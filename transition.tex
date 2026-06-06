@@ -125,32 +125,23 @@ the BAO feature.
 \section{Introduction}
 \noindent
 In a previous work~\citep{Dam:2025ops} we found that correlations in
-real space are related to correlations in redshift space through a
+real space are generally related to correlations in redshift space through a
 transition probability,
 a conditional probability distribution function of the
 redshift positions attainable from a given real position.
-%; it is
-%closely related to the pairwise relative velocity distribution~\citep{Peebles_LSS}.
-%A number of properties were noted in that work.
-%We noted a few properties in that work but stopped short of
-%a detailed study. This paper is to fill that gap.
-Given the similarities between the redshift mapping and
-the Lagrangian mapping, it did not take
-long to realize that correlations
-between Lagrangian and Eulerian space can also be viewed through
-a transition probability. As we will see, this case is more natural
-since the transition probability can be interpreted dynamically,
-propagating the initial correlations forward in time.
-The aim of this work is thus to set out the basic framework
-for describing the correlation function in terms of
-the transition probability.
-Although the framework can be straightforwardly generalized to
-$n$-point functions, we will focus on the two-point function
-for simplicity.
+Since that work we realized there is a similar relation
+between Lagrangian space and Eulerian space, i.e.\ between the initial
+and final correlations.
+The aim of this paper is to study this transition probability.
 
-
-The relation between initial and final distribution is given by the
-marginal integral
+Since the transition probability
+propagates the initial correlations forward in time it can be
+understood in dynamical terms.
+The important concepts behind this are conservation and transport.
+Conservation of mass implies the conservation of probability,
+while transport redistributes the mass. 
+The basic relation between initial and final distribution is given
+by the marginal integral
 \be
 p(\x)=\int p(\x\Mid \q)\,\pi(\q)\,\dif^3\q\,,
 \ee
@@ -175,6 +166,37 @@ $\xi$ the two-point correlation function (the excess probability
 above Poisson).
 There is a similar relation in Lagrangian space
 for $\dif P=\pi(\q_1,\q_2)\,\dif^3\q_1\dif^3\q_2$.
+
+The aim of this work is thus to set out the basic framework
+for describing the matter correlation function in terms of
+the transition probability.
+Although the framework can be straightforwardly generalized to
+$n$-point functions, we will focus on the two-point function
+for simplicity.
+
+The transition probability is the focus of this work,
+but it is not the first time it has appeared in a
+cosmological context.
+It also appears in
+a sophisticated analytical approach to the $N$-body problem,
+called kinetic field theory~\citep[KFT;][]{Bartelmann:2014gma,Bartelmann:2019unp},
+Following \cite{2010PhRvE..81f1102M,2012JSP...149..643D},
+KFT is based on reformulating as a field theory the
+phase-space description of point particles.
+This allows KFT to take advantage of established
+path integral techniques for classical theories
+\citep{Martin:1973zz,Janssen76,deDominicis78}.
+
+
+
+
+The framework presented here has a
+distinctly probabilistic character.
+We take as our starting point Eq.~\eqref{eq:n} and from there build
+up the statistical theory using techniques that
+should be familiar to practitioners of the resummed approach.
+Our goal here is not to present a detailed model of the two-point
+function, but to expose the underlying probabilistic structure.
 
 
 
@@ -256,20 +278,6 @@ initial time $t=0$, not the present time.}
 %remaining in configuration space.
 
 
-The transition probability is the focus of this work,
-but it is not the first time it has appeared in the
-cosmological context.
-It also appears in
-kinetic field theory~\citep[KFT;][]{Bartelmann:2014gma,Bartelmann:2019unp},
-a sophisticated statistical approach to the $N$-body problem.
-In particular, KFT takes the
-kinetic phase-space description of point particles and reformulates it
-as a field theory (hence its name),
-following \cite{2010PhRvE..81f1102M,2012JSP...149..643D}.
-This allows KFT to take advantage of sophisticated
-path integral techniques for classical theories, developed in
-the pioneering works of
-\cite{Martin:1973zz,Janssen76,deDominicis78}.
 
 
 
@@ -294,38 +302,6 @@ the pioneering works of
     \label{fig:trajectories}
 \end{figure*}
 
-
-
-
-KFT assumes Newtonian dynamics and makes use of its
-Hamiltonian structure to solve for the
-state trajectory in phase space.
-By contrast, we make no such assumptions. Here the
-individual trajectories $\x_t(\q)$ may be solutions to more
-complicated equations of motion, for instance, of the form
-$\dif^2\x/\dif t^2=\mbf{F}(\x,t)$, where
-$\mbf{F}$ consists not only of contributions from
-(self-consistent) gravitational forces $-\nabla\Phi$ but also
-non-gravitational forces.
-Moreover, $-\nabla\Phi$ may either be determined from the
-mean-field limit (as in LPT) or from an accounting
-of the two-body interactions (as in KFT).
-Although we will often refer to
-particles (as it's easier to imagine what transition probabilities
-are doing), most of our results go through as if we were working in
-the continuum limit of fields. (What changes are the detailed
-estimates of the statistical averages.) On the few occasions when
-we treat the discrete case we will make these distinctions
-clear.
-
-
-The framework presented here has a
-distinctly probabilistic character.
-We take as our starting point Eq.~\eqref{eq:n} and from there build
-up the statistical theory using techniques that
-should be familiar to practitioners of the resummed approach.
-Our goal here is not to present a detailed model of the two-point
-function, but to expose the underlying probabilistic structure.
 
 
 
@@ -3810,37 +3786,32 @@ from a Gaussian at intermediate times to a more general skewed
 distribution.
 
 
-The same pushforward framework can be extended to biased tracers
-whose comoving number density is not conserved but evolves
-due to ongoing formation and merger.
-We showed that number conservation is not essential to the
-pushforward framework: source and sink terms can be included, so the
-evolution attaches to the tracers that survive to the observation time
-rather than to a fixed conserved population. In the simple model,
-ongoing formation alters the large-scale bias only modestly,
-whereas environmentally dependent removal gives the dominant effect,
-producing a negative correction to the usual conserved-tracer bias;
-in the fiducial example this accounts for roughly a $20\%$ suppression,
-and qualitatively matches the stronger suppression seen in simulations.
+KFT assumes Newtonian dynamics and makes use of its
+Hamiltonian structure to solve for the
+state trajectory in phase space.
+By contrast, we make no such assumptions. Here the
+individual trajectories $\x_t(\q)$ may be solutions to more
+complicated equations of motion, for instance, of the form
+$\dif^2\x/\dif t^2=\mbf{F}(\x,t)$, where
+$\mbf{F}$ consists not only of contributions from
+(self-consistent) gravitational forces $-\nabla\Phi$ but also
+non-gravitational forces.
+Moreover, $-\nabla\Phi$ may either be determined from the
+mean-field limit (as in LPT) or from an accounting
+of the two-body interactions (as in KFT).
+Although we will often refer to
+particles (as it's easier to imagine what transition probabilities
+are doing), most of our results go through as if we were working in
+the continuum limit of fields. (What changes are the detailed
+estimates of the statistical averages.) On the few occasions when
+we treat the discrete case we will make these distinctions
+clear.
 
-%In principle, these non-conservation effects should be taken into account
-%in nonlocal-in-time models of galaxy clustering, specifically those that
-%attempt to physically
-%model the formation history up to the observation time.
-%The nonlocal-in-time bias expansion appears to be
-%of enough generality
-%that these non-conservation effects are subsumed into the
-%bias coefficients.
 
 
 Besides giving new understanding to old results, our approach 
 may engender new techniques for modelling large-scale structure.
 
-
-% In the phenomenological non-conserved model considered here,
-%ongoing formation has only a modest effect on large-scale bias, while
-%environmentally dependent removal provides the dominant suppression relative
-%to the conserved prediction.
 
 
 
