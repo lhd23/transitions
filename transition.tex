@@ -125,29 +125,39 @@ the BAO feature.
 \section{Introduction}
 \noindent
 In a previous work~\citep{Dam:2025ops} we found that correlations in
-real space are generally related to correlations in redshift space through a
+real space are related to correlations in redshift space through a
 transition probability,
 a conditional probability distribution function of the
 redshift positions attainable from a given real position.
 %; it is
 %closely related to the pairwise relative velocity distribution~\citep{Peebles_LSS}.
 %A number of properties were noted in that work.
-Given the mathematical similarities, it did not take long to realize there is
-also a transition probability relating correlations
-between Lagrangian and Eulerian space, i.e.\
-between initial correlations and the evolved, final correlations.
-In fact, the transition probability in this case has a more
-physical interpretation, describing the statistical evolution
-of the system.
+%We noted a few properties in that work but stopped short of
+%a detailed study. This paper is to fill that gap.
+Given the similarities between the redshift mapping and
+the Lagrangian mapping, it did not take
+long to realize that correlations
+between Lagrangian and Eulerian space can also be viewed through
+a transition probability. As we will see, this case is more natural
+since the transition probability can be interpreted dynamically,
+propagating the initial correlations forward in time.
+The aim of this work is thus to set out the basic framework
+for describing the correlation function in terms of
+the transition probability.
+Although the framework can be straightforwardly generalized to
+$n$-point functions, we will focus on the two-point function
+for simplicity.
 
-In both cases the basic pattern is that for  the
-final (or redshift-space) distribution $p(\x)$ we have
+
+The relation between initial and final distribution is given by the
+marginal integral
 \be
-p(\x)=\int\dif^3\q\, p(\x\Mid \q)\,\pi(\q)\,,
+p(\x)=\int p(\x\Mid \q)\,\pi(\q)\,\dif^3\q\,,
 \ee
-where $p(\x\Mid\q)$ is the transition probability and $\pi(\q)$ is
-the initial (or real-space) distribution, which can be thought of
-as the `prior' pdf. Note that this is for a single point; for $n$
+where $p(\x)$ is the final distribution,
+$p(\x\Mid\q)$ is the transition probability, and $\pi(\q)$ is
+the initial distribution, which can be thought of
+as the `prior' pdf. Generalizing from a single point to $n$
 points we have instead $n$ marginal integrations over $n$ latent
 positions. Now the input and output pdfs, which give the probability of finding
 particles at $n$ points in their respective spaces, are related
@@ -157,20 +167,15 @@ For instance, for $n=2$ we have the probability~\citep{Peebles_LSS}
 \dif P=p(\x_1,\x_2)\,\dif^3\x_1\dif^3\x_2
 =\bar\varrho^2[1+\xi(\x_1,\x_2)]\,\dif^3\x_1\dif^3\x_2
 \ee
-of finding a particle in a small volume centred on $\x_1$ and another 
-centred on $\x_2$.
+of finding a particle in a small volume centred at $\x_1$ and
+another in a small volume
+centred at $\x_2$.
 Here $\bar\varrho$ is the mean comoving density and 
 $\xi$ the two-point correlation function (the excess probability
 above Poisson).
-There is an analogous relation in Lagrangian space
+There is a similar relation in Lagrangian space
 for $\dif P=\pi(\q_1,\q_2)\,\dif^3\q_1\dif^3\q_2$.
 
-The aim of this work is to set out the basic framework
-for describing the correlation function in terms of
-the transition probability.
-We will focus on the two-point function for simplicity, but
-we note the framework can be straightforwardly generalized to
-$n$-point functions.
 
 
 
@@ -197,11 +202,11 @@ $n$-point functions.
 
 
 \section{Conservation and transport}
-\noindent The important concept underlying this approach
-is a notion of conservation under transport.
+\noindent The two important ideas behind Eq.~\eqref{eq:marginal}
+are conservation and transport.
 
 Let us briefly review resummed LPT, with an emphasis
-on \emph{transport} (the ``convective part'').
+on \emph{transport}.
 Consider a system of (self-gravitating) particles
 labelled by their initial position $\q$, e.g.\ cold dark matter particles.
 Because the total number (or mass) of particles is
@@ -1450,9 +1455,9 @@ indeed confirms that the standard relation is recovered.
   \end{tikzpicture}
   \caption{Three effects on the correlation, illustrated on the
   peak~\eqref{eq:xi-peak}.
-	Note that a rightward shift of the peak to larger separations, due
-	to outfall, is also possible.
-	Likewise, a suppression of the peak, due to expansion,
+	Note that depending on the scale a rightward shift of the peak
+	to larger separations due to outfall is also possible.
+	Likewise, a suppression of the peak due to expansion
 	is also possible. For simplicity we have ignored the fact that
 	each effect also carries
 	scale dependence
@@ -1512,8 +1517,7 @@ This effect causes the trajectories to fan out over time
 (Figure~\ref{fig:pt}),
 broadening the transition probability.
 We liken this effect to diffusion,
-described by $\mbf{C}_t(\q)$ and
-which is absent from Eq.~\eqref{eq:xi_n-formula}.
+described by $\mbf{C}_t(\q)$ but absent from Eq.~\eqref{eq:xi_n-formula}.
 Now, returning to the general formula~\eqref{eq:xi-homo} with the transition
 probability given by the Gaussian~\eqref{eq:p-t-Gauss},
 how is the peak's width and location affected
