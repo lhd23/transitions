@@ -297,7 +297,7 @@ initial time $t=0$, not the present time.}
 
 \begin{figure*}[t!]
     \centering
-    \includegraphics[width=0.8\textwidth]{plots/trajectories_extended4}
+    \includegraphics[width=0.9\textwidth]{plots/trajectories_extended6}
     % \includegraphics[width=0.8\textwidth]{plots/trajectories_extended_long8}
     \caption{Illustration of the pushforward~\eqref{eq:n} in
     one dimension.
@@ -373,7 +373,7 @@ $\int_{\q}$ is shorthand for $\int\dif^3\q$, and
 \big\rangle\!\big\rangle
     \label{eq:pt}
 \eea
-is the \emph{transition probability}.
+is the {transition probability}.
 Here the double bracket $\langle\!\langle\cdots\rangle\!\rangle$
 % =\langle \cdots\, n_0(\q_1)\sp n_0(\q_2)\rangle/\langle n_0(\q_1)\sp n_0(\q_2)\rangle$
 denotes the {density-weighted} ensemble 
@@ -396,7 +396,7 @@ $(\x_1+\dif\x_1,\x_2+\dif\x_2)$ at time $t$.
 %of the initial distribution $p(x')$.
 
 \subsection{Properties}\label{sec:properties}
-\noindent Two properties should be noted.
+\noindent Two properties are notable.
 First, the transition probability is normalized:
 $\int\dif^3\x_1\int\dif^3\x_2\, p_t(\x_1,\x_2\Mid\q_1,\q_2)=1$.
 Physically, this is the requirement that the number of pairs is
@@ -990,8 +990,9 @@ $(k\Delta t)^n$.
     in a one-dimensional universe. Here the transition probability
     is estimated from 5000 $N$-body simulations
     of $N=50$ particles.
-    The top row uses initial separation $q\equiv q_1-q_2=0.2L$, the middle row $q=0.1L$,
-    and the bottom row $q=0.05L$.
+    Each row is for a different initial separation $q\equiv q_1-q_2=0.2L$:
+    from top to bottom, $q=0.2L$, $q=0.1L$, and $q=0.05L$, where
+    $L$ is the box size.
     Left panels show the trajectory $r_t=x_t(q_1)-x_t(q_2)$
     in 50 realisations of the initial conditions, for given $q$.
     The two particles singled out have zero initial velocity.
@@ -1003,8 +1004,7 @@ $(k\Delta t)^n$.
     outcomes of 5000 realisations.
     The Gaussians shown in solid black correspond
     to the data points in the left panel. The dashed black line
-    indicates the initial separation of the pair $q_1-q_2=0.1\sp L$,
-    where $L$ is the box size.
+    indicates the initial separation of the pair.
     The dashed blue vertical line indicates the mean separation.
     The 48 other particles
     have initial positions that are uniformly random distributed and
