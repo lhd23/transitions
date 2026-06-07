@@ -125,34 +125,39 @@ the BAO feature.
 \section{Introduction}
 \noindent
 In a previous work~\citep{Dam:2025ops} we found that correlations in
-real space are generally related to correlations in redshift space through a
-transition probability,
+redshift space are generally related to correlations in real space
+through a marginal integral over a \emph{transition probability},
 a conditional probability distribution function of the
 redshift positions attainable from a given real position.
-Since that work we realized there is a similar relation
-between Lagrangian space and Eulerian space, i.e.\ between the initial
-and final correlations.
-The aim of this paper is to study this transition probability.
+We have since realized there is also a relation
+between Lagrangian space and Eulerian space, that is,
+a transition probability connecting the initial and final correlations.
+This will be the focus of our work.
 
-Since the transition probability
-propagates the initial correlations forward in time it can be
-understood in dynamical terms.
-The important concepts behind this are conservation and transport.
+An important aspect of this transition probability,
+distinguishing it from the one we found earlier, is its
+dynamical origin. Since it connects data from the initial
+to final time it naturally encodes the statistical evolution
+of the system.
+The key concepts behind this are mass conservation and transport.
 Conservation of mass implies the conservation of probability,
-while transport redistributes the mass. 
-The basic relation between initial and final distribution is given
-by the marginal integral
-\be
+while mass transport implies the redistribution of probability
+over time. 
+This is described by the marginal integral over
+Lagrangian positions $\q$:
+\be\label{eq:marginal}
 p(\x)=\int p(\x\Mid \q)\,\pi(\q)\,\dif^3\q\,,
 \ee
-where $p(\x)$ is the final distribution,
+where $p(\x)$ is the final (Eulerian) distribution,
 $p(\x\Mid\q)$ is the transition probability, and $\pi(\q)$ is
-the initial distribution, which can be thought of
-as the `prior' pdf. Generalizing from a single point to $n$
-points we have instead $n$ marginal integrations over $n$ latent
-positions. Now the input and output pdfs, which give the probability of finding
-particles at $n$ points in their respective spaces, are related
-to the $n$-point correlation functions.
+the initial (Lagrangian) distribution. Generalizing from a single point
+to $n$ points we have instead $n$ marginal integrations over 
+$\q_1,\ldots,\q_n$.
+
+For a given $n$ the initial and final distributions
+are related to the $n$-point functions.
+%Here it helps to recall that which give the probability of finding
+%particles at $n$ points in their respective spaces,
 For instance, for $n=2$ we have the probability~\citep{Peebles_LSS}
 \be\nonumber
 \dif P=p(\x_1,\x_2)\,\dif^3\x_1\dif^3\x_2
@@ -162,8 +167,8 @@ of finding a particle in a small volume centred at $\x_1$ and
 another in a small volume
 centred at $\x_2$.
 Here $\bar\varrho$ is the mean comoving density and 
-$\xi$ the two-point correlation function (the excess probability
-above Poisson).
+$\xi$ is the two-point correlation function, the excess probability
+above Poisson.
 There is a similar relation in Lagrangian space
 for $\dif P=\pi(\q_1,\q_2)\,\dif^3\q_1\dif^3\q_2$.
 
@@ -173,6 +178,9 @@ the transition probability.
 Although the framework can be straightforwardly generalized to
 $n$-point functions, we will focus on the two-point function
 for simplicity.
+Our goal here is not to give a detailed model of the two-point
+function, but to highlight the model-independent aspects.
+
 
 The transition probability is the focus of this work,
 but it is not the first time it has appeared in a
@@ -181,23 +189,30 @@ It also appears in
 a sophisticated analytical approach to the $N$-body problem,
 called kinetic field theory~\citep[KFT;][]{Bartelmann:2014gma,Bartelmann:2019unp},
 Following \cite{2010PhRvE..81f1102M,2012JSP...149..643D},
-KFT is based on reformulating as a field theory the
-phase-space description of point particles.
+KFT is based on reformulating the
+phase-space description of point particles as a field theory.
 This allows KFT to take advantage of established
 path integral techniques for classical theories
 \citep{Martin:1973zz,Janssen76,deDominicis78}.
 
+This paper is organized as follows.
+Section~\ref{sec:transition} establishes some general
+results which hold for any transition probability.
+In Section~\ref{sec:phase-space}
+we clarify the assumptions underlying Eq.~\eqref{eq:n}.
+Derivations and technical discussions supporting some of
+the results of this work are given in the Appendix.
 
 
 
-The framework presented here has a
-distinctly probabilistic character.
-We take as our starting point Eq.~\eqref{eq:n} and from there build
-up the statistical theory using techniques that
-should be familiar to practitioners of the resummed approach.
-Our goal here is not to present a detailed model of the two-point
-function, but to expose the underlying probabilistic structure.
 
+
+%The framework presented here has a
+%distinctly probabilistic character.
+%We take as our starting point Eq.~\eqref{eq:n} and from there build
+%up the statistical theory using techniques that
+%should be familiar to practitioners of the resummed approach.
+%
 
 
 
@@ -224,9 +239,7 @@ function, but to expose the underlying probabilistic structure.
 
 
 \section{Conservation and transport}
-\noindent The two important ideas behind Eq.~\eqref{eq:marginal}
-are conservation and transport.
-
+\noindent
 Let us briefly review resummed LPT, with an emphasis
 on \emph{transport}.
 Consider a system of (self-gravitating) particles
@@ -307,15 +320,6 @@ initial time $t=0$, not the present time.}
 
 
 
-This paper is organized as follows.
-Section~\ref{sec:transition} establishes some general
-results which hold for any transition probability.
-In Section~\ref{sec:phase-space}
-we clarify the assumptions underlying Eq.~\eqref{eq:n}.
-Derivations and technical discussions supporting some of
-the results of this work are given in the Appendix.
-
-
 
 
 
@@ -330,10 +334,10 @@ Eq.~\eqref{eq:n} the two-point correlation function%
 \footnote{In this work it is more natural to work with
 $\xi_\varrho=\langle \varrho(\x_1)\sp \varrho(\x_2)\rangle$ instead
 of the conventional
-$\xi=\langle\delta(\x_1)\sp\delta(\x_2)\rangle$
+$\xi(\x_1,\x_2)=\langle\delta(\x_1)\sp\delta(\x_2)\rangle$
 of the overdensity $\delta=\varrho/\bar{\varrho}-1$.
 The two are simply related by
-$\xi_\varrho=\bar{\varrho}^2(1+\xi)$.
+$\xi_\varrho(\x_1,\x_2)=\bar{\varrho}^2[1+\xi(\x_1,\x_2)]$.
 % Here the number density makes more sense when working with
 % discrete tracers (it also simplifies the mathematical presentation).
 }
@@ -355,12 +359,16 @@ is the two-point function at the initial time,
 $\int_{\q}$ is shorthand for $\int\dif^3\q$, and
 %Here we have multiplied by $1=\xi_{n0}(\q_1,\q_2)/\xi_{n0}(\q_1,\q_2)$
 \bea
-&p_t(\x_1,\x_2\Mid\q_1,\q_2) \nonumber\\[3pt]
-&\quad=\frac{\langle 
-\delD[\x_1-\x_t(\q_1)]\ssp\delD[\x_2-\x_t(\q_2)]\ssp
-    \varrho_0(\q_1)\sp \varrho_0(\q_2)\rangle}
-    {\langle \varrho_0(\q_1)\sp \varrho_0(\q_2)\rangle} \nonumber\\[3pt]
-&\quad\equiv\big\langle\!\big\langle
+&p_t(\x_1,\x_2\Mid\q_1,\q_2) %\nonumber\\[3pt]
+%&\quad=\frac{\langle 
+%\delD[\x_1-\x_t(\q_1)]\ssp\delD[\x_2-\x_t(\q_2)]\ssp
+%    \varrho_0(\q_1)\sp \varrho_0(\q_2)\rangle}
+%    {\langle \varrho_0(\q_1)\sp \varrho_0(\q_2)\rangle} \nonumber\\[3pt]
+%&\quad\equiv\big\langle\!\big\langle
+%    \delD[\x_1-\x_{t}(\q_1)]\ssp \delD[\x_2-\x_{t}(\q_2)]
+%\big\rangle\!\big\rangle
+%    \label{eq:pt}
+\equiv\big\langle\!\big\langle
     \delD[\x_1-\x_{t}(\q_1)]\ssp \delD[\x_2-\x_{t}(\q_2)]
 \big\rangle\!\big\rangle
     \label{eq:pt}
@@ -369,32 +377,38 @@ is the \emph{transition probability}.
 Here the double bracket $\langle\!\langle\cdots\rangle\!\rangle$
 % =\langle \cdots\, n_0(\q_1)\sp n_0(\q_2)\rangle/\langle n_0(\q_1)\sp n_0(\q_2)\rangle$
 denotes the {density-weighted} ensemble 
-average, defined by the second line.
-This pdf gives the probability
+average
+\be
+\llangle F(\q_1,\q_2)\rrangle
+\equiv
+\frac{\langle F(\q_1,\q_2)\ssp
+    \varrho_0(\q_1)\ssp \varrho_0(\q_2)\rangle}
+    {\langle\sp \varrho_0(\q_1)\ssp \varrho_0(\q_2)\rangle}\,,
+\ee
+for any pairwise function $F(\q_1,\q_2)$.
+The pdf~\eqref{eq:pt} gives the probability
 $p_t(\x_1,\x_2\Mid\q_1,\q_2)\ssp\dif^3\x_1\sp\dif^3\x_2$
 that a particle pair $(\q_1,\q_2)$ at $t=0$
 is later found between $(\x_1,\x_2)$ and
 $(\x_1+\dif\x_1,\x_2+\dif\x_2)$ at time $t$. 
-Equation~\eqref{eq:MASTER} can be regarded as
-the pushforward $p(x)=\int\dif x'\sp p_t(x\Mid x')p(x')$
-of the initial distribution $p(x')$.
+%Equation~\eqref{eq:MASTER} can be regarded as
+%the pushforward $p(x)=\int\dif x'\sp p_t(x\Mid x')p(x')$
+%of the initial distribution $p(x')$.
 
 \subsection{Properties}\label{sec:properties}
 \noindent Two properties should be noted.
 First, the transition probability is normalized:
-\be
-\int\dif^3\x_1\int\dif^3\x_2\, p_t(\x_1,\x_2\Mid\q_1,\q_2)=1\,.
-\ee
+$\int\dif^3\x_1\int\dif^3\x_2\, p_t(\x_1,\x_2\Mid\q_1,\q_2)=1$.
 Physically, this is the requirement that the number of pairs is
 conserved under time evolution
 (pairs cannot disappear from the system but must assume {some} position).
 
 Second, the transition probability collapses
 to the identity map in the limit $t\to 0$:
-\be
-\lim_{t\to0}\: p_t(\x_1,\x_2\Mid\q_1,\q_2)=
-\delD(\x_1-\q_1)\,\delD(\x_2-\q_2)\,,
-\ee
+$
+p_t(\x_1,\x_2\Mid\q_1,\q_2)\to
+\delD(\x_1-\q_1)\,\delD(\x_2-\q_2)
+$
 since $\x_t(\q)\to\q$.
 Without time evolution, we trivially recover the initial
 correlations, $\xi_{\varrho0}\to\xi_\varrho$.
@@ -454,7 +468,7 @@ Given a particle located at the origin, $p_t(r\Mid q)\ssp\dif r$ is
 the probability that a second
 particle, located on a shell of radius $q$, transitions to a shell of radius
 between $r$ and $r+\dif r$. If the second particle passes through the origin,
-so that there is a sign change in $\r_t$, then shell crossing occurs.
+so there is a sign change in $\r_t$, then shell crossing occurs.
 Note that although Eq.~\eqref{eq:xi-radial} is an exact formula,
 its utility will be limited by one's
 ability to model $p_t(r\Mid q)$, which is in general a
@@ -563,7 +577,7 @@ $\x_t(\q;\delta_0)$, not $\x_t(\q)$ as we did earlier
 For brevity we will continue writing
 $\x_t(\q)$ with the dependence on $\delta_0$ understood.
 
-But why do the individual trajectories depend on $\delta_0$?
+Why do the individual trajectories depend on $\delta_0$?
 This is because the gravitational field is
 \emph{self-consistently} determined from the mass distribution.
 Specifically, the acceleration of
@@ -969,11 +983,12 @@ $(k\Delta t)^n$.
 %are the result of straightline ballistic motion.
 
 
-\begin{figure}
+\begin{figure*}
     \centering
-    \includegraphics[width=\columnwidth]{plots/pt_grid}
+    \includegraphics[width=2\columnwidth]{plots/pt_grid}
     \caption{Evolution of the transition probability~\eqref{eq:pt}
-    in a one-dimensional universe, here estimated from 5000 $N$-body simulations
+    in a one-dimensional universe. Here the transition probability
+    is estimated from 5000 $N$-body simulations
     of $N=50$ particles.
     The top row uses initial separation $q\equiv q_1-q_2=0.2L$, the middle row $q=0.1L$,
     and the bottom row $q=0.05L$.
@@ -997,7 +1012,7 @@ $(k\Delta t)^n$.
     Note that negative values of $r/L$ indicate that the particle pair
     has crossed.}
     \label{fig:pt}
-\end{figure}
+\end{figure*}
 
 
 \subsection{Gaussian model}
@@ -1138,7 +1153,7 @@ There is no real difference between them except one of interpretation:
 in those works the Gaussian is understood
 as a scale-dependent kernel of the form $K(\r-\q;\q)$.
 The problem with this view is that Eq.~\eqref{eq:MASTER}
-is not a proper convolution due to the absolute
+is not a proper convolution on account of the absolute
 scale dependence; nonlinear evolution is \emph{not} simply
 a Gaussian smoothing of the initial correlations~\citep{Smith:2007gi}.
 Rather, this kernel should be understood as a transition
