@@ -120,7 +120,8 @@ the BAO feature.
 
 \section{Introduction}
 \noindent
-In a previous work~\citep{Dam:2025ops} we noticed a general
+In a previous work~\citep{Dam:2025ops} on an unrelated topic
+we noticed a general
 relation between correlations in
 redshift space and those in real space. The relation takes
 the form of a marginal integral over the distribution of
@@ -135,47 +136,52 @@ and final correlations.
 The Lagrangian case will be the focus of this work.
 
 Unlike the one found earlier, the transition probability
-we will explore has a straightforward dynamical interpretation.
-Since it propagates data from an initial time
+we will study
+has a straightforward dynamical interpretation.
+Since it propagates initial data
 to a final time it encodes the statistical evolution
 of the universe.
 In this there are two key concepts:
 mass conservation and transport.
 Conservation of mass implies the conservation of probability,
-while transport, which drives clustering, leads to a redistribution
-of probability. An important lesson here is that however
-complicated the dynamics,
-the redistribution is simply given by
+while transport drives clustering and leads to a redistribution
+of probability. The core idea, forming the basis of this work, is
+that however complicated the dynamics may be
+the redistribution is described simply by
 a marginal integral of the form
 \be\label{eq:marginal}
 p(\x,t)=\int p_t(\x\Mid \q)\,p_\mathrm{init}(\q)\,\dif^3\q\,,
 \ee
 where $p(\x,t)$ is the final (Eulerian) distribution,
-$p_t(\x\Mid\q)$ is the transition probability, and $p_\mathrm{init}(\q)$ is
-the initial (Lagrangian) distribution. Here the initial and final
-distributions describe the mean density in their respective spaces
-(with the spatial dependence dropping out if statistical homogeneity is
-assumed).
-If we generalize to $n$ points we have instead $n$ marginal integrations
-over $\q_1,\ldots,\q_n$, with the initial and final distributions
-related to the $n$-point functions.
-%Here it helps to recall that which give the probability of finding
-%particles at $n$ points in their respective spaces,
-For instance, for $n=2$ we have the probability~\citep{Peebles_LSS}
+$p_\mathrm{init}(\q)$ is
+the initial (Lagrangian) distribution, and $p_t(\x\Mid\q)$
+is the transition probability.
+%Here the initial and final distributions give the mean density
+%in their respective spaces.
+%(with the spatial dependence dropping out if statistical homogeneity is
+%assumed).
+In the case of two particles at $\x_1$ and $\x_2$ we have instead
+marginal integrals
+over $\q_1$ and $\q_2$, with the initial and final distributions
+related to the two-point function as~\citep{Peebles_LSS}
 \be\nonumber
 \dif P=p(\x_1,\x_2)\,\dif^3\x_1\dif^3\x_2
-=\bar\varrho^2[1+\xi(\x_1,\x_2)]\,\dif^3\x_1\dif^3\x_2
+=\bar\varrho^2[1+\xi(\x_1,\x_2)]\,\dif^3\x_1\dif^3\x_2,
 \ee
-of finding a particle in a small volume centred at $\x_1$ and
-another in a small volume
-centred at $\x_2$, i.e.\ $p_\mathrm{fin}(\x_1,\x_2)$ is the two-particle
-distribution function (in configuration space). We have a
-similar relation in Lagrangian space
-for $\dif P=p_\mathrm{init}(\q_1,\q_2)\,\dif^3\q_1\dif^3\q_2$.
-Here $\bar\varrho$ is the mean comoving density and 
+where $\bar\varrho$ is the mean comoving density and 
 $\xi$ is the two-point correlation function (the excess
 probability above Poisson).
+One may view $p(\x_1,\x_2)$ as the two-particle
+distribution function marginalized over the particle momenta,
+that is, the probability of finding a particle in a small volume
+centred at $\x_1$ and another in a small volume
+centred at $\x_2$.
 
+%We have a similar relation in Lagrangian space
+%for $\dif P=p_\mathrm{init}(\q_1,\q_2)\,\dif^3\q_1\dif^3\q_2$.
+
+Modelling the transition rates is the principal difficulty
+in this approach.
 The approach we will explore is essentially
 Lagrangian perturbation theory~\citep{Couchman_Bond88,Taylor:1996ne,1995MNRAS.273..475S,Porciani:1996tn,Matsubara:2007wj,White:2014},
 but leans slightly into kinetic theory~\citep{Davis:1977}.
@@ -518,9 +524,9 @@ known as the pair conservation equation~\citep{Davis:1977}
 %By expanding the transition probability for a small
 %time interval, we obtain (see Appendix~\ref{app:KM-expansion} for details)
 \be\label{eq:pairwise-eqn}
-\partial_t\,\xi_n
+\partial_t\,\xi_\varrho
 +\frac1a\sp\nabla_\r\cdot
-    \big(\xi_n\,\v_{12}\big)=0\,,
+    \big(\xi_\varrho\,\v_{12}\big)=0\,,
 \ee
 where we have the pairwise relative velocity
 $\v_{12}(\r,t)=\llangle\v_1-\v_2\rrangle$, with $\v_1=a\sp\dif\x_t(\q_1)/\dif t$
@@ -926,7 +932,7 @@ Markov property.
 
 \section{Statistical evolution}\label{sec:proof}
 \noindent 
-By now it should be clear that the difficulty of calculating
+By now it should be clear that the principal difficulty of calculating
 the correlation function~\eqref{eq:xi-homo} lies in
 the calculation of
 the transition probabilities,
@@ -3928,6 +3934,8 @@ The bulk of this work was completed in 2025 at the University of Geneva
 where the author was supported by the European Research Council under
 the Horizon 2020 Research and Innovation Programme of the European Union
 (grant agreement no.~863929).
+We thank Julian Adamek for a discussion that led to
+Appendix~\ref{app:path-integral}.
 Use of the Baobab HPC cluster at the University
 of Geneva is gratefully acknowledged.
 \end{acknowledgements}
