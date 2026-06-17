@@ -120,23 +120,25 @@ the BAO feature.
 
 \section{Introduction}
 \noindent
-In a previous work~\citep{Dam:2025ops} on a different topic
+In a previous work~\citep{Dam:2025ops} on a related topic
 we noticed a general
 relation between correlations in
 redshift space and those in real space. The relation takes
-the form of a marginal integral over the distribution of
-real positions subject to
-a \emph{transition probability},
-a conditional probability distribution function of the
-redshift positions attainable from a given real position.
-In this work we explore a similar relation that exists
+the form of a marginal integral, $p(s)=\int\dif x\, p(s\Mid x)\sp p(x)$,
+over the distribution $p(x)$ of
+real positions and
+a \emph{transition probability} $p(s\Mid x)$,
+a conditional probability density of the
+redshift positions $s$ attainable from a given real position $x$.
+
+In this work we explore a similar relation
 between Lagrangian space and Eulerian space, and for which there is
 a transition probability connecting the initial
 and final correlations.
 %The Lagrangian case will be the focus of this work.
 
-Unlike the one found earlier, this transition probability
-has a straightforward dynamical interpretation.
+Unlike the one found earlier, the transition probability
+we will study has a straightforward dynamical interpretation.
 Since it propagates initial data
 to a final time it encodes the statistical evolution
 of the universe.
@@ -145,9 +147,9 @@ mass conservation and transport.
 Conservation of mass implies the conservation of probability,
 while transport drives clustering and leads to a redistribution
 of probability. The core idea, which is the basis of this work, is
-that however complicated the dynamics may be
-the redistribution is described simply by
-a marginal integral of the form
+that however complicated the particle dynamics may be
+the redistribution from one time to another is always described
+by a marginal integral of the form
 \be\label{eq:marginal}
 p(\x,t)=\int p_t(\x\Mid \q)\,p_\mathrm{init}(\q)\,\dif^3\q\,,
 \ee
@@ -163,10 +165,11 @@ later found in a small volume $\dif^3\x$ around $\x$.
 %assumed).
 In the case of two particles, at $\x_1$ and $\x_2$, this becomes a
 marginal integral
-over $\q_1$ and $\q_2$ in what should be an obvious generalization.
-How is this related to the two-point function
-$\xi(\x_1,\x_2,t)$ that we are after? Here it helps to remember
-that $\xi(\x_1,\x_2,t)$ is the excess probability in~\citep{Peebles_LSS}
+over $\q_1$ and $\q_2$ (in what should be an obvious generalization).
+How is this related to
+the two-point function $\xi(\x_1,\x_2,t)$? Here it helps to recall
+that $\xi(\x_1,\x_2,t)$ is the excess probability over random
+in~\citep{Peebles_LSS}
 \be\nonumber
 \dif P=p(\x_1,\x_2,t)\,\dif^3\x_1\dif^3\x_2
 \propto[1+\xi(\x_1,\x_2,t)]\,\dif^3\x_1\dif^3\x_2\,,
@@ -174,7 +177,7 @@ that $\xi(\x_1,\x_2,t)$ is the excess probability in~\citep{Peebles_LSS}
 the probability of finding a particle in a small volume
 around $\x_1$ and another in a small volume
 around $\x_2$.
-We have a similar expression for the initial distribution.
+We have similar for the initial distribution.
 %where $\bar\rho$ is the mean comoving density and 
 %$\xi$ is the two-point correlation function (the excess
 %probability above Poisson).
@@ -184,28 +187,35 @@ We have a similar expression for the initial distribution.
 %We have a similar relation in Lagrangian space
 %for $\dif P=p_\mathrm{init}(\q_1,\q_2)\,\dif^3\q_1\dif^3\q_2$.
 
-That the correlation function can be forward modelled in
-probabilistic terms is the main message of this work.
-We are not the first to have noticed this, however.
-As far as we know \cite{Couchman_Bond88} were the first,
-though they gave their expression in terms of Lagrangian displacements
-and so missed the more basic
-structure~\eqref{eq:marginal}.
-In any case this approach appears to have been overlooked
-in subsequent work, the bulk of which
-\citep{Taylor:1996ne,1995MNRAS.273..475S,Matsubara:2007wj,Vlah:2016bcl,Chen:2020fxs}
+That the correlation function can be forward modelled
+through a transition probability is the main message of this work.
+In fact, the seeds of this idea can be traced to \cite{Couchman_Bond88}
+who it seems were the first to give an expression like Eq.~\eqref{eq:marginal},
+though theirs in terms of the distribution of Lagrangian displacements
+(so apparently missing the more basic structure);
+see also \cite{1995MNRAS.273..475S}.
+%We are not the first to have noticed this, however.
+%As far as we know \cite{Couchman_Bond88} were the first,
+%though they gave their expression in terms of Lagrangian displacements
+%and so missed the more basic structure~\eqref{eq:marginal}.
+In any case, a positively probabilistic approach has not been
+developed in any of the subsequent works we are aware of,
+the bulk of which have tended to focus on the power spectrum
+\citep[e.g.][]{Taylor:1996ne,Matsubara:2007wj,Vlah:2016bcl,Chen:2020fxs}.
 %Eq.~\eqref{eq:marginal}, 
 %But in passing to a model of the power spectrum
 %, obscuring a conceptual reading of Eq.~\eqref{eq:marginal},
 %They did not apparently recognize the transition probability, however.
-have tended to focus on the power spectrum,
-obscuring the probabilistic structure.
+Although there are good reasons to work in Fourier space~\citep{Hamilton:2005kz},
+here it appears to have obscured the probabilistic viewpoint.
 %Although there have been many works since then,
 %the probabilistic perspective appears to have been overlooked.
-And works that focus on the correlation function
-view the marginal integral~\eqref{eq:marginal} as a
+The main works that have focussed on the correlation function
+nominally view the marginal integral~\eqref{eq:marginal} as a
 form of convolution with the transition probability
-a kind of kernel~\citep{Carlson:2012,White:2014}.
+a smoothing kernel~\cite{Carlson:2012,White:2014},
+following \cite{Matsubara:2007wj} developed
+the position-space approach now commonly used for BAO analysis.
 %A great deal of work has since been done on power spectrum modelling
 %~\citep{Taylor:1996ne,1995MNRAS.273..475S,Matsubara:2007wj,Vlah:2016bcl,Chen:2020fxs},
 %but leans slightly into kinetic theory~\citep{Davis:1977}.
@@ -223,15 +233,22 @@ a kind of kernel~\citep{Carlson:2012,White:2014}.
 
 
 
-The aim of this work is to show that the
-correlation function is naturally described in terms of
-the transition probability.
+This work will show that the correlation function is naturally
+described in terms of
+the transition probability as in
+Eq.~\eqref{eq:marginal}. 
+The aim is to show that a clear picture emerges of how
+one can reason about the correlation function in
+probabilistic terms.
+In doing so this will also make clear the inference problem 
+of obtaining the initial conditions
+(or correlations) from the late-time correlations.
 Rather than attempting a detailed model using perturbation theory,
 we will highlight the aspects and properties that
 hold for any model of the transition probability.
 To illustrate the main concepts we focus on the two-point function.
-However, the framework can be straightforwardly extended to
-$n$-point functions as well.
+though it is straightforwad to generalize the framework to
+$n$-point functions.
 
 
 This paper is organized as follows.
@@ -384,12 +401,12 @@ path-integral techniques for classical theories
 
 \section{Transition probability}\label{sec:transition}
 \noindent Independent of the particular equation of motion,
-the correlation function can be formally written in terms of the
+the correlation function can be written in terms of the
 initial correlations and a transition probability.
 Explicitly, using Eq.~\eqref{eq:n} the two-point function%
 \footnote{In this work it is more natural to work with
 $\xi_\rho=\langle \rho(\x_1)\sp \rho(\x_2)\rangle$ instead
-of the conventional
+of the more common
 $\xi(\x_1,\x_2)=\langle\delta(\x_1)\sp\delta(\x_2)\rangle$
 of the overdensity $\delta=\rho/\bar{\rho}-1$.
 The two are simply related by
@@ -402,7 +419,7 @@ $\xi_{\rho}(\x_1,\x_2,t)
 \equiv\langle\sp \rho(\x_1,t)\ssp \rho(\x_2,t)\rangle$
 % =\bar{n}^2[1+\xi_\delta(\x_1,\x_2,t)]
 %\ee
-can be brought into the form
+can be brought into the form [cf.~Eq.~\eqref{eq:marginal}]
 \be\label{eq:MASTER} % {eq:MASTER}
 \xi_{\rho}(\x_1,\x_2,t) % \langle n(\bm0,t)\ssp n(\r,t)\rangle 
 =\int_{\q_1}\int_{\q_2}
@@ -414,8 +431,8 @@ where $\xi_{\rho0}(\q_1,\q_2)\equiv
 is the two-point function at the initial time $t=0$,
 $\int_{\q}$ is shorthand for $\int\dif^3\q$, and
 %Here we have multiplied by $1=\xi_{n0}(\q_1,\q_2)/\xi_{n0}(\q_1,\q_2)$
-\bea
-&p_t(\x_1,\x_2\Mid\q_1,\q_2) %\nonumber\\[3pt]
+\be
+p_t(\x_1,\x_2\Mid\q_1,\q_2) %\nonumber\\[3pt]
 %&\quad=\frac{\langle 
 %\delD[\x_1-\x_t(\q_1)]\ssp\delD[\x_2-\x_t(\q_2)]\ssp
 %    \rho_0(\q_1)\sp \rho_0(\q_2)\rangle}
@@ -428,7 +445,7 @@ $\int_{\q}$ is shorthand for $\int\dif^3\q$, and
     \delD[\x_1-\x_{t}(\q_1)]\ssp \delD[\x_2-\x_{t}(\q_2)]
 \big\rangle\!\big\rangle
     \label{eq:pt}
-\eea
+\ee
 is the {transition probability}.
 Here the double bracket $\langle\!\langle\cdots\rangle\!\rangle$
 % =\langle \cdots\, n_0(\q_1)\sp n_0(\q_2)\rangle/\langle n_0(\q_1)\sp n_0(\q_2)\rangle$
@@ -455,9 +472,10 @@ $(\x_1+\dif\x_1,\x_2+\dif\x_2)$ at time $t$.
 \noindent Two properties are notable.
 First, the transition probability is normalized:
 $\int\dif^3\x_1\int\dif^3\x_2\, p_t(\x_1,\x_2\Mid\q_1,\q_2)=1$.
-Physically, this is the requirement that the number of pairs is
-conserved under time evolution
-(pairs cannot disappear from the system but must assume {some} position).
+This is the requirement that the number of pairs is
+conserved under time evolution.
+Physically, pairs cannot disappear from the system but must
+assume {some} position.
 
 Second, the transition probability collapses
 to the identity map in the limit $t\to 0$:
@@ -484,7 +502,7 @@ Eulerian separation and midpoint, respectively (with
 similar for Lagrangian $\q$ and $\bar\q$). 
 Note that Eq.~\eqref{eq:pt-alt} is invariant under
 translations $\x_a\to\x_a+\mbf{c}$ and $\q_a\to\q_a+\mbf{c}$.
-Now, inserting Eq.~\eqref{eq:pt-alt} back into Eq.~\eqref{eq:MASTER},
+Now inserting Eq.~\eqref{eq:pt-alt} back into Eq.~\eqref{eq:MASTER},
 using that
 $\xi_{\rho0}(\q_1,\q_2)=\xi_{\rho0}(\q)$ depends on the separation only,
 so that the integral over $\bar\q$ is trivial,
@@ -499,10 +517,9 @@ p_t(\r\Mid\q)=\llangle\delD(\r-\r_t)\rrangle\,,
 \r_t\equiv\x_t(\q_1)-\x_t(\q_2)\,,
 \ee
 is the pair transition probability.
-We should note that \cite{Couchman_Bond88} gave a similar
-expression to Eq.~\eqref{eq:xi-homo},
-specialized to the Zeldovich approximation and Gaussian statistics,
-but apparently did not recognize the general probabilistic structure.
+The expression that \cite{Couchman_Bond88} gave is similar
+to Eq.~\eqref{eq:xi-homo}, though
+specialized to the Zeldovich approximation and Gaussian statistics.
 
 Equation~\eqref{eq:xi-homo} further simplifies
 if we additionally impose statistical isotropy. Now
@@ -559,9 +576,9 @@ known as the pair conservation equation~\citep{Davis:1977}
 where we have the pairwise relative velocity
 $\v_{12}(\r,t)=\llangle\v_1-\v_2\rrangle$, with $\v_1=a\sp\dif\x_t(\q_1)/\dif t$
 and $\v_2=a\sp\dif\x_t(\q_2)/\dif t$.
-As we show in Appendix~\ref{app:KM-expansion},
-this equation can derived by considering an expansion of
-Eq.~\eqref{eq:xi-homo} for a small time interval.
+This equation can derived by considering an expansion of
+Eq.~\eqref{eq:xi-homo} for a small time interval,
+as we show in Appendix~\ref{app:KM-expansion}.
 
 
 Equation~\eqref{eq:pairwise-eqn} is one of a family of conservation equations;
@@ -591,10 +608,9 @@ see \cite{Peebles_LSS}, section 71.B.
 \noindent The transition probability we have described should
 not be confused for that of a fundamentally stochastic process.
 The trajectories are classical and deterministic but they depend on
-unknown initial conditions. These initial conditions are specified
-by the random field $\delta_0$
+unknown initial conditions. These initial conditions are stochastic,
+specified by the random field $\delta_0$
 (or $\rho_0$) and are ensemble average over.
-This is the origin of stochasticity.
 The distribution of possible transitions
 is because there is a distribution of $\delta_0$ field
 configurations.
@@ -977,7 +993,8 @@ p_t(\r\Mid\q)
 =\int\frac{\dif^3\k}{(2\pi)^3}\, e^{-\im\k\cdot\r}\ssp W(\k;\q)\,.
 \ee
 For our particular $p_t(\r\Mid\q)=\langle\!\langle\delD(\r-\r_t)\rangle\!\rangle$
-we have, taking the Fourier transform and using the
+we have, using the integral representation of the delta function
+and then applying the
 cumulant expansion theorem~\citep[e.g.][]{1992LNP...408...65B},
 % $W(\k;\q)=\exp\llangle e^{\im\k\cdot\r_t}\rrangle_c$. 
 \be\label{eq:W}
@@ -1072,7 +1089,7 @@ $(k\Delta t)^n$.
 \end{figure*}
 
 
-\subsection{Instructive model}
+\subsection{An instructive model}
 % To obtain a closed-form expression of $p_t(\r\Mid\q)$ we need to
 % specify the pairwise statistics of the separation 
 % $\r_t$.
@@ -1082,7 +1099,7 @@ $(k\Delta t)^n$.
 \noindent
 A Gaussian is a good first approximation for the transition probability.
 This is obtained by dropping all
-but the first and second cumulants in $W(\k;\q)$, yielding
+but the first and second cumulants in $W(\k;\q)$ [Eq.~\eqref{eq:W}], yielding
 \be\label{eq:p-t-Gauss}
 p_t(\r\Mid\q)\,\dif^3\r
 =\frac{e^{-\frac12[\r-\R_t(\q)]^T\mbf{C}_t(\q)^{-1}[\r-\R_t(\q)]}}
@@ -1381,8 +1398,8 @@ we can write
 \be\label{eq:xi_n-formula}
 \xi_\rho(\r,t)
 =\xi_{\rho0}(\q)
-    \exp\left(-\int^t_{0}\frac{\dif t'}{a(t')}\,\theta_{12}(\q,t')
-        \right)\bigg|_{\q=\R_t^{-1}(\r)},
+    \exp\bigg(-\int^t_{0}\frac{\dif t'}{a(t')}\,\theta_{12}(\q,t')
+        \bigg)\ssp\bigg|_{\q=\R_t^{-1}(\r)},
 \ee
 where $\theta_{12}=\nabla\cdot\v_{12}$ is the divergence
 of the pairwise velocity.
@@ -1423,9 +1440,9 @@ $\partial_t\ssp\xi+\frac1a\theta_{12}=0$
 [cf.~$\partial_t\ssp\delta_m+\frac1a\theta=0$], to evaluate
 the integral
 \be\nonumber
--\int^t_0\frac{\dif t'}{a(t')}\,\theta_{12}(q,t')
-=\int^t_0{\dif t'}\ssp\partial_{t'}\sp\xi(q,t')
-=\big(({D}/{D_0})^2-1\big)\,\xi_{0}(q)\,,
+e^{-\int^t_0\frac{\dif t'}{a(t')}\,\theta_{12}(q,t')}
+=e^{\int^t_0{\dif t'}\ssp\partial_{t'}\sp\xi(q,t')}
+=e^{[({D}/{D_0})^2-1]\,\xi_{0}(q)}\,,
 \ee
 where in the last equality we assumed
 scale-independent growth of fluctuations.
@@ -1505,7 +1522,7 @@ indeed confirms that the standard relation is recovered.
   peak~\eqref{eq:xi-peak}.
 	Note that depending on the scale a rightward shift of the peak
 	to larger separations due to outfall is also possible.
-	Likewise, a suppression of the peak due to expansion
+	Likewise, a suppression of the peak from expansion
 	is also possible. For simplicity we have ignored the fact that
 	each effect also carries
 	scale dependence
@@ -1532,12 +1549,12 @@ Of course we have in mind the baryon acoustic peak.
 How does this feature evolve under gravity?
 We can break this down into
 two physical effects, advection and divergence, which
-can be seen from the pair continuity equation~\eqref{eq:pairwise-eqn},
-written as
+can be seen from the pair continuity equation~\eqref{eq:pairwise-eqn}
+upon writing
 \be\label{eq:pairwise-eqn-exp}
-\partial_t\,\xi_\rho
-	+\frac1a\,\v_{12}\cdot\nabla_\r\,\xi_\rho
-	+\frac1a\,\xi_\rho\,\theta_{12}=0\,,
+\nabla_\r\cdot(\xi_\rho\v_{12})
+=	 \v_{12}\cdot\nabla_\r\,\xi_\rho
+	+\xi_\rho\,\theta_{12}\,,
 \ee
 with $\theta_{12}=\nabla_\r\cdot\v_{12}$.
 Here advection, given by the
@@ -1605,7 +1622,7 @@ features are obscured by the development of structure.
 A simple way to account for the broadening
 of the transition probability over time is to
 suppose that the realized trajectory differs from the
- mean trajectory $\R_t$ by a perturbation $\bm\epsilon_t$, which we shall treat
+(ensemble averaged) mean trajectory $\R_t$ by a perturbation $\bm\epsilon_t$, which we shall treat
 as a random variable with variance
 $\langle\bm\epsilon_t^2\rangle=\sigma_t^2$.
 These errors grow as $\sigma_t\propto D(t)^2-D(0)^2$,
@@ -1696,7 +1713,7 @@ $\R_t(\q)$).
     \centering
     \includegraphics[width=0.9\columnwidth]{plots/entropy_vs_time_gnuplot}
     \caption{Conditional entropy~\eqref{eq:H} of the transition
-    probability, estimated from 2000 simulations of
+    probability as estimated from 2000 simulations of
     $N=100$ particles. Each curve eventually plateaus, reflecting 
     that particles fall into potential wells
     where they mostly remain.}
@@ -2114,6 +2131,30 @@ and the pushforward~\eqref{eq:n} can be applied at {any} time.
 Although single streaming is not required, we show in
 Appendix~\ref{app:path-integral} that the
 pushforward can be written in path-integral form.
+
+
+\section{Redshift space}
+\noindent
+The same relation we have studied throughout this work also
+holds between redshift space and real space, as mentioned in
+the introduction.
+We can combine this relation with the
+one the between Lagrangian and Eulerian space to define
+a transition probability from Lagrangian to redshift space.
+Using the composition property we can chain
+distributions together as
+\be
+p(\s)
+=\int_\x p(\s\Mid\x)\ssp p(\x) 
+=\int_\x p(\s\Mid\x)
+	\int_\q p_t(\x\Mid\q)\ssp p_\mrm{init}(\q)\,,
+\ee
+where $p(\s)$ and $p_\mrm{init}(\q)$ may be the one-point
+function (or mean density), two-point function, etc.
+This motivates we define the transition probability as
+\be
+p(\s\Mid\q)=\int_\x  p(\s\Mid\x)\ssp p_t(\x\Mid\q)
+\ee 
 
 
 %\section{Biased tracers}
@@ -3962,8 +4003,6 @@ The bulk of this work was completed in 2025 at the University of Geneva
 where the author was supported by the European Research Council under
 the Horizon 2020 Research and Innovation Programme of the European Union
 (grant agreement no.~863929).
-The author thanks Julian Adamek for a discussion that led to
-Appendix~\ref{app:path-integral}.
 Use of the Baobab HPC cluster at the University
 of Geneva is gratefully acknowledged.
 \end{acknowledgements}
