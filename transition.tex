@@ -203,6 +203,7 @@ the bulk of which focus on modelling the power spectrum
 %Although there are good practical and theoretical reasons to
 %work in Fourier space~\citep{Hamilton:2005kz},
 %here it appears to have obscured the probabilistic viewpoint.
+
 Our approach is closely related to convolution Lagrangian perturbation theory \citep{Carlson:2012,White:2014}, so named
 because the marginal integral~\eqref{eq:marginal}
 has nominally been understood as a convolution.
@@ -220,16 +221,15 @@ has nominally been understood as a convolution.
 %kinetic field theory~\citep{Bartelmann:2014gma,Bartelmann:2019unp},
 %then integrate out the variables for all but two particles.
 %Rather than going this route we will stay close to LPT.
-There are also many similarities our approach shares with
+There are also similarities between our approach and
 kinetic field theory
 \citep{Bartelmann:2014gma,Bartelmann:2019unp},
 a phase-space approach to the $N$-body problem,
 formulated as a field theory to take advantage of path integral techniques~\citep{Martin:1973zz,Janssen76,deDominicis78}.
-The approach of kinetic field theory is more systematic than ours,
-e.g.\ beginning with the full phase-space distribution versus
-some marginal distribution used here, but
-requires a great deal more formalism. Here our starting point
-is much closer to Lagrangian perturbation theory.
+Though theirs is a more systematic treatment than ours,
+beginning with a complete phase-space description versus
+a reduced description, it involves a good deal more formalism
+than Lagrangian perturbation theory.
 
 
 %We believe this obscures a physical reading of the problem.
@@ -315,60 +315,59 @@ we clarify the assumptions underlying Eq.~\eqref{eq:n}.
 
 \section{Transport}
 \noindent
-The transition probability follows from the pushforward density formula,
-which we now review.
+The transition probability derives from
+a distributional description of clustering,
+the key formula being the pushforward density which we now recall.
 Consider a system of particles
 labelled by their initial position $\q$.
-Because the total number (or mass) of particles is
+Using that the total number (or mass) of particles is
 conserved, the initial comoving density $\rho_0(\q)$ of particles at
 some early time, say $t=0$, can be evolved forward to  
-a later time $t$ by
+time $t>0$ by
 \be\label{eq:n}
 \rho(\x,t)
 =\int\delD[\x-\x_t(\q)]\, \rho_0(\q)\ssp\dif^3{\q}\,,
 % \equiv\mbf{P}_t\ssp n_0
 \ee
-that is, by following each particle along its
+that is, by collectively following each particle along its
 trajectory $\x_t(\q)$, with $\x_0(\q)=\q$.%
 \footnote{In this work subscript 0 denotes evaluation at the
 initial time $t=0$, not the present.}
-Note that multiple $\q$ can map to a single $\x$, meaning
+Notice that multiple $\q$ can map to a single $\x$, so
 trajectories can cross.
-The pushforward formula~\eqref{eq:n}, given in terms of 
-trajectories, is thus formally
-valid in the multistreaming regime; it is simply a consequence of
+This means that the pushforward formula~\eqref{eq:n}, given knowledge
+of the trajectories, also holds in the multistreaming regime.
+The formula is simply a consequence of
 mass conservation or, equivalently, the
 continuity equation
 $\partial_t\ssp\rho+\nabla\cdot(\rho\v)=0$ to which Eq.~\eqref{eq:n}
 can be seen as the formal solution
-given cold initial conditions~\citep{Dam:2026bhb}.
+(with cold initial conditions)~\citep{Dam:2026bhb}.
 We can also write Eq.~\eqref{eq:n}
-in terms of the the displacement $\bm\psi$ with
-$\x_t(\q)=\q+\bm\psi(\q,t)$, as is typically done.
-%(This also lets us remain agnostic as to the equation of motion.)
-But since $\bm\psi(\q,t)$ is a field it is technically required
-to be single valued for each $\q$. In practice, this distinction
-is not so important
-since one conventionally takes the linear density field as the basic
-input out of which one constructs observables.
-On a conceptual level however thinking of the pushforward in terms of
-trajectories better lends itself to the idea of a transition probability.
-(It also allows us to remain agnostic as to the equation of motion.)
+in terms of the the displacement field $\bm\psi(\q,t)$ with
+$\x_t(\q)=\q+\bm\psi(\q,t)$, as is usually done, although
+this technically limits the pushforward formula to the
+single-streaming regime.
+In practice, perturbation theory is used in modelling and we are
+in any case limited to single streaming.
+However, on a conceptual level thinking of the pushforward in terms of
+trajectories lends itself better to the idea of a transition probability.
+(It also allows us to remain agnostic on the equation of motion.)
 
 
 
-The transition probability is the focus of this work,
-but it is not the first time it has appeared in a
-cosmological context.
-It also appears in
-a statistical approach to the $N$-body problem,
-called kinetic field theory~\citep[KFT;][]{Bartelmann:2014gma,Bartelmann:2019unp},
-Following \cite{2010PhRvE..81f1102M,2012JSP...149..643D},
-KFT is based on reformulating the
-phase-space description of point particles as a field theory.
-This allows KFT to take advantage of sophisticated
-path-integral techniques for classical theories
-\citep{Martin:1973zz,Janssen76,deDominicis78}.
+%The transition probability is the focus of this work,
+%but it is not the first time it has appeared in a
+%cosmological context.
+%It also appears in
+%a statistical approach to the $N$-body problem,
+%called kinetic field theory~\citep[KFT;][]{Bartelmann:2014gma,Bartelmann:2019unp},
+%Following \cite{2010PhRvE..81f1102M,2012JSP...149..643D},
+%KFT is based on reformulating the
+%phase-space description of point particles as a field theory.
+%This allows KFT to take advantage of sophisticated
+%path-integral techniques for classical theories
+%\citep{Martin:1973zz,Janssen76,deDominicis78}.
 
 
 %In fact, Eq.~\eqref{eq:n} is rarely used in practice.
@@ -414,8 +413,8 @@ path-integral techniques for classical theories
 the correlation function can be written in terms of the
 initial correlations and a transition probability.
 Explicitly, using Eq.~\eqref{eq:n} the two-point function%
-\footnote{In this work `correlation function' refers to
-$\xi_\rho=\langle \rho(\x_1)\sp \rho(\x_2)\rangle$ instead
+\footnote{In this work by `correlation function' we mean
+$\xi_\rho=\langle \rho(\x_1)\sp \rho(\x_2)\rangle$, instead
 of the more common
 $\xi(\x_1,\x_2)=\langle\delta(\x_1)\sp\delta(\x_2)\rangle$
 of the overdensity $\delta=\rho/\bar{\rho}-1$.
@@ -468,7 +467,7 @@ Here the double bracket $\langle\!\langle\cdots\rangle\!\rangle$
 % =\langle \cdots\, n_0(\q_1)\sp n_0(\q_2)\rangle/\langle n_0(\q_1)\sp n_0(\q_2)\rangle$
 denotes the {density-weighted} ensemble 
 average
-\be
+\be\label{eq:dens-ensemble}
 \llangle O(\q_1,\q_2)\rrangle
 \equiv
 \frac{\langle O(\q_1,\q_2)\ssp
@@ -476,7 +475,7 @@ average
     {\langle\sp \rho_0(\q_1)\ssp \rho_0(\q_2)\rangle}\,,
 \ee
 where $O(\q_1,\q_2)$ is any pairwise function.
-In Section~\ref{sec:proof} we will put the transition
+In Section~\ref{sec:proof} we will express the transition
 probability~\eqref{eq:pt} in a more convenient form.
 
 \subsection{Properties}\label{sec:properties}
@@ -520,7 +519,7 @@ $\xi_{\rho0}(\q_1,\q_2)=\xi_{\rho0}(\q)$ depends on the separation only,
 so that the integral over $\bar\q$ is trivial,
 Eq.~\eqref{eq:MASTER} simplifies to
 \be\label{eq:xi-homo}
-\xi_\rho(\r,t)=\int_\q p_t(\r\Mid\q)\, \xi_{\rho0}(\q)\,,
+\xi_\rho(\r,t)=\int_\q\, p_t(\r\Mid\q)\, \xi_{\rho0}(\q)\,,
 \ee
 where $\xi_\rho(\x_1,\x_2,t)=\xi_\rho(\r,t)$ and
 \be\label{eq:pt-r}
@@ -622,17 +621,16 @@ The trajectories are classical and deterministic but they depend on
 unknown initial conditions. These initial conditions are stochastic,
 specified by the random field $\delta_0$
 (or $\rho_0$) and are ensemble average over.
-The distribution of possible transitions
+That there is a distribution of possible transitions
 is because there is a distribution of $\delta_0$ field
-configurations.
-For if $\delta_0$ is held fixed then 
+configurations. This implies that if $\delta_0$ is held fixed then 
 \be\label{eq:pt-fixed-n0}
 p_t(\x_1,\x_2\Mid\q_1,\q_2,\delta_0)
 =\delD[\x_1-\x_t(\q_1;\delta_0)]\sp\delD[\x_2-\x_t(\q_2;\delta_0)],
 \ee
 i.e.\ the transition probability is determined.
 We recover~\eqref{eq:pt} by taking the density-weighted ensemble
-average over $\delta_0$:
+average~\eqref{eq:dens-ensemble} over $\delta_0$:
 \be\label{eq:pt-marginal}
 p_t(\x_1,\x_2\Mid\q_1,\q_2)
 =\llangle p_t(\x_1,\x_2\Mid\q_1,\q_2,\delta_0)\rrangle\,.
@@ -1098,7 +1096,7 @@ $(k\Delta t)^n$.
 \end{figure*}
 
 
-\subsection{An instructive model}
+\subsection{Instructive model}
 % To obtain a closed-form expression of $p_t(\r\Mid\q)$ we need to
 % specify the pairwise statistics of the separation 
 % $\r_t$.
