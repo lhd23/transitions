@@ -113,14 +113,14 @@ the BAO feature.
 
 \end{abstract}
 
-\keywords{Large-scale structure; galaxy formation} 
+%\keywords{Large-scale structure} 
 
 \maketitle
 
 
 \section{Introduction}
 \noindent
-In a previous work~\citep{Dam:2025ops} on a related topic
+In previous work~\citep{Dam:2025ops} on a related topic
 we noticed a general
 relation between correlations in
 redshift space and those in real space. The relation takes
@@ -135,19 +135,17 @@ In this work we explore a similar relation
 between Lagrangian space and Eulerian space, and for which there is
 a transition probability connecting the initial
 and final correlations.
-%The Lagrangian case will be the focus of this work.
-
-Unlike the one found earlier, the transition probability
-we will study has a straightforward dynamical interpretation.
+Unlike the one found earlier, this transition probability
+has a straightforward dynamical interpretation.
 Since it propagates initial data
-to a final time it encodes the statistical evolution
-of the universe.
+to a final time it contains information about the
+statistical evolution of the universe.
 In this there are two key concepts:
 mass conservation and transport.
 Conservation of mass implies the conservation of probability,
 while transport drives clustering and leads to a redistribution
 of probability. The core idea, which is the basis of this work, is
-that however complicated the particle dynamics may be
+that however complicated the particle dynamics may be,
 the redistribution from one time to another is always described
 by a marginal integral of the form
 \be\label{eq:marginal}
@@ -188,34 +186,26 @@ We have similar for the initial distribution.
 %for $\dif P=p_\mathrm{init}(\q_1,\q_2)\,\dif^3\q_1\dif^3\q_2$.
 
 That the correlation function can be forward modelled
-through a transition probability is the main message of this work.
+via a transition probability is the main message of this work.
 In fact, the seeds of this idea can be traced to \cite{Couchman_Bond88}
 who it seems were the first to give an expression like Eq.~\eqref{eq:marginal},
-though theirs in terms of the distribution of Lagrangian displacements
-(so apparently missing the more basic structure);
+though in terms of the distribution of Lagrangian displacements
+(apparently missing the more basic structure);
 see also \cite{1995MNRAS.273..475S}.
 %We are not the first to have noticed this, however.
 %As far as we know \cite{Couchman_Bond88} were the first,
 %though they gave their expression in terms of Lagrangian displacements
 %and so missed the more basic structure~\eqref{eq:marginal}.
-In any case, a clear probabilistic approach has not been
-developed in any of the subsequent works we are aware of,
-the bulk of which have tended to focus on the power spectrum
+In any case a clear probabilistic approach has not been
+put forth in any of the subsequent works we are aware of,
+the bulk of which focus on modelling the power spectrum
 \citep[e.g.][]{Taylor:1996ne,Matsubara:2007wj,Vlah:2016bcl,Chen:2020fxs}.
-%Eq.~\eqref{eq:marginal}, 
-%But in passing to a model of the power spectrum
-%, obscuring a conceptual reading of Eq.~\eqref{eq:marginal},
-%They did not apparently recognize the transition probability, however.
-Although there are good reasons to work in Fourier space~\citep{Hamilton:2005kz},
-here it appears to have obscured the probabilistic viewpoint.
-%Although there have been many works since then,
-%the probabilistic perspective appears to have been overlooked.
-\cite{Carlson:2012,White:2014},
-following \cite{Matsubara:2007wj} developed
-the correlation function approach now widely used, e.g.\ for BAO analysis.
-The models that have come out of this are akin to streaming models,
-but nominally view the marginal integral~\eqref{eq:marginal}
-as a form of convolution with a nonlinear smoothing kernel.
+%Although there are good practical and theoretical reasons to
+%work in Fourier space~\citep{Hamilton:2005kz},
+%here it appears to have obscured the probabilistic viewpoint.
+Our approach is closely related to convolution Lagrangian perturbation theory \citep{Carlson:2012,White:2014}, so named
+because the marginal integral~\eqref{eq:marginal}
+has nominally been understood as a convolution.
 % with the transition probability a smoothing kernel.
 %A great deal of work has since been done on power spectrum modelling
 %~\citep{Taylor:1996ne,1995MNRAS.273..475S,Matsubara:2007wj,Vlah:2016bcl,Chen:2020fxs},
@@ -230,24 +220,36 @@ as a form of convolution with a nonlinear smoothing kernel.
 %kinetic field theory~\citep{Bartelmann:2014gma,Bartelmann:2019unp},
 %then integrate out the variables for all but two particles.
 %Rather than going this route we will stay close to LPT.
+There are also many similarities our approach shares with
+kinetic field theory
+\citep{Bartelmann:2014gma,Bartelmann:2019unp},
+a phase-space approach to the $N$-body problem,
+formulated as a field theory to take advantage of path integral techniques~\citep{Martin:1973zz,Janssen76,deDominicis78}.
+The approach of kinetic field theory is more systematic than ours,
+e.g.\ beginning with the full phase-space distribution versus
+some marginal distribution used here, but
+requires a great deal more formalism. Here our starting point
+is much closer to Lagrangian perturbation theory.
 
 
-
-
-In this work we take the view that the correlation function
+%We believe this obscures a physical reading of the problem.
+In this work we resurface the earlier probabilistic view,
+showing that the correlation function
 is naturally described in terms of the transition probability.
-As we will show, a clear picture emerges of how
-to think about the correlation function in
-probabilistic terms. This is best done for discrete particles,
-though it applies equally well smooth fields is no issue.
-There is also the advantage of making clear the inference problem 
+As we will see, this gives rise to a physically appealing way
+to think about the correlation function which is based on
+probability theory.
+There is also the advantage of clarifying the inference problem 
 of recovering the initial conditions
-(or correlations) from the late-time correlations.
-The aim of this work is to highlight the aspects and properties that
+from the late-time correlations.
+We will highlight the aspects and properties that
 hold for any model of the transition probability.
-To illustrate the main concepts we focus on the two-point function,
-though it is straightforward to generalize to
-$n$-point functions.
+However, to avoid unnecessary complications we will focus on
+the two-point function; the generalization to $n$-point functions
+is conceptually straightforward.
+Throughout we have in mind discrete matter particles (as in the Lagrangian approach
+or the $N$-body problem), though
+the approach applies equally well to continuous matter fields.
 
 
 This paper is organized as follows.
@@ -311,12 +313,12 @@ we clarify the assumptions underlying Eq.~\eqref{eq:n}.
 
 
 
-\section{Conservation and transport}
+\section{Transport}
 \noindent
-Let us briefly review resummed LPT, with an emphasis
-on \emph{transport}.
-Consider a system of (self-gravitating) particles
-labelled by their initial position $\q$, e.g.\ cold dark matter particles.
+The transition probability follows from the pushforward density formula,
+which we now review.
+Consider a system of particles
+labelled by their initial position $\q$.
 Because the total number (or mass) of particles is
 conserved, the initial comoving density $\rho_0(\q)$ of particles at
 some early time, say $t=0$, can be evolved forward to  
@@ -326,25 +328,34 @@ a later time $t$ by
 =\int\delD[\x-\x_t(\q)]\, \rho_0(\q)\ssp\dif^3{\q}\,,
 % \equiv\mbf{P}_t\ssp n_0
 \ee
-that is, by transporting each particle along its
-trajectory $\x_t(\q)$, with $\x_0(\q)=\q$.
-(Note that the delta function can
-register multiple $\q$ for a given $\x$, meaning that
-trajectories cross and particles are multistreaming.)
-The pushforward formula~\eqref{eq:n} follows from
-mass conservation 
-$\rho(\x,t)\sp\dif^3\x=\rho_0(\q)\sp\dif^3\q$~\citep{Matsubara:2007wj}
-or equivalently the continuity equation
-$\partial_t\ssp\rho+\nabla\cdot(\rho\v)=0$
-~\citep{Dam:2026}.%
+that is, by following each particle along its
+trajectory $\x_t(\q)$, with $\x_0(\q)=\q$.%
 \footnote{In this work subscript 0 denotes evaluation at the
-initial time $t=0$, not the present time.}
+initial time $t=0$, not the present.}
+Note that multiple $\q$ can map to a single $\x$, meaning
+trajectories can cross.
+The pushforward formula~\eqref{eq:n}, given in terms of 
+trajectories, is thus formally
+valid in the multistreaming regime; it is simply a consequence of
+mass conservation or, equivalently, the
+continuity equation
+$\partial_t\ssp\rho+\nabla\cdot(\rho\v)=0$ to which Eq.~\eqref{eq:n}
+can be seen as the formal solution
+given cold initial conditions~\citep{Dam:2026bhb}.
+We can also write Eq.~\eqref{eq:n}
+in terms of the the displacement $\bm\psi$ with
+$\x_t(\q)=\q+\bm\psi(\q,t)$, as is typically done.
+%(This also lets us remain agnostic as to the equation of motion.)
+But since $\bm\psi(\q,t)$ is a field it is technically required
+to be single valued for each $\q$. In practice, this distinction
+is not so important
+since one conventionally takes the linear density field as the basic
+input out of which one constructs observables.
+On a conceptual level however thinking of the pushforward in terms of
+trajectories better lends itself to the idea of a transition probability.
+(It also allows us to remain agnostic as to the equation of motion.)
 
-Note that Eq.~\eqref{eq:n} is of the form~\eqref{eq:marginal}.
-\cite{Bartelmann:2014gma,Bartelmann:2019unp},
-in their `kinetic field theory', call $\delD[\x-\x_t(\q)]$
-the transition probability. Here we use a different definition,
-see Eq.~\eqref{eq:pt} below.
+
 
 The transition probability is the focus of this work,
 but it is not the first time it has appeared in a
@@ -399,16 +410,16 @@ path-integral techniques for classical theories
 
 
 \section{Transition probability}\label{sec:transition}
-\noindent Independent of the particular equation of motion,
+\noindent For any equation of motion,
 the correlation function can be written in terms of the
 initial correlations and a transition probability.
 Explicitly, using Eq.~\eqref{eq:n} the two-point function%
-\footnote{In this work it is more natural to work with
+\footnote{In this work `correlation function' refers to
 $\xi_\rho=\langle \rho(\x_1)\sp \rho(\x_2)\rangle$ instead
 of the more common
 $\xi(\x_1,\x_2)=\langle\delta(\x_1)\sp\delta(\x_2)\rangle$
 of the overdensity $\delta=\rho/\bar{\rho}-1$.
-The two are simply related by
+Of course the two are simply related by
 $\xi_\rho(\x_1,\x_2)=\bar{\rho}^2[1+\xi(\x_1,\x_2)]$.
 % Here the number density makes more sense when working with
 % discrete tracers (it also simplifies the mathematical presentation).
@@ -445,30 +456,31 @@ p_t(\x_1,\x_2\Mid\q_1,\q_2) %\nonumber\\[3pt]
 \big\rangle\!\big\rangle
     \label{eq:pt}
 \ee
-is the {transition probability}.
-Here the double bracket $\langle\!\langle\cdots\rangle\!\rangle$
-% =\langle \cdots\, n_0(\q_1)\sp n_0(\q_2)\rangle/\langle n_0(\q_1)\sp n_0(\q_2)\rangle$
-denotes the {density-weighted} ensemble 
-average
-\be
-\llangle F(\q_1,\q_2)\rrangle
-\equiv
-\frac{\langle F(\q_1,\q_2)\ssp
-    \rho_0(\q_1)\ssp \rho_0(\q_2)\rangle}
-    {\langle\sp \rho_0(\q_1)\ssp \rho_0(\q_2)\rangle}\,,
-\ee
-where $F(\q_1,\q_2)$ is any pairwise function.
-The pdf~\eqref{eq:pt} gives the probability
+is the {transition probability}, which gives the probability
 $p_t(\x_1,\x_2\Mid\q_1,\q_2)\ssp\dif^3\x_1\sp\dif^3\x_2$
-that a particle pair $(\q_1,\q_2)$ at $t=0$
+that a pair $(\q_1,\q_2)$ at $t=0$
 is later found between $(\x_1,\x_2)$ and
 $(\x_1+\dif\x_1,\x_2+\dif\x_2)$ at time $t$. 
 %Equation~\eqref{eq:MASTER} can be regarded as
 %the pushforward $p(x)=\int\dif x'\sp p_t(x\Mid x')p(x')$
 %of the initial distribution $p(x')$.
+Here the double bracket $\langle\!\langle\cdots\rangle\!\rangle$
+% =\langle \cdots\, n_0(\q_1)\sp n_0(\q_2)\rangle/\langle n_0(\q_1)\sp n_0(\q_2)\rangle$
+denotes the {density-weighted} ensemble 
+average
+\be
+\llangle O(\q_1,\q_2)\rrangle
+\equiv
+\frac{\langle O(\q_1,\q_2)\ssp
+    \rho_0(\q_1)\ssp \rho_0(\q_2)\rangle}
+    {\langle\sp \rho_0(\q_1)\ssp \rho_0(\q_2)\rangle}\,,
+\ee
+where $O(\q_1,\q_2)$ is any pairwise function.
+In Section~\ref{sec:proof} we will put the transition
+probability~\eqref{eq:pt} in a more convenient form.
 
 \subsection{Properties}\label{sec:properties}
-\noindent Two properties are notable.
+\noindent Before going further, two properties are worth highlighting.
 First, the transition probability is normalized:
 $\int\dif^3\x_1\int\dif^3\x_2\, p_t(\x_1,\x_2\Mid\q_1,\q_2)=1$.
 This is the requirement that the number of pairs is
@@ -490,7 +502,8 @@ correlations, $\xi_{\rho0}\to\xi_\rho$.
 
 
 \subsection{Symmetry considerations}
-\noindent Under statistical homogeneity the transition
+\noindent We have not yet assumed any symmetry;
+now imposing statistical homogeneity the transition
 probability has the form
 \be\label{eq:pt-alt}
 p_t(\x_1,\x_2\Mid\q_1,\q_2)
@@ -516,9 +529,8 @@ p_t(\r\Mid\q)=\llangle\delD(\r-\r_t)\rrangle\,,
 \r_t\equiv\x_t(\q_1)-\x_t(\q_2)\,,
 \ee
 is the pair transition probability.
-The expression that \cite{Couchman_Bond88} gave is similar
-to Eq.~\eqref{eq:xi-homo}, though
-specialized to the Zeldovich approximation and Gaussian statistics.
+The expression that \cite{Couchman_Bond88} gave is most similar
+to Eq.~\eqref{eq:xi-homo}.
 
 Equation~\eqref{eq:xi-homo} further simplifies
 if we additionally impose statistical isotropy. Now
@@ -975,17 +987,15 @@ Markov property.
 
 \section{Statistical evolution}\label{sec:proof}
 \noindent 
-By now it should be clear that the principal difficulty of calculating
-the correlation function~\eqref{eq:xi-homo} lies in
-the calculation of
-the transition probabilities,
+The nonlinearity that develops from gravitational evolution
+lies entirely with the transition probabilities,
 the initial correlations being simply described by linear theory.
-Consequently it is worth studying how 
+Thus it is worth studying how 
 the full nonlinear evolution of the correlation function is
 encoded in the transition probability, and in particular how it is
 built up from the pairwise statistics
 $\llangle\r_t\rrangle$, $\llangle\r_t\r_t^T\rrangle$, etc.
-To this end let us express
+To this end it will be convenient to express
 $p_t(\r\Mid\q)$ in terms of its characteristic function $W(\k;\q)$:
 \be\label{eq:pt-r}
 p_t(\r\Mid\q)
@@ -1165,7 +1175,7 @@ and \eqref{eq:pt-Delta}.
 Note that in terms of the mean displacement,
 $\R_t(\q)=\q+\mbf{D}_t(\q)$.
 
-To fully specify the model, we evaluate
+To make this more concrete, we model
 these statistics using the Zeldovich approximation. For the mean we have
 %$\R_t(\q)=\q+\v_{12}(\q,0)\int^t_{0}\dif t' A(t')/a(t')$.
 %where $\int^t_{0}\dif t' A(t')\propto D^2-1$
@@ -1225,7 +1235,7 @@ is essentially the convolution kernel in LPT~\citep{Carlson:2012,White:2014,Vlah
 There is no real difference between them except one of interpretation:
 in those works the Gaussian is understood
 as a scale-dependent kernel of the form $K(\r-\q;\q)$.
-The problem with this view is that Eq.~\eqref{eq:MASTER}
+But Eq.~\eqref{eq:MASTER}
 is not a proper convolution on account of the absolute
 scale dependence; nonlinear evolution is \emph{not} simply
 a Gaussian smoothing of the initial correlations~\citep{Smith:2007gi}.
@@ -1536,7 +1546,7 @@ indeed confirms that the standard relation is recovered.
 We now apply Eq.~\eqref{eq:xi-homo} to a
 simple model of $\xi_{\rho0}$ to illustrate the evolution
 of the correlation function.
-Thus suppose that $\xi_{\rho0}$ is unstructured,
+For simplicity, suppose $\xi_{\rho0}$ is unstructured,
 save for a narrow feature centred at $\q=\q_*$:
 \be\label{eq:xi-peak}
 \xi_{\rho0}(\q)
@@ -2132,7 +2142,7 @@ Appendix~\ref{app:path-integral} that the
 pushforward can be written in path-integral form.
 
 
-\section{Redshift space}
+\section{From observations to initial conditions}
 \noindent
 The same relation we have studied throughout this work also
 holds between redshift space and real space, as mentioned in
@@ -2155,6 +2165,7 @@ This motivates we define the transition probability as
 p(\s\Mid\q)=\int_\x  p(\s\Mid\x)\ssp p_t(\x\Mid\q)
 \ee 
 
+Concerning biased tracers.....
 
 %\section{Biased tracers}
 %\noindent LPT is based on the assumption that number (or mass) is conserved.
