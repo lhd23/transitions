@@ -187,24 +187,26 @@ We have similar for the initial distribution.
 
 That the correlation function can be forward modelled
 via a transition probability is the main message of this work.
-In fact, the seeds of this idea can be traced to \cite{Couchman_Bond88}
+We should note however that the seeds of this idea can be
+traced to \cite{Couchman_Bond88}
 who it seems were the first to give an expression like Eq.~\eqref{eq:marginal},
-though in terms of the distribution of Lagrangian displacements
+though they did so in terms of the distribution of
+Lagrangian displacements
 (apparently missing the more basic structure);
 see also \cite{1995MNRAS.273..475S}.
 %We are not the first to have noticed this, however.
 %As far as we know \cite{Couchman_Bond88} were the first,
 %though they gave their expression in terms of Lagrangian displacements
 %and so missed the more basic structure~\eqref{eq:marginal}.
-In any case a clear probabilistic approach has not been
-put forth in any of the subsequent works we are aware of,
+
+A clear probabilistic approach has not been
+described in any of the subsequent works we are aware of,
 the bulk of which focus on modelling the power spectrum
 \citep[e.g.][]{Taylor:1996ne,Matsubara:2007wj,Vlah:2016bcl,Chen:2020fxs}.
-%Although there are good practical and theoretical reasons to
-%work in Fourier space~\citep{Hamilton:2005kz},
-%here it appears to have obscured the probabilistic viewpoint.
-
-Our approach is closely related to convolution Lagrangian perturbation theory \citep{Carlson:2012,White:2014}, so named
+A notable exception is convolution Lagrangian perturbation theory 
+%Our approach is closely related to convolution Lagrangian perturbation theory 
+\citep{Carlson:2012,White:2014} to which our work is closely related.
+This is a model of the correlation function and is so named
 because the marginal integral~\eqref{eq:marginal}
 has nominally been understood as a convolution.
 % with the transition probability a smoothing kernel.
@@ -224,23 +226,26 @@ has nominally been understood as a convolution.
 There are also similarities between our approach and
 kinetic field theory
 \citep{Bartelmann:2014gma,Bartelmann:2019unp},
-a phase-space approach to the $N$-body problem,
-formulated as a field theory to take advantage of path integral techniques~\citep{Martin:1973zz,Janssen76,deDominicis78}.
-Though theirs is a more systematic treatment than ours,
-beginning with a complete phase-space description versus
-a reduced description, it involves a good deal more formalism
-than Lagrangian perturbation theory.
+an altogether different approach based on 
+formulating the $N$-body problem of classical particles
+as a field theory so as to take advantage of path integral methods
+\citep{Martin:1973zz,Janssen76,deDominicis78}.
+Though theirs is a more systematic treatment,
+working with a complete phase-space description versus
+a reduced (marginal) description, it requires much beyond
+Lagrangian perturbation theory.
 
 
 %We believe this obscures a physical reading of the problem.
 In this work we resurface the earlier probabilistic view,
 showing that the correlation function
 is naturally described in terms of the transition probability.
-As we will see, this gives rise to a physically appealing way
+One advantage over the standard treatment is that it gives a
+physically appealing way
 to think about the correlation function which is based on
 probability theory.
-There is also the advantage of clarifying the inference problem 
-of recovering the initial conditions
+Another advantage is that it clarifies the problem 
+of inferring the initial conditions
 from the late-time correlations.
 We will highlight the aspects and properties that
 hold for any model of the transition probability.
@@ -329,12 +334,13 @@ time $t>0$ by
 =\int\delD[\x-\x_t(\q)]\, \rho_0(\q)\ssp\dif^3{\q}\,,
 % \equiv\mbf{P}_t\ssp n_0
 \ee
-that is, by collectively following each particle along its
+that is, by collectively tracing each particle along its
 trajectory $\x_t(\q)$, with $\x_0(\q)=\q$.%
 \footnote{In this work subscript 0 denotes evaluation at the
 initial time $t=0$, not the present.}
-Notice that multiple $\q$ can map to a single $\x$, so
-trajectories can cross.
+This is the pushforward density.
+Notice that multiple $\q$ can map to a single $\x$, i.e.\
+trajectories can cross; see Figure~\ref{fig:trajectories}.
 This means that the pushforward formula~\eqref{eq:n}, given knowledge
 of the trajectories, also holds in the multistreaming regime.
 The formula is simply a consequence of
@@ -409,10 +415,11 @@ trajectories lends itself better to the idea of a transition probability.
 
 
 \section{Transition probability}\label{sec:transition}
-\noindent For any equation of motion,
-the correlation function can be written in terms of the
-initial correlations and a transition probability.
-Explicitly, using Eq.~\eqref{eq:n} the two-point function%
+\noindent For any equation of motion, Newton's equation or
+otherwise,
+the correlation function can resolved into an
+initial distribution and a transition probability.
+More precisely, using Eq.~\eqref{eq:n} the two-point function%
 \footnote{In this work by `correlation function' we mean
 $\xi_\rho=\langle \rho(\x_1)\sp \rho(\x_2)\rangle$, instead
 of the more common
@@ -479,10 +486,11 @@ In Section~\ref{sec:proof} we will express the transition
 probability~\eqref{eq:pt} in a more convenient form.
 
 \subsection{Properties}\label{sec:properties}
-\noindent Before going further, two properties are worth highlighting.
+\noindent Two properties are worth highlighting
+before going further.
 First, the transition probability is normalized:
 $\int\dif^3\x_1\int\dif^3\x_2\, p_t(\x_1,\x_2\Mid\q_1,\q_2)=1$.
-This is the requirement that the number of pairs is
+This is the statement that the number of pairs is
 conserved under time evolution.
 Physically, pairs cannot disappear from the system but must
 assume {some} position.
@@ -654,7 +662,7 @@ Note that the dependence on $\delta_0$ enters
 Eq.~\eqref{eq:pt-marginal} through the
 density weighting and the trajectories themselves.
 In Eq.~\eqref{eq:pt-fixed-n0} we have thus written
-$\x_t(\q;\delta_0)$, not $\x_t(\q)$ as we did earlier
+$\x_t(\q;\delta_0)$, instead of $\x_t(\q)$ as we did earlier
 (in keeping with standard notation).
 For brevity we will continue writing
 $\x_t(\q)$ with the dependence on $\delta_0$ understood.
@@ -664,7 +672,7 @@ This is because the gravitational field is
 \emph{self-consistently} determined from the mass distribution.
 Specifically, the acceleration of
 a particle depends on the gradient of the gravitational potential,
-which in turn depends on the positions of {all} other
+which in turn depends on the positions of \emph{all} other
 particles through pairwise interactions.
 
 
@@ -985,7 +993,7 @@ Markov property.
 
 \section{Statistical evolution}\label{sec:proof}
 \noindent 
-The nonlinearity that develops from gravitational evolution
+The nonlinearity that arises from gravitational collapse
 lies entirely with the transition probabilities,
 the initial correlations being simply described by linear theory.
 Thus it is worth studying how 
@@ -994,18 +1002,18 @@ encoded in the transition probability, and in particular how it is
 built up from the pairwise statistics
 $\llangle\r_t\rrangle$, $\llangle\r_t\r_t^T\rrangle$, etc.
 To this end it will be convenient to express
-$p_t(\r\Mid\q)$ in terms of its characteristic function $W(\k;\q)$:
+$p_t(\r\Mid\q)$ in terms of its characteristic function $Z(\k;\q)$:
 \be\label{eq:pt-r}
 p_t(\r\Mid\q)
-=\int\frac{\dif^3\k}{(2\pi)^3}\, e^{-\im\k\cdot\r}\ssp W(\k;\q)\,.
+=\int\frac{\dif^3\k}{(2\pi)^3}\, e^{-\im\k\cdot\r}\ssp Z(\k;\q)\,.
 \ee
 For our particular $p_t(\r\Mid\q)=\langle\!\langle\delD(\r-\r_t)\rangle\!\rangle$
 we have, using the integral representation of the delta function
 and then applying the
 cumulant expansion theorem~\citep[e.g.][]{1992LNP...408...65B},
-% $W(\k;\q)=\exp\llangle e^{\im\k\cdot\r_t}\rrangle_c$. 
+% $Z(\k;\q)=\exp\llangle e^{\im\k\cdot\r_t}\rrangle_c$. 
 \be\label{eq:W}
-W(\k;\q)
+Z(\k;\q)
 =\exp\left(\,\sum_{n=1}^\infty \frac{\im^n}{n!}
 	\big\langle\!\big\langle(\k\cdot\r_t)^n\big\rangle\!\big\rangle_c
 	\right)\,,
@@ -1106,7 +1114,7 @@ $(k\Delta t)^n$.
 \noindent
 A Gaussian is a good first approximation for the transition probability.
 This is obtained by dropping all
-but the first and second cumulants in $W(\k;\q)$ [Eq.~\eqref{eq:W}], yielding
+but the first and second cumulants in $Z(\k;\q)$ [Eq.~\eqref{eq:W}], yielding
 \be\label{eq:p-t-Gauss}
 p_t(\r\Mid\q)\,\dif^3\r
 =\frac{e^{-\frac12[\r-\R_t(\q)]^T\mbf{C}_t(\q)^{-1}[\r-\R_t(\q)]}}
@@ -1374,7 +1382,7 @@ particles that begin close together (smaller $q$).
 
 
 %Note that Eq.~\eqref{eq:pt-sharp} corresponds to
-%a generating function $W(\k;\q)=e^{\im\k\cdot\R_t(\q)}$,
+%a generating function $Z(\k;\q)=e^{\im\k\cdot\R_t(\q)}$,
 %i.e.\ neglecting all but the first cumulant vanishing.
 %Alternatively, Eq.~\eqref{eq:pt-sharp} can be obtained by
 %taking $\mbf{C}_t\to0$ in the Gaussian approximation~\eqref{eq:p-t-Gauss}.
