@@ -353,16 +353,26 @@ continuity equation
 $\partial_t\ssp\rho+\nabla\cdot(\rho\v)=0$ to which Eq.~\eqref{eq:n}
 can be seen as the formal solution
 (with cold initial conditions)~\citep{Dam:2026bhb}.
-We can also write Eq.~\eqref{eq:n}
-in terms of the the displacement field $\bm\psi(\q,t)$ with
-$\x_t(\q)=\q+\bm\psi(\q,t)$, as is usually done, although
-this technically limits the pushforward formula to the
-single-streaming regime.
-In practice, perturbation theory is used in modelling and we are
-in any case limited to single streaming.
-However, on a conceptual level thinking of the pushforward in terms of
-trajectories lends itself better to the idea of a transition probability.
-(It also allows us to remain agnostic on the equation of motion.)
+
+Some words on conventions.
+Typically, Eq.~\eqref{eq:n} is written
+in terms of the displacement $\bm\psi(\q,t)$ with
+$\x_t(\q)=\q+\bm\psi(\q,t)$.
+%, although
+%this automatically puts us in the
+%single-streaming regime (since $\bm\psi$ is a field).
+%In practice, perturbation theory is used in modelling and we are
+%in any case limited to single streaming.
+However, we prefer an expression in trajectories 
+to emphasize that the transition probability
+is associated with the map $\q$ to $\x$, which of course need
+not be one-to-one.
+(It also allows us to remain agnostic to the equation of motion
+that produces the trajectory.)
+Another convention is to write Eq.~\eqref{eq:n} in terms of the
+overdensity $\delta(\x,t)$ with $\rho(\x,t)=\bar\rho[1+\delta(\x,t)]$.
+However, we prefer to work with the density to remind
+us that the pushforward acts on \emph{distributions}.
 
 
 
@@ -419,11 +429,11 @@ trajectories lends itself better to the idea of a transition probability.
 
 
 \section{Transition probability}\label{sec:transition}
-\noindent For any equation of motion, Newton's equation or
-otherwise,
-the correlation function can resolved into an
-initial distribution and a transition probability.
-More precisely, using Eq.~\eqref{eq:n} the two-point function%
+\noindent 
+Roughly speaking, the transition probability
+$p_t$ is what we get by taking an ensemble average over the
+pushforward kernel in Eq.~\eqref{eq:n}.
+More precisely, inserting Eq.~\eqref{eq:n} into the two-point function%
 \footnote{In this work by `correlation function' we mean
 $\xi_\rho=\langle \rho(\x_1)\sp \rho(\x_2)\rangle$, instead
 of the more common
@@ -486,8 +496,18 @@ average
     {\langle\sp \rho_0(\q_1)\ssp \rho_0(\q_2)\rangle}\,,
 \ee
 where $O(\q_1,\q_2)$ is any pairwise function.
-In Section~\ref{sec:proof} we will express the transition
-probability~\eqref{eq:pt} in a more convenient form.
+
+Regardless of the equation of motion, Newton's equation or
+otherwise, we emphasize that
+the correlation function can be written in the form~\eqref{eq:MASTER}.
+No perturbation theory is needed here.
+And although it may not be obvious the transition
+probability~\eqref{eq:pt} is a genuine pdf,
+even if the input and output $\xi_\rho$ on which it acts is
+technically not a properly normalized distribution.
+This will become clear in Section~\ref{sec:proof} when
+we express the transition probability in a more standard form.
+
 
 \subsection{Properties}\label{sec:properties}
 \noindent Two properties are worth highlighting
@@ -513,8 +533,8 @@ correlations, $\xi_{\rho0}\to\xi_\rho$.
 
 
 \subsection{Symmetry considerations}
-\noindent We have not yet assumed any symmetry;
-now imposing statistical homogeneity the transition
+\noindent So far we have not assumed any symmetry;
+now if we impose statistical homogeneity the transition
 probability has the form
 \be\label{eq:pt-alt}
 p_t(\x_1,\x_2\Mid\q_1,\q_2)
@@ -671,7 +691,7 @@ $\x_t(\q;\delta_0)$, instead of $\x_t(\q)$ as we did earlier
 For brevity we will continue writing
 $\x_t(\q)$ with the dependence on $\delta_0$ understood.
 
-Why do the individual trajectories depend on $\delta_0$?
+Now, why do the individual trajectories depend on $\delta_0$?
 This is because the gravitational field is
 \emph{self-consistently} determined from the mass distribution.
 Specifically, the acceleration of
@@ -1026,8 +1046,8 @@ Z(\k;\q)
 where subscript $c$ denotes the cumulant so, for example,
 %$\llangle\r_t\rrangle_c$,
 $\llangle\r_t\r_t^T\rrangle_c=\llangle\r_t\r_t^T\rrangle-\llangle\r_t\rrangle\llangle\r_t\rrangle^T$. (In LPT these are
-essentially the moments of the pairwise displacement field.)
-A useful heuristic is that the $n$th cumulant is order 
+essentially the pairwise moments of the displacement field.)
+As a rule of thumb, the $n$th cumulant is order 
 $\Delta t^n=(t-t_0)^n$ so $\llangle\r_t\rrangle_c=O(\Delta t)$,
 $\llangle\r_t\r_t^T\rrangle_c=O(\Delta t^2)$, etc.
 This means that for long integration times the higher-order cumulants
@@ -1554,8 +1574,8 @@ indeed confirms that the standard relation is recovered.
 \subsection{Evolution of sharp features}
 \noindent
 We now apply Eq.~\eqref{eq:xi-homo} to a
-simple model of $\xi_{\rho0}$ to illustrate the evolution
-of the correlation function.
+simple model of $\xi_{\rho0}$ to illustrate the various effects
+of evolution on the correlation function.
 For simplicity, suppose $\xi_{\rho0}$ is unstructured,
 save for a narrow feature centred at $\q=\q_*$:
 \be\label{eq:xi-peak}
