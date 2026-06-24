@@ -200,15 +200,17 @@ see also \cite{1995MNRAS.273..475S}.
 %and so missed the more basic structure~\eqref{eq:marginal}.
 
 A clear probabilistic approach has not been
-described in any of the subsequent works we are aware of,
-the bulk of which focus on modelling the power spectrum
-\citep[e.g.][]{Taylor:1996ne,Matsubara:2007wj,Vlah:2016bcl,Chen:2020fxs}.
-A notable exception is convolution Lagrangian perturbation theory 
+described in any of the subsequent works we are aware of.
+The bulk of these works aim at a model of the power spectrum
+\citep[e.g.][]{Taylor:1996ne,Matsubara:2007wj,Vlah:2016bcl,Chen:2020fxs},
+though there are also models of the correlation function,
+notably the approach of convolution Lagrangian perturbation theory 
 %Our approach is closely related to convolution Lagrangian perturbation theory 
-\citep{Carlson:2012,White:2014} to which our work is closely related.
-This is a model of the correlation function and is so named
+\citep{Carlson:2012,White:2014}.
+This approach, so named
 because the marginal integral~\eqref{eq:marginal}
-has nominally been understood as a convolution.
+has nominally been understood as a convolution, is closely
+related to our work.
 % with the transition probability a smoothing kernel.
 %A great deal of work has since been done on power spectrum modelling
 %~\citep{Taylor:1996ne,1995MNRAS.273..475S,Matsubara:2007wj,Vlah:2016bcl,Chen:2020fxs},
@@ -223,13 +225,14 @@ has nominally been understood as a convolution.
 %kinetic field theory~\citep{Bartelmann:2014gma,Bartelmann:2019unp},
 %then integrate out the variables for all but two particles.
 %Rather than going this route we will stay close to LPT.
-There are also similarities between our approach and
+There are also similarities between our work and
 kinetic field theory
 \citep{Bartelmann:2014gma,Bartelmann:2019unp},
-an altogether different approach based on 
-formulating the $N$-body problem of classical particles
-as a field theory so as to take advantage of path integral methods
-\citep{Martin:1973zz,Janssen76,deDominicis78}.
+a statistical approach to the $N$-body problem
+based on formulating the kinetic theory of mutually-gravitating,
+classical particles as a field theory.
+ This is to take advantage of path integral methods,
+following the formalism of \cite{Martin:1973zz,Janssen76,deDominicis78}.
 Though theirs is a more systematic treatment,
 working with a complete phase-space description versus
 a reduced (marginal) description, it requires much beyond
@@ -321,10 +324,11 @@ we clarify the assumptions underlying Eq.~\eqref{eq:n}.
 \section{Transport}
 \noindent
 The transition probability derives from
-a distributional description of clustering,
+a distributional picture of clustering,
 the key formula being the pushforward density which we now recall.
-Consider a system of particles
-labelled by their initial position $\q$.
+
+Consider a system of particles labelled by their initial
+ position $\q$, as in the Lagrangian approach.
 Using that the total number (or mass) of particles is
 conserved, the initial comoving density $\rho_0(\q)$ of particles at
 some early time, say $t=0$, can be evolved forward to  
@@ -540,7 +544,7 @@ The expression that \cite{Couchman_Bond88} gave is most similar
 to Eq.~\eqref{eq:xi-homo}.
 
 Equation~\eqref{eq:xi-homo} further simplifies
-if we additionally impose statistical isotropy. Now
+if we additionally have statistical isotropy. Now
 $\xi_\rho(\r,t)=\xi_\rho(r,t)$ and
 % $p_t(\r\Mid\q)\,\dif^3\r
 % =p_t(r,\mu\Mid q)\,r^2\dif r\,\dif\mu\,\dif\phi/(2\pi)$,
@@ -993,7 +997,7 @@ Markov property.
 
 \section{Statistical evolution}\label{sec:proof}
 \noindent 
-The nonlinearity that arises from gravitational collapse
+The nonlinearity arising from gravitational collapse
 lies entirely with the transition probabilities,
 the initial correlations being simply described by linear theory.
 Thus it is worth studying how 
@@ -1010,7 +1014,7 @@ p_t(\r\Mid\q)
 For our particular $p_t(\r\Mid\q)=\langle\!\langle\delD(\r-\r_t)\rangle\!\rangle$
 we have, using the integral representation of the delta function
 and then applying the
-cumulant expansion theorem~\citep[e.g.][]{1992LNP...408...65B},
+cumulant expansion formula~\citep[e.g.][]{1992LNP...408...65B},
 % $Z(\k;\q)=\exp\llangle e^{\im\k\cdot\r_t}\rrangle_c$. 
 \be\label{eq:W}
 Z(\k;\q)
@@ -1249,7 +1253,7 @@ Rather, this kernel should be understood as a transition
 probability~\eqref{eq:p-t-Gauss}, a genuine pdf once $\q$ 
 is conditioned upon.
 (It is worth noting here that the
-Gaussian streaming model~\citep{Fisher:1994ks,Scoccimarro:2004,Vlah:2018ygt}
+streaming model~\citep{Fisher:1994ks,Scoccimarro:2004,Vlah:2018ygt}
 can be interpreted in a similar way.)
 
 
@@ -1938,10 +1942,12 @@ f(\x,\v,t)
 \delD\big[\x-\x_t(\q,\u)\big]\ssp
 \delD\big[\v-\v_t(\q,\u)\big]\ssp f_0(\q,\u)\,,
 \ee
+where $\x_t$ and $\v_t$ solve Hamilton's equation.
 % This is equivalent to the above standard form~\eqref{eq:fK}, as is easily
 % checked by substituting $f_0(\w_0)=\sum_a\delD(\w_0-\w_{a,0})$ and
 % evaluating the integral over $\w_0$.
-which formally solves the Vlasov--Poisson equation.
+This expression can thus be seen as the formal solution to
+the Vlasov--Poisson equation.
 Note that due to self-consistency $\x_t(\q,\u)$ and $\v_t(\q,\u)$
 also depend on the initial density $f_0$; for brevity
 this dependence has been suppressed.
