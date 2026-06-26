@@ -199,9 +199,9 @@ see also \cite{1995MNRAS.273..475S}.
 %though they gave their expression in terms of Lagrangian displacements
 %and so missed the more basic structure~\eqref{eq:marginal}.
 
-A clear probabilistic approach has not been
+In any case a clear probabilistic approach has not been
 described in any of the subsequent works we are aware of.
-The bulk of these works aim at a model of the power spectrum
+The bulk of these works are aimed at modelling the power spectrum
 \citep[e.g.][]{Taylor:1996ne,Matsubara:2007wj,Vlah:2016bcl,Chen:2020fxs},
 though there are also models of the correlation function,
 notably the approach of convolution Lagrangian perturbation theory 
@@ -235,18 +235,17 @@ classical particles as a field theory.
 following the formalism of \cite{Martin:1973zz,Janssen76,deDominicis78}.
 Though theirs is a more systematic treatment,
 working with a complete phase-space description versus
-a reduced (marginal) description, it requires much beyond
-Lagrangian perturbation theory.
+a reduced (marginal) description, ours has the virtue of requiring
+little beyond Lagrangian perturbation theory.
 
 
 %We believe this obscures a physical reading of the problem.
 In this work we resurface the earlier probabilistic view,
 showing that the correlation function
 is naturally described in terms of the transition probability.
-One advantage over the standard treatment is that it gives a
+One advantage over the conventional view is that it gives a
 physically appealing way
-to think about the correlation function which is based on
-probability theory.
+to think about the correlation function based on probability theory.
 Another advantage is that it clarifies the problem 
 of inferring the initial conditions
 from the late-time correlations.
@@ -321,14 +320,14 @@ we clarify the assumptions underlying Eq.~\eqref{eq:n}.
 
 
 
-\section{Transport}
+\section{Transport and conservation}
 \noindent
 The transition probability derives from
 a distributional picture of clustering,
 the key formula being the pushforward density which we now recall.
 
 Consider a system of particles labelled by their initial
- position $\q$, as in the Lagrangian approach.
+ position $\q$, as in the Lagrangian framework.
 Using that the total number (or mass) of particles is
 conserved, the initial comoving density $\rho_0(\q)$ of particles at
 some early time, say $t=0$, can be evolved forward to  
@@ -345,8 +344,9 @@ initial time $t=0$, not the present.}
 This is the pushforward density.
 Notice that multiple $\q$ can map to a single $\x$, i.e.\
 trajectories can cross; see Figure~\ref{fig:trajectories}.
-This means that the pushforward formula~\eqref{eq:n}, given knowledge
-of the trajectories, also holds in the multistreaming regime.
+This means that given knowledge of the trajectories
+the pushforward formula~\eqref{eq:n} also holds in the
+multistreaming regime.
 The formula is simply a consequence of
 mass conservation or, equivalently, the
 continuity equation
@@ -431,7 +431,7 @@ us that the pushforward acts on \emph{distributions}.
 \section{Transition probability}\label{sec:transition}
 \noindent 
 Roughly speaking, the transition probability
-$p_t$ is what we get by taking an ensemble average over the
+is the ensemble average over the
 pushforward kernel in Eq.~\eqref{eq:n}.
 More precisely, inserting Eq.~\eqref{eq:n} into the two-point function%
 \footnote{In this work by `correlation function' we mean
@@ -449,7 +449,7 @@ $\xi_{\rho}(\x_1,\x_2,t)
 \equiv\langle\sp \rho(\x_1,t)\ssp \rho(\x_2,t)\rangle$
 % =\bar{n}^2[1+\xi_\delta(\x_1,\x_2,t)]
 %\ee
-can be brought into the form [cf.~Eq.~\eqref{eq:marginal}]
+we have [cf.~Eq.~\eqref{eq:marginal}]
 \be\label{eq:MASTER} % {eq:MASTER}
 \xi_{\rho}(\x_1,\x_2,t) % \langle n(\bm0,t)\ssp n(\r,t)\rangle 
 =\int_{\q_1}\int_{\q_2}
@@ -476,7 +476,7 @@ p_t(\x_1,\x_2\Mid\q_1,\q_2) %\nonumber\\[3pt]
 \big\rangle\!\big\rangle
     \label{eq:pt}
 \ee
-is the {transition probability}, which gives the probability
+is the {transition probability} (density), which gives the probability
 $p_t(\x_1,\x_2\Mid\q_1,\q_2)\ssp\dif^3\x_1\sp\dif^3\x_2$
 that a pair $(\q_1,\q_2)$ at $t=0$
 is later found between $(\x_1,\x_2)$ and
@@ -502,9 +502,9 @@ otherwise, we emphasize that
 the correlation function can be written in the form~\eqref{eq:MASTER}.
 No perturbation theory is needed here.
 And although it may not be obvious the transition
-probability~\eqref{eq:pt} is a genuine pdf,
-even if the input and output $\xi_\rho$ on which it acts is
-technically not a properly normalized distribution.
+probability~\eqref{eq:pt} is a genuine pdf
+(even if the input and output $\xi_\rho$ on which it acts is
+technically not a properly normalized distribution).
 This will become clear in Section~\ref{sec:proof} when
 we express the transition probability in a more standard form.
 
@@ -560,8 +560,8 @@ p_t(\r\Mid\q)=\llangle\delD(\r-\r_t)\rrangle\,,
 \r_t\equiv\x_t(\q_1)-\x_t(\q_2)\,,
 \ee
 is the pair transition probability.
-The expression that \cite{Couchman_Bond88} gave is most similar
-to Eq.~\eqref{eq:xi-homo}.
+We note that Eq.~\eqref{eq:xi-homo} is very similar
+to an expression given by \cite{Couchman_Bond88}.
 
 Equation~\eqref{eq:xi-homo} further simplifies
 if we additionally have statistical isotropy. Now
@@ -1043,7 +1043,7 @@ Z(\k;\q)
 	\right)\,,
 %=\exp\left(\im\k\cdot\llangle\r_t\rrangle-\frac12\k^T\llangle\r_t\r_t^T\rrangle_c\k+\cdots\right)
 \ee
-where subscript $c$ denotes the cumulant so, for example,
+where subscript $c$ denotes the cumulant so that, for example,
 %$\llangle\r_t\rrangle_c$,
 $\llangle\r_t\r_t^T\rrangle_c=\llangle\r_t\r_t^T\rrangle-\llangle\r_t\rrangle\llangle\r_t\rrangle^T$. (In LPT these are
 essentially the pairwise moments of the displacement field.)
@@ -1574,8 +1574,8 @@ indeed confirms that the standard relation is recovered.
 \subsection{Evolution of sharp features}
 \noindent
 We now apply Eq.~\eqref{eq:xi-homo} to a
-simple model of $\xi_{\rho0}$ to illustrate the various effects
-of evolution on the correlation function.
+simple model of $\xi_{\rho0}$ to illustrate the various ways
+in which the correlation function evolves.
 For simplicity, suppose $\xi_{\rho0}$ is unstructured,
 save for a narrow feature centred at $\q=\q_*$:
 \be\label{eq:xi-peak}
@@ -1888,7 +1888,7 @@ remains sharp? No. There is a shift and a skew.
 
 
 % \section{Phase-space description of clustering}\label{sec:phase-space}
-\section{Phase-space reduction of the pushforward:
+\section{Phase-space perspective of the pushforward:
 clarifying the initial conditions}\label{sec:phase-space}
 \noindent Since LPT is based on a
 second-order ODE (Newton's equation),
@@ -3921,6 +3921,9 @@ Concerning biased tracers.....
 
 \section{Conclusions}
 \noindent
+By formulating correlations in terms of transition probability
+we have arrived at a statistical understanding of the evolution
+of large-scale structure.
 We have described the probabilistic structure underlying the calculation of
 correlation functions.
 The map from Lagrangian to Eulerian space, together with
