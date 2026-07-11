@@ -433,7 +433,8 @@ us that the pushforward acts on \emph{distributions}.
 Roughly speaking, the transition probability
 is the ensemble average over the
 pushforward kernel in Eq.~\eqref{eq:n}.
-More precisely, inserting Eq.~\eqref{eq:n} into the two-point function%
+More precisely, it is obtained by inserting
+Eq.~\eqref{eq:n} into the two-point function%
 \footnote{In this work by `correlation function' we mean
 $\xi_\rho=\langle \rho(\x_1)\sp \rho(\x_2)\rangle$, instead
 of the more common
@@ -444,12 +445,9 @@ $\xi_\rho(\x_1,\x_2)=\bar{\rho}^2[1+\xi(\x_1,\x_2)]$.
 % Here the number density makes more sense when working with
 % discrete tracers (it also simplifies the mathematical presentation).
 }
-%\be\nonumber
 $\xi_{\rho}(\x_1,\x_2,t)
-\equiv\langle\sp \rho(\x_1,t)\ssp \rho(\x_2,t)\rangle$
-% =\bar{n}^2[1+\xi_\delta(\x_1,\x_2,t)]
-%\ee
-we have [cf.~Eq.~\eqref{eq:marginal}]
+\equiv\langle\sp \rho(\x_1,t)\ssp \rho(\x_2,t)\rangle$,
+giving [cf.~Eq.~\eqref{eq:marginal}]
 \be\label{eq:MASTER} % {eq:MASTER}
 \xi_{\rho}(\x_1,\x_2,t) % \langle n(\bm0,t)\ssp n(\r,t)\rangle 
 =\int_{\q_1}\int_{\q_2}
@@ -1018,7 +1016,7 @@ Markov property.
 \section{Statistical evolution}\label{sec:proof}
 \noindent 
 The nonlinearity arising from gravitational collapse
-is contained within the transition probabilities,
+is confined to the transition probabilities,
 the initial correlations being simply described by linear theory.
 Thus it is worth studying how 
 the full nonlinear evolution of the correlation function is
@@ -1557,8 +1555,7 @@ indeed confirms that the standard relation is recovered.
       \node [font=\small] at (axis cs: 7.5, -0.08) {diffusion};
     \end{axis}
   \end{tikzpicture}
-  \caption{Three effects on the correlations, illustrated on the
-  peak~\eqref{eq:xi-peak}.
+  \caption{Three effects on a peak~\eqref{eq:xi-peak}.
 	Note that depending on the scale a rightward shift of the peak
 	to larger separations due to outfall is also possible.
 	Likewise, a suppression of the peak from expansion
@@ -1755,7 +1752,8 @@ $\R_t(\q)$).
     probability as estimated from 2000 simulations of
     $N=100$ particles. Each curve eventually plateaus, reflecting 
     that particles fall into potential wells
-    where they mostly remain.}
+    where they mostly remain. Zero conditional entropy means
+    no broadening of the pdf.}
     \label{fig:entropy}
 \end{figure}
 
