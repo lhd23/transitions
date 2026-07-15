@@ -131,10 +131,10 @@ a \emph{transition probability} $p(s\Mid x)$,
 a conditional probability density of the
 redshift positions $s$ attainable from a given real position $x$.
 
-In this work we explore a similar relation
-between Lagrangian space and Eulerian space, and for which there is
-a transition probability connecting the initial
-and final correlations.
+In this work we point out that the relation
+between Lagrangian and Eulerian space can be framed
+in a similar way, with a transition probability
+connecting the initial and final correlations.
 Unlike the one found earlier, this transition probability
 has a straightforward dynamical interpretation.
 Since it propagates initial data
@@ -352,7 +352,7 @@ mass conservation or, equivalently, the
 continuity equation
 $\partial_t\ssp\rho+\nabla\cdot(\rho\v)=0$ to which Eq.~\eqref{eq:n}
 can be seen as the formal solution
-(with cold initial conditions)~\citep{Dam:2026bhb}.
+(with cold initial conditions).
 
 A note on conventions.
 Typically, Eq.~\eqref{eq:n} is written
@@ -1015,12 +1015,11 @@ Markov property.
 
 \section{Statistical evolution}\label{sec:proof}
 \noindent 
-The nonlinearity arising from gravitational collapse
-is confined to the transition probabilities,
-the initial correlations being simply described by linear theory.
-Thus it is worth studying how 
-the full nonlinear evolution of the correlation function is
-encoded in the transition probability, and in particular how it is
+The nonlinearity induced by gravitational collapse
+enters the correlation function through the transition probabilities
+(the initial correlations being simply described by linear theory).
+Thus it is worth studying how the transition probability encodes 
+the full nonlinear evolution, and in particular how it is
 built up from the pairwise statistics
 $\llangle\r_t\rrangle$, $\llangle\r_t\r_t^T\rrangle$, etc.
 To this end it will be convenient to express
@@ -1415,7 +1414,7 @@ Over short timescales we can write down a
 closed-form expression of the correlation function $\xi_\rho(\r,t)$.
 Inserting into Eq.~\eqref{eq:xi-homo} the sharp transition
 probability~\eqref{eq:pt-sharp},
-neglecting higher-order corrections, we have
+neglecting the $O(\Delta t^2)$ corrections, we have
 \be\label{eq:xi-adv}
 \xi_\rho(\r,t)
 =\int_\q \delD\big[\r-\R_t(\q)\big]\ssp \xi_{\rho0}(\q)\,.
@@ -1680,7 +1679,7 @@ $\bm\epsilon_t\sim\mathcal{N}(0,\sigma^2_t)$,
 integration yields
 \be
 p_t(\r\Mid\q)
-= \frac{1}{(2\pi)^{3/2}\sigma_t^3}\, e^{-[\r-\R_t(\q)]^2/2\sigma^2_t}\,.
+= \frac{e^{-[\r-\R_t(\q)]^2/2\sigma^2_t}}{(2\pi)^{3/2}\sigma_t^3}\,.
 \ee
 Over short timescales, $\sigma_t\approx 0$, this pdf is sharp.
 In the limit $\sigma_t\to0$ we recover the sharp 
