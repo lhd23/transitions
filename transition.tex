@@ -431,7 +431,7 @@ us that the pushforward acts on \emph{distributions}.
 \section{Transition probability}\label{sec:transition}
 \noindent 
 Roughly speaking, the transition probability
-is the ensemble average over the
+is the ensemble average of the
 pushforward kernel in Eq.~\eqref{eq:n}.
 More precisely, it is obtained by inserting
 Eq.~\eqref{eq:n} into the two-point function%
@@ -532,7 +532,7 @@ correlations, $\xi_{\rho0}\to\xi_\rho$.
 
 \subsection{Symmetry considerations}
 \noindent So far we have not assumed any symmetry;
-now if we impose statistical homogeneity the transition
+now imposing statistical homogeneity the transition
 probability has the form
 \be\label{eq:pt-alt}
 p_t(\x_1,\x_2\Mid\q_1,\q_2)
@@ -794,7 +794,7 @@ Consequently,
 Eq.~\eqref{eq:MASTER} is a nonlinear map of correlations
 at one time to correlations at another. This distinguishes
 the transition probability~\eqref{eq:pt} from those normally
-encountered, e.g.\ in statistical fluid mechanics~\citep{MoninYaglom71},
+encountered in, e.g.\ statistical fluid mechanics~\citep{MoninYaglom71},
 which instead follow from linear maps and often satisfy the
 Markov property.
 %Unless one considers the motion of test particles, the concept of
@@ -1258,8 +1258,8 @@ gravitational potential, tend to be moving coherently
 %With the conditioning made clear, it is not hard to see from
 % these expressions that the transition probability is a genuine pdf.
 Lastly, note that the Gaussian transition probability~\eqref{eq:pt-Delta}
-is essentially the convolution kernel in LPT~\citep{Carlson:2012,White:2014,Vlah:2016bcl}.
-There is no real difference between them except one of interpretation:
+is the convolution kernel in LPT~\citep{Carlson:2012,White:2014,Vlah:2016bcl}.
+The only difference between them is one of interpretation:
 in those works the Gaussian is understood
 as a scale-dependent kernel of the form $K(\r-\q;\q)$.
 But Eq.~\eqref{eq:MASTER}
@@ -1746,13 +1746,12 @@ $\R_t(\q)$).
 
 \begin{figure}[t!]
     \centering
-    \includegraphics[width=0.9\columnwidth]{plots/entropy_vs_time_gnuplot}
+    \includegraphics[width=\columnwidth]{plots/conditional_entropy}
     \caption{Conditional entropy~\eqref{eq:H} of the transition
-    probability as estimated from 2000 simulations of
-    $N=100$ particles. Each curve eventually plateaus, reflecting 
+    probability, estimated from 2000 simulations of
+    $100$ particles. Each curve eventually plateaus, reflecting 
     that particles fall into potential wells
-    where they mostly remain. Zero conditional entropy means
-    no broadening of the pdf.}
+    where they tend to remain.}
     \label{fig:entropy}
 \end{figure}
 
@@ -1797,11 +1796,37 @@ From the point of view of the transition probability
 this is because for large $\r$ the transition probability
 depends on $\r-\q$ and not $\r$ and $\q$ separately.
 In particular, $\mbf{C}_t(\q)\to\mrm{const}.$ and $\mbf{D}_t(\q)\to0$.
-That is, the pushforward can legitimately be understood as
-a convolution against, e.g.\ a Gaussian kernel.
-We note this is often called IR resummation.
+That is, for large $\r$ the transition probability
+reduces to a Gaussian convolution kernel.
+This is often called IR resummation.
 
+{\it needs editing.} The conditional entropy measures the broadening of the
+final pair-separation distribution.
+In Figure~\ref{fig:entropy}, large initial separations
+($q=50-100h^{-1}\mrm{Mpc}$) remain
+sensitive to evolving large-scale displacements out to $a\simeq1$ and
+show sustained increase in entropy. By contrast, closely separated particles
+rapidly become confined within the same structures: $q=5h^{-1}\mrm{Mpc}$
+remains almost deterministic and $q=10h^{-1}\mrm{Mpc}$ rises
+briefly before saturating. The $q=20h^{-1}\mrm{Mpc}$ curve
+exhibits two distinct stages, plausibly corresponding first
+to pre-collapse displacement broadening, followed by a temporary
+balance during collapse, and then renewed broadening from
+shell crossing, secondary infall, or phase mixing before the
+bound separation distribution reaches its final plateau.
 
+The conditional entropy initially rises because gravitational evolution broadens the transition probability. This means that pairs with the same
+initial separation visit an increasingly wide range of final
+separations as they encounter different density environments.
+The plateau occurs earlier at small $q$, since two particles are
+more likely to enter the same nonlinear structure and become
+confined within a common potential well, with further evolution
+producing relatively little additional spreading of the bulk
+of the distribution. For $q=20,h^{-1}\mrm{Mpc}$, the intermediate plateau and subsequent rise may reflect two stages of nonlinear evolution-initial collapse on smaller scales, followed by later infall, merging, or coupling to larger-scale structures. The final plateau should not, however, be interpreted automatically as convergence to a stationary transition probability.
+As the bottom row in Figure~\ref{fig:pt} shows, the pdf can
+continue to develop a narrow, strongly populated
+core associated with trapped pairs while a small fraction of pairs
+generates increasingly long tails.
 
 
 %There are a couple of regimes in which we expect
@@ -1890,6 +1915,8 @@ We note this is often called IR resummation.
 
 
 
+
+\subsection{Obstacles for inferring initial conditions}
 
 
 
