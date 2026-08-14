@@ -99,7 +99,7 @@ University of Geneva, 24 Quai Ansermet, CH-1211 Geneva 4, Switzerland}
 % \thanks{$^\star$Email: \href{mailto:lawrence.dam@unige.ch}{lawrence.dam55@gmail.com}}
 
 \begin{abstract}
-\noindent 
+\noindent A probabilistic approach to the correlation function is described.
 We show that the Lagrangian description of large-scale structure
 admits a formulation in terms of a transition probability, describing
 the likely Eulerian positions of a particle given its
@@ -185,8 +185,8 @@ We have similar for the initial distribution.
 %We have a similar relation in Lagrangian space
 %for $\dif P=p_\mathrm{init}(\q_1,\q_2)\,\dif^3\q_1\dif^3\q_2$.
 
-That the correlation function can be forward modelled
-via a transition probability is the main message of this work.
+The main message of this work is that the correlation function
+is naturally forward modelled by a transition probability.
 We should note however that the seeds of this idea can be
 traced to \cite{Couchman_Bond88}
 who it seems were the first to give an expression like Eq.~\eqref{eq:marginal},
@@ -270,7 +270,7 @@ we clarify the assumptions underlying Eq.~\eqref{eq:n}.
 
 \begin{figure*}[t!]
     \centering
-    \includegraphics[width=0.87\textwidth]{plots/trajectories_extended6}
+    \includegraphics[width=0.9\textwidth]{plots/trajectories_extended6}
     % \includegraphics[width=0.8\textwidth]{plots/trajectories_extended_long8}
     \caption{Illustration of the pushforward~\eqref{eq:n} in
     one dimension.
@@ -1095,11 +1095,11 @@ $(k\Delta t)^n$.
 
 \begin{figure*}
     \centering
-    \includegraphics[width=0.9\textwidth]{plots/pt_grid}
+    \includegraphics[width=\textwidth]{plots/pt_grid_uniform_random_5000}
     \caption{Evolution of the transition probability~\eqref{eq:pt}
     in a one-dimensional universe. Here the transition probability
     is estimated from 5000 $N$-body simulations
-    of $N=50$ particles.
+    of 100 particles.
     Each row is for a different initial separation
     $q\equiv q_1-q_2=0.2L$ (where $L$ is the box size):
     from top to bottom, $q=0.2L$, $q=0.1L$, and $q=0.05L$.
@@ -1201,6 +1201,17 @@ The covariance is the same in both Eqs.~\eqref{eq:p-t-Gauss}
 and \eqref{eq:pt-Delta}.
 Note that in terms of the mean displacement,
 $\R_t(\q)=\q+\mbf{D}_t(\q)$.
+
+We also note that $p_t(\r\Mid\q)$ satisfies a Fokker--Planck-like
+equation,
+\be
+\partial_t p_t+\nabla_i\sp (\dot{D}_t^{\sp i} p_t)
+-\tfrac12\nabla_i\sp\nabla_j\sp (\dot{C}_t^{\sp ij}\sp p_t)=0\,,
+\ee
+where $\nabla_i=\partial/\partial r_i$ and overdot is
+differentiation with respect to $t$. This can be checked by
+direct substitution of Eq.~\eqref{eq:pt-Delta}.
+A similar equation also holds for $p_t(\bm\Delta\Mid\q)$.
 
 To make this more concrete, we model
 these statistics using the Zeldovich approximation. For the mean we have
@@ -1365,8 +1376,8 @@ can be interpreted in a similar way.)
 
 
 
-\subsection{Transitions over short timescales, or
-the no-diffusion limit}\label{sec:zel-approx}
+\subsection{Transitions over short timescales
+(the zero diffusion limit)}\label{sec:zel-approx}
 \noindent We now consider, from the perspective of the
 transition probability, the evolution
 of the correlation function over short timescales.
@@ -1641,112 +1652,47 @@ features are obscured by the development of structure.
 
 
 
-\subsubsection{Random perturbations to Zeldovich trajectories}
-%\noindent The sharp transition~\eqref{eq:pt-sharp} may be
-%regarded an overly strong prior. 
-%This is because we generally expect that the transition
-%is broadened by gravitational interactions
-%with the rest of the system, so that for a given $\q$ 
-%one has not a delta function but instead a distribution of $\r$
-%(Figure~\ref{fig:pt}).
-% Recall we are marginalizing over the unknown positions of the rest
-% of the system and the uncertainty in these positions propagates
-% to the transition probability.
+%\subsubsection{Random perturbations to Zeldovich trajectories*}
+%\noindent 
+%A simple way to account for the broadening
+%of the transition probability over time is to
+%suppose that the realized trajectory differs from the
+%(ensemble averaged) mean trajectory $\R_t$ by a perturbation $\bm\epsilon_t$, which we shall treat
+%as a random variable with variance
+%$\langle\bm\epsilon_t^2\rangle=\sigma_t^2$.
+%These errors grow as $\sigma_t\propto D(t)^2-D(0)^2$,
+%such that over short timescales $\sigma_t\approx0$.
+%In general $\bm\epsilon_t$ should also depend on $\q$,
+%but we will ignore this complication.
+%
+%Now with $\R_t\to\R_t+\bm\epsilon_t$
+%we effectively soften Eq.~\eqref{eq:pt-sharp} to
+%\be
+%p_t(\r\Mid\q)
+%% =\int\dif\bm\epsilon_t\,p(\bm\epsilon_t)\, p_t(\r\Mid\q,\bm\epsilon_t)
+%=\int\dif\bm\epsilon_t\, p(\bm\epsilon_t)\,
+%    \delD[\r-\R_t(\q)-\bm\epsilon_t]\,.
+%\ee
+%Assuming errors are Gaussian distributed, so
+%$\bm\epsilon_t\sim\mathcal{N}(0,\sigma^2_t)$,
+%%$p(\bm\epsilon_t)\propto e^{-\bm\epsilon_t^2/2\sigma^2(t)}$,
+%integration yields
+%\be
+%p_t(\r\Mid\q)
+%= \frac{e^{-[\r-\R_t(\q)]^2/2\sigma^2_t}}{(2\pi)^{3/2}\sigma_t^3}\,.
+%\ee
+%Over short timescales, $\sigma_t\approx 0$, this pdf is sharp.
+%In the limit $\sigma_t\to0$ we recover the sharp 
+%transition~\eqref{eq:pt-sharp}.
+%On longer timescales $\sigma_t>0$ grows and the sharp transition
+%broadens, or diffuses, to reflect the increasing breakdown of the Zeldovich
+%approximation (note that the mean is given by the Zeldovich estimate
+%$\R_t(\q)$).
 
-\noindent 
-A simple way to account for the broadening
-of the transition probability over time is to
-suppose that the realized trajectory differs from the
-(ensemble averaged) mean trajectory $\R_t$ by a perturbation $\bm\epsilon_t$, which we shall treat
-as a random variable with variance
-$\langle\bm\epsilon_t^2\rangle=\sigma_t^2$.
-These errors grow as $\sigma_t\propto D(t)^2-D(0)^2$,
-such that over short timescales $\sigma_t\approx0$.
-In general $\bm\epsilon_t$ should also depend on $\q$,
-but we will ignore this complication.
-
-Now with $\R_t\to\R_t+\bm\epsilon_t$
-we effectively soften Eq.~\eqref{eq:pt-sharp} to
-\be
-p_t(\r\Mid\q)
-% =\int\dif\bm\epsilon_t\,p(\bm\epsilon_t)\, p_t(\r\Mid\q,\bm\epsilon_t)
-=\int\dif\bm\epsilon_t\, p(\bm\epsilon_t)\,
-    \delD[\r-\R_t(\q)-\bm\epsilon_t]\,.
-\ee
-Assuming errors are Gaussian distributed, so
-$\bm\epsilon_t\sim\mathcal{N}(0,\sigma^2_t)$,
-%$p(\bm\epsilon_t)\propto e^{-\bm\epsilon_t^2/2\sigma^2(t)}$,
-integration yields
-\be
-p_t(\r\Mid\q)
-= \frac{e^{-[\r-\R_t(\q)]^2/2\sigma^2_t}}{(2\pi)^{3/2}\sigma_t^3}\,.
-\ee
-Over short timescales, $\sigma_t\approx 0$, this pdf is sharp.
-In the limit $\sigma_t\to0$ we recover the sharp 
-transition~\eqref{eq:pt-sharp}.
-On longer timescales $\sigma_t>0$ grows and the sharp transition
-broadens, or diffuses, to reflect the increasing breakdown of the Zeldovich
-approximation (note that the mean is given by the Zeldovich estimate
-$\R_t(\q)$).
-% This somewhat recovers the Gaussian approximation~\eqref{eq:p-t-Gauss} but
-% there is a difference because here we assumed that the errors
-% are scale independent. 
-
-%\subsection{Recovering linear theory}
-%\bea
-%\xi_n(r,t)
-%&\simeq\xi_{n0}(r)-\frac{1}{r^2}\frac{\dif}{\dif r} r^2 u_{12}(r) \nonumber\\
-%&\qquad\quad+\frac{1}{2r^2}\frac{\dif}{\dif r} r^2
-%	\left(\frac{\dif}{\dif r}\sigma_{12}^\|(r)
-%		-\frac{2}{r} \sigma_{12}^\perp(r)
-%	\right)
-%\eea
-%At large $r$ the terms which go as $1/r$ are small and may
-%be neglected. We then have
-%\bea
-%\xi_m(r,t)
-%&\simeq\xi_{m0}(r)-\frac{\dif}{\dif r} u_{12}(r)
-%+\frac12\frac{\dif^2}{\dif r^2}\,\sigma_{12}^\|(r)
-%\eea
-
-% \subsubsection{Mean-flow approximation}
-% % \cite{Smith:2007gi} derived a similar formula to
-% % Eq.~\eqref{eq:MASTER} relating
-% % initial and final correlations. However, theirs is not
-% % self-consistent as transitions (of separations $\r$)
-% % are assumed to follow the mean flow, given by the 
-% % mean streaming velocity $\u_{12}(\r)$ so
-% % ${\dif\r}/{\dif t}=\u_{12}(\r,t)$. In our approach, this is equivalent
-% % to assuming $p(\r\Mid\q)=\delD[\r-\bm\mu_t(\q)]$
-% % where $\r_t$ is a solution of ${\dif\r}/{\dif t}=\u_{12}$.
-
-% \noindent It is insightful to consider the case of particles
-% moving in single stream, e.g.\ at some early epoch.
-% In this case, $\llangle\cdots\rrangle\to\langle\cdots\rangle$.
-% We have that particles track the characteristics of the mean flow such that
-% \be
-% \u(\x_t(\q),t)=\frac{\dif\x_t(\q)}{\dif t}\,,
-% \ee
-% where $\q$ uniquely labels the characteristics 
-% and $\u$ is the bulk velocity. This yields
-% a sharp transition
-% \be
-% p_t(\r\Mid\q)=\delD[\r-\bm\mu_t(\q)]\,,
-% \ee
-% with which Eq.~\eqref{eq:xi-homo} reads
-% \be\label{eq:xi-advect}
-% \xi_{n}(\r,t)=\int_\q
-%     \delD[\r-\bm\mu_t(\q)]\ssp \xi_{n0}(\q)\,.
-% \ee
-% Thus, in the mean flow the evolution of the initial correlations
-% is due to advection only.
-% Higher-order cumulants are generated through stream crossing,
-% adding dispersion to the line $\r=\bm\mu_t$. 
-% See Appendix~\ref{app:KM-expansion} for details.
 
 \begin{figure}[t!]
     \centering
-    \includegraphics[width=\columnwidth]{plots/conditional_entropy}
+    \includegraphics[width=0.93\columnwidth]{plots/conditional_entropy}
     \caption{Conditional entropy~\eqref{eq:H} of the transition
     probability, estimated from 2000 simulations of
     $100$ particles. Each curve eventually plateaus, reflecting 
@@ -1758,8 +1704,6 @@ $\R_t(\q)$).
 
 
 \subsection{Correlations with diffusion}
-%Although this picture is incomplete without diffusion it is instructive.
-
 \noindent A sharp transition distribution 
 implies little uncertainty in the final positions 
 of particles.
@@ -1786,9 +1730,6 @@ Even perfect knowledge of the present
 correlations is insufficient to infer past correlations.
 This has to do with diffusion (which is analogous to
 infrared resummation in the conventional approach).
-
-Does the low entropy mean imply the transition probability
-remains sharp? No. There is a shift and a skew.
 
 The effect of these large-scale displacements has sometimes been called `smearing'.
 E.g. Crocce and Scoccimarro, Bharadwaj 1996.
@@ -1916,9 +1857,8 @@ generates increasingly long tails.
 
 
 
-\subsection{Obstacles for inferring initial conditions}
-
-
+\subsection{Obstacles towards inferring initial conditions*}
+deconvolution on large scales?
 
 % \section{Phase-space description of clustering}\label{sec:phase-space}
 \section{Phase-space perspective of the pushforward:
@@ -2207,7 +2147,7 @@ Appendix~\ref{app:path-integral} that the
 pushforward can be written in path-integral form.
 
 
-\section{From observations to initial conditions}
+\section{From observations to initial conditions*}
 \noindent
 The same relation we have studied throughout this work also
 holds between redshift space and real space, as mentioned in
@@ -3980,7 +3920,7 @@ distribution.
 KFT assumes Newtonian dynamics and makes use of its
 Hamiltonian structure to solve for the
 state trajectory in phase space.
-By contrast, we make no such assumptions. Here the
+Here we make no such assumptions; the
 individual trajectories $\x_t(\q)$ may be solutions to more
 complicated equations of motion, for instance, of the form
 $\dif^2\x/\dif t^2=\mbf{F}(\x,t)$, where
