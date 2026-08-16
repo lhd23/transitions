@@ -240,7 +240,7 @@ little more than Lagrangian perturbation theory.
 
 
 %We believe this obscures a physical reading of the problem.
-In this work we resurface the earlier probabilistic view,
+In this work we will resurface the older probabilistic view,
 showing that the correlation function
 is naturally described in terms of the transition probability.
 One advantage over the conventional view is that it gives a
@@ -267,7 +267,6 @@ we clarify the assumptions underlying Eq.~\eqref{eq:n}.
 %Derivations supporting some of
 %our results are given in the Appendix.
 
-
 \begin{figure*}[t!]
     \centering
     \includegraphics[width=0.9\textwidth]{plots/trajectories_extended6}
@@ -286,6 +285,17 @@ we clarify the assumptions underlying Eq.~\eqref{eq:n}.
     }
     \label{fig:trajectories}
 \end{figure*}
+
+\noindent{\bf Notation and conventions.}
+In this work we find it more convenient to use the density
+correlation function
+$\xi_\rho(\x_1,\x_2)=\langle \rho(\x_1)\sp \rho(\x_2)\rangle$, instead
+of the more common
+$\xi(\x_1,\x_2)=\langle\delta(\x_1)\sp\delta(\x_2)\rangle$
+of the overdensity $\delta=\rho/\bar{\rho}-1$.
+Of course the two are simply related by
+$\xi_\rho(\x_1,\x_2)=\bar{\rho}^2[1+\xi(\x_1,\x_2)]$.
+
 
 
 
@@ -434,17 +444,17 @@ Roughly speaking, the transition probability
 is the ensemble average of the
 pushforward kernel in Eq.~\eqref{eq:n}.
 More precisely, it is obtained by inserting
-Eq.~\eqref{eq:n} into the two-point function%
-\footnote{In this work by `correlation function' we mean
-$\xi_\rho=\langle \rho(\x_1)\sp \rho(\x_2)\rangle$, instead
-of the more common
-$\xi(\x_1,\x_2)=\langle\delta(\x_1)\sp\delta(\x_2)\rangle$
-of the overdensity $\delta=\rho/\bar{\rho}-1$.
-Of course the two are simply related by
-$\xi_\rho(\x_1,\x_2)=\bar{\rho}^2[1+\xi(\x_1,\x_2)]$.
-% Here the number density makes more sense when working with
-% discrete tracers (it also simplifies the mathematical presentation).
-}
+Eq.~\eqref{eq:n} into the two-point function
+%\footnote{In this work by `correlation function' we mean
+%$\xi_\rho=\langle \rho(\x_1)\sp \rho(\x_2)\rangle$, instead
+%of the more common
+%$\xi(\x_1,\x_2)=\langle\delta(\x_1)\sp\delta(\x_2)\rangle$
+%of the overdensity $\delta=\rho/\bar{\rho}-1$.
+%Of course the two are simply related by
+%$\xi_\rho(\x_1,\x_2)=\bar{\rho}^2[1+\xi(\x_1,\x_2)]$.
+%% Here the number density makes more sense when working with
+%% discrete tracers (it also simplifies the mathematical presentation).
+%}
 $\xi_{\rho}(\x_1,\x_2,t)
 \equiv\langle\sp \rho(\x_1,t)\ssp \rho(\x_2,t)\rangle$,
 giving [cf.~Eq.~\eqref{eq:marginal}]
@@ -495,9 +505,8 @@ average
 \ee
 where $O(\q_1,\q_2)$ is any pairwise function.
 
-Regardless of the equation of motion, Newton's equation or
-otherwise, we emphasize that
-the correlation function can be written in the form~\eqref{eq:MASTER}.
+Regardless of the equation of motion (e.g.\ Newton's equation),
+we emphasize that the correlation function can be written in the form~\eqref{eq:MASTER}.
 No perturbation theory is needed here.
 And although it may not be obvious the transition
 probability~\eqref{eq:pt} is a genuine pdf
@@ -689,13 +698,16 @@ $\x_t(\q;\delta_0)$, instead of $\x_t(\q)$ as we did earlier
 For brevity we will continue writing
 $\x_t(\q)$ with the dependence on $\delta_0$ understood.
 
-Now, why do the individual trajectories depend on $\delta_0$?
+Why do the individual trajectories depend on $\delta_0$?
 This is because the gravitational field is
 \emph{self-consistently} determined from the mass distribution.
-Specifically, the acceleration of
+That is, the acceleration of
 a particle depends on the gradient of the gravitational potential,
-which in turn depends on the positions of \emph{all} other
-particles through pairwise interactions.
+which in turn depends on the positions of {all} other
+particles through pairwise interactions. Similar to
+the way that initial conditions are specified in an
+$N$-body simulation, $\delta_0$ encodes the initial
+positions of  all other particles.
 
 
 %, we have
@@ -1197,24 +1209,27 @@ with mean and covariance
 \eea
 where the second line follows because
 $\r_t=\q+\Delta\bm\psi$ and $\llangle\q\rrangle=\q$.
-The covariance is the same in both Eqs.~\eqref{eq:p-t-Gauss}
-and \eqref{eq:pt-Delta}.
-Note that in terms of the mean displacement,
+The covariance is the same in both pdfs~\eqref{eq:p-t-Gauss}
+and \eqref{eq:pt-Delta}, while the means are related by
 $\R_t(\q)=\q+\mbf{D}_t(\q)$.
 
-We also note that $p_t(\r\Mid\q)$ satisfies a Fokker--Planck-like
-equation,
+It is also interesting to note that the
+Gaussian~\eqref{eq:p-t-Gauss} satisfies a
+Fokker--Planck-like equation~\citep{Risken1989FokkerPlanck},
 \be
-\partial_t p_t+\nabla_i\sp (\dot{D}_t^{\sp i} p_t)
--\tfrac12\nabla_i\sp\nabla_j\sp (\dot{C}_t^{\sp ij}\sp p_t)=0\,,
+\partial_t p_t=-\nabla_\r\cdot (\dot{\R}_t p_t)
++\tfrac12\nabla_\r\sp\nabla_\r(\dot{\mbf{C}}_t\sp p_t)\,,
 \ee
-where $\nabla_i=\partial/\partial r_i$ and overdot is
-differentiation with respect to $t$. This can be checked by
-direct substitution of Eq.~\eqref{eq:pt-Delta}.
-A similar equation also holds for $p_t(\bm\Delta\Mid\q)$.
+where $\partial_i=\partial/\partial r_i$ and overdot is
+differentiation with respect to $t$.
+%A similar equation also holds for $p_t(\bm\Delta\Mid\q)$.
+Note that for a general transition probability there are
+additional contributions to the right-hand side from
+higher-order cumulants.
 
-To make this more concrete, we model
-these statistics using the Zeldovich approximation. For the mean we have
+To make the Gaussian model more concrete, we evaluate
+its mean and covariance using the Zeldovich approximation.
+For the mean we have
 %$\R_t(\q)=\q+\v_{12}(\q,0)\int^t_{0}\dif t' A(t')/a(t')$.
 %where $\int^t_{0}\dif t' A(t')\propto D^2-1$
 \be
@@ -1376,8 +1391,8 @@ can be interpreted in a similar way.)
 
 
 
-\subsection{Transitions over short timescales
-(the zero diffusion limit)}\label{sec:zel-approx}
+\subsection{Transitions over short timescales\\
+(or the case of zero dispersion)}\label{sec:zel-approx}
 \noindent We now consider, from the perspective of the
 transition probability, the evolution
 of the correlation function over short timescales.
@@ -1562,10 +1577,10 @@ indeed confirms that the standard relation is recovered.
         to[out=290, in=130]
         (axis cs: 8.45, 0.18);
     % diffusion label
-      \node [font=\small] at (axis cs: 7.5, -0.08) {diffusion};
+      \node [font=\small] at (axis cs: 7.5, -0.09) {dispersion};
     \end{axis}
   \end{tikzpicture}
-  \caption{Three effects on a peak~\eqref{eq:xi-peak}.
+  \caption{Three effects on the correlation feature~\eqref{eq:xi-peak}.
 	Note that depending on the scale a rightward shift of the peak
 	to larger separations due to outfall is also possible.
 	Likewise, a suppression of the peak from expansion
