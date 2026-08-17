@@ -99,9 +99,10 @@ University of Geneva, 24 Quai Ansermet, CH-1211 Geneva 4, Switzerland}
 % \thanks{$^\star$Email: \href{mailto:lawrence.dam@unige.ch}{lawrence.dam55@gmail.com}}
 
 \begin{abstract}
-\noindent A probabilistic approach to the correlation function is described.
+\noindent A probabilistic approach to the two-point correlation function
+is described.
 We show that the Lagrangian description of large-scale structure
-admits a formulation in terms of a transition probability, describing
+can be formulated in terms of a transition probability, describing
 the likely Eulerian positions of a particle given its
 Lagrangian position.
 The resulting formulation is mathematically equivalent to the more usual
@@ -122,7 +123,7 @@ the BAO feature.
 \noindent
 In previous work~\citep{Dam:2025ops} on a related topic
 we noticed a general
-relation between correlations in
+pattern between correlations in
 redshift space and those in real space. The relation takes
 the form of a marginal integral, $p(s)=\int\dif x\, p(s\Mid x)\sp p(x)$,
 over the distribution $p(x)$ of
@@ -295,7 +296,8 @@ $\xi(\x_1,\x_2)=\langle\delta(\x_1)\sp\delta(\x_2)\rangle$
 of the overdensity $\delta=\rho/\bar{\rho}-1$.
 Of course the two are simply related by
 $\xi_\rho(\x_1,\x_2)=\bar{\rho}^2[1+\xi(\x_1,\x_2)]$.
-
+We will also use subscript 0 to denote evaluation at the
+initial time $t=0$, not the present time.
 
 
 
@@ -348,9 +350,9 @@ time $t>0$ by
 % \equiv\mbf{P}_t\ssp n_0
 \ee
 that is, by collectively tracing each particle along its
-trajectory $\x_t(\q)$, with $\x_0(\q)=\q$.%
-\footnote{In this work subscript 0 denotes evaluation at the
-initial time $t=0$, not the present.}
+trajectory $\x_t(\q)$, with $\x_0(\q)=\q$.
+%\footnote{In this work subscript 0 denotes evaluation at the
+%initial time $t=0$, not the present.}
 This is the pushforward density.
 Notice that multiple $\q$ can map to a single $\x$, i.e.\
 trajectories can cross; see Figure~\ref{fig:trajectories}.
@@ -1214,8 +1216,8 @@ and \eqref{eq:pt-Delta}, while the means are related by
 $\R_t(\q)=\q+\mbf{D}_t(\q)$.
 
 It is also interesting to note that the
-Gaussian~\eqref{eq:p-t-Gauss} satisfies a
-Fokker--Planck-like equation~\citep{Risken1989FokkerPlanck},
+Gaussian~\eqref{eq:p-t-Gauss} satisfies the
+Fokker--Planck-like equation~\citep{Risken1989FokkerPlanck}
 \be
 \partial_t p_t=-\nabla_\r\cdot (\dot{\R}_t p_t)
 +\tfrac12\nabla_\r\sp\nabla_\r(\dot{\mbf{C}}_t\sp p_t)\,,
@@ -1223,9 +1225,9 @@ Fokker--Planck-like equation~\citep{Risken1989FokkerPlanck},
 where $\partial_i=\partial/\partial r_i$ and overdot is
 differentiation with respect to $t$.
 %A similar equation also holds for $p_t(\bm\Delta\Mid\q)$.
-Note that for a general transition probability there are
-additional contributions to the right-hand side from
-higher-order cumulants.
+Note that for a general transition probability
+additional contributions from
+higher-order cumulants appear on the right-hand side.
 
 To make the Gaussian model more concrete, we evaluate
 its mean and covariance using the Zeldovich approximation.
@@ -1446,7 +1448,7 @@ neglecting the $O(\Delta t^2)$ corrections, we have
 =\int_\q \delD\big[\r-\R_t(\q)\big]\ssp \xi_{\rho0}(\q)\,.
 \ee
 If we now assume that the map $\R_t(\q)$ is invertible, so that
-for the Jacobian $\det\mbf{J}_t(\q)\equiv\det\sp\partial\R_t/\partial\q\neq 0$,
+the Jacobian $\det\mbf{J}_t(\q)\equiv\det\sp\partial\R_t/\partial\q\neq 0$,
 we have
 \bea\nonumber
 \xi_\rho(\r,t)
@@ -1709,7 +1711,7 @@ features are obscured by the development of structure.
     \centering
     \includegraphics[width=0.93\columnwidth]{plots/conditional_entropy}
     \caption{Conditional entropy~\eqref{eq:H} of the transition
-    probability, estimated from 2000 simulations of
+    probability, as estimated from 2000 simulations of
     $100$ particles. Each curve eventually plateaus, reflecting 
     that particles fall into potential wells
     where they tend to remain.}
@@ -1874,292 +1876,6 @@ generates increasingly long tails.
 
 \subsection{Obstacles towards inferring initial conditions*}
 deconvolution on large scales?
-
-% \section{Phase-space description of clustering}\label{sec:phase-space}
-\section{Phase-space perspective of the pushforward:
-clarifying the initial conditions}\label{sec:phase-space}
-\noindent Since LPT is based on a
-second-order ODE (Newton's equation),
-phase space is the natural arena in which to describe the dynamics.
-A key aspect of such dynamics is that they are
-determined by state, the initial positions $\q$ and initial velocities $\u$.
-% In turn, the number density~\eqref{eq:n} is
-% determined by counting up these trajectories.
-But this raises a question: why in Eq.~\eqref{eq:n} are the
-trajectories initialized 
-by positions only, and not both positions {and} velocities?
-In other words, why is it $\x_t(\q)$ and not $\x_t(\q,\u)$?
-Here we will clarify the conditions under which
-Eq.~\eqref{eq:n} is valid, pointing out the implicit assumption
-of cold initial conditions.
-%We will find that there is an implicit
-%assumption about the initial conditions being \emph{cold}.
-
-% In this section we show why positions are sufficient,
-% and in doing so we will clarify the regime of validity of Eq.~\eqref{eq:n}.
-% Here we enlarge the usual description to phase space,
-% showing how kinematic information enters the spatial correlations.
-% Our treatment also provides a new handle on
-% modelling the correlation function without losing
-% multistreaming effects.
-
-\subsection{Pushforward from arbitrary initial conditions}
-\noindent Begin with the phase-space density $f(\x,\v,t)$. This
-gives the probability $f(\x,\v,t)\,\dif^3\x\,\dif^3\v$
-of finding a particle in a phase-space volume $\dif^3\x\,\dif^3\v$ 
-centred at $(\x,\v)$.
-The density is $\rho(\x,t)=\int\dif^3\v\, f(\x,\v,t)$.
-By the chain rule it is convenient to write
-\be\label{eq:f-chain}
-f(\x,\v,t)=\rho(\x,t)\sp p(\v\Mid\x,t)\,,
-\ee
-where $p(\v\Mid\x,t)$ is the velocity distribution
-at position $\x$ and time $t$.
-% by assuming that we have
-% complete information about the system, as given by
-% the Klimontovich distribution function
-% \be\label{eq:fK}
-% f(\x,\v,t)
-% =\sum_{a}\delD[\x-\x_a(t)]\,\delD[\v-\v_a(t)]\,,
-% \ee
-% Here $\v_a(t)=a(t)\dot\x_a(t)$ is the $a$th particle (peculiar) velocity
-% (this is equal to the canonical momenta with unit mass).
-% Note that in the limit $N\to\infty$, the discrete 
-% distribution~\eqref{eq:fK} can be replaced by
-% the smooth phase-space distribution (as in the Vlasov equation).
-% For convenience we define the phase-space position $\w=(\x,\v)$.
-% The phase-space trajectory 
-% \be
-% \w_a(t)=(\x_a(t),\v_a(t))
-% \ee
-% of the
-% $a$th particle  is governed by a system of first-order ODEs
-% (e.g.\ Hamilton's equation) of the form
-% ${\dif\w}/{\dif t}=\mbf{F}(\w,t)$, $\w=(\x,\v)$, whose solution we
-% denote $\bm\Phi_t(\w_0)$  with initial condition $\w_0=(\x_0,\v_0)$.
-% The important step in what follows is the lifting of the
-% trajectories $\bm\Phi_t$ into $f(\w,t)\equiv f(\x,\v,t)$
-% by writing 
-Similar to Eq.~\eqref{eq:n}, the phase-space density can be expressed in
-terms of the initial density $f_0(\q,\u)\equiv f(\q,\u,0)$ as
-% [with $f(\X,t)=f(\x,\p,t)$]
-\be\nonumber %\label{eq:f}
-f(\x,\v,t)
-% =\int_{\w_0}\delD\big[\w-\bm\Phi_t(\w_0)\big]\ssp f_0(\w_0)\,,
-=\int_{\q}\int_{\u}
-\delD\big[\x-\x_t(\q,\u)\big]\ssp
-\delD\big[\v-\v_t(\q,\u)\big]\ssp f_0(\q,\u)\,,
-\ee
-where $\x_t$ and $\v_t$ solve Hamilton's equation.
-% This is equivalent to the above standard form~\eqref{eq:fK}, as is easily
-% checked by substituting $f_0(\w_0)=\sum_a\delD(\w_0-\w_{a,0})$ and
-% evaluating the integral over $\w_0$.
-This expression can thus be seen as the formal solution to
-the Vlasov--Poisson equation.
-Note that due to self-consistency $\x_t(\q,\u)$ and $\v_t(\q,\u)$
-also depend on the initial density $f_0$; for brevity
-this dependence has been suppressed.
-% Ensemble averages of any observable of $f(\x,\v,t)$
-% is taken over realizations of the
-% initial three-dimensional phase-space sheet, or equivalently
-% over $n_0$ (or $\delta_0$)~\citep{Abel:2011ui,Shandarin:2012}.
-% \footnote{
-% The initial position and velocity of each particle $\q$
-% is specified by the map~\citep{Abel:2011ui,Shandarin:2012}
-% \be
-% \q\mapsto (\x_0,\u_0)=(\q+D_0\ssp\bm\psi_0(\q),\dot{D}_0\ssp\bm\psi_0)\,,
-% \ee
-% where $D_0=D(0)$ is the growth factor of the linear growing mode,
-% and $\bm\psi_0(\q)$ is the initial displacement field.
-% This map describes a smooth three-dimensional sheet in phase space.
-% The initial density and velocity fields are
-% related to the displacement field $\bm\psi_0(\q)$ by
-% $\delta_0=-D(0)\bm\nabla\cdot\bm\psi_0$ and
-% $\mbf{U}_0\equiv \dot{D}(0)\ssp\bm\psi_0$.
-% }
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% The notation above hides that
-% Eq.~\eqref{eq:f} is a
-% \emph{nonlinear} functional of $f_0$.
-% Since the acceleration of a particle is determined by interactions with the rest of the system (through Poisson's equation),
-% $\bm\Phi_t$ implicitly depends on the state of the entire 
-% distribution (specifically, the positions of all other particles). As a self-consistent model, the initial position and velocity $\w_0$
-% of any given particle are not enough to determine its future trajectory.
-% (If $\mbf{F}$ is a fixed vector field then $\w_0$ would be
-% sufficient, but this would not be a self-consistent theory.)
-% But knowing the initial distribution $f_0$
-% is enough to fix the trajectories of all particles, and so
-% we might have written instead $\bm\Phi_t[f_0](\w_0)$. 
-% Another way to understand this is because the transport
-% equation $\partial_t f+\bm\nabla\cdot(\mbf{F}f)=0$ is nonlinear
-% in $f$, given that the
-% force $\mbf{F}=\mbf{F}[f]$ by Poisson's equation.
-% However, even though solving this integro-differential
-% equations is perhaps only possible numerically,
-% we can still formally write the
-% general solution for $f(\w,t)$ as Eq.~\eqref{eq:f}.
-
-% This is still progress; Eq.~\eqref{eq:f} is
-% an explicit expression in the initial conditions (appearing
-% only on the right-hand side) which is ultimately what
-% we want to compute expectations over.
-% And even though we do not have explicit solutions for the
-% trajectories $\bm\Phi_t$, this is not a problem; we
-% care only about the statistics of $\bm\Phi_t$ rather than the detailed solutions for any given realization of the initial conditions.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \bea\label{eq:n-lifted}
-% n(\x,t)
-% % &=\int_\v\int_{\w_0}
-% %     \delD[\w-\bm\Phi_t(\w_0)]\ssp f_0(\w_0) \\
-% % &=\int_\v\int_{\w_0}
-% %     \delD[\x-\x_t(\w_0)]\ssp
-% %     \delD[\v-\v_t(\w_0)]\ssp f_0(\w_0)     \nonumber\\
-% =\int_\v f(\x,\v,t)
-% &=\int_\q\int_\u
-%     \delD[\x-\x_t(\q,\u)]\ssp f_0(\q,\u)\,,
-% \eea
-% where the second equality follows from inserting
-% Eq.~\eqref{eq:f}. Since by the chain rule the distribution
-% function can at any time be factorized as
-% $f(\x,\v,t)=n(\x,t)\ssp p(\v\Mid\x,t)$,
-% Eq.~\eqref{eq:n-lifted} can be written
-Now inserting the foregoing equation into
-$\rho(\x,t)=\int\dif^3\v\,f(\x,\v,t)$
-and using Eq.~\eqref{eq:f-chain} to write
-$f_0(\q,\u)=\rho_0(\q)\ssp p_0(\u\Mid\q)$, we have
-\be\label{eq:n2}
-\rho(\x,t)=\int_\q T_t(\x\Mid\q)\, \rho_0(\q)\,,
-% n(\x,t)=\int_\q\bigg(\int_\u p_0(\u\Mid\q)\ssp
-%     \delD\big[\x-\x_t(\q,\u)\big]\bigg)\, n_0(\q)\,.
-\ee
-with the transition kernel given by
-\be\label{eq:T_t}
-T_t(\x\Mid\q)
-\equiv\int_\u p_0(\u\Mid\q)\,
-    \delD\big[\x-\x_t(\q,\u)\big]\,,
-\ee
-which is normalized: $\int\dif^3\x\, T_t(\x\Mid\q)=1$.
-Equation~\eqref{eq:n2} is the generalization of Eq.~\eqref{eq:n}
-to arbitrary initial conditions at any time.
-If particles are multistreaming at $\q$,
-then kinematic information is lost in the velocity-averaged
-kernel~\eqref{eq:T_t}.
-In this case tracking positions only is not sufficient to determine
-the future trajectory.
-%\footnote{The average over $\u$ should {not} be mistaken for
-%having the effect of a smoothing kernel on the sharp transitions.
-%Transitions remain sharp (before ensemble averaging).
-%This is because of phase mixing, whereby
-%the initial phase-space sheet repeatedly folds in on itself.
-%Although this leads to a distribution of velocities
-%at a given position, the number of folds is not continuous number,
-%meaning that $p_0(\u\Mid\q)$ and thus $T_t(\x\Mid\q)$
-%is generally a spiky distribution, not a smooth one.}
-
-%This kernel depends on the initial conditions.
-% As a result $T_t(\x\Mid\q)$ is a multiply spiked
-% distribution (multiple $\x$ possible for a given $\q$).
-% For example, suppose there are two streams with velocity
-% $\u_1$ and $\u_2$ at $\q$:
-% \be
-% p_0(\u\Mid\q)= \tfrac12[\delD(\u-\u_1)+\delD(\u-\u_2)]
-% \ee
-% Plugging this into Eq.~\eqref{eq:T_t} we see that a particle at $\q$
-% can land on one of two Eulerian positions, depending on the
-% initial velocity.
-% Then
-% \be
-% T_t(\x,\q)=\tfrac12\delD[\x-\x_t(\q,\u_1)]
-%     +\tfrac12\delD[\x-\x_t(\q,\u_2)]
-% \ee
-% The integration over integral generally broadens the sharp transition kernel
-% and has the effect of smoothing out the density peaks.
-
-
-%The transition probability of a pair $(\q_1,\q_2)$ at
-%an arbitrary initial time is generally given by
-%\be\label{eq:pt-v-avg}
-%p_t(\x_1,\x_2\Mid\q_1,\q_2) 
-%=\llangle T_t(\x_1\Mid\q_1)\sp T_t(\x_2\Mid\q_2)\rrangle\,,
-%\ee
-%where the density-weighted ensemble average is again over the
-%initial density $n_0$
-%(or $\delta_0$) on which $T_t(\x\Mid\q)$ implicitly depends through
-%$\x_t$ and $p_0(\u\Mid\q)$. 
-%The two-point function $\xi_n(\x_1,\x_2,t)$ is given as before
-%by Eq.~\eqref{eq:MASTER}, but now with the
-%transition probability~\eqref{eq:pt-v-avg}.
-
-
-
-\subsection{Pushforward from cold initial conditions}
-\noindent Equation~\eqref{eq:n} is recovered from
-the general formula~\eqref{eq:n2} in the case of cold initial conditions.
-Such conditions require that the pushforward be applied at an early
-epoch when the Universe was well approximated by a pressureless
-perfect fluid, described
-by the distribution function
-$f_0(\q,\u)=\rho_0(\q)\ssp\delD[\u-\v_{m0}(\q)]$ with
-the initial velocity field $\v_{m0}(\q)\propto\nabla\nabla^{-2}\delta_0$
-corresponding to the growing mode.
-Comparing this with Eq.~\eqref{eq:f-chain}, we deduce
-$p_0(\u\Mid\q)=\delD[\u-\v_{m0}(\q)]$
-which, when inserted into Eq.~\eqref{eq:T_t}, yields
-$T_t(\x\Mid\q)=\delD[\x-\x_t(\q,\v_{m0}(\q)]$.
-This transition kernel recovers Eq.~\eqref{eq:n} in a form
-that makes clear that the trajectory also depends on
-initial velocity too.
-%Thus Eq.~\eqref{eq:n2} reads
-%\be\label{eq:n-alt}
-%\rho(\x,t)
-%=\int_{\q}
-%    \delD\big[\x-\x_t(\q,\v_{m0}(\q))\big]\, \rho_0(\q)
-%\ee
-%This expression is equivalent to Eq.~\eqref{eq:n}. now with
-%the hidden dependence on the initial velocity $\u=\v_{m0}(\q)$
-%made explicit.
-In fact kinematic information is already contained in the
-initial density $\rho_0$, which is conventionally suppressed anyway.
-The phase-space picture makes this clear.
-For cold initial conditions the initial distribution function $f_0$
-is confined to a three-dimensional sheet, essentially $n_0$,
-in six-dimensional phase space~\citep{Abel:2011ui,Shandarin:2012}.%
-\footnote{More precisely,
-for a given linear $\delta_0$ the three-dimensional sheet is described by the
-map from configuration space into phase space:
-\be
-\q\mapsto (\x_0,\v_0)
-=\big(\q+D_0\ssp\bm\psi_0(\q),\dot{D}_0\ssp\bm\psi_0(\q)\big)\,,
-\ee
-where $D_0=D(0)$ and $\bm\psi_0(\q)\propto\nabla\nabla^{-2}\delta_0$
-is the initial displacement field.
-%Note that by the continuity equation
-%$\bm\psi_0(\q)\propto\nabla\nabla^{-2}\delta_0$.
-%The initial density and velocity fields are
-%related to $\bm\psi_0(\q)$ by $\delta_0=-D_0\nabla\cdot\bm\psi_0$
-%and $\v_{m0}\equiv \dot{D}_0\ssp\bm\psi_0$.
-}
-Sampling this sheet yields the initial positions and
-velocities for the dark matter particles in an $N$-body simulation.
-
-These considerations relate to a multistreaming,
-particle description of clustering.
-In standard perturbation theory,
-the stronger assumption is made that cold dark matter is
-a pressureless perfect fluid described by
-$f(\x,\v,t)=\rho(\x,t)\,\delD[\v-\v_{m}(\x,t)]$ for all times.
-In this case, $\x_t(\q)$ is given by the equation of motion
-\be\label{eq:eom-ss}
-\frac{\dif\x_t(\q)}{\dif t}=\frac{1}{a}\,\v_m(\x_t(\q),t)\,,
-\ee
-and the pushforward~\eqref{eq:n} can be applied at {any} time.
-Although single streaming is not required, we show in
-Appendix~\ref{app:path-integral} that the
-pushforward can be written in path-integral form.
 
 
 \section{From observations to initial conditions*}
@@ -4053,6 +3769,7 @@ of Geneva is gratefully acknowledged.
 
 \input{app_path-integral}
 \input{app_kramers-moyal}
+\input{app_phase_space}
 % \input{app_anatomy}
 % \input{app_pt_symmetry}
 % \input{app_density-weighting}
