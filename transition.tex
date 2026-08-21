@@ -101,13 +101,14 @@ University of Geneva, 24 Quai Ansermet, CH-1211 Geneva 4, Switzerland}
 \begin{abstract}
 \noindent A probabilistic approach to the two-point correlation function
 is described.
-We show that the Lagrangian description of large-scale structure
-can be formulated in terms of a transition probability, describing
-the likely Eulerian positions of a particle given its
-Lagrangian position.
-The resulting formulation is mathematically equivalent to the more usual
+It is shown that the Lagrangian description of large-scale structure
+can be formulated in terms of a transition probability, the
+distribution of
+final (or Eulerian) particle positions given their
+initial (or Lagrangian) positio.
+The resulting formulation is mathematically equivalent to the more familiar
 formulations of Lagrangian perturbation theory, but
-offers distinct modelling advantages.
+may engender new modelling techniques.
 The passage from a sharp distribution to a broad one
 explains the failure of linear theory to precisely reconstruct
 the BAO feature.
@@ -119,43 +120,42 @@ the BAO feature.
 \maketitle
 
 
-\section{Introduction}
+\section{\bf Introduction}
 \noindent
 In previous work~\citep{Dam:2025ops} on a related topic
 we noticed a general
-pattern between correlations in
+pattern, apparently overlooked, between correlations in
 redshift space and those in real space. The relation takes
-the form of a marginal integral, $p(s)=\int\dif x\, p(s\Mid x)\sp p(x)$,
-over the distribution $p(x)$ of
+the form $p(s)=\int\dif x\, p(s\Mid x)\sp p(x)$, that is,
+a marginal integral over the distribution $p(x)$ of
 real positions and
 a \emph{transition probability} $p(s\Mid x)$,
 a conditional probability density of the
 redshift positions $s$ attainable from a given real position $x$.
 
-In this work we point out that the relation
-between Lagrangian and Eulerian space can be framed
-in a similar way, with a transition probability
-connecting the initial and final correlations.
-Unlike the one found earlier, this transition probability
-has a straightforward dynamical interpretation.
+In this work we point out a similar relation
+between Lagrangian and Eulerian space where there is a
+transition probability connecting the initial and final correlations.
+But unlike the one found earlier, this transition probability
+has a natural interpretation.
 Since it propagates initial data
-to a final time it contains information about the
-statistical evolution of the universe.
+to a final time it contains dynamical information about the
+statistical evolution of a particle system.
 In this there are two key concepts:
 mass conservation and transport.
 Conservation of mass implies the conservation of probability,
-while transport drives clustering and leads to a redistribution
+while transport drives further clustering and leads to a redistribution
 of probability. The core idea, which is the basis of this work, is
-that however complicated the particle dynamics may be,
-the redistribution from one time to another is always described
-by a marginal integral of the form
+that however complicated and nonlinear the gravitational dynamics may be,
+the redistribution from one time to another is always in
+the form of a marginal integral
 \be\label{eq:marginal}
 p(\x,t)=\int p_t(\x\Mid \q)\,p_\mathrm{init}(\q)\,\dif^3\q\,,
 \ee
 where $p(\x,t)$ is the final (Eulerian) distribution,
 $p_\mathrm{init}(\q)$ is
 the initial (Lagrangian) distribution, and $p_t(\x\Mid\q)$
-is the transition probability which gives the probability
+is the transition probability giving the probability
 $p_t(\x\Mid\q)\,\dif^3\x$ that a given particle $\q$ is
 later found in a small volume $\dif^3\x$ around $\x$.
 %Here the initial and final distributions give the mean density
@@ -173,7 +173,7 @@ in~\citep{Peebles_LSS}
 \dif P=p(\x_1,\x_2,t)\,\dif^3\x_1\dif^3\x_2
 \propto[1+\xi(\x_1,\x_2,t)]\,\dif^3\x_1\dif^3\x_2\,,
 \ee
-the probability of finding a particle in a small volume
+i.e.\ the probability of finding a particle in a small volume
 around $\x_1$ and another in a small volume
 around $\x_2$.
 We have similar for the initial distribution.
@@ -193,25 +193,29 @@ traced to \cite{Couchman_Bond88}
 who it seems were the first to give an expression like Eq.~\eqref{eq:marginal},
 though they did so in terms of the distribution of
 Lagrangian displacements
-(apparently missing the more basic structure);
-see also \cite{1995MNRAS.273..475S}.
+(apparently missing the more basic structure)
 %We are not the first to have noticed this, however.
 %As far as we know \cite{Couchman_Bond88} were the first,
 %though they gave their expression in terms of Lagrangian displacements
 %and so missed the more basic structure~\eqref{eq:marginal}.
 
-In any case a clear probabilistic approach has not been
-described in any of the subsequent works we are aware of.
-The bulk of these works are aimed at modelling the power spectrum
-\citep[e.g.][]{Taylor:1996ne,Matsubara:2007wj,Vlah:2016bcl,Chen:2020fxs},
-though there are also models of the correlation function,
-notably the approach of convolution Lagrangian perturbation theory 
-%Our approach is closely related to convolution Lagrangian perturbation theory 
-\citep{Carlson:2012,White:2014}.
-This approach, so named
-because the marginal integral~\eqref{eq:marginal}
-has nominally been understood as a convolution, is closely
-related to our work.
+To our knowledge a
+treatment of the two-point function in clear probabilistic terms
+has not been described in the literature. There are however
+a large number of works based on the 
+calculational method of \cite{Couchman_Bond88}; see, e.g.\
+\cite{1995MNRAS.273..475S,Taylor:1996ne,
+Matsubara:2007wj,Vlah:2016bcl,Chen:2020fxs}.
+Modern treatments of the correlation function
+are based on Convolution Lagrangian perturbation theory
+\citep{Carlson:2012,White:2014} to which our work
+has many similarities.
+The main difference is in how
+the correlation function~\eqref{eq:marginal} is understood:
+here we argue that it should be viewed as a marginal integral
+over a well-defined transition probability,
+whereas in those earlier works Eq.~\eqref{eq:marginal} was
+understood as a nominal convolution.
 % with the transition probability a smoothing kernel.
 %A great deal of work has since been done on power spectrum modelling
 %~\citep{Taylor:1996ne,1995MNRAS.273..475S,Matsubara:2007wj,Vlah:2016bcl,Chen:2020fxs},
@@ -226,22 +230,40 @@ related to our work.
 %kinetic field theory~\citep{Bartelmann:2014gma,Bartelmann:2019unp},
 %then integrate out the variables for all but two particles.
 %Rather than going this route we will stay close to LPT.
-There are also similarities between our work and
-kinetic field theory
+We should also mention that our approach has similarities
+with `kinetic field theory'
 \citep{Bartelmann:2014gma,Bartelmann:2019unp},
-a statistical approach to the $N$-body problem
-based on formulating the kinetic theory of mutually-gravitating,
-classical particles as a field theory.
- This is to take advantage of path integral methods,
-following the formalism of \cite{Martin:1973zz,Janssen76,deDominicis78}.
-While KFT is a more systematic treatment,
-working with a complete phase-space description versus
-a reduced (marginal) description, ours requires
-little more than Lagrangian perturbation theory.
+a statistical approach to the $N$-body problem.
+The idea of KFT is to formulate the kinetic theory of
+particles as a field theory, allowing one
+to take advantage of path integral methods
+\citep{Martin:1973zz,Janssen76,deDominicis78}.
+While KFT is a more systematic and powerful framework than ours
+(working with a complete phase-space description versus
+our reduced, marginal description), it requires a great
+deal more formalism than the Lagrangian perturbation theory
+used here.
 
+\begin{figure*}[t!]
+    \centering
+    \includegraphics[width=0.9\textwidth]{plots/trajectories_extended6}
+    % \includegraphics[width=0.8\textwidth]{plots/trajectories_extended_long8}
+    \caption{{\bf Pushforward of the density~\eqref{eq:n} in
+    a one-dimensional gravitating system.}
+    Narrow panels show at three different epochs the (smoothed) density,
+    whose evolution proceeds along the particle trajectories.
+    In the density profiles, each circle on the dashed vertical line
+    represents a different particle,
+    % Marked particles correspond to peaks and are indicated by thick black lines. 
+    and as time goes on we see the gravitational collapse of
+    overdense regions, where there tends to be
+    multiple particles arriving at the same position.
+%    Note $n(x,t_0)=n_0(q)$ is the initial density.
+    }
+    \label{fig:trajectories}
+\end{figure*}
 
-%We believe this obscures a physical reading of the problem.
-In this work we will resurface the older probabilistic view,
+In this work we resurface the earlier probabilistic view,
 showing that the correlation function
 is naturally described in terms of the transition probability.
 One advantage over the conventional view is that it gives a
@@ -268,30 +290,13 @@ we clarify the assumptions underlying Eq.~\eqref{eq:n}.
 %Derivations supporting some of
 %our results are given in the Appendix.
 
-\begin{figure*}[t!]
-    \centering
-    \includegraphics[width=0.9\textwidth]{plots/trajectories_extended6}
-    % \includegraphics[width=0.8\textwidth]{plots/trajectories_extended_long8}
-    \caption{Illustration of the pushforward~\eqref{eq:n} in
-    one dimension.
-    Narrow panels show at three different epochs the (smoothed) density,
-    whose evolution proceeds along the particle trajectories.
-    In the density profiles, each circle on the dashed vertical line
-    represents a different particle,
-    % Marked particles correspond to peaks and are indicated by thick black lines. 
-    and as time goes on we see the gravitational collapse of
-    overdense regions, where there tends to be
-    multiple particles arriving at the same position.
-%    Note $n(x,t_0)=n_0(q)$ is the initial density.
-    }
-    \label{fig:trajectories}
-\end{figure*}
+
 
 \noindent{\bf Notation and conventions.}
 In this work we find it more convenient to use the density
 correlation function
-$\xi_\rho(\x_1,\x_2)=\langle \rho(\x_1)\sp \rho(\x_2)\rangle$, instead
-of the more common
+$\xi_\rho(\x_1,\x_2)=\langle \rho(\x_1)\sp \rho(\x_2)\rangle$
+instead of the more common
 $\xi(\x_1,\x_2)=\langle\delta(\x_1)\sp\delta(\x_2)\rangle$
 of the overdensity $\delta=\rho/\bar{\rho}-1$.
 Of course the two are simply related by
@@ -332,15 +337,15 @@ initial time $t=0$, not the present time.
 
 
 
-\section{Transport and conservation}
+\section{\bf Pushforward approach to LPT}
 \noindent
-The transition probability derives from
-the distributional picture of clustering,
-the key formula being the pushforward density which we now recall.
+The transition probability, discussed in the next section,
+is closely tied to the idea of pushforward, that mass is transported
+along the particle flow.
 
 Consider a system of particles labelled by their initial
- position $\q$, as in the Lagrangian framework.
-Using that the total number (or mass) of particles is
+position $\q$, as in the Lagrangian framework.
+Using that the total mass (or number) of particles is
 conserved, the initial comoving density $\rho_0(\q)$ of particles at
 some early time, say $t=0$, can be evolved forward to  
 time $t>0$ by
@@ -353,7 +358,8 @@ that is, by collectively tracing each particle along its
 trajectory $\x_t(\q)$, with $\x_0(\q)=\q$.
 %\footnote{In this work subscript 0 denotes evaluation at the
 %initial time $t=0$, not the present.}
-This is the pushforward density.
+This is the density written as a pushforward from an earlier
+configuration.
 Notice that multiple $\q$ can map to a single $\x$, i.e.\
 trajectories can cross; see Figure~\ref{fig:trajectories}.
 This means that given knowledge of the trajectories
@@ -440,13 +446,12 @@ us that the pushforward acts on \emph{distributions}.
 
 
 
-\section{Transition probability}\label{sec:transition}
+\section{\bf Transition probability}\label{sec:transition}
 \noindent 
-Roughly speaking, the transition probability
-is the ensemble average of the
-pushforward kernel in Eq.~\eqref{eq:n}.
-More precisely, it is obtained by inserting
-Eq.~\eqref{eq:n} into the two-point function
+In general there is a transition probability associated with each
+$N$-point function; here we will focus on the simplest, that of
+the two-point function.
+Thus, we insert Eq.~\eqref{eq:n} into the two-point function
 %\footnote{In this work by `correlation function' we mean
 %$\xi_\rho=\langle \rho(\x_1)\sp \rho(\x_2)\rangle$, instead
 %of the more common
@@ -459,14 +464,14 @@ Eq.~\eqref{eq:n} into the two-point function
 %}
 $\xi_{\rho}(\x_1,\x_2,t)
 \equiv\langle\sp \rho(\x_1,t)\ssp \rho(\x_2,t)\rangle$,
-giving [cf.~Eq.~\eqref{eq:marginal}]
+to get [cf.~Eq.~\eqref{eq:marginal}]
 \be\label{eq:MASTER} % {eq:MASTER}
 \xi_{\rho}(\x_1,\x_2,t) % \langle n(\bm0,t)\ssp n(\r,t)\rangle 
 =\int_{\q_1}\int_{\q_2}
         p_t(\x_1,\x_2\Mid\q_1,\q_2) \,
-        \xi_{\rho0}(\q_1,\q_2)\,,
+        \xi_{\rho0}(\q_1,\q_2)\,.
 \ee
-where $\xi_{\rho0}(\q_1,\q_2)\equiv
+Here $\xi_{\rho0}(\q_1,\q_2)\equiv
 \langle \rho_0(\q_1)\sp \rho_0(\q_2)\rangle$
 is the two-point function at the initial time $t=0$,
 $\int_{\q}$ is shorthand for $\int\dif^3\q$, and
@@ -507,18 +512,21 @@ average
 \ee
 where $O(\q_1,\q_2)$ is any pairwise function.
 
-Regardless of the equation of motion (e.g.\ Newton's equation),
-we emphasize that the correlation function can be written in the form~\eqref{eq:MASTER}.
+Independent of the equation of motion (e.g.\ Newton's equation),
+the correlation function can always be written in the
+form~\eqref{eq:MASTER}.
 No perturbation theory is needed here.
-And although it may not be obvious the transition
-probability~\eqref{eq:pt} is a genuine pdf
-(even if the input and output $\xi_\rho$ on which it acts is
-technically not a properly normalized distribution).
-This will become clear in Section~\ref{sec:proof} when
-we express the transition probability in a more standard form.
+
+We also emphasize that the transition probability~\eqref{eq:pt}
+is a genuine pdf.
+This is true even if the input and output correlation 
+are not properly normalized distributions (as for an
+infinite universe).
+%This will become clear in Section~\ref{sec:proof} when
+%we express the transition probability in a more standard form.
 
 
-\subsection{Properties}\label{sec:properties}
+\subsection{\bf Properties}\label{sec:properties}
 \noindent Two properties are worth highlighting
 before going further.
 First, the transition probability is normalized:
@@ -535,13 +543,14 @@ p_t(\x_1,\x_2\Mid\q_1,\q_2)\to
 \delD(\x_1-\q_1)\,\delD(\x_2-\q_2)
 $
 since $\x_t(\q)\to\q$.
-Without time evolution, we trivially recover the initial
+This is the statement that without time evolution
+we trivially recover the initial
 correlations, $\xi_{\rho0}\to\xi_\rho$.
 
 
 
 
-\subsection{Symmetry considerations}
+\subsection{\bf Symmetry considerations}
 \noindent So far we have not assumed any symmetry;
 now imposing statistical homogeneity the transition
 probability has the form
@@ -569,8 +578,8 @@ p_t(\r\Mid\q)=\llangle\delD(\r-\r_t)\rrangle\,,
 \r_t\equiv\x_t(\q_1)-\x_t(\q_2)\,,
 \ee
 is the pair transition probability.
-We note that Eq.~\eqref{eq:xi-homo} is very similar
-to an expression given by \cite{Couchman_Bond88}.
+Equation~\eqref{eq:xi-homo} is very similar
+to an expression given in \cite{Couchman_Bond88}.
 
 Equation~\eqref{eq:xi-homo} further simplifies
 if we additionally have statistical isotropy. Now
@@ -588,12 +597,13 @@ with $p_t(r\Mid q)=\llangle\delD(r-|\r_t|)\rrangle$.
 %for sufficiently large separations $r$ where 
 %$p_t(r\Mid q)$ is supported on a relatively narrow interval
 %over which $q/r\approx 1$.}
+
 Given a particle located at the origin, $p_t(r\Mid q)\ssp\dif r$ is
 the probability that a second
 particle, located on a shell of radius $q$, transitions to a shell of radius
-between $r$ and $r+\dif r$. If the second particle passes through the origin,
-so there is a sign change in $\r_t$, then shell crossing occurs.
-Note that although Eq.~\eqref{eq:xi-radial} is an exact formula,
+between $r$ and $r+\dif r$. If the second particle passes through the
+origin, so that there is a sign change in $\r_t$, then shell crossing
+occurs. Note that although Eq.~\eqref{eq:xi-radial} is an exact formula,
 its utility will be limited by one's
 ability to model $p_t(r\Mid q)$, which is in general a
 highly nonlinear object.
@@ -601,7 +611,7 @@ highly nonlinear object.
 
 
 
-\subsection{Pair conservation equation}
+\subsection{\bf Pair conservation equation}
 \noindent
 Just as the integral form~\eqref{eq:n} of $\rho(\x,t)$ can 
 be expressed in differential form as the continuity equation
@@ -655,7 +665,7 @@ see \cite{Peebles_LSS}, section 71.B.
 
 
 
-\subsection{Source of stochasticity}\label{sec:origin}
+\subsection{\bf Source of stochasticity}\label{sec:origin}
 \noindent The transition probability we have described should
 not be confused for that of a fundamentally stochastic process.
 The trajectories are classical and deterministic but they depend on
@@ -1023,11 +1033,40 @@ Markov property.
 
 
 
+\begin{figure*}
+    \centering
+    \includegraphics[width=0.93\textwidth]{plots/pt_grid_uniform_random_5000}
+    \caption{{\bf Evolution of the transition probability~\eqref{eq:pt}
+    in a one-dimensional universe.} Here the transition probability
+    is estimated from 5000 $N$-body simulations
+    of 100 particles.
+    Each row is for a different initial separation
+    $q\equiv q_1-q_2=0.2L$ (where $L$ is the box size):
+    from top to bottom, $q=0.2L$, $q=0.1L$, and $q=0.05L$.
+    Left panels show the trajectory $r_t=x_t(q_1)-x_t(q_2)$
+    in 50 realisations of the initial conditions, for given $q$.
+    The two particles singled out have zero initial velocity.
+    The error bars show the mean and standard deviation of the full
+    distribution at times
+    $a=0.1,\,0.3,\,0.6$ and $1$. The heavy solid blue curve is the mean trajectory.
+    The four panels to the right show the transition probability distribution
+    at different times, and is obtained by binning the
+    outcomes of 5000 realisations.
+    The Gaussians shown in solid black correspond
+    to the data points in the left panel. The dashed black line
+    indicates the initial separation of the pair.
+    The dashed blue vertical line indicates the mean separation.
+    The 48 other particles
+    have initial positions that are uniformly random distributed and
+    initial velocities that are Gaussian distributed with mean zero.
+    Note that negative values of $r/L$ indicate that the particle pair
+    has crossed.}
+    \label{fig:pt}
+\end{figure*}
 
 
 
-
-\section{Statistical evolution}\label{sec:proof}
+\section{\bf Statistical evolution}\label{sec:proof}
 \noindent 
 The nonlinearity induced by gravitational collapse
 enters the correlation function through the transition probabilities
@@ -1107,39 +1146,10 @@ $(k\Delta t)^n$.
 %are the result of straightline ballistic motion.
 
 
-\begin{figure*}
-    \centering
-    \includegraphics[width=\textwidth]{plots/pt_grid_uniform_random_5000}
-    \caption{Evolution of the transition probability~\eqref{eq:pt}
-    in a one-dimensional universe. Here the transition probability
-    is estimated from 5000 $N$-body simulations
-    of 100 particles.
-    Each row is for a different initial separation
-    $q\equiv q_1-q_2=0.2L$ (where $L$ is the box size):
-    from top to bottom, $q=0.2L$, $q=0.1L$, and $q=0.05L$.
-    Left panels show the trajectory $r_t=x_t(q_1)-x_t(q_2)$
-    in 50 realisations of the initial conditions, for given $q$.
-    The two particles singled out have zero initial velocity.
-    The error bars show the mean and standard deviation of the full
-    distribution at times
-    $a=0.1,\,0.3,\,0.6$ and $1$. The heavy solid blue curve is the mean trajectory.
-    The four panels to the right show the transition probability distribution
-    at different times, and is obtained by binning the
-    outcomes of 5000 realisations.
-    The Gaussians shown in solid black correspond
-    to the data points in the left panel. The dashed black line
-    indicates the initial separation of the pair.
-    The dashed blue vertical line indicates the mean separation.
-    The 48 other particles
-    have initial positions that are uniformly random distributed and
-    initial velocities that are Gaussian distributed with mean zero.
-    Note that negative values of $r/L$ indicate that the particle pair
-    has crossed.}
-    \label{fig:pt}
-\end{figure*}
 
 
-\subsection{Instructive model}
+
+\subsection{\bf Instructive model}
 % To obtain a closed-form expression of $p_t(\r\Mid\q)$ we need to
 % specify the pairwise statistics of the separation 
 % $\r_t$.
@@ -1147,7 +1157,7 @@ $(k\Delta t)^n$.
 % that $\r_t$ is Gaussian distributed for given
 % $\q_1$ and $\q_2$.
 \noindent
-A Gaussian is a good first approximation for the transition probability.
+The Gaussian is a good first approximation for the transition probability.
 This is obtained by dropping all
 but the first and second cumulants in $Z(\k;\q)$ [Eq.~\eqref{eq:W}], yielding
 \be\label{eq:p-t-Gauss}
@@ -1189,6 +1199,7 @@ $\int_\r\ssp p_t(\r\Mid\q)(\r-\R_t(\q))(\r-\R_t(\q))^T=\mbf{C}_t(\q)$.
 The transition probability~\eqref{eq:p-t-Gauss}
 can also be viewed as a measure on the
 relative displacements $\bm\Delta\equiv\r-\q$ for given $\q$.
+This brings our treatment closer to convolution LPT.
 Specifically, by making a change of variables from $\r$ to
 $\bm\Delta$, we can alternatively
 express the Gaussian~\eqref{eq:p-t-Gauss} as
@@ -1211,7 +1222,7 @@ with mean and covariance
 \eea
 where the second line follows because
 $\r_t=\q+\Delta\bm\psi$ and $\llangle\q\rrangle=\q$.
-The covariance is the same in both pdfs~\eqref{eq:p-t-Gauss}
+Note that the covariance is the same in both pdfs~\eqref{eq:p-t-Gauss}
 and \eqref{eq:pt-Delta}, while the means are related by
 $\R_t(\q)=\q+\mbf{D}_t(\q)$.
 
@@ -1283,6 +1294,80 @@ gravitational potential, tend to be moving coherently
 (before shell crossing).
 
 
+\begin{figure}
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+      width  = 3.7in,
+      height = 1.22in,
+%      xlabel = {$r$},
+      ylabel = {$\xi_\rho(r,t)$},
+      xlabel style = {font=\small},
+      ylabel style = {font=\small},
+      axis line style = {thick},
+      tick label style = {font=\footnotesize},
+      xmin = 0,  xmax = 10,
+      ymin =  0,  ymax = 0.45,
+      xtick = \empty,
+      ytick = \empty,
+      axis lines = left,
+      clip = false,
+      samples = 200,
+      smooth,
+    ]
+    \node [font=\small] at (axis cs: 10, -0.08) {$r$};
+    % advection
+      \addplot [black, domain=0:10, thick]
+        {exp(-0.5*(x-1)^2/0.2^2) / sqrt(2*pi)};
+      \addplot [black, dashed, domain=0:10, thick]
+        {exp(-0.5*(x-2.3)^2/0.2^2) / sqrt(2*pi)};
+      % arrow between advection peaks
+      \draw [<-, thick]
+        (axis cs: 1.25, 0.38) -- (axis cs: 1.95, 0.38);
+    % advection label
+      \node [font=\small] at (axis cs: 1.65, -0.08) {advection};
+
+    % divergence
+      \addplot [black, dashed, domain=0:10, thick]
+        {exp(-0.5*(x-4.6)^2/0.2^2) / sqrt(2*pi) / 1.02};
+      \addplot [black, domain=0:10, thick]
+        {exp(-0.5*(x-4.6)^2/0.2^2) / sqrt(2*pi) / 0.82};
+      \draw [->, thick]
+        (axis cs: 4, 0.22) -- (axis cs: 4, 0.42);
+    % divergence label
+      \node [font=\small] at (axis cs: 4.6, -0.09) {divergence};
+
+    % diffusion
+      \addplot [black, dashed, domain=0:10, thick]
+        {exp(-0.5*(x-7.5)^2/0.2^2) / sqrt(2*pi)};
+      \addplot [black, domain=0:10, thick]
+        {exp(-0.5*(x-7.5)^2/0.6^2) / sqrt(2*pi) / 1.3};
+      \draw [->, >=stealth, thick]
+        (axis cs: 7.15, 0.35)
+        to[out=250, in=50]
+        (axis cs: 6.55, 0.18);
+      \draw [->, >=stealth, thick]
+        (axis cs: 7.85, 0.35)
+        to[out=290, in=130]
+        (axis cs: 8.45, 0.18);
+    % diffusion label
+      \node [font=\small] at (axis cs: 7.5, -0.09) {dispersion};
+    \end{axis}
+  \end{tikzpicture}
+  \caption{{\bf Three distinct ways in which the
+   correlation feature~\eqref{eq:xi-peak} can evolve.}
+	Note that depending on the scale a rightward shift of the peak
+	to larger separations due to outfall is also possible.
+	Likewise, a suppression of the peak from expansion
+	is also possible. This cartoon also ignores that
+	each effect also carries scale dependence
+	(e.g.\ different amounts of enhancement or suppression
+	on the near vs far side of the peak).}
+  \label{fig:cartoon_peak}
+\end{figure}
+
+
+
 %With the conditioning made clear, it is not hard to see from
 % these expressions that the transition probability is a genuine pdf.
 Lastly, note that the Gaussian transition probability~\eqref{eq:pt-Delta}
@@ -1300,6 +1385,11 @@ is conditioned upon.
 (It is worth noting here that the
 streaming model~\citep{Fisher:1994ks,Scoccimarro:2004,Vlah:2018ygt}
 can be interpreted in a similar way.)
+
+\subsection{\bf Large $q$ limit}
+For large $\q$ the dependence of scale-dependence of
+the cumulants drops out. This yields a transition probability
+of the form $p_t(\r-\q)$, i.e.\ no conditioning on $\q$.
 
 
 %\subsubsection{Displacement pdf}
@@ -1393,7 +1483,7 @@ can be interpreted in a similar way.)
 
 
 
-\subsection{Transitions over short timescales\\
+\subsection{\bf Transitions over short timescales\\
 (or the case of zero dispersion)}\label{sec:zel-approx}
 \noindent We now consider, from the perspective of the
 transition probability, the evolution
@@ -1436,6 +1526,20 @@ particles that begin close together (smaller $q$).
 %Alternatively, Eq.~\eqref{eq:pt-sharp} can be obtained by
 %taking $\mbf{C}_t\to0$ in the Gaussian approximation~\eqref{eq:p-t-Gauss}.
 
+
+\begin{figure}[t!]
+    \centering
+    \includegraphics[width=\columnwidth]{plots/correlation_evolution_raw_all_snapshots_overlay_zeldovich}
+    \caption{{\bf Impact of dispersion on the evolution of
+    the two-point function (overdensity).}
+    In order to make this effect more apparent
+    we have scaled out the leading-order divergence effect,
+    proportional to $D^2(z)$. Model predictions are obtained using
+    the Zeldovich approximation.
+    Note that the curves
+    below $z=10$ have been vertically offset for clarity.}
+    \label{fig:evoln}
+\end{figure}
 
 
 Over short timescales we can write down a 
@@ -1522,83 +1626,12 @@ indeed confirms that the standard relation is recovered.
 
 
 
-\begin{figure}
-  \centering
-  \begin{tikzpicture}
-    \begin{axis}[
-      width  = 3.7in,
-      height = 1.22in,
-%      xlabel = {$r$},
-      ylabel = {$\xi_\rho(r,t)$},
-      xlabel style = {font=\small},
-      ylabel style = {font=\small},
-      axis line style = {thick},
-      tick label style = {font=\footnotesize},
-      xmin = 0,  xmax = 10,
-      ymin =  0,  ymax = 0.45,
-      xtick = \empty,
-      ytick = \empty,
-      axis lines = left,
-      clip = false,
-      samples = 200,
-      smooth,
-    ]
-    \node [font=\small] at (axis cs: 10, -0.08) {$r$};
-    % advection
-      \addplot [black, domain=0:10, thick]
-        {exp(-0.5*(x-1)^2/0.2^2) / sqrt(2*pi)};
-      \addplot [black, dashed, domain=0:10, thick]
-        {exp(-0.5*(x-2.3)^2/0.2^2) / sqrt(2*pi)};
-      % arrow between advection peaks
-      \draw [<-, thick]
-        (axis cs: 1.25, 0.38) -- (axis cs: 1.95, 0.38);
-    % advection label
-      \node [font=\small] at (axis cs: 1.65, -0.08) {advection};
 
-    % divergence
-      \addplot [black, dashed, domain=0:10, thick]
-        {exp(-0.5*(x-4.6)^2/0.2^2) / sqrt(2*pi) / 1.02};
-      \addplot [black, domain=0:10, thick]
-        {exp(-0.5*(x-4.6)^2/0.2^2) / sqrt(2*pi) / 0.82};
-      \draw [->, thick]
-        (axis cs: 4, 0.22) -- (axis cs: 4, 0.42);
-    % divergence label
-      \node [font=\small] at (axis cs: 4.6, -0.09) {divergence};
 
-    % diffusion
-      \addplot [black, dashed, domain=0:10, thick]
-        {exp(-0.5*(x-7.5)^2/0.2^2) / sqrt(2*pi)};
-      \addplot [black, domain=0:10, thick]
-        {exp(-0.5*(x-7.5)^2/0.6^2) / sqrt(2*pi) / 1.3};
-      \draw [->, >=stealth, thick]
-        (axis cs: 7.15, 0.35)
-        to[out=250, in=50]
-        (axis cs: 6.55, 0.18);
-      \draw [->, >=stealth, thick]
-        (axis cs: 7.85, 0.35)
-        to[out=290, in=130]
-        (axis cs: 8.45, 0.18);
-    % diffusion label
-      \node [font=\small] at (axis cs: 7.5, -0.09) {dispersion};
-    \end{axis}
-  \end{tikzpicture}
-  \caption{Three effects on the correlation feature~\eqref{eq:xi-peak}.
-	Note that depending on the scale a rightward shift of the peak
-	to larger separations due to outfall is also possible.
-	Likewise, a suppression of the peak from expansion
-	is also possible. For simplicity we have ignored the fact that
-	each effect also carries
-	scale dependence
-	so that, for instance, there are different amounts of enhancement
-	or suppression
-	on the near vs far side of the shell.}
-  \label{fig:cartoon_peak}
-\end{figure}
-
-\subsection{Evolution of sharp features}
+\subsection{\bf Evolution of sharp features}
 \noindent
 We now apply Eq.~\eqref{eq:xi-homo} to a simple model of
-$\xi_{\rho0}$ to illustrate the distinct ways
+$\xi_{\rho0}$ to illustrate the different ways
 in which the correlation function evolves.
 For simplicity, suppose $\xi_{\rho0}$ is unstructured,
 save for a narrow feature centred at $\q=\q_*$:
@@ -1606,7 +1639,7 @@ save for a narrow feature centred at $\q=\q_*$:
 \xi_{\rho0}(\q)
 =\bar\rho^2\big[1+e^{-(\q-\q_*)^2/\epsilon}\big]\,,
 \ee
-where $\epsilon$ is a small parameter.
+where the small parameter $\epsilon>0$ sets the width.
 Of course we have in mind the baryon acoustic peak.
 
 How does this feature evolve under gravity?
@@ -1710,22 +1743,25 @@ features are obscured by the development of structure.
 \begin{figure}[t!]
     \centering
     \includegraphics[width=0.93\columnwidth]{plots/conditional_entropy}
-    \caption{Conditional entropy~\eqref{eq:H} of the transition
-    probability, as estimated from 2000 simulations of
-    $100$ particles. Each curve eventually plateaus, reflecting 
+    \caption{{Conditional entropy~\eqref{eq:H} of the transition
+    probabilities shown in Figure~\ref{fig:pt} (with one
+    additional curve here for $q=0.001L$).}
+    Each curve eventually plateaus, reflecting 
     that particles fall into potential wells
-    where they tend to remain.}
+    where they tend to settle.}
     \label{fig:entropy}
 \end{figure}
 
 
 
-\subsection{Correlations with diffusion}
+
+
+\subsection{\bf Correlations with diffusion}
 \noindent A sharp transition distribution 
 implies little uncertainty in the final positions 
 of particles.
-The uncertainty in the transitions
-can be quantified by the (conditional) entropy
+We can quantify this uncertainty in the transitions
+by computing the conditional entropy
 \be\label{eq:H}
 H_t(\q)=-\int\dif^3\r\, p_t(\r\Mid\q)\ln p_t(\r\Mid\q)\,.
 \ee
@@ -1874,34 +1910,11 @@ generates increasingly long tails.
 
 
 
-\subsection{Obstacles towards inferring initial conditions*}
+\subsection{\bf Obstacles towards inferring initial conditions*}
 deconvolution on large scales?
 
 
-\section{From observations to initial conditions*}
-\noindent
-The same relation we have studied throughout this work also
-holds between redshift space and real space, as mentioned in
-the introduction.
-We can combine this relation with the
-one the between Lagrangian and Eulerian space to define
-a transition probability from Lagrangian to redshift space.
-Using the composition property we can chain
-distributions together as
-\be
-p(\s)
-=\int_\x p(\s\Mid\x)\ssp p(\x) 
-=\int_\x p(\s\Mid\x)
-	\int_\q p_t(\x\Mid\q)\ssp p_\mrm{init}(\q)\,,
-\ee
-where $p(\s)$ and $p_\mrm{init}(\q)$ may be the one-point
-function (or mean density), two-point function, etc.
-This motivates we define the transition probability as
-\be
-p(\s\Mid\q)=\int_\x  p(\s\Mid\x)\ssp p_t(\x\Mid\q)
-\ee 
 
-Concerning biased tracers.....
 
 %\section{Biased tracers}
 %\noindent LPT is based on the assumption that number (or mass) is conserved.
@@ -3623,8 +3636,33 @@ Concerning biased tracers.....
 
 
 
-\section{Conclusions}
-\noindent
+\section{\bf Conclusions}
+\noindent % This paper has presented no new modelling.
+Our work has described a probabilistic way of
+thinking about the statistics of large-scale structure.
+The main message is that the correlation function 
+is naturally formulated in terms of particle trajectories and
+their transition probabilities. (This also extends to
+$N$-point functions.) Formally, these
+probabilities describe the final distribution of particle separations given
+their initial separations, and thus encode the
+full nonlinear evolution of the two-point function.
+Except in certain limits, calculation of these transition
+probabilities can only be done approximately, e.g.\ by modelling
+the low-order cumulants, as in convolution LPT.
+
+That there is a distribution of trajectories originates from 
+the randomness in the initial conditions
+(e.g.\ the initial density field) over which one is
+averaging; it is not because of multistreaming nor because the trajectories
+are non-deterministic (they are not).
+A consequence of this is that, after averaging
+over the ensemble of realizations, widely-separated pairs become
+dispersed. There is no infall-induced shift in the final distribution
+but only a broadening brought on by different realizations of the 
+velocity field, which on average has no preferred direction.
+
+
 By formulating correlations in terms of transition probability
 we have arrived at a statistical understanding of the evolution
 of large-scale structure.
@@ -3671,11 +3709,29 @@ clear.
 
 
 
-Besides giving new understanding to old results, our approach 
-may engender new techniques for modelling large-scale structure.
 
+The same relation we have studied throughout this work also
+holds between redshift space and real space, as mentioned in
+the introduction.
+We can combine this relation with the
+one the between Lagrangian and Eulerian space to define
+a transition probability from Lagrangian to redshift space.
+Using the composition property we can chain
+distributions together as
+\be
+p(\s)
+=\int_\x p(\s\Mid\x)\ssp p(\x) 
+=\int_\x p(\s\Mid\x)
+	\int_\q p_t(\x\Mid\q)\ssp p_\mrm{init}(\q)\,,
+\ee
+where $p(\s)$ and $p_\mrm{init}(\q)$ may be the one-point
+function (or mean density), two-point function, etc.
+This motivates defining the transition probability as
+\be
+p(\s\Mid\q)=\int_\x  p(\s\Mid\x)\ssp p_t(\x\Mid\q)
+\ee 
 
-
+Concerning biased tracers.....
 
 
 %\section{Summary}
@@ -3767,9 +3823,9 @@ of Geneva is gratefully acknowledged.
 
 
 
-\input{app_path-integral}
 \input{app_kramers-moyal}
 \input{app_phase_space}
+\input{app_path-integral}
 % \input{app_anatomy}
 % \input{app_pt_symmetry}
 % \input{app_density-weighting}
@@ -3786,7 +3842,7 @@ of Geneva is gratefully acknowledged.
 
 
 
-
+% Perron–Frobenius operator, Koopman operator, effective field theory
 
 
 \end{document}
