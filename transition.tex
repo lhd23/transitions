@@ -199,23 +199,19 @@ Lagrangian displacements
 %though they gave their expression in terms of Lagrangian displacements
 %and so missed the more basic structure~\eqref{eq:marginal}.
 
-To our knowledge a
-treatment of the two-point function in clear probabilistic terms
-has not been described in the literature. There are however
-a large number of works based on the 
+There are a large number of works based on the 
 calculational method of \cite{Couchman_Bond88}; see, e.g.\
 \cite{1995MNRAS.273..475S,Taylor:1996ne,
 Matsubara:2007wj,Vlah:2016bcl,Chen:2020fxs}.
-Modern treatments of the correlation function
-are based on Convolution Lagrangian perturbation theory
-\citep{Carlson:2012,White:2014} to which our work
-has many similarities.
-The main difference is in how
-the correlation function~\eqref{eq:marginal} is understood:
-here we argue that it should be viewed as a marginal integral
-over a well-defined transition probability,
-whereas in those earlier works Eq.~\eqref{eq:marginal} was
-understood as a nominal convolution.
+But to our knowledge a treatment of the two-point function in
+clear probabilistic terms has not been described in the literature. 
+While our work is closely related to convolution Lagrangian perturbation theory
+\citep{Carlson:2012,White:2014} there are some important
+conceptual differences.
+In particular, here we emphasize the dynamical role naturally played by
+the transition probability via the marginal integral~\eqref{eq:marginal}.
+This is to be contrasted with previous works where such integrals were
+understood as nominal convolutions.
 % with the transition probability a smoothing kernel.
 %A great deal of work has since been done on power spectrum modelling
 %~\citep{Taylor:1996ne,1995MNRAS.273..475S,Matsubara:2007wj,Vlah:2016bcl,Chen:2020fxs},
@@ -230,12 +226,14 @@ understood as a nominal convolution.
 %kinetic field theory~\citep{Bartelmann:2014gma,Bartelmann:2019unp},
 %then integrate out the variables for all but two particles.
 %Rather than going this route we will stay close to LPT.
+
 We should also mention that our approach has similarities
 with `kinetic field theory'
 \citep{Bartelmann:2014gma,Bartelmann:2019unp},
 a statistical approach to the $N$-body problem.
-The idea of KFT is to formulate the kinetic theory of
-particles as a field theory, allowing one
+KFT begins with the kinetic theory of
+particles but, taking inspiration from \cite{2010PhRvE..81f1102M},
+formulate it as a field theory, allowing one
 to take advantage of path integral methods
 \citep{Martin:1973zz,Janssen76,deDominicis78}.
 While KFT is a more systematic and powerful framework than ours
@@ -248,11 +246,13 @@ used here.
     \centering
     \includegraphics[width=0.9\textwidth]{plots/trajectories_extended6}
     % \includegraphics[width=0.8\textwidth]{plots/trajectories_extended_long8}
-    \caption{{\bf Pushforward of the density~\eqref{eq:n} in
-    a one-dimensional gravitating system.}
-    Narrow panels show at three different epochs the (smoothed) density,
-    whose evolution proceeds along the particle trajectories.
-    In the density profiles, each circle on the dashed vertical line
+    \caption{{\bf Transport of mass under gravity.}
+    Here application of the pushforward~\eqref{eq:n} evolves the mass
+    density forward along
+    particle trajectories, which may cross as collapse becomes nonlinear.
+    Narrow panels show the (smoothed) density profile
+    at three different epochs the.
+    In these profiles, each circle on the dashed vertical line
     represents a different particle,
     % Marked particles correspond to peaks and are indicated by thick black lines. 
     and as time goes on we see the gravitational collapse of
@@ -263,23 +263,23 @@ used here.
     \label{fig:trajectories}
 \end{figure*}
 
-In this work we resurface the earlier probabilistic view,
-showing that the correlation function
-is naturally described in terms of the transition probability.
-One advantage over the conventional view is that it gives a
-physically appealing way
-to think about the correlation function based on probability theory.
-Another advantage is that it clarifies the problem 
-of inferring the initial conditions
-from the late-time correlations.
-We will highlight the aspects and properties that
-hold for any model of the transition probability.
-However, to avoid unnecessary complications we will focus on
-the two-point function; the generalization to $n$-point functions
-is conceptually straightforward.
-Throughout we have in mind discrete matter particles (as in the Lagrangian approach
-or the $N$-body problem), though
-the approach applies equally well to continuous matter fields.
+%In this work we resurface the earlier probabilistic view,
+%showing that the correlation function
+%is naturally described in terms of the transition probability.
+%One advantage over the conventional view is that it gives a
+%physically appealing way
+%to think about the correlation function based on probability theory.
+%Another advantage is that it clarifies the problem 
+%of inferring the initial conditions
+%from the late-time correlations.
+%We will highlight the aspects and properties that
+%hold for any model of the transition probability.
+%However, to avoid unnecessary complications we will focus on
+%the two-point function; the generalization to $n$-point functions
+%is conceptually straightforward.
+%Throughout we have in mind discrete matter particles (as in the Lagrangian approach
+%or the $N$-body problem), though
+%the approach applies equally well to continuous matter fields.
 
 
 This paper is organized as follows.
@@ -296,7 +296,7 @@ we clarify the assumptions underlying Eq.~\eqref{eq:n}.
 In this work we find it more convenient to use the density
 correlation function
 $\xi_\rho(\x_1,\x_2)=\langle \rho(\x_1)\sp \rho(\x_2)\rangle$
-instead of the more common
+rather than the more standard
 $\xi(\x_1,\x_2)=\langle\delta(\x_1)\sp\delta(\x_2)\rangle$
 of the overdensity $\delta=\rho/\bar{\rho}-1$.
 Of course the two are simply related by
@@ -340,8 +340,11 @@ initial time $t=0$, not the present time.
 \section{\bf Pushforward approach to LPT}
 \noindent
 The transition probability, discussed in the next section,
-is closely tied to the idea of pushforward, that mass is transported
-along the particle flow.
+is closely tied to the idea of transport.
+This is illustrated in Figure~\ref{fig:trajectories}:
+since particles make up the mass 
+distribution their motions underlie the transport of the density.
+This is the pushforward approach to LPT, which we now recall.
 
 Consider a system of particles labelled by their initial
 position $\q$, as in the Lagrangian framework.
@@ -512,10 +515,12 @@ average
 \ee
 where $O(\q_1,\q_2)$ is any pairwise function.
 
-Independent of the equation of motion (e.g.\ Newton's equation),
+The above expressions hold for any equation of motion,
+not just Newton's equation. In particular,
 the correlation function can always be written in the
-form~\eqref{eq:MASTER}.
-No perturbation theory is needed here.
+form~\eqref{eq:MASTER}, which is simply an expression of
+conservation.\footnote{The case of nonconserved tracers
+is treated in \cite{Dam:2026bhb}.} No perturbation theory is assumed.
 
 We also emphasize that the transition probability~\eqref{eq:pt}
 is a genuine pdf.
@@ -567,7 +572,7 @@ Now inserting Eq.~\eqref{eq:pt-alt} back into Eq.~\eqref{eq:MASTER},
 using that
 $\xi_{\rho0}(\q_1,\q_2)=\xi_{\rho0}(\q)$ depends on the separation only,
 so that the integral over $\bar\q$ is trivial,
-Eq.~\eqref{eq:MASTER} simplifies to
+Eq.~\eqref{eq:MASTER} reduces to
 \be\label{eq:xi-homo}
 \xi_\rho(\r,t)=\int_\q\, p_t(\r\Mid\q)\, \xi_{\rho0}(\q)\,,
 \ee
@@ -1041,26 +1046,29 @@ Markov property.
     is estimated from 5000 $N$-body simulations
     of 100 particles.
     Each row is for a different initial separation
-    $q\equiv q_1-q_2=0.2L$ (where $L$ is the box size):
-    from top to bottom, $q=0.2L$, $q=0.1L$, and $q=0.05L$.
-    Left panels show the trajectory $r_t=x_t(q_1)-x_t(q_2)$
-    in 50 realisations of the initial conditions, for given $q$.
-    The two particles singled out have zero initial velocity.
-    The error bars show the mean and standard deviation of the full
+    $q\equiv q_1-q_2=0.2L$ (where $L$ is the box length).
+    Left panels show trajectories $r_t=x_t(q_1)-x_t(q_2)$
+    from 50 sample realizations for fixed $q$;
+    the heavy solid curve is the mean trajectory and
+	the vertical bars indicate the mean and standard deviation of the full
     distribution at times
-    $a=0.1,\,0.3,\,0.6$ and $1$. The heavy solid blue curve is the mean trajectory.
-    The four panels to the right show the transition probability distribution
-    at different times, and is obtained by binning the
-    outcomes of 5000 realisations.
-    The Gaussians shown in solid black correspond
-    to the data points in the left panel. The dashed black line
-    indicates the initial separation of the pair.
-    The dashed blue vertical line indicates the mean separation.
-    The 48 other particles
-    have initial positions that are uniformly random distributed and
-    initial velocities that are Gaussian distributed with mean zero.
-    Note that negative values of $r/L$ indicate that the particle pair
-    has crossed.}
+    $a=0.1,\,0.3,\,0.6$ and $1$ as shown in the histograms.
+%    in 50 realisations of the initial conditions, for given $q$.
+%    The two particles singled out have zero initial velocity.
+%    The four panels to the right show the transition probability distribution
+%    at different times, and is obtained by binning the
+%    outcomes of 5000 realisations.
+%    The Gaussians shown in solid black correspond
+%    to the data points in the left panel. 
+    The solid vertical lines indicates the mean separation.
+    For reference we overplot in thin black the Gaussian corresponding
+    to the measured mean and standard deviation.
+%    The 98 other particles
+%    have initial positions that are uniformly random distributed and
+%    initial velocities that are Gaussian distributed with mean zero.
+%    Note that negative values of $(r-q)/L$ indicate that the particle pair
+%    has crossed.
+    }
     \label{fig:pt}
 \end{figure*}
 
@@ -1149,7 +1157,7 @@ $(k\Delta t)^n$.
 
 
 
-\subsection{\bf Instructive model}
+\subsection{\bf A simple model}
 % To obtain a closed-form expression of $p_t(\r\Mid\q)$ we need to
 % specify the pairwise statistics of the separation 
 % $\r_t$.
@@ -1233,24 +1241,25 @@ Fokker--Planck-like equation~\citep{Risken1989FokkerPlanck}
 \partial_t p_t=-\nabla_\r\cdot (\dot{\R}_t p_t)
 +\tfrac12\nabla_\r\sp\nabla_\r(\dot{\mbf{C}}_t\sp p_t)\,,
 \ee
-where $\partial_i=\partial/\partial r_i$ and overdot is
+where overdot is
 differentiation with respect to $t$.
 %A similar equation also holds for $p_t(\bm\Delta\Mid\q)$.
 Note that for a general transition probability
 additional contributions from
 higher-order cumulants appear on the right-hand side.
 
-To make the Gaussian model more concrete, we evaluate
-its mean and covariance using the Zeldovich approximation.
-For the mean we have
+Now that we have fixed the form of $p_t$ it remains to evaluate
+$\R_t$ and $\mbf{C}_t$. We do this using the Zeldovich approximation.
+
+For the mean vector we have
 %$\R_t(\q)=\q+\v_{12}(\q,0)\int^t_{0}\dif t' A(t')/a(t')$.
 %where $\int^t_{0}\dif t' A(t')\propto D^2-1$
 \be
 \R_t(\q)\simeq\q+
-	\big[(D(t)/D_0)^2-1\big]\,
+	\big(D(t)/D_0-1\big)\,
 	\langle\bm\psi_0(0)\ssp\delta_0(\q)\rangle\,,
 \ee
-where $\R_t(\q)=\q$ when $t=0$.
+with $\R_t(\q)=\q$ when $t=0$.
 Since the pair conservation equation
 guarantees the pairwise relative velocity is negative definite,
 we have $\langle\bm\psi_0(0)\sp\delta_0(\q)\rangle<0$.
@@ -1261,13 +1270,14 @@ see the left panels of Figure~\ref{fig:pt}
 The tendency of infall vanishes
 at the extremes: $\langle\bm\psi_0(0)\ssp\delta_0(\q)\rangle\to0$
 in the limits $q\to0$ and $q\to\infty$.
-Now for the covariance
+
+For the covariance we have
 \be
 \mbf{C}_t(\q)
-\simeq\big[(D(t)/D_0)^2-1\big]^2\sp
+\simeq\big(D(t)/D_0-1\big)^2\sp
 	\langle\Delta\bm\psi_0\ssp\Delta\bm\psi_0\rangle\,,
 \ee
-where $\mbf{C}_t(\q)=0$ when $t=0$.
+with $\mbf{C}_t(\q)=0$ when $t=0$.
 The prefactor grows over time, leading to a broader
 transition probability (Figure~\ref{fig:pt});
 expansion of the prefactor for $t=t_0+\Delta t$ shows
@@ -1275,7 +1285,7 @@ indeed $\R_t(\q)=O(\Delta t)$ and
 $\mbf{C}_t(\q)=O(\Delta t^2)$.
 The Zeldovich approximation suggests the broadening grows
 without bound, which is not realistic since this approximation
-ignores gravity and thus the convergence of trajectories. Indeed
+ignores the convergence of trajectories under gravity. Indeed
 particles settle into potential wells and stop 
 exploring so the growth of the prefactor
 should be sub-quadratic. Such behaviour can be seen in
@@ -1288,7 +1298,7 @@ with $\sigma_{\psi0}^2$ the one-dimensional displacement
 dispersion (which is proportional to the velocity dispersion).
 In the limit $q\to0$ we have instead
 $\langle\Delta\bm\psi_0\ssp\Delta\bm\psi_0\rangle\to0$
-so $\mbf{C}_t(\q)\to0$, regardless of time. We can understand
+so $\mbf{C}_t(\q)\to0$, independent of time. We can understand
 this because nearby particles, subject to the same
 gravitational potential, tend to be moving coherently
 (before shell crossing).
@@ -1335,7 +1345,7 @@ gravitational potential, tend to be moving coherently
       \draw [->, thick]
         (axis cs: 4, 0.22) -- (axis cs: 4, 0.42);
     % divergence label
-      \node [font=\small] at (axis cs: 4.6, -0.09) {divergence};
+      \node [font=\small] at (axis cs: 4.6, -0.1) {convergence};
 
     % diffusion
       \addplot [black, dashed, domain=0:10, thick]
@@ -1356,8 +1366,10 @@ gravitational potential, tend to be moving coherently
   \end{tikzpicture}
   \caption{{\bf Three distinct ways in which the
    correlation feature~\eqref{eq:xi-peak} can evolve.}
+   In this picture convergence plays a similar role to the growth factor
+   in linear theory.
 	Note that depending on the scale a rightward shift of the peak
-	to larger separations due to outfall is also possible.
+	to larger separations due to outfall is also possible (divergence).
 	Likewise, a suppression of the peak from expansion
 	is also possible. This cartoon also ignores that
 	each effect also carries scale dependence
@@ -1386,7 +1398,7 @@ is conditioned upon.
 streaming model~\citep{Fisher:1994ks,Scoccimarro:2004,Vlah:2018ygt}
 can be interpreted in a similar way.)
 
-\subsection{\bf Large $q$ limit}
+\subsection{\bf Large separation limit}
 For large $\q$ the dependence of scale-dependence of
 the cumulants drops out. This yields a transition probability
 of the form $p_t(\r-\q)$, i.e.\ no conditioning on $\q$.
@@ -1530,12 +1542,12 @@ particles that begin close together (smaller $q$).
 \begin{figure}[t!]
     \centering
     \includegraphics[width=\columnwidth]{plots/correlation_evolution_raw_all_snapshots_overlay_zeldovich}
-    \caption{{\bf Impact of dispersion on the evolution of
+    \caption{{\bf Effect of dispersion on the evolution of
     the two-point function (overdensity).}
     In order to make this effect more apparent
     we have scaled out the leading-order divergence effect,
     proportional to $D^2(z)$. Model predictions are obtained using
-    the Zeldovich approximation.
+    Gaussian transitions under the Zeldovich approximation.
     Note that the curves
     below $z=10$ have been vertically offset for clarity.}
     \label{fig:evoln}
@@ -1756,7 +1768,7 @@ features are obscured by the development of structure.
 
 
 
-\subsection{\bf Correlations with diffusion}
+\subsection{\bf Entropy}
 \noindent A sharp transition distribution 
 implies little uncertainty in the final positions 
 of particles.
@@ -3643,7 +3655,7 @@ thinking about the statistics of large-scale structure.
 The main message is that the correlation function 
 is naturally formulated in terms of particle trajectories and
 their transition probabilities. (This also extends to
-$N$-point functions.) Formally, these
+$N$-point functions and fluids.) Formally, these
 probabilities describe the final distribution of particle separations given
 their initial separations, and thus encode the
 full nonlinear evolution of the two-point function.
@@ -3668,6 +3680,8 @@ we have arrived at a statistical understanding of the evolution
 of large-scale structure.
 We have described the probabilistic structure underlying the calculation of
 correlation functions.
+\begin{itemize}
+\item
 The map from Lagrangian to Eulerian space, together with
 number conservation, implies a transition probability
 $p_t(\r\Mid\q)$ [Eq.~\eqref{eq:xi-homo}].
@@ -3686,26 +3700,40 @@ from a Gaussian at intermediate times to a more general skewed
 distribution.
 
 
-KFT assumes Newtonian dynamics and makes use of its
-Hamiltonian structure to solve for the
-state trajectory in phase space.
-Here we make no such assumptions; the
-individual trajectories $\x_t(\q)$ may be solutions to more
-complicated equations of motion, for instance, of the form
-$\dif^2\x/\dif t^2=\mbf{F}(\x,t)$, where
-$\mbf{F}$ consists not only of contributions from
-(self-consistent) gravitational forces $-\nabla\Phi$ but also
-non-gravitational forces.
-Moreover, $-\nabla\Phi$ may either be determined from the
-mean-field limit (as in LPT) or from an accounting
-of the two-body interactions (as in KFT).
-Although we will often refer to
-particles (as it's easier to imagine what transition probabilities
-are doing), most of our results go through as if we were working in
-the continuum limit of fields. (What changes are the detailed
-estimates of the statistical averages.) On the few occasions when
-we treat the discrete case we will make these distinctions
-clear.
+In this work we resurface the earlier probabilistic view,
+showing that the correlation function
+is naturally described in terms of the transition probability.
+One advantage over the conventional view is that it gives a
+physically appealing way
+to think about the correlation function based on probability theory.
+Another advantage is that it clarifies the problem 
+of inferring the initial conditions
+from the late-time correlations.
+
+\end{itemize}
+
+
+%KFT assumes Newtonian dynamics and makes use of its
+%Hamiltonian structure to solve for the
+%state trajectory in phase space.
+%Here we make no such assumptions; the
+%individual trajectories $\x_t(\q)$ may be solutions to more
+%complicated equations of motion, for instance, of the form
+%$\dif^2\x/\dif t^2=\mbf{F}(\x,t)$, where
+%$\mbf{F}$ consists not only of contributions from
+%(self-consistent) gravitational forces $-\nabla\Phi$ but also
+%non-gravitational forces.
+%Moreover, $-\nabla\Phi$ may either be determined from the
+%mean-field limit (as in LPT) or from an accounting
+%of the two-body interactions (as in KFT).
+%Although we will often refer to
+%particles (as it's easier to imagine what transition probabilities
+%are doing), most of our results go through as if we were working in
+%the continuum limit of fields. (What changes are the detailed
+%estimates of the statistical averages.) 
+%On the few occasions when
+%we treat the discrete case we will make these distinctions
+%clear.
 
 
 
