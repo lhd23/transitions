@@ -101,18 +101,18 @@ University of Geneva, 24 Quai Ansermet, CH-1211 Geneva 4, Switzerland}
 \begin{abstract}
 \noindent A probabilistic approach to the two-point correlation function
 is described.
-It is shown that the Lagrangian description of large-scale structure
-can be formulated in terms of a transition probability, the
-distribution of
+It is shown that the Lagrangian picture of large-scale structure
+can be formulated in terms of a transition probability describing the
+distribution of the
 final (or Eulerian) particle positions given their
-initial (or Lagrangian) positio.
-The resulting formulation is mathematically equivalent to the more familiar
-formulations of Lagrangian perturbation theory, but
-may engender new modelling techniques.
-The passage from a sharp distribution to a broad one
-explains the failure of linear theory to precisely reconstruct
-the BAO feature.
-
+initial (or Lagrangian) position.
+The transition probability, which is initially sharply peaked,
+broadens over time in a diffusion-like manner,
+reflecting increasing uncertainty about the final positions.
+The effect is more pronounced for
+widely-separated particles (e.g.\ at the baryon acoustic scale),
+effectively damping the two-point function in what is
+normally understood as infrared resummation.
 \end{abstract}
 
 %\keywords{Large-scale structure} 
@@ -124,7 +124,7 @@ the BAO feature.
 \noindent
 In previous work~\citep{Dam:2025ops} on a related topic
 we noticed a general
-pattern, apparently overlooked, between correlations in
+relation, apparently overlooked, between correlations in
 redshift space and those in real space. The relation takes
 the form $p(s)=\int\dif x\, p(s\Mid x)\sp p(x)$, that is,
 a marginal integral over the distribution $p(x)$ of
@@ -133,9 +133,9 @@ a \emph{transition probability} $p(s\Mid x)$,
 a conditional probability density of the
 redshift positions $s$ attainable from a given real position $x$.
 
-In this work we point out a similar relation
-between Lagrangian and Eulerian space where there is a
-transition probability connecting the initial and final correlations.
+In this work we point out another relation of this form,
+namely between Lagrangian and Eulerian space. In this relation the
+transition probability connects the initial and final correlations.
 But unlike the one found earlier, this transition probability
 has a natural interpretation.
 Since it propagates initial data
@@ -143,12 +143,13 @@ to a final time it contains dynamical information about the
 statistical evolution of a particle system.
 In this there are two key concepts:
 mass conservation and transport.
-Conservation of mass implies the conservation of probability,
-while transport drives further clustering and leads to a redistribution
-of probability. The core idea, which is the basis of this work, is
-that however complicated and nonlinear the gravitational dynamics may be,
-the redistribution from one time to another is always in
-the form of a marginal integral
+Conservation of mass implies conservation of probability,
+while transport under gravity drives further clustering,
+leading to a redistribution of probability.
+The core idea, which is the basis of this work, is
+that however complicated and nonlinear the gravitational dynamics,
+the redistribution from one time to another is always of
+the marginal integral form
 \be\label{eq:marginal}
 p(\x,t)=\int p_t(\x\Mid \q)\,p_\mathrm{init}(\q)\,\dif^3\q\,,
 \ee
@@ -165,9 +166,11 @@ later found in a small volume $\dif^3\x$ around $\x$.
 In the case of two particles, at $\x_1$ and $\x_2$, this becomes a
 marginal integral
 over $\q_1$ and $\q_2$ (in what should be an obvious generalization).
+
 How is this related to
 the two-point function $\xi(\x_1,\x_2,t)$? Here it helps to recall
-that $\xi(\x_1,\x_2,t)$ is the excess probability over random
+that $\xi(\x_1,\x_2,t)$ is the excess probability over Poisson
+distribution
 in~\citep{Peebles_LSS}
 \be\nonumber
 \dif P=p(\x_1,\x_2,t)\,\dif^3\x_1\dif^3\x_2
@@ -187,7 +190,7 @@ We have similar for the initial distribution.
 %for $\dif P=p_\mathrm{init}(\q_1,\q_2)\,\dif^3\q_1\dif^3\q_2$.
 
 The main message of this work is that the correlation function
-is naturally forward modelled by a transition probability.
+is naturally formulated in terms of a transition probability.
 We should note however that the seeds of this idea can be
 traced to \cite{Couchman_Bond88}
 who it seems were the first to give an expression like Eq.~\eqref{eq:marginal},
@@ -205,11 +208,11 @@ calculational method of \cite{Couchman_Bond88}; see, e.g.\
 Matsubara:2007wj,Vlah:2016bcl,Chen:2020fxs}.
 But to our knowledge a treatment of the two-point function in
 clear probabilistic terms has not been described in the literature. 
-While our work is closely related to convolution Lagrangian perturbation theory
+While our work closely resembles convolution Lagrangian perturbation theory
 \citep{Carlson:2012,White:2014} there are some important
 conceptual differences.
-In particular, here we emphasize the dynamical role naturally played by
-the transition probability via the marginal integral~\eqref{eq:marginal}.
+In particular, here we emphasize the dynamical role played by
+the transition probability, via the marginal integral~\eqref{eq:marginal}.
 This is to be contrasted with previous works where such integrals were
 understood as nominal convolutions.
 % with the transition probability a smoothing kernel.
@@ -227,16 +230,15 @@ understood as nominal convolutions.
 %then integrate out the variables for all but two particles.
 %Rather than going this route we will stay close to LPT.
 
-We should also mention that our approach has similarities
-with `kinetic field theory'
-\citep{Bartelmann:2014gma,Bartelmann:2019unp},
+Our approach also has similarities with kinetic field theory
+\citep[KFT;][]{Bartelmann:2014gma,Bartelmann:2019unp},
 a statistical approach to the $N$-body problem.
-KFT begins with the kinetic theory of
-particles but, taking inspiration from \cite{2010PhRvE..81f1102M},
-formulate it as a field theory, allowing one
-to take advantage of path integral methods
+Following \cite{2010PhRvE..81f1102M}, KFT reformulates the
+Hamiltonian theory of interacting point
+particles as a field theory, allowing one to
+take advantage of path integral techniques
 \citep{Martin:1973zz,Janssen76,deDominicis78}.
-While KFT is a more systematic and powerful framework than ours
+While KFT is a more systematic framework than ours
 (working with a complete phase-space description versus
 our reduced, marginal description), it requires a great
 deal more formalism than the Lagrangian perturbation theory
@@ -1042,9 +1044,10 @@ Markov property.
     \centering
     \includegraphics[width=0.93\textwidth]{plots/pt_grid_uniform_random_5000}
     \caption{{\bf Evolution of the transition probability~\eqref{eq:pt}
-    in a one-dimensional universe.} Here the transition probability
-    is estimated from 5000 $N$-body simulations
-    of 100 particles.
+    in a one-dimensional universe.} 
+%    Here the transition probability
+%    is estimated from 5000 $N$-body simulations
+%    of 100 particles.
     Each row is for a different initial separation
     $q\equiv q_1-q_2=0.2L$ (where $L$ is the box length).
     Left panels show trajectories $r_t=x_t(q_1)-x_t(q_2)$
@@ -1549,7 +1552,8 @@ particles that begin close together (smaller $q$).
     proportional to $D^2(z)$. Model predictions are obtained using
     Gaussian transitions under the Zeldovich approximation.
     Note that the curves
-    below $z=10$ have been vertically offset for clarity.}
+    below $z=10$ have been vertically offset for clarity.
+    {\it put pdf histograms on left}}
     \label{fig:evoln}
 \end{figure}
 
@@ -1690,7 +1694,7 @@ This effect causes the trajectories to fan out over time
 (Figure~\ref{fig:pt}),
 broadening the transition probability.
 We liken this effect to diffusion,
-described by $\mbf{C}_t(\q)$ but absent from Eq.~\eqref{eq:xi_n-formula}.
+parametrized by $\mbf{C}_t(\q)$ but absent from Eq.~\eqref{eq:xi_n-formula}.
 Now, returning to the general formula~\eqref{eq:xi-homo} with the transition
 probability given by the Gaussian~\eqref{eq:p-t-Gauss},
 how is the peak's width and location affected
@@ -1773,7 +1777,7 @@ features are obscured by the development of structure.
 implies little uncertainty in the final positions 
 of particles.
 We can quantify this uncertainty in the transitions
-by computing the conditional entropy
+by computing the conditional entropy~\citep{Mackay_book}
 \be\label{eq:H}
 H_t(\q)=-\int\dif^3\r\, p_t(\r\Mid\q)\ln p_t(\r\Mid\q)\,.
 \ee
@@ -3650,13 +3654,13 @@ deconvolution on large scales?
 
 \section{\bf Conclusions}
 \noindent % This paper has presented no new modelling.
-Our work has described a probabilistic way of
-thinking about the statistics of large-scale structure.
+Our work has described a probabilistic way to
+think about the statistics of large-scale structure.
 The main message is that the correlation function 
 is naturally formulated in terms of particle trajectories and
 their transition probabilities. (This also extends to
-$N$-point functions and fluids.) Formally, these
-probabilities describe the final distribution of particle separations given
+$N$-point functions and fluids.) These
+probabilities formally describe the final distribution of particle separations given
 their initial separations, and thus encode the
 full nonlinear evolution of the two-point function.
 Except in certain limits, calculation of these transition
