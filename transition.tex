@@ -99,19 +99,18 @@ University of Geneva, 24 Quai Ansermet, CH-1211 Geneva 4, Switzerland}
 % \thanks{$^\star$Email: \href{mailto:lawrence.dam@unige.ch}{lawrence.dam55@gmail.com}}
 
 \begin{abstract}
-\noindent A probabilistic approach to the two-point correlation function
-is described.
-It is shown that the Lagrangian picture of large-scale structure
-can be formulated in terms of a transition probability describing the
-distribution of the
+\noindent We describe a probabilistic approach to large-scale structure.
+We show that the two-point function
+can be formulated in terms of a transition probability,
+describing the distribution of
 final (or Eulerian) particle positions given their
-initial (or Lagrangian) position.
-The transition probability, which is initially sharply peaked,
-broadens over time in a diffusion-like manner,
-reflecting increasing uncertainty about the final positions.
+initial (or Lagrangian) position. In this picture
+the transition probability is initially sharply peaked
+and then over time broadens out in a diffusion-like manner,
+reflecting the increasing uncertainty about the final positions.
 The effect is more pronounced for
 widely-separated particles (e.g.\ at the baryon acoustic scale),
-effectively damping the two-point function in what is
+leading to an effective damping of the two-point function in what is
 normally understood as infrared resummation.
 \end{abstract}
 
@@ -122,11 +121,12 @@ normally understood as infrared resummation.
 
 \section{\bf Introduction}
 \noindent
-In previous work~\citep{Dam:2025ops} on a related topic
+In previous work~\citep{Dam:2025ops} % on a related topic
 we noticed a general
-relation, apparently overlooked, between correlations in
-redshift space and those in real space. The relation takes
-the form $p(s)=\int\dif x\, p(s\Mid x)\sp p(x)$, that is,
+relation between correlations in
+redshift space and those in real space. The
+relation, which appears to have been overlooked in earlier work, takes
+the form $p(s)=\int\dif x\, p(s\Mid x)\sp p(x)$; that is,
 a marginal integral over the distribution $p(x)$ of
 real positions and
 a \emph{transition probability} $p(s\Mid x)$,
@@ -139,7 +139,7 @@ transition probability connects the initial and final correlations.
 But unlike the one found earlier, this transition probability
 has a natural interpretation.
 Since it propagates initial data
-to a final time it contains dynamical information about the
+forward in time it contains dynamical information about the
 statistical evolution of a particle system.
 In this there are two key concepts:
 mass conservation and transport.
@@ -195,8 +195,8 @@ We should note however that the seeds of this idea can be
 traced to \cite{Couchman_Bond88}
 who it seems were the first to give an expression like Eq.~\eqref{eq:marginal},
 though they did so in terms of the distribution of
-Lagrangian displacements
-(apparently missing the more basic structure)
+Lagrangian displacements,
+obscuring a probabilistic perspective.
 %We are not the first to have noticed this, however.
 %As far as we know \cite{Couchman_Bond88} were the first,
 %though they gave their expression in terms of Lagrangian displacements
@@ -453,10 +453,8 @@ us that the pushforward acts on \emph{distributions}.
 
 \section{\bf Transition probability}\label{sec:transition}
 \noindent 
-In general there is a transition probability associated with each
-$N$-point function; here we will focus on the simplest, that of
-the two-point function.
-Thus, we insert Eq.~\eqref{eq:n} into the two-point function
+To obtain the transition probability,
+we insert Eq.~\eqref{eq:n} into the two-point function
 %\footnote{In this work by `correlation function' we mean
 %$\xi_\rho=\langle \rho(\x_1)\sp \rho(\x_2)\rangle$, instead
 %of the more common
@@ -468,14 +466,15 @@ Thus, we insert Eq.~\eqref{eq:n} into the two-point function
 %% discrete tracers (it also simplifies the mathematical presentation).
 %}
 $\xi_{\rho}(\x_1,\x_2,t)
-\equiv\langle\sp \rho(\x_1,t)\ssp \rho(\x_2,t)\rangle$,
-to get [cf.~Eq.~\eqref{eq:marginal}]
+\equiv\langle\sp \rho(\x_1,t)\ssp \rho(\x_2,t)\rangle$
+to get
 \be\label{eq:MASTER} % {eq:MASTER}
 \xi_{\rho}(\x_1,\x_2,t) % \langle n(\bm0,t)\ssp n(\r,t)\rangle 
 =\int_{\q_1}\int_{\q_2}
         p_t(\x_1,\x_2\Mid\q_1,\q_2) \,
-        \xi_{\rho0}(\q_1,\q_2)\,.
+        \xi_{\rho0}(\q_1,\q_2)\,,
 \ee
+cf.~Eq.~\eqref{eq:marginal}.
 Here $\xi_{\rho0}(\q_1,\q_2)\equiv
 \langle \rho_0(\q_1)\sp \rho_0(\q_2)\rangle$
 is the two-point function at the initial time $t=0$,
@@ -518,16 +517,16 @@ average
 where $O(\q_1,\q_2)$ is any pairwise function.
 
 The above expressions hold for any equation of motion,
-not just Newton's equation. In particular,
+not just Newton's equation. That
 the correlation function can always be written in the
-form~\eqref{eq:MASTER}, which is simply an expression of
-conservation.\footnote{The case of nonconserved tracers
-is treated in \cite{Dam:2026bhb}.} No perturbation theory is assumed.
+form~\eqref{eq:MASTER} is simply an expression of
+conservation.\footnote{The more general case of nonconserved
+biased tracers was partially treated in \cite{Dam:2026bhb}.} No perturbation theory is assumed.
 
 We also emphasize that the transition probability~\eqref{eq:pt}
 is a genuine pdf.
-This is true even if the input and output correlation 
-are not properly normalized distributions (as for an
+This is true even if the input and output distributions 
+are not properly normalized (as for an
 infinite universe).
 %This will become clear in Section~\ref{sec:proof} when
 %we express the transition probability in a more standard form.
@@ -1049,9 +1048,10 @@ Markov property.
 %    is estimated from 5000 $N$-body simulations
 %    of 100 particles.
     Each row is for a different initial separation
-    $q\equiv q_1-q_2=0.2L$ (where $L$ is the box length).
-    Left panels show trajectories $r_t=x_t(q_1)-x_t(q_2)$
-    from 50 sample realizations for fixed $q$;
+    $q\equiv q_1-q_2$.
+    Left panels show, for a given $q$, 50 sample trajectories
+    $r_t=x_t(q_1)-x_t(q_2)$,
+    each taken from a different realization;
     the heavy solid curve is the mean trajectory and
 	the vertical bars indicate the mean and standard deviation of the full
     distribution at times
@@ -1386,7 +1386,7 @@ gravitational potential, tend to be moving coherently
 %With the conditioning made clear, it is not hard to see from
 % these expressions that the transition probability is a genuine pdf.
 Lastly, note that the Gaussian transition probability~\eqref{eq:pt-Delta}
-is the convolution kernel in LPT~\citep{Carlson:2012,White:2014,Vlah:2016bcl}.
+corresponds to the convolution kernel in LPT~\citep{Carlson:2012,White:2014,Vlah:2016bcl}.
 The only difference between them is one of interpretation:
 in those works the Gaussian is understood
 as a scale-dependent kernel of the form $K(\r-\q;\q)$.
@@ -1406,6 +1406,9 @@ For large $\q$ the dependence of scale-dependence of
 the cumulants drops out. This yields a transition probability
 of the form $p_t(\r-\q)$, i.e.\ no conditioning on $\q$.
 
+How large is each effect?
+
+plot final separation distribution for N=3,10,100,1000,1e4
 
 %\subsubsection{Displacement pdf}
 %\noindent Now that we have given an explicit expression of
@@ -1544,16 +1547,15 @@ particles that begin close together (smaller $q$).
 
 \begin{figure}[t!]
     \centering
-    \includegraphics[width=\columnwidth]{plots/correlation_evolution_raw_all_snapshots_overlay_zeldovich}
+    \includegraphics[width=1.0\columnwidth]{plots/correlation_evolution_raw_all_snapshots_overlay_zeldovich_transition_probabilities} % correlation_evolution_raw_all_snapshots_overlay_zeldovich
     \caption{{\bf Effect of dispersion on the evolution of
     the two-point function (overdensity).}
-    In order to make this effect more apparent
-    we have scaled out the leading-order divergence effect,
+    Right column shows the model transition probability distributions
+    for $q=95\,h^{-1}\mrm{Mpc}$ at an initial redshift $z=49$.
+    Note that in order to make the effect more apparent
+    we have scaled out the dominant convergence effect,
     proportional to $D^2(z)$. Model predictions are obtained using
-    Gaussian transitions under the Zeldovich approximation.
-    Note that the curves
-    below $z=10$ have been vertically offset for clarity.
-    {\it put pdf histograms on left}}
+    Gaussian transitions under the Zeldovich approximation.}
     \label{fig:evoln}
 \end{figure}
 
@@ -1615,7 +1617,7 @@ fluctuations on those scales.
 
 Note that Eq.~\eqref{eq:xi_n-formula} 
 is of a similar form to the usual linear relation
-$\xi(r,t)=(D/D_0)^2\xi_{0}(r)$ of the overdensity, and which
+$\xi(r,t)=(D(t)/D_0)^2\xi_{0}(r)$ of the overdensity, and which
 can be recovered by expanding the right-hand side of Eq.~\eqref{eq:xi_n-formula}
 and keeping only the leading-order terms.%
 \footnote{A simple way to verify this is to
@@ -1758,13 +1760,12 @@ features are obscured by the development of structure.
 
 \begin{figure}[t!]
     \centering
-    \includegraphics[width=0.93\columnwidth]{plots/conditional_entropy}
+    \includegraphics[width=\columnwidth]{plots/conditional_entropy_particle_count_comparison} % conditional_entropy
+    \vspace{-14pt}
     \caption{{Conditional entropy~\eqref{eq:H} of the transition
-    probabilities shown in Figure~\ref{fig:pt} (with one
-    additional curve here for $q=0.001L$).}
-    Each curve eventually plateaus, reflecting 
-    that particles fall into potential wells
-    where they tend to settle.}
+    probability for different initial separations $q$.}
+    Note that the entropy tends to plateau, reflecting
+    the capture of particles into bound regions.}
     \label{fig:entropy}
 \end{figure}
 
@@ -3654,8 +3655,11 @@ deconvolution on large scales?
 
 \section{\bf Conclusions}
 \noindent % This paper has presented no new modelling.
-Our work has described a probabilistic way to
-think about the statistics of large-scale structure.
+%Our work has described a probabilistic way to
+%think about the statistics of large-scale structure.
+It is surprising that an overtly probabilistic way of 
+thinking about the statistics of large-scale structure has
+apparently not been described.
 The main message is that the correlation function 
 is naturally formulated in terms of particle trajectories and
 their transition probabilities. (This also extends to
