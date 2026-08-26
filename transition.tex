@@ -99,13 +99,17 @@ University of Geneva, 24 Quai Ansermet, CH-1211 Geneva 4, Switzerland}
 % \thanks{$^\star$Email: \href{mailto:lawrence.dam@unige.ch}{lawrence.dam55@gmail.com}}
 
 \begin{abstract}
-\noindent We describe a probabilistic approach to large-scale structure.
+\noindent We describe a probabilistic approach to the statistics of
+large-scale structure.
+%In modelling the development of structure from stochastic initial conditions,
+%we show that there is a well-defined
 We show that the two-point function
-can be formulated in terms of a transition probability,
+can be formulated in terms of a
+ transition probability,
 describing the distribution of
 final (or Eulerian) particle positions given their
-initial (or Lagrangian) position. In this picture
-the transition probability is initially sharply peaked
+initial (or Lagrangian) position. % In this picture
+The transition probability is initially sharply peaked
 and then over time broadens out in a diffusion-like manner,
 reflecting the increasing uncertainty about the final positions.
 The effect is more pronounced for
@@ -125,7 +129,7 @@ In previous work~\citep{Dam:2025ops} % on a related topic
 we noticed a general
 relation between correlations in
 redshift space and those in real space. The
-relation, which appears to have been overlooked in earlier work, takes
+relation, which appears to have gone unnoticed in earlier work, takes
 the form $p(s)=\int\dif x\, p(s\Mid x)\sp p(x)$; that is,
 a marginal integral over the distribution $p(x)$ of
 real positions and
@@ -249,7 +253,7 @@ used here.
     \includegraphics[width=0.9\textwidth]{plots/trajectories_extended6}
     % \includegraphics[width=0.8\textwidth]{plots/trajectories_extended_long8}
     \caption{{\bf Transport of mass under gravity.}
-    Here application of the pushforward~\eqref{eq:n} evolves the mass
+    Here the application of the pushforward~\eqref{eq:n} evolves the mass
     density forward along
     particle trajectories, which may cross as collapse becomes nonlinear.
     Narrow panels show the (smoothed) density profile
@@ -521,7 +525,7 @@ not just Newton's equation. That
 the correlation function can always be written in the
 form~\eqref{eq:MASTER} is simply an expression of
 conservation.\footnote{The more general case of nonconserved
-biased tracers was partially treated in \cite{Dam:2026bhb}.} No perturbation theory is assumed.
+biased tracers was treated in \cite{Dam:2026bhb}.} No perturbation theory is assumed.
 
 We also emphasize that the transition probability~\eqref{eq:pt}
 is a genuine pdf.
@@ -1295,7 +1299,7 @@ should be sub-quadratic. Such behaviour can be seen in
 Figure~\ref{fig:trajectories}.
 As for the scale dependence,
 in the large-$q$ limit we have
-$\langle\Delta\bm\psi_0\ssp\Delta\bm\psi_0\rangle
+$\langle\Delta\bm\psi_0^i\ssp\Delta\bm\psi_0^j\rangle
 \to\sigma_{\psi0}^2\,\delta_{ij}$,
 with $\sigma_{\psi0}^2$ the one-dimensional displacement
 dispersion (which is proportional to the velocity dispersion).
@@ -1364,7 +1368,7 @@ gravitational potential, tend to be moving coherently
         to[out=290, in=130]
         (axis cs: 8.45, 0.18);
     % diffusion label
-      \node [font=\small] at (axis cs: 7.5, -0.09) {dispersion};
+      \node [font=\small] at (axis cs: 7.5, -0.08) {diffusion};
     \end{axis}
   \end{tikzpicture}
   \caption{{\bf Three distinct ways in which the
@@ -1404,7 +1408,8 @@ can be interpreted in a similar way.)
 \subsection{\bf Large separation limit}
 For large $\q$ the dependence of scale-dependence of
 the cumulants drops out. This yields a transition probability
-of the form $p_t(\r-\q)$, i.e.\ no conditioning on $\q$.
+of the form $p_t(\r-\q)$, i.e.\ a translation-invariant kernel.
+This yields a convolution...
 
 How large is each effect?
 
@@ -1547,14 +1552,14 @@ particles that begin close together (smaller $q$).
 
 \begin{figure}[t!]
     \centering
-    \includegraphics[width=1.0\columnwidth]{plots/correlation_evolution_raw_all_snapshots_overlay_zeldovich_transition_probabilities} % correlation_evolution_raw_all_snapshots_overlay_zeldovich
-    \caption{{\bf Effect of dispersion on the evolution of
+    \includegraphics[width=0.97\columnwidth]{plots/correlation_evolution_raw_all_snapshots_overlay_zeldovich_transition_probabilities} % correlation_evolution_raw_all_snapshots_overlay_zeldovich_transition_probabilities} % correlation_evolution_raw_all_snapshots_overlay_zeldovich
+    \caption{{\bf Effect of diffusion on the evolution of
     the two-point function (overdensity).}
     Right column shows the model transition probability distributions
     for $q=95\,h^{-1}\mrm{Mpc}$ at an initial redshift $z=49$.
     Note that in order to make the effect more apparent
     we have scaled out the dominant convergence effect,
-    proportional to $D^2(z)$. Model predictions are obtained using
+    proportional to $D^2(z)$. Model predictions are based on
     Gaussian transitions under the Zeldovich approximation.}
     \label{fig:evoln}
 \end{figure}
@@ -1777,7 +1782,7 @@ features are obscured by the development of structure.
 \noindent A sharp transition distribution 
 implies little uncertainty in the final positions 
 of particles.
-We can quantify this uncertainty in the transitions
+A convenient way to quantify this is
 by computing the conditional entropy~\citep{Mackay_book}
 \be\label{eq:H}
 H_t(\q)=-\int\dif^3\r\, p_t(\r\Mid\q)\ln p_t(\r\Mid\q)\,.
@@ -3653,13 +3658,36 @@ deconvolution on large scales?
 
 
 
-\section{\bf Conclusions}
+\section{\bf Discussion}
 \noindent % This paper has presented no new modelling.
 %Our work has described a probabilistic way to
 %think about the statistics of large-scale structure.
-It is surprising that an overtly probabilistic way of 
-thinking about the statistics of large-scale structure has
-apparently not been described.
+%It is surprising that an overtly probabilistic way of 
+%thinking about the statistics of large-scale structure has
+%apparently not been described.
+The current paradigm for power spectrum modelling is based
+on growth factors, transfer functions, initial spectra,
+and a continuous (or fluid) description of matter.
+There are many reasons, both theoretical and practical,
+that the power spectra
+has become the statistic of choice~\citep{Hamilton:2005kz}.
+%much of which hinges on the mode independence in linear theory.
+% For one
+%Fourier analysis is natural when there is translation invariance
+%so that distinct plane wave modes
+%become statistically independent (on large scales).
+
+There are however modelling advantages to returning to
+a configuration-space approach, favoured in early work~\citep{Peebles_LSS}.
+Here we have presented a more mechanical view based on
+particle trajectories from uncertain initial conditions and
+their associated transition probabilities. This approach
+is more natural when working with discrete objects in 
+configuration space (where they have compact support).
+Indeed, this brings us in line with
+the language and tools used in other fields, e.g.\ statistical fluid mechanics.
+
+\section{\bf Conclusions}
 The main message is that the correlation function 
 is naturally formulated in terms of particle trajectories and
 their transition probabilities. (This also extends to
@@ -3746,28 +3774,28 @@ from the late-time correlations.
 
 
 
-The same relation we have studied throughout this work also
-holds between redshift space and real space, as mentioned in
-the introduction.
-We can combine this relation with the
-one the between Lagrangian and Eulerian space to define
-a transition probability from Lagrangian to redshift space.
-Using the composition property we can chain
-distributions together as
-\be
-p(\s)
-=\int_\x p(\s\Mid\x)\ssp p(\x) 
-=\int_\x p(\s\Mid\x)
-	\int_\q p_t(\x\Mid\q)\ssp p_\mrm{init}(\q)\,,
-\ee
-where $p(\s)$ and $p_\mrm{init}(\q)$ may be the one-point
-function (or mean density), two-point function, etc.
-This motivates defining the transition probability as
-\be
-p(\s\Mid\q)=\int_\x  p(\s\Mid\x)\ssp p_t(\x\Mid\q)
-\ee 
-
-Concerning biased tracers.....
+%The same relation we have studied throughout this work also
+%holds between redshift space and real space, as mentioned in
+%the introduction.
+%We can combine this relation with the
+%one the between Lagrangian and Eulerian space to define
+%a transition probability from Lagrangian to redshift space.
+%Using the composition property we can chain
+%distributions together as
+%\be
+%p(\s)
+%=\int_\x p(\s\Mid\x)\ssp p(\x) 
+%=\int_\x p(\s\Mid\x)
+%	\int_\q p_t(\x\Mid\q)\ssp p_\mrm{init}(\q)\,,
+%\ee
+%where $p(\s)$ and $p_\mrm{init}(\q)$ may be the one-point
+%function (or mean density), two-point function, etc.
+%This motivates defining the transition probability as
+%\be
+%p(\s\Mid\q)=\int_\x  p(\s\Mid\x)\ssp p_t(\x\Mid\q)
+%\ee 
+%
+%Concerning biased tracers.....
 
 
 %\section{Summary}
@@ -3840,10 +3868,12 @@ Concerning biased tracers.....
 
 
 \begin{acknowledgements}
-The bulk of this work was completed in 2025 at the University of Geneva
+Much of this manuscript was written in 2025 at the University of Geneva
 where the author was supported by the European Research Council under
 the Horizon 2020 Research and Innovation Programme of the European Union
-(grant agreement no.~863929).
+(grant agreement no.~863929). Numerics were added more recently
+for which the author acknowledges use of GPT 5.6 (OpenAI) to assist in code development.
+The author takes responsibility for any errors in the results.
 Use of the Baobab HPC cluster at the University
 of Geneva is gratefully acknowledged.
 \end{acknowledgements}
