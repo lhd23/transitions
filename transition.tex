@@ -142,7 +142,7 @@ namely between Lagrangian and Eulerian space. In this relation the
 transition probability connects the initial and final correlations.
 But unlike the one found earlier, this transition probability
 has a natural interpretation.
-Since it propagates initial data
+Since it maps initial data
 forward in time it contains dynamical information about the
 statistical evolution of a particle system.
 In this there are two key concepts:
@@ -1070,6 +1070,9 @@ Markov property.
     The solid vertical lines indicates the mean separation.
     For reference we overplot in thin black the Gaussian corresponding
     to the measured mean and standard deviation.
+    Note that the distributions are (slightly) skewed towards values $r<q$,
+    since particles infall towards each other, decreasing
+    the separation between them.
 %    The 98 other particles
 %    have initial positions that are uniformly random distributed and
 %    initial velocities that are Gaussian distributed with mean zero.
@@ -1172,7 +1175,7 @@ $(k\Delta t)^n$.
 % that $\r_t$ is Gaussian distributed for given
 % $\q_1$ and $\q_2$.
 \noindent
-The Gaussian is a good first approximation for the transition probability.
+A Gaussian transition probability is an instructive first approximation.
 This is obtained by dropping all
 but the first and second cumulants in $Z(\k;\q)$ [Eq.~\eqref{eq:W}], yielding
 \be\label{eq:p-t-Gauss}
@@ -1241,19 +1244,6 @@ Note that the covariance is the same in both pdfs~\eqref{eq:p-t-Gauss}
 and \eqref{eq:pt-Delta}, while the means are related by
 $\R_t(\q)=\q+\mbf{D}_t(\q)$.
 
-It is also interesting to note that the
-Gaussian~\eqref{eq:p-t-Gauss} satisfies the
-Fokker--Planck-like equation~\citep{Risken1989FokkerPlanck}
-\be
-\partial_t p_t=-\nabla_\r\cdot (\dot{\R}_t p_t)
-+\tfrac12\nabla_\r\sp\nabla_\r(\dot{\mbf{C}}_t\sp p_t)\,,
-\ee
-where overdot is
-differentiation with respect to $t$.
-%A similar equation also holds for $p_t(\bm\Delta\Mid\q)$.
-Note that for a general transition probability
-additional contributions from
-higher-order cumulants appear on the right-hand side.
 
 Now that we have fixed the form of $p_t$ it remains to evaluate
 $\R_t$ and $\mbf{C}_t$. We do this using the Zeldovich approximation.
@@ -1275,11 +1265,10 @@ $|\R_t(\q)|<q$, as we expect from pairwise infall;
 see the left panels of Figure~\ref{fig:pt}
 (solid blue curves).
 The tendency of infall vanishes
-at the extremes: $\langle\bm\psi_0(0)\ssp\delta_0(\q)\rangle\to0$
-in the limits $q\to0$ and $q\to\infty$.
+as $q\to0$: $\langle\bm\psi_0(0)\ssp\delta_0(\q)\rangle\to0$.
 
 For the covariance we have
-\be
+\be\label{eq:C}
 \mbf{C}_t(\q)
 \simeq\big(D(t)/D_0-1\big)^2\sp
 	\langle\Delta\bm\psi_0\ssp\Delta\bm\psi_0\rangle\,,
@@ -1297,18 +1286,12 @@ particles settle into potential wells and stop
 exploring so the growth of the prefactor
 should be sub-quadratic. Such behaviour can be seen in
 Figure~\ref{fig:trajectories}.
-As for the scale dependence,
-in the large-$q$ limit we have
-$\langle\Delta\bm\psi_0^i\ssp\Delta\bm\psi_0^j\rangle
-\to\sigma_{\psi0}^2\,\delta_{ij}$,
-with $\sigma_{\psi0}^2$ the one-dimensional displacement
-dispersion (which is proportional to the velocity dispersion).
-In the limit $q\to0$ we have instead
+In the limit $q\to0$ we have
 $\langle\Delta\bm\psi_0\ssp\Delta\bm\psi_0\rangle\to0$
 so $\mbf{C}_t(\q)\to0$, independent of time. We can understand
 this because nearby particles, subject to the same
-gravitational potential, tend to be moving coherently
-(before shell crossing).
+gravitational potential, tend to move coherently
+in single stream.
 
 
 \begin{figure}
@@ -1387,33 +1370,57 @@ gravitational potential, tend to be moving coherently
 
 
 
+\subsection{\bf Large separation limit}\label{sec:large-r-limit}
+\noindent 
+For widely-separated particles the Gaussian~\eqref{eq:p-t-Gauss}
+assumes the translation-invariant form, $p_t(\r-\q)$.
+This can be seen by taking the limit $q\to\infty$
+for the mean and covariance. For the mean we have
+$\R_t\to\q$, since the tendency of infall vanishes as $q\to\infty$.
+For the covariance
+$\mbf{C}_t\to2(D(t)/D_0-1)^2\,\sigma_{\psi0}^2\,\mbf{I}$,
+since $\langle\Delta\bm\psi_0\ssp\Delta\bm\psi_0\rangle
+\to2\sigma_{\psi0}^2\,\mbf{I}$.
+Here $\sigma_{\psi0}^2=\langle\psi_0^2\rangle$ is the
+one-dimensional displacement
+dispersion and $\mbf{I}$ is the $3\times3$ identity matrix.
+Inserting these into Eq.~\eqref{eq:p-t-Gauss}
+shows that the conditional dependence on
+$\q$ drops out.
+
 %With the conditioning made clear, it is not hard to see from
 % these expressions that the transition probability is a genuine pdf.
-Lastly, note that the Gaussian transition probability~\eqref{eq:pt-Delta}
-corresponds to the convolution kernel in LPT~\citep{Carlson:2012,White:2014,Vlah:2016bcl}.
-The only difference between them is one of interpretation:
-in those works the Gaussian is understood
-as a scale-dependent kernel of the form $K(\r-\q;\q)$.
-But Eq.~\eqref{eq:MASTER}
-is not a proper convolution on account of the absolute
-scale dependence; nonlinear evolution is \emph{not} simply
-a Gaussian smoothing of the initial correlations~\citep{Smith:2007gi}.
-Rather, this kernel should be understood as a transition
-probability~\eqref{eq:p-t-Gauss}, a genuine pdf once $\q$ 
-is conditioned upon.
-(It is worth noting here that the
-streaming model~\citep{Fisher:1994ks,Scoccimarro:2004,Vlah:2018ygt}
-can be interpreted in a similar way.)
+Only in the special case where the transition probability
+is translation invariant can the correlation
+function~\eqref{eq:xi-homo} be understood as a convolution.
+This is the case for sufficiently large separations,
+but not for small separations,
+where the transition kernel
+retains dependence on both $\r$ and $\q$. As mentioned
+in the introduction, the structure of the correlation function
+is generally that of a marginal integral, involving a genuine
+conditional pdf.
+The naming `convolution LPT'~\citep{Carlson:2012,White:2014,Vlah:2016bcl}
+is something of a misnomer.
+%Lastly, note that the Gaussian transition probability~\eqref{eq:pt-Delta}
+%corresponds to the convolution kernel in LPT~\citep{Carlson:2012,White:2014,Vlah:2016bcl}.
+%The difference between them is a matter of interpretation:
+%in those works the Gaussian is understood
+%as a scale-dependent kernel of the form $K(\r-\q;\q)$.
+%But Eq.~\eqref{eq:MASTER} is generally
+%not a proper convolution on account of the absolute
+%scale dependence; nonlinear evolution is \emph{not} simply
+%a Gaussian smoothing of the initial correlations~\citep{Smith:2007gi}.
+%Rather, this kernel should be understood as a transition
+%probability~\eqref{eq:p-t-Gauss}, a genuine pdf once $\q$ 
+%is conditioned upon.%
+%\footnote{It is worth mentioning here that the
+%streaming model~\citep{Fisher:1994ks,Scoccimarro:2004,Vlah:2018ygt}
+%can be interpreted in a similar way.}
 
-\subsection{\bf Large separation limit}
-For large $\q$ the dependence of scale-dependence of
-the cumulants drops out. This yields a transition probability
-of the form $p_t(\r-\q)$, i.e.\ a translation-invariant kernel.
-This yields a convolution...
 
-How large is each effect?
 
-plot final separation distribution for N=3,10,100,1000,1e4
+
 
 %\subsubsection{Displacement pdf}
 %\noindent Now that we have given an explicit expression of
@@ -1504,13 +1511,24 @@ plot final separation distribution for N=3,10,100,1000,1e4
 
 
 
+\begin{figure}[t!]
+    \centering
+    \includegraphics[width=0.97\columnwidth]{plots/correlation_evolution_raw_all_snapshots_overlay_zeldovich_transition_probabilities} % correlation_evolution_raw_all_snapshots_overlay_zeldovich_transition_probabilities} % correlation_evolution_raw_all_snapshots_overlay_zeldovich
+    \caption{{\bf Effect of diffusion on the evolution of
+    the two-point function (overdensity).}
+    Right column shows the model transition distributions
+    for $q=95\,h^{-1}\mrm{Mpc}$ at an initial redshift $z=49$.
+    Note that in order to make the effect more apparent
+    we have scaled out the dominant convergence effect,
+    proportional to $D^2(z)$. Model predictions are based on
+    Gaussian transitions under the Zeldovich approximation.}
+    \label{fig:evoln}
+\end{figure}
 
-
-\subsection{\bf Transitions over short timescales\\
-(or the case of zero dispersion)}\label{sec:zel-approx}
-\noindent We now consider, from the perspective of the
-transition probability, the evolution
-of the correlation function over short timescales.
+\subsection{\bf Transitions over short timescales}\label{sec:zel-approx}
+\noindent To gain insight into the nature of the
+transitions, consider the evolution of the
+correlation function~\eqref{eq:xi-homo} over short timescales.
 
 First, we mentioned in Section~\ref{sec:properties} that the
 transition probability collapses to  $p_t(\r\Mid\q)\to\delD(\r-\q)$ in the limit
@@ -1550,19 +1568,7 @@ particles that begin close together (smaller $q$).
 %taking $\mbf{C}_t\to0$ in the Gaussian approximation~\eqref{eq:p-t-Gauss}.
 
 
-\begin{figure}[t!]
-    \centering
-    \includegraphics[width=0.97\columnwidth]{plots/correlation_evolution_raw_all_snapshots_overlay_zeldovich_transition_probabilities} % correlation_evolution_raw_all_snapshots_overlay_zeldovich_transition_probabilities} % correlation_evolution_raw_all_snapshots_overlay_zeldovich
-    \caption{{\bf Effect of diffusion on the evolution of
-    the two-point function (overdensity).}
-    Right column shows the model transition probability distributions
-    for $q=95\,h^{-1}\mrm{Mpc}$ at an initial redshift $z=49$.
-    Note that in order to make the effect more apparent
-    we have scaled out the dominant convergence effect,
-    proportional to $D^2(z)$. Model predictions are based on
-    Gaussian transitions under the Zeldovich approximation.}
-    \label{fig:evoln}
-\end{figure}
+
 
 
 Over short timescales we can write down a 
@@ -1592,107 +1598,201 @@ we can write
     \exp\bigg(-\int^t_{0}\frac{\dif t'}{a(t')}\,\theta_{12}(\q,t')
         \bigg)\ssp\bigg|_{\q=\R_t^{-1}(\r)},
 \ee
-where $\theta_{12}=\nabla\cdot\v_{12}$ is the divergence
-of the pairwise velocity.
-We note that Eq.~\eqref{eq:xi_n-formula} can also be derived
-starting from the pair
-conservation equation~\eqref{eq:pairwise-eqn}~\citep{Smith:2007gi}.
-Note that one can extrapolate beyond short timescales and so track
-the mean trajectory only, but this will miss the important
-effect of diffusion (for which we will give a combined treatment below).
+where $\theta_{12}=\nabla\cdot\v_{12}$ is the
+pairwise velocity divergence. Equation~\eqref{eq:xi_n-formula} is a
+two-point version of
+a standard formula from fluid dynamics~\citep{MoninYaglom71}.
+It has appeared before in the context of large-scale structure,
+see, e.g.~\cite{Smith:2007gi} who derived it using
+pair conservation equation~\eqref{eq:pairwise-eqn}.
+Extrapolation of Eq.~\eqref{eq:xi_n-formula} beyond short
+timescales ($t\gg 0$) neglects an important effect related to $\mbf{C}_t$
+which we discuss below (Section~\ref{sec:diffusion}).
+
+Note that linear theory is contained in
+Eq.~\eqref{eq:xi_n-formula}. In particular, the
+well-known relation
+$\xi(r,t)=(D(t)/D_0)^2\xi_{0}(r)$ can be recovered by
+expanding the right-hand side of Eq.~\eqref{eq:xi_n-formula}
+and retaining the leading-order terms.%
+\footnote{A quick way to verify this is using
+the linearized pair conservation equation~\eqref{eq:pairwise-eqn},
+$\partial_t\ssp\xi+\frac1a\theta_{12}=0$
+[cf.~$\partial_t\ssp\delta_m+\frac1a\theta=0$]. Then the Jacobian
+becomes
+\bea\nonumber
+{-\int^t_0\frac{\dif t'}{a(t')}\,\theta_{12}(q,t')}
+&={\int^t_0{\dif t'}\ssp\partial_{t'}\sp\xi(q,t')}
+=(({D}/{D_0})^2-1)\,\xi_{0}(q)\,.
+\eea
+Inserting this into Eq.~\eqref{eq:xi_n-formula},
+recalling $\xi_\rho(r)=\bar{\rho}^2[1+\xi(r)]$ and then expanding
+to leading order in $\xi_0$,
+confirms that the standard relation is recovered.
+}
+
+%Mode-coupling effects arise from the higher-order terms
+%(as well as the neglected higher-order cumulants).
 
 
-Physically, the Jacobian (or exponential) describes the cumulative effects
-of volume expansion and contraction on correlations.
+
+\subsection{\bf Convergence and advection}
+\noindent These effects are illustrated in Figure~\ref{fig:cartoon_peak}.
+Both are related to $\R_t(\q)$ and are
+therefore contained in Eq.~\eqref{eq:xi_n-formula}.
+
+Convergence is related to the Jacobian
+(cf.~lensing convergence).
+Physically, this is the cumulative effect
+of volume expansion and contraction on the final correlations.
 %First, in case  the volume is preserved,
 %$\det\mbf{J}_t=1$ and $\r=\q$, we have $\xi_\rho(\r,t)=\xi_{\rho0}(\r)$.
-In general, consider a shell of test particles, with initial
+A simple picture is as follows.
+Consider a shell of test particles, with initial
 radius $\q$, traced along 
 characteristics from time $t'=0$ to $t'=t$.
 In overdense regions where pairs of particles are more
 likely to be infalling, trajectories
 converge, volumes contract, and $\theta_{12}<0$.
 This enhances the correlations.
-In underdense regions we have the opposite
-(outfall, expansion, and $\theta_{12}>0$), leading
-to a damping of the correlations.
-How much of either expanding or contracting regions characteristics
-sample will depend on the separation and the typical size of
-fluctuations on those scales.
+By contrast, in underdense regions we have
+outfall, volume expansion, and $\theta_{12}>0$.
+This suppresses the correlations.
+The integrated effect samples both expanding
+and contracting regions.
 
-Note that Eq.~\eqref{eq:xi_n-formula} 
-is of a similar form to the usual linear relation
-$\xi(r,t)=(D(t)/D_0)^2\xi_{0}(r)$ of the overdensity, and which
-can be recovered by expanding the right-hand side of Eq.~\eqref{eq:xi_n-formula}
-and keeping only the leading-order terms.%
-\footnote{A simple way to verify this is to
-use the linearized pair conservation equation~\eqref{eq:pairwise-eqn},
-$\partial_t\ssp\xi+\frac1a\theta_{12}=0$
-[cf.~$\partial_t\ssp\delta_m+\frac1a\theta=0$], to evaluate
-the integral
-\be\nonumber
-{-\int^t_0\frac{\dif t'}{a(t')}\,\theta_{12}(q,t')}
-={\int^t_0{\dif t'}\ssp\partial_{t'}\sp\xi(q,t')}
-={[({D}/{D_0})^2-1]\,\xi_{0}(q)}\,,
-\ee
-where in the last equality we assumed
-scale-independent growth of fluctuations.
-Inserting this into Eq.~\eqref{eq:xi_n-formula},
-using $\xi_\rho=\bar{\rho}^2(1+\xi)$ and then expanding
-to leading order in correlators,
-indeed confirms that the standard relation is recovered.
-}
-%Mode-coupling effects arise from the higher-order terms
-%(as well as the neglected higher-order cumulants).
-
-
-
-
-
-
-
-\subsection{\bf Evolution of sharp features}
-\noindent
-We now apply Eq.~\eqref{eq:xi-homo} to a simple model of
-$\xi_{\rho0}$ to illustrate the different ways
-in which the correlation function evolves.
-For simplicity, suppose $\xi_{\rho0}$ is unstructured,
-save for a narrow feature centred at $\q=\q_*$:
-\be\label{eq:xi-peak}
-\xi_{\rho0}(\q)
-=\bar\rho^2\big[1+e^{-(\q-\q_*)^2/\epsilon}\big]\,,
-\ee
-where the small parameter $\epsilon>0$ sets the width.
-Of course we have in mind the baryon acoustic peak.
-
-How does this feature evolve under gravity?
-We can break this down into
-two physical effects, advection and divergence, which
-can be seen from the pair continuity equation~\eqref{eq:pairwise-eqn}
-upon writing
+Next consider advection.
+In the pair conservation equation~\eqref{eq:pairwise-eqn},
+writing
 \be\label{eq:pairwise-eqn-exp}
 \nabla_\r\cdot(\xi_\rho\v_{12})
 =	 \v_{12}\cdot\nabla_\r\,\xi_\rho
 	+\xi_\rho\,\theta_{12}\,,
 \ee
-with $\theta_{12}=\nabla_\r\cdot\v_{12}$.
-Here advection, given by the
-second term $\v_{12}\cdot\nabla_\r\,\xi_\rho$,
-describes the shift of the peak.
-Divergence, given by the third term
- $\xi_\rho\,\theta_{12}$ (and as we saw above),
-describes volume expansion or contraction. 
-Supposing the volume is preserved
-under the flow, $\theta_{12}=0$ (or $\det\mbf{J}=1$),
-we have Eq.~\eqref{eq:xi_n-formula} that
-$\xi_\rho(\r,t)=\xi_{\rho0}(\R_t^{-1}(\r))$.
-At leading order this implies a
-peak shift from $\q_*\to\q_*+\llangle\Delta\bm\psi\rrangle$.
-Note that the peak amplitude is neither enhanced nor suppressed.
-Including the  divergence, however, modifies the peak amplitude.
-In particular, since the Jacobian enters multiplicatively,
-it acts locally on the initial correlations. In other words,
-the peak is modulated but its support remains the same.
+advection is related to the first term $\v_{12}\cdot\nabla_\r\,\xi_\rho$
+(while convergence is related to the second term).
+If we neglect convergence,
+so $\theta_{12}=0$, then from Eq.~\eqref{eq:xi_n-formula} 
+we have simply $\xi_\rho(\r,t)=\xi_{\rho0}(\R_t^{-1}(\r))$.
+This means that the initial correlations are remapped.
+For example, suppose
+$\xi_{\rho0}(\q)
+=\bar\rho^2[1+e^{-(\q-\q_*)^2/\epsilon}]$,
+where $\epsilon$ is a small parameter and $\q_*$
+is the peak location.
+Then at leading order the peak's location is shifted
+from $\q_*$ to $\q_*+\mbf{D}_t(\q_*)$.
+Note that the height of the peak is neither enhanced
+nor suppressed; that is the role of convergence.
+%In particular, since the Jacobian enters multiplicatively,
+%it acts locally on the initial correlations. In other words,
+%the peak is amplified but its support remains the same.
+
+
+
+%
+%\be\label{eq:xi-peak}
+%\xi_{\rho0}(\q)
+%=\bar\rho^2\big[1+e^{-(\q-\q_*)^2/\epsilon}\big]\,,
+%\ee
+
+
+%How does this feature evolve under gravity?
+%We can break this down into
+%two physical effects, advection and divergence, which
+%can be seen from the pair continuity equation~\eqref{eq:pairwise-eqn}
+%upon writing
+%\be\label{eq:pairwise-eqn-exp}
+%\nabla_\r\cdot(\xi_\rho\v_{12})
+%=	 \v_{12}\cdot\nabla_\r\,\xi_\rho
+%	+\xi_\rho\,\theta_{12}\,,
+%\ee
+%with $\theta_{12}=\nabla_\r\cdot\v_{12}$.
+%Here advection, given by $\v_{12}\cdot\nabla_\r\,\xi_\rho$,
+%describes the shift of the peak.
+%Divergence, given by the third term
+% $\xi_\rho\,\theta_{12}$ (and as we saw above),
+%describes volume expansion or contraction. 
+%Supposing the volume is preserved
+%under the flow, $\theta_{12}=0$ (or $\det\mbf{J}=1$),
+%we have Eq.~\eqref{eq:xi_n-formula} that
+%$\xi_\rho(\r,t)=\xi_{\rho0}(\R_t^{-1}(\r))$.
+%At leading order this implies a
+%peak shift from $\q_*\to\q_*+\llangle\Delta\bm\psi\rrangle$.
+%Note that the peak amplitude is neither enhanced nor suppressed.
+%Including the  divergence, however, modifies the peak amplitude.
+%In particular, since the Jacobian enters multiplicatively,
+%it acts locally on the initial correlations. In other words,
+%the peak is modulated but its support remains the same.
+
+
+
+
+%shows how this could be done, namely
+%by inverting the nonlinear transformation on $\xi_{\rho0}$.
+%This cannot be done in general without a model prior
+%on $\R_t$. For this
+%purpose let us assume the Zeldovich approximation.
+%the initial correlations are volume-distorting effects of gravity.
+
+
+
+
+
+
+\subsection{\bf Diffusion}\label{sec:diffusion}
+\noindent
+Diffusion is related to the spreading out
+of trajectories (see Figure~\ref{fig:pt}).
+Since it is governed by $\mbf{C}_t$ it is absent in
+Eq.~\eqref{eq:xi_n-formula}, and we need to
+consider the full Gaussian kernel~\eqref{eq:p-t-Gauss}.
+As can be checked, this Gaussian satisfies the
+Fokker--Planck equation~\citep{Risken1989FokkerPlanck}
+\be\label{eq:FP}
+\partial_t p_t=-\nabla_\r\cdot (\dot{\R}_t p_t)
++\tfrac12\nabla_\r\sp\nabla_\r(\dot{\mbf{C}}_t\sp p_t)\,,
+\ee
+where the first term is related to drift and the second to
+diffusion, hence our calling this effect `diffusion'.%
+\footnote{Note that for a general transition probability
+Eq.~\eqref{eq:FP} includes non-Gaussian cumulants, which enter 
+the right-hand side as higher-derivative corrections.}
+We should however be careful to identify our problem with
+solving the standard Fokker--Planck equation.
+Although the form of the equation is the same, the underlying
+dynamics are deterministic and it is rather the
+initial conditions that are stochastic, as mentioned
+in Section~\ref{sec:origin}.
+
+As a numerical demonstration,
+in Figure~\ref{fig:evoln} we show the evolution of the correlation
+function around the acoustic feature as measured
+in a one-dimensional $N$-body simulation.
+In particular, here we see that
+the correlation function evolves as if it were
+smoothed by a series of increasingly broad Gaussian kernels,
+shown in the right column.
+In fact, we find that the separations $r$ considered here
+are large enough that the model predictions are well
+approximated by the large separation limit
+(Section~\ref{sec:large-r-limit}), i.e.\ by genuine
+convolutions.
+
+
+Note that the diffusion effect is subdominant to
+the convergence effect, the more familiar linear
+effect given by the growth factor. Hence we have
+normalized by $D^2(z)$ in Figure~\ref{fig:evoln}.
+The raw correlations grow in time, and a short calculation
+shows that the correlations are enhanced by a factor
+$[D(z=0)/D(z=10)]^2\approx49$. By contrast,
+across the same redshift interval, we find the peak is
+suppressed by a factor of about 4 (with respect to the broadband),
+more than an order of magnitude smaller than the convergence.
+
+
+
 
 Now there is also a statistical effect which arises from
 our taking the ensemble average over the initial conditions
@@ -1710,19 +1810,10 @@ diffusion has the effect of broadening
 the peak. For if the initial peak is sharp compared to
 $\mbf{C}_t(\q)$, then the evolved peak simply assumes the
 width of $\mbf{C}_t(\q)$, that is, the peak loses sharpness.
-Moreover, this evolved peak is set
-against a backdrop of correlations induced by the collapse
-of uniform random distribution of particles. Simply, initial
-features are obscured by the development of structure.
-
-
-%shows how this could be done, namely
-%by inverting the nonlinear transformation on $\xi_{\rho0}$.
-%This cannot be done in general without a model prior
-%on $\R_t$. For this
-%purpose let us assume the Zeldovich approximation.
-%the initial correlations are volume-distorting effects of gravity.
-
+%Moreover, this evolved peak is set
+%against a backdrop of correlations induced by the collapse
+%of uniform random distribution of particles. Simply, initial
+%features are obscured by the development of structure.
 
 
 %\subsubsection{Random perturbations to Zeldovich trajectories*}
@@ -3868,12 +3959,12 @@ from the late-time correlations.
 
 
 \begin{acknowledgements}
-Much of this manuscript was written in 2025 at the University of Geneva
+The bulk of this manuscript was written in 2025 at the University of Geneva
 where the author was supported by the European Research Council under
 the Horizon 2020 Research and Innovation Programme of the European Union
 (grant agreement no.~863929). Numerics were added more recently
-for which the author acknowledges use of GPT 5.6 (OpenAI) to assist in code development.
-The author takes responsibility for any errors in the results.
+for which the author acknowledges use of GPT-5.6 (OpenAI) to assist in code development.
+The author takes responsibility for any errors in these results.
 Use of the Baobab HPC cluster at the University
 of Geneva is gratefully acknowledged.
 \end{acknowledgements}
