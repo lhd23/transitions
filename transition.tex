@@ -123,19 +123,21 @@ normally understood as infrared resummation.
 \maketitle
 
 
-\section{\bf Introduction}
+\section{Introduction}
 \noindent
 In previous work~\citep{Dam:2025ops} % on a related topic
 we noticed a general
 relation between correlations in
 redshift space and those in real space. The
-relation, which appears to have gone unnoticed in earlier work, takes
+relation takes
 the form $p(s)=\int\dif x\, p(s\Mid x)\sp p(x)$; that is,
 a marginal integral over the distribution $p(x)$ of
 real positions and
 a \emph{transition probability} $p(s\Mid x)$,
 a conditional probability density of the
 redshift positions $s$ attainable from a given real position $x$.
+This probabilistic structure appears to have gone
+unnoticed in previous work. 
 
 In this work we point out another relation of this form,
 namely between Lagrangian and Eulerian space. In this relation the
@@ -251,12 +253,13 @@ used here.
     \centering
     \includegraphics[width=0.9\textwidth]{plots/push} % trajectories_extended6
     % \includegraphics[width=0.8\textwidth]{plots/trajectories_extended_long8}
-    \caption{{\bf Transport of mass under gravity.}
-    Here the application of the pushforward~\eqref{eq:n} evolves the mass
-    density forward along
-    particle trajectories, which may cross as collapse becomes nonlinear.
+    \caption{{\bf Evolution of the density from the action of the pushforward.}
+    Application of the pushforward~\eqref{eq:n} transports the
+    density field forward along
+    particle trajectories, which crosses at late times as
+    gravitational collapse becomes nonlinear.
     Narrow panels show the (smoothed) density profile
-    at three different epochs the.
+    at three different epochs.
     In these profiles, each circle on the dashed vertical line
     represents a different particle,
     % Marked particles correspond to peaks and are indicated by thick black lines. 
@@ -342,7 +345,7 @@ initial time $t=0$, not the present time.
 
 
 
-\section{\bf Pushforward approach to LPT}
+\section{Pushforward approach to LPT}
 \noindent
 The transition probability, discussed in the next section,
 is closely tied to the idea of transport.
@@ -380,8 +383,7 @@ $\partial_t\ssp\rho+\nabla\cdot(\rho\v)=0$ to which Eq.~\eqref{eq:n}
 can be seen as the formal solution
 (with cold initial conditions).
 
-A note on conventions.
-Typically, Eq.~\eqref{eq:n} is written
+We note that Eq.~\eqref{eq:n} is typically written
 in terms of the displacement $\bm\psi(\q,t)$ with
 $\x_t(\q)=\q+\bm\psi(\q,t)$.
 %, although
@@ -454,7 +456,7 @@ us that the pushforward acts on \emph{distributions}.
 
 
 
-\section{\bf Transition probability}\label{sec:transition}
+\section{Transition probability}\label{sec:transition}
 \noindent 
 To obtain the transition probability,
 we insert Eq.~\eqref{eq:n} into the two-point function
@@ -535,7 +537,7 @@ infinite universe).
 %we express the transition probability in a more standard form.
 
 
-\subsection{\bf Properties}\label{sec:properties}
+\subsection{Properties}\label{sec:properties}
 \noindent Two properties are worth highlighting
 before going further.
 First, the transition probability is normalized:
@@ -559,7 +561,7 @@ correlations, $\xi_{\rho0}\to\xi_\rho$.
 
 
 
-\subsection{\bf Symmetry considerations}
+\subsection{Symmetry considerations}
 \noindent So far we have not assumed any symmetry;
 now imposing statistical homogeneity the transition
 probability has the form
@@ -620,7 +622,7 @@ highly nonlinear object.
 
 
 
-\subsection{\bf Pair conservation equation}
+\subsection{Pair conservation equation}
 \noindent
 Just as the integral form~\eqref{eq:n} of $\rho(\x,t)$ can 
 be expressed in differential form as the continuity equation
@@ -674,7 +676,7 @@ see \cite{Peebles_LSS}, section 71.B.
 
 
 
-\subsection{\bf Source of stochasticity}\label{sec:origin}
+\subsection{Source of stochasticity}\label{sec:origin}
 \noindent The transition probability we have described should
 not be confused for that of a fundamentally stochastic process.
 The trajectories are classical and deterministic but they depend on
@@ -1083,7 +1085,7 @@ Markov property.
 
 
 
-\section{\bf Statistical evolution}\label{sec:proof}
+\section{Statistical evolution}\label{sec:proof}
 \noindent 
 The nonlinearity induced by gravitational collapse
 enters the correlation function through the transition probabilities
@@ -1166,7 +1168,7 @@ $(k\Delta t)^n$.
 
 
 
-\subsection{\bf A simple model}
+\subsection{A simple model}
 % To obtain a closed-form expression of $p_t(\r\Mid\q)$ we need to
 % specify the pairwise statistics of the separation 
 % $\r_t$.
@@ -1252,7 +1254,7 @@ Now that we have fixed the form of $p_t$ it remains to evaluate
 $\R_t$ and $\mbf{C}_t$. We do this using the
 \cite{Zeldovich:1969sb} approximation.
 
-For the mean vector we have
+For the mean (a vector) we have
 %$\R_t(\q)=\q+\v_{12}(\q,0)\int^t_{0}\dif t' A(t')/a(t')$.
 %where $\int^t_{0}\dif t' A(t')\propto D^2-1$
 \be
@@ -1260,10 +1262,12 @@ For the mean vector we have
 	2\big(D(t)/D_0-1\big)\,
 	\langle\bm\psi_0(0)\ssp\delta_0(\q)\rangle\,,
 \ee
-with $\R_t(\q)=\q$ when $t=0$.
+with $\R_t(\q)=\q$ when $t=0$. Here $D(t)$ is the growth factor
+and $D_0\equiv D(0)$.
 Since the pair conservation equation
-guarantees the pairwise relative velocity is negative definite,
-we have $\langle\bm\psi_0(0)\sp\delta_0(\q)\rangle<0$~\citep{Juszkiewicz:1998xf}.
+guarantees the pairwise relative velocity is negative
+definite~\citep[e.g.][]{Juszkiewicz:1998xf},
+we have $\langle\bm\psi_0(0)\sp\delta_0(\q)\rangle<0$.
 This implies that the mean separation decreases over time,
 $|\R_t(\q)|<q$, as we expect from pairwise infall;
 see the left panels of Figure~\ref{fig:pt}
@@ -1374,7 +1378,7 @@ in single stream.
 
 
 
-\subsection{\bf Large separation limit}\label{sec:large-r-limit}
+\subsection{Large separation limit}\label{sec:large-r-limit}
 \noindent 
 For widely-separated particles the Gaussian~\eqref{eq:p-t-Gauss}
 assumes the translation-invariant form, $p_t(\r-\q)$.
@@ -1526,11 +1530,12 @@ is something of a misnomer.
     we have scaled out the dominant convergence effect,
     proportional to $D^2(z)$. Model predictions are based on
     Gaussian transition probability~\eqref{eq:p-t-Gauss}
-    evaluated using the Zeldovich approximation.}
+    evaluated using the Zeldovich approximation (solid black).
+    Linear theory prediction shown for reference (dashed blue).}
     \label{fig:evoln}
 \end{figure}
 
-\subsection{\bf Transitions over short timescales}\label{sec:zel-approx}
+\subsection{Transitions over short timescales}\label{sec:zel-approx}
 \noindent To gain insight into the nature of the
 transitions, consider the evolution of the
 correlation function~\eqref{eq:xi-homo} over short timescales.
@@ -1623,17 +1628,17 @@ and retaining the leading-order terms.%
 \footnote{A quick way to verify this is using
 the linearized pair conservation equation~\eqref{eq:pairwise-eqn},
 $\partial_t\ssp\xi+\frac1a\theta_{12}=0$
-[cf.~$\partial_t\ssp\delta_m+\frac1a\theta=0$]. Then the Jacobian
-becomes
+[cf.~$\partial_t\ssp\delta_m+\frac1a\theta=0$]. With this the Jacobian
+is
 \bea\nonumber
 {-\int^t_0\frac{\dif t'}{a(t')}\,\theta_{12}(q,t')}
 &={\int^t_0{\dif t'}\ssp\partial_{t'}\sp\xi(q,t')}
 =({D}/{D_0})^2\xi_{0}(q)-\xi_{0}(q)\,.
 \eea
-Inserting this into Eq.~\eqref{eq:xi_n-formula},
+The standard relation, $\xi(r,t)=(D(t)/D_0)^2\xi_{0}(r)$,
+is recovered upon inserting this Jacobian into Eq.~\eqref{eq:xi_n-formula},
 recalling $\xi_\rho(r)=\bar{\rho}^2[1+\xi(r)]$ and then expanding
-to leading order in $\xi_0$,
-confirms that the standard relation is recovered.
+to leading order in $\xi_0$.
 }
 
 %Mode-coupling effects arise from the higher-order terms
@@ -1641,15 +1646,18 @@ confirms that the standard relation is recovered.
 
 
 
-\subsection{\bf Convergence and advection}
+\subsection{Convergence and advection}
 \noindent These effects are illustrated in Figure~\ref{fig:cartoon_peak}.
 We group these two effects together because they derive from $\R_t(\q)$.
 The third effect, diffusion, is related to $\mbf{C}_t(\q)$
 and is discussed below.
 
-Convergence is related to the Jacobian
-(cf.~lensing convergence).
-Physically, this is the cumulative effect
+We call it `convergence' because it is very similar to lensing convergence;
+both are related to the trace of the Jacobian of a map.
+Here it can be identified with the exponential factor in
+Eq.~\eqref{eq:xi_n-formula}.
+
+Physically, convergence is the cumulative effect
 of volume expansion and contraction on the final correlations.
 %First, in case  the volume is preserved,
 %$\det\mbf{J}_t=1$ and $\r=\q$, we have $\xi_\rho(\r,t)=\xi_{\rho0}(\r)$.
@@ -1659,11 +1667,11 @@ radius $\q$, traced along
 characteristics from time $t'=0$ to $t'=t$.
 In overdense regions where pairs of particles are more
 likely to be infalling, trajectories
-converge, volumes contract, and $\theta_{12}<0$.
-This enhances the correlations.
+converge and volumes contract. This means that $\theta_{12}<0$,
+so correlations are enhanced.
 By contrast, in underdense regions we have
-outfall, volume expansion, and $\theta_{12}>0$.
-This suppresses the correlations.
+outfall and volume expansion. This means that $\theta_{12}>0$,
+so correlations are suppressed.
 In general, the integrated effect consists of
 sampling both expanding and contracting regions.
 If we evaluate the Jacobian using linear theory
@@ -1688,10 +1696,10 @@ Here advection is due to the first term $\v_{12}\cdot\nabla_\r\,\xi_\rho$
 (while convergence is due to the second term).
 If we neglect convergence,
 so $\theta_{12}=0$, then from Eq.~\eqref{eq:xi_n-formula} 
-we have simply $\xi_\rho(\r,t)=\xi_{\rho0}(\R_t^{-1}(\r))$.
-This means that the initial correlations are remapped.
+we have $\xi_\rho(\r,t)=\xi_{\rho0}(\R_t^{-1}(\r))$,
+i.e.\ the initial correlations are remapped.
 
-Let us consider this remapping in more detail.
+Let us consider the remapping in more detail.
 For example, suppose the initial correlations are given by
 $\xi_{\rho0}(\q)
 =\bar\rho^2(1+e^{-(\q-\q_*)^2/\epsilon})$,
@@ -1701,29 +1709,42 @@ Then at leading order it is easy to show that the peak's location
 is shifted from $\q_*$ to $\q_*+\mbf{D}_t(\q_*)$ at time $t$,
 where we recall
 $\mbf{D}_t(\q_*)=\llangle\Delta\bm\psi\rrangle$ is the mean
-pairwise displacement. Given the mean pairwise velocity
-$\v_{12}\lesssim 400\,\mrm{km\,s^{-1}}$~\citep{Juszkiewicz:1998xf},
-this converts to a mean
-pairwise displacement of a few Mpc at most. 
-Given $\v_{12}<0$ the shift is generally inward toward
+pairwise displacement. More quantitatively, a mean pairwise velocity
+$|\v_{12}|\lesssim 400\,\mrm{km\,s^{-1}}$~\citep{Juszkiewicz:1998xf},
+converts to a mean pairwise displacement of a few Mpc at most. 
+Given $\v_{12}<0$ the shift is generally toward
 to smaller separations. 
 The precise size of the shift depends on scale and time (specifically the
-time interval over which the displacement accumulates). For 
-$q_*\sim100\,h^{-1}\mrm{Mpc}$ the shift is significantly smaller.
-For instance, over a time interval $z=10$ to
-$z=0$ we estimate a shift of about $0.04\,h^{-1}\mrm{Mpc}$,
-or less than $1\%$.
+time interval over which the displacement accumulates). If
+we take $q_*=100\,h^{-1}\mrm{Mpc}$ the shift is much smaller.
+For example, over a time interval $z=10$ to
+$z=0$ and using the Zeldovich approximation, we estimate a shift
+$|\mbf{D}_t(\q_*)|\simeq0.03\,h^{-1}\mrm{Mpc}$.%
+\footnote{There is another, `apparent' shift~\citep{Smith:2007gi}
+missed in this analysis. 
+This shift is induced by what we call `diffusion'
+(Section~\ref{sec:diffusion}), which has the effect of
+smoothing the correlation function at large separation.
+% due to the random, uncorrelated motions
+%(and thus displacements) of widely-separated particles.
+Such is the case near the acoustic peak. But due to the presence
+of broadband correlations, smoothing generally does not
+preserve the location of the peak.
+%This means that a thin BAO shell contains slightly more particles
+%on the inside than the outside, so that a smoothing of the shell
+%generally yields a shift in the shell's peak density.
+The result is an apparent shift. This turns out to be larger
+than the one due to advection.
+Indeed, in the same time interval considered above, we estimate an
+overall shift of $1.2\,h^{-1}\mrm{Mpc}$, driven largely by
+the apparent shift.
+This is supported by our simulations (in 1D)
+which show a similarly small overall shift ($1.6\,h^{-1}\mrm{Mpc}$)
+and which is barely visible in Figure~\ref{fig:evoln}.
+We note that the precise size of the shift is time-interval and
+tracer dependent.}
 
-The picture is slightly more complicated than this, however.
-\cite{Smith:2007gi} discussed shifts
-in the context of the BAO.
-They identified two types, apparent and physical.
-The shift we described above is of the physical type.
-The apparent shift is induced by symmetric smoothing (what we call
-diffusion) of an asymmetric correlation function.
-Such shift was ignored in the crude analysis above.
-In the 1D simulations we performed we found that the peak shifts
-by $1.6\,h^{-1}\mrm{Mpc}$ (apparent and physical).
+
 
 
 
@@ -1777,21 +1798,25 @@ by $1.6\,h^{-1}\mrm{Mpc}$ (apparent and physical).
 
 
 
-\subsection{\bf Diffusion}\label{sec:diffusion}
+\subsection{Diffusion}\label{sec:diffusion}
 \noindent
-Diffusion is related to the spreading out
-of trajectories as seen in Figure~\ref{fig:pt}.
-Since it is governed by $\mbf{C}_t$ it is absent in
-Eq.~\eqref{eq:xi_n-formula}, and we need to
-consider the full Gaussian kernel~\eqref{eq:p-t-Gauss}.
-As can be checked, this Gaussian satisfies the
+Diffusion describes the spreading out
+of trajectories, as seen in Figure~\ref{fig:pt} (left panels).
+It is governed by $\mbf{C}_t$ and its 
+%it is absent in
+%Eq.~\eqref{eq:xi_n-formula}, and we need to
+%consider the full Gaussian kernel~\eqref{eq:p-t-Gauss}.
+effect on the correlation function is shown in Figure~\ref{fig:evoln}.
+
+To motivate this effect it is useful to note 
+that the Gaussian satisfies the
 Fokker--Planck equation~\citep{Risken1989FokkerPlanck}
 \be\label{eq:FP}
 \partial_t p_t=-\nabla_\r\cdot (\dot{\R}_t p_t)
 +\tfrac12\nabla_\r\sp\nabla_\r(\dot{\mbf{C}}_t\sp p_t)\,,
 \ee
 where the first term is related to drift and the second to
-diffusion, hence our calling this effect `diffusion'.%
+diffusion (hence the name).%
 \footnote{Note that for a general transition probability
 Eq.~\eqref{eq:FP} includes non-Gaussian cumulants, which enter 
 the right-hand side as higher-derivative corrections.}
@@ -1802,11 +1827,11 @@ dynamics are deterministic and it is rather the
 initial conditions that are stochastic, as mentioned
 in Section~\ref{sec:origin}.
 
-As a numerical demonstration,
+As a numerical test,
 in Figure~\ref{fig:evoln} we show the evolution of the correlation
 function around the acoustic feature as measured
 in a one-dimensional $N$-body simulation.
-In particular, here we see that
+Here we see that
 the correlation function evolves as if it were
 smoothed by a series of increasingly broad Gaussian kernels,
 shown in the right column.
@@ -1817,9 +1842,8 @@ approximated by the large separation limit
 convolutions.
 
 
-Note that the diffusion effect is subdominant to
-the convergence effect, the more familiar linear
-effect given by the growth factor. Hence we have
+On the size of the effect, diffusion is subdominant to
+convergence. Hence we have
 normalized by $D^2(z)$ in Figure~\ref{fig:evoln}.
 The raw correlations grow in time, and a short calculation
 shows that the correlations are enhanced by a factor
@@ -1828,7 +1852,23 @@ across the same redshift interval, we find the peak is
 suppressed by a factor of about 4 (with respect to the broadband),
 about an order of magnitude smaller than the convergence.
 
-What we call diffusion others might call infrared resummation.
+To be clear, diffusion is not a new phenomena:
+the suppression of the acoustic peak is well established, and
+the failure of standard perturbation theory to account
+for it is well known~\citep{Senatore:2014via}.
+But typically the suppression is understood in terms of
+field theory and in particular
+the nonperturbative effects of long-wavelength modes.
+The procedure that corrects for this is known as `infrared resummation'~\citep{Baldauf:2015xfa}.
+The framework we have presented instead describes this
+suppression as arising from the uncorrelated motions between
+widely-separated particle pairs. In this limit each particle
+in the pair is subject to independent gravitational forces
+sourced by encounters with nearby particles. This explains why
+we have $\mbf{C}_t(\q)\propto 2\Sigma^2$ for widely-separated particles
+and $\mbf{C}_t(\q)\simeq0$ for closely-separated ones.
+Even if the correlation function was smooth without any features,
+there is still suppression.
 
 
 
@@ -1907,7 +1947,7 @@ What we call diffusion others might call infrared resummation.
 
 
 
-\subsection{\bf Entropy}
+\subsection{Entropy}
 \noindent A sharp transition distribution 
 implies little uncertainty in the final positions 
 of particles.
@@ -2061,7 +2101,7 @@ generates increasingly long tails.
 
 
 
-\subsection{\bf Obstacles towards inferring initial conditions*}
+\subsection{Obstacles towards inferring initial conditions*}
 deconvolution on large scales?
 
 
@@ -3787,14 +3827,14 @@ deconvolution on large scales?
 
 
 
-\section{\bf Discussion}
+\section{Discussion}
 \noindent % This paper has presented no new modelling.
 %Our work has described a probabilistic way to
 %think about the statistics of large-scale structure.
 %It is surprising that an overtly probabilistic way of 
 %thinking about the statistics of large-scale structure has
 %apparently not been described.
-The current paradigm for power spectrum modelling is based
+The current power spectrum modelling paradigm is based
 on growth factors, transfer functions, initial spectra,
 and a continuous (or fluid) description of matter.
 There are many reasons, both theoretical and practical,
@@ -3810,14 +3850,15 @@ There are however modelling advantages to returning to
 a configuration-space approach, favoured in early work~\citep{Peebles_LSS}.
 Here we have presented a more mechanical view based on
 particle trajectories, their uncertain initial conditions, and
-the associated transition probabilities. This approach
-is more natural when working with discrete objects in 
-configuration space (where they have compact support).
+the associated transition probabilities. This is closely
+related to the Lagrangian viewpoint.
+%is more natural when working with discrete objects in 
+%configuration space (where they have compact support).
 Indeed, this brings us in line with
 the language and stochastic methods used in the study
 of e.g.\ statistical fluid mechanics.
 
-\section{\bf Conclusions}
+\section{Conclusions}
 The main message is that the correlation function 
 is naturally formulated in terms of particle trajectories and
 their transition probabilities. (This also extends to
@@ -4002,10 +4043,11 @@ The bulk of this manuscript was written in 2025 at the University of Geneva
 where the author was supported by the European Research Council under
 the Horizon 2020 Research and Innovation Programme of the European Union
 (grant agreement no.~863929). Numerics were added more recently
-for which the author acknowledges use of GPT-5.6 (OpenAI) to assist in code development and accepts responsibility for
-the accuracy of the results reported. Text was written by the author.
+for which the author acknowledges use of GPT-5.6 (OpenAI) to assist in code development and thus accepts responsibility for
+the accuracy of the results reported. All text was human authored.
 Use of the Baobab HPC cluster at the University
 of Geneva is gratefully acknowledged.
+LD thanks Anton Chudaykin and Omar Darwish for helpful discussions.
 \end{acknowledgements}
 
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
