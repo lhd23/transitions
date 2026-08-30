@@ -1332,21 +1332,23 @@ where $\Sigma^2_t\equiv(D(t)/D_0-1)^2\,\Sigma_0^2$,
 with $\Sigma_0^2=\langle\bm\psi_0^2\rangle/3$, is the
 one-dimensional displacement
 dispersion, and $\mbf{I}$ is the $3\times3$ identity matrix.
-Notice that these cumulants cease to depend on $\q$.
+Since these cumulants no longer depend on $\q$,
+Eq.~\eqref{eq:xi-homo} becomes a convolution.
+
 %Here $\Sigma_0^2=\langle\bm\psi_0^2\rangle/3$ is the
 %one-dimensional displacement
 %dispersion and $\mbf{I}$ is the $3\times3$ identity matrix.
 %Inserting these into Eq.~\eqref{eq:p-t-Gauss}
 %gives a convolution.
 
-In fact, for widely-separated particles the transition
-probability~\eqref{eq:pt-r} reduces to a factorized form.
+In general, the transition probability~\eqref{eq:pt-r} of
+widely-separated particles reduces to a factorized form.
 Since the motions of particles $\q_1$
 and $\q_2$ for large $\q=\q_1-\q_2$
 can be considered independent, we have in this regime
 $p_t(\x_1,\x_2\Mid\q_1,\q_2)\approx
 p_t(\x_1\Mid\q_1)\sp p_t(\x_2\Mid\q_2)$.
-This implies
+This gives
 \bea\label{eq:pt-factorize1}
 p_t(\r\sp\Mid\sp\text{$\q$ large})
 &\approx\int_{\x_1}\int_{\x_2}\:
@@ -1577,6 +1579,7 @@ closed-form expression of the correlation function $\xi_\rho(\r,t)$.
 Inserting into Eq.~\eqref{eq:xi-homo} the sharp transition
 probability~\eqref{eq:pt-sharp},
 neglecting the $O(\Delta t^2)$ corrections, we have
+[cf.~Eq.~\eqref{eq:xi-homo}]
 \be\label{eq:xi-adv}
 \xi_\rho(\r,t)
 =\int_\q \delD\big[\r-\R_t(\q)\big]\ssp \xi_{\rho0}(\q)\,.
@@ -1625,7 +1628,7 @@ $\partial_t\ssp\xi+\frac1a\theta_{12}=0$
 is
 \bea\nonumber
 {-\int^t_0\frac{\dif t'}{a(t')}\,\theta_{12}(q,t')}
-&={\int^t_0{\dif t'}\ssp\partial_{t'}\sp\xi(q,t')}
+&\simeq{\int^t_0{\dif t'}\ssp\partial_{t'}\sp\xi(q,t')}
 =({D}/{D_0})^2\xi_{0}(q)-\xi_{0}(q)\,.
 \eea
 The standard relation, $\xi(r,t)=(D(t)/D_0)^2\xi_{0}(r)$,
@@ -2188,10 +2191,6 @@ generates increasingly long tails.
 
 
 
-
-
-\subsection{Obstacles towards inferring initial conditions*}
-deconvolution on large scales?
 
 
 
