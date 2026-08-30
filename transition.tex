@@ -115,7 +115,7 @@ reflecting the increasing uncertainty about the final positions.
 The effect is more pronounced for
 widely-separated particles (e.g.\ at the baryon acoustic scale),
 leading to an effective damping of the two-point function in what is
-normally understood as infrared resummation.
+normally referred to as infrared resummation.
 \end{abstract}
 
 %\keywords{Large-scale structure} 
@@ -136,10 +136,10 @@ real positions and
 a \emph{transition probability} $p(s\Mid x)$,
 a conditional probability density of the
 redshift positions $s$ attainable from a given real position $x$.
-This probabilistic structure appears to have gone
-unnoticed in previous work. 
+The aim of this paper is to further explore this probabilistic
+viewpoint, which apparently has gone unnoticed in previous work. 
 
-In this work we point out another relation of this form,
+We will do so by pointing out and studying another relation of this form,
 namely between Lagrangian and Eulerian space. In this relation the
 transition probability connects the initial and final correlations.
 But unlike the one found earlier, this transition probability
@@ -200,7 +200,7 @@ is naturally formulated in terms of a transition probability.
 We should note that the seeds of this idea can be
 found in \cite{Couchman_Bond88}
 who it seems were the first to give an expression like Eq.~\eqref{eq:marginal},
-but in terms of the distribution of Lagrangian displacements,
+though in terms of the distribution of Lagrangian displacements,
 obscuring a probabilistic viewpoint.
 %We are not the first to have noticed this, however.
 %As far as we know \cite{Couchman_Bond88} were the first,
@@ -212,12 +212,12 @@ calculational method of \cite{Couchman_Bond88}; see, e.g.\
 \cite{1995MNRAS.273..475S,Taylor:1996ne,
 Matsubara:2007wj,Vlah:2016bcl,Chen:2020fxs}.
 But to our knowledge a treatment of the two-point function in
-clear probabilistic terms has not been described in the literature. 
-While our work closely resembles convolution Lagrangian perturbation theory
+clear probabilistic terms has not been described before. 
+Though our work closely resembles convolution Lagrangian perturbation theory
 \citep{Carlson:2012,White:2014} there are some important
 conceptual differences.
-In particular, here we emphasize the dynamical role played by
-the transition probability, via the marginal integral~\eqref{eq:marginal}.
+In particular, here we emphasize the dynamical nature of
+the transition probability through its action in Eq.~\eqref{eq:marginal}.
 This is to be contrasted with previous works where such integrals were
 understood as nominal convolutions.
 % with the transition probability a smoothing kernel.
@@ -235,25 +235,28 @@ understood as nominal convolutions.
 %then integrate out the variables for all but two particles.
 %Rather than going this route we will stay close to LPT.
 
-Our approach also has similarities with kinetic field theory
+Our approach is in some respects also similar to kinetic field theory
 \citep[KFT;][]{Bartelmann:2014gma,Bartelmann:2019unp},
-a statistical approach to the $N$-body problem.
-Following \cite{2010PhRvE..81f1102M}, KFT reformulates the
-Hamiltonian theory of interacting point
-particles as a field theory, allowing one to
-access path integral techniques
+a statistical approach to the $N$-body problem
+based on path integral methods
 \citep{Martin:1973zz,Janssen76,deDominicis78}.
-While KFT is a more systematic framework than ours
-(working with a complete phase-space description versus
-our reduced, marginal description), it requires a great
-deal more formalism than the Lagrangian perturbation theory
-used here.
+%Following \cite{2010PhRvE..81f1102M}, KFT reformulates the
+%Hamiltonian theory of interacting point
+%particles as a field theory, allowing one to
+%access path integral techniques
+%\citep{Martin:1973zz,Janssen76,deDominicis78}.
+While KFT is a more systematic framework
+(e.g.\ working with a complete phase-space description versus
+our reduced description), it requires much else
+besides a familiarity with the
+Lagrangian perturbation theory needed here.
 
 \begin{figure*}[t!]
     \centering
     \includegraphics[width=0.9\textwidth]{plots/push} % trajectories_extended6
     % \includegraphics[width=0.8\textwidth]{plots/trajectories_extended_long8}
-    \caption{{\bf Evolution of the density from the action of the pushforward.}
+    \caption{{\bf Gravitational evolution of the
+    matter distribution from the action of the pushforward.}
     Application of the pushforward~\eqref{eq:n} transports the
     density field forward along
     particle trajectories, which crosses at late times as
@@ -1101,7 +1104,7 @@ p_t(\r\Mid\q)
 =\int\frac{\dif^3\k}{(2\pi)^3}\, e^{-\im\k\cdot\r}\ssp Z(\k;\q)\,.
 \ee
 For our particular $p_t(\r\Mid\q)=\langle\!\langle\delD(\r-\r_t)\rangle\!\rangle$
-we have, using the integral representation of the delta function
+we have, using the Fourier representation of the delta function
 and then applying the
 cumulant expansion formula~\citep[e.g.][]{1992LNP...408...65B},
 % $Z(\k;\q)=\exp\llangle e^{\im\k\cdot\r_t}\rrangle_c$. 
@@ -1176,9 +1179,11 @@ $(k\Delta t)^n$.
 % that $\r_t$ is Gaussian distributed for given
 % $\q_1$ and $\q_2$.
 \noindent
-A Gaussian transition probability is an instructive first approximation.
-This is obtained by dropping all
-but the first and second cumulants in $Z(\k;\q)$ [Eq.~\eqref{eq:W}], yielding
+For the rest of this section we will specialize to a Gaussian
+transition probability, an instructive first approximation.
+The Gaussian corresponds to dropping all
+but the first and second cumulants in $Z(\k;\q)$ [Eq.~\eqref{eq:W}],
+yielding
 \be\label{eq:p-t-Gauss}
 p_t(\r\Mid\q)\,\dif^3\r
 =\frac{e^{-\frac12[\r-\R_t(\q)]^T\mbf{C}_t(\q)^{-1}[\r-\R_t(\q)]}}
@@ -1299,116 +1304,116 @@ $\langle\Delta\bm\psi_0\ssp\Delta\bm\psi_0\rangle\to0$
 so $\mbf{C}_t(\q)\to0$, independent of time. We can understand
 this because nearby particles, subject to the same
 gravitational potential, tend to move coherently
-in single stream.
+(before multistreaming).
 
 
-\begin{figure}
-  \centering
-  \begin{tikzpicture}
-    \begin{axis}[
-      width  = 3.7in,
-      height = 1.22in,
-%      xlabel = {$r$},
-      ylabel = {$\xi_\rho(r,t)$},
-      xlabel style = {font=\small},
-      ylabel style = {font=\small},
-      axis line style = {thick},
-      tick label style = {font=\footnotesize},
-      xmin = 0,  xmax = 10,
-      ymin =  0,  ymax = 0.45,
-      xtick = \empty,
-      ytick = \empty,
-      axis lines = left,
-      clip = false,
-      samples = 200,
-      smooth,
-    ]
-    \node [font=\small] at (axis cs: 10, -0.08) {$r$};
-    % advection
-      \addplot [black, domain=0:10, thick]
-        {exp(-0.5*(x-1)^2/0.2^2) / sqrt(2*pi)};
-      \addplot [black, dashed, domain=0:10, thick]
-        {exp(-0.5*(x-2.3)^2/0.2^2) / sqrt(2*pi)};
-      % arrow between advection peaks
-      \draw [<-, thick]
-        (axis cs: 1.25, 0.38) -- (axis cs: 1.95, 0.38);
-    % advection label
-      \node [font=\small] at (axis cs: 1.65, -0.08) {advection};
-
-    % divergence
-      \addplot [black, dashed, domain=0:10, thick]
-        {exp(-0.5*(x-4.6)^2/0.2^2) / sqrt(2*pi) / 1.02};
-      \addplot [black, domain=0:10, thick]
-        {exp(-0.5*(x-4.6)^2/0.2^2) / sqrt(2*pi) / 0.82};
-      \draw [->, thick]
-        (axis cs: 4, 0.22) -- (axis cs: 4, 0.42);
-    % divergence label
-      \node [font=\small] at (axis cs: 4.6, -0.1) {convergence};
-
-    % diffusion
-      \addplot [black, dashed, domain=0:10, thick]
-        {exp(-0.5*(x-7.5)^2/0.2^2) / sqrt(2*pi)};
-      \addplot [black, domain=0:10, thick]
-        {exp(-0.5*(x-7.5)^2/0.6^2) / sqrt(2*pi) / 1.3};
-      \draw [->, >=stealth, thick]
-        (axis cs: 7.15, 0.35)
-        to[out=250, in=50]
-        (axis cs: 6.55, 0.18);
-      \draw [->, >=stealth, thick]
-        (axis cs: 7.85, 0.35)
-        to[out=290, in=130]
-        (axis cs: 8.45, 0.18);
-    % diffusion label
-      \node [font=\small] at (axis cs: 7.5, -0.08) {diffusion};
-    \end{axis}
-  \end{tikzpicture}
-  \caption{{\bf Three distinct ways in which the
-   correlation function evolves.}
-   In this picture convergence plays a similar role to the growth factor
-   in linear theory.
-	Note that depending on the scale a rightward shift of the peak
-	to larger separations due to outfall is also possible (divergence).
-	Likewise, a suppression of the peak from expansion
-	is also possible. This cartoon also ignores that
-	each effect also carries scale dependence
-	(e.g.\ different amounts of enhancement or suppression
-	on the near vs far side of the peak).}
-  \label{fig:cartoon_peak}
-\end{figure}
 
 
 
 \subsection{Large separation limit}\label{sec:large-r-limit}
 \noindent 
-For widely-separated particles the Gaussian~\eqref{eq:p-t-Gauss}
-assumes the translation-invariant form, $p_t(\r-\q)$.
-This can be seen by taking the limit $q\to\infty$
-for the mean and covariance. For the mean we have
-$\R_t\to\q$, since the tendency of infall vanishes as $q\to\infty$.
-For the covariance
-$\mbf{C}_t\to2(D(t)/D_0-1)^2\,\Sigma_0^2\,\mbf{I}$,
-since $\langle\Delta\bm\psi_0\ssp\Delta\bm\psi_0\rangle
-\to2\Sigma_0^2\,\mbf{I}$.
-Here $\Sigma_0^2=\langle\psi_0^2\rangle$ is the
+For widely-separated particles the transition probability~\eqref{eq:pt-r}
+generally assumes the translation-invariant form, $p_t(\r-\q)$.
+%This can be seen for the Gaussian~\eqref{eq:p-t-Gauss}
+%by taking the limit $q\to\infty$
+%for the mean and covariance.
+%For the mean we have
+%$\R_t\to\q$, since the tendency of infall vanishes as $q\to\infty$.
+%For the covariance
+%$\mbf{C}_t\to2(D(t)/D_0-1)^2\,\Sigma_0^2\,\mbf{I}$,
+%since $\langle\Delta\bm\psi_0\ssp\Delta\bm\psi_0\rangle
+%\to2\Sigma_0^2\,\mbf{I}$.
+In the large $q$ limit the mean and covariance converge to
+\be\label{eq:cum-large-q}
+\R_t(\q)\sim\q\,,\quad\;
+\mbf{C}_t(\q)\sim2\sp\Sigma^2_t\,\mbf{I}\,,
+\ee
+where $\Sigma^2_t\equiv(D(t)/D_0-1)^2\,\Sigma_0^2$,
+with $\Sigma_0^2=\langle\bm\psi_0^2\rangle/3$, is the
 one-dimensional displacement
-dispersion and $\mbf{I}$ is the $3\times3$ identity matrix.
-Inserting these into Eq.~\eqref{eq:p-t-Gauss}
-shows that the conditional dependence on
-$\q$ drops out.
+dispersion, and $\mbf{I}$ is the $3\times3$ identity matrix.
+Notice that these cumulants cease to depend on $\q$.
+%Here $\Sigma_0^2=\langle\bm\psi_0^2\rangle/3$ is the
+%one-dimensional displacement
+%dispersion and $\mbf{I}$ is the $3\times3$ identity matrix.
+%Inserting these into Eq.~\eqref{eq:p-t-Gauss}
+%gives a convolution.
+
+In fact, for widely-separated particles the transition
+probability~\eqref{eq:pt-r} reduces to a factorized form.
+Since the motions of particles $\q_1$
+and $\q_2$ for large $\q=\q_1-\q_2$
+can be considered independent, we have in this regime
+$p_t(\x_1,\x_2\Mid\q_1,\q_2)\approx
+p_t(\x_1\Mid\q_1)\sp p_t(\x_2\Mid\q_2)$.
+This implies
+\bea\label{eq:pt-factorize1}
+p_t(\r\sp\Mid\sp\text{$\q$ large})
+&\approx\int_{\x_1}\int_{\x_2}\:
+	p_t(\x_1\Mid\q_1)\ssp p_t(\x_2\Mid\q_2)\,\delD\big[\r-(\x_1-\x_2)\big]
+	 \nonumber\\[-2pt]
+&\qquad\qquad\qquad\qquad	\text{(with $\q=\q_1-\q_2$)}
+\eea
+%where $\sim$ is used in the asymptotic sense.
+Here $p_t(\x_1\Mid\q_1)$ and $p_t(\x_2\Mid\q_2)$ are one-particle
+transition probabilities
+(which only depend on one-point statistics like $\Sigma^2_t$).
+They are defined as
+$p_t(\x\Mid\q)=\langle\rho_0(\q)\ssp\delD[\x-\x_t(\q)]\rangle/
+\langle\rho_0(\q)\rangle$, cf.~the two-particle
+transition probability~\eqref{eq:pt}.
+Now invoking statistical homogeneity we have
+$p_t(\x\Mid\q)=p_t(\x-\q)=p_t(\bm\psi)$,
+with which Eq.~\eqref{eq:pt-factorize1} becomes
+\bea\label{eq:pt-factorize2}
+\begin{split}
+p_t(\r\sp\Mid\sp\text{$\q$ large})
+&\approx\int\dif^3{\bm\psi_1}\!\sp\int\dif^3{\bm\psi_2}\:
+	p_t(\bm\psi_1)\ssp p_t(\bm\psi_2) \\[-2pt]	
+&\qquad\qquad
+	\times\delD\big[\r-\q-(\bm\psi_1-\bm\psi_2)\big]\,,
+\end{split}
+\eea
+i.e.\ a convolution between the (identical)
+displacement distributions
+$p_t(\bm\psi_1)$ and $p_t(\bm\psi_2)$.%
+\footnote{These distributions are identical but we can easily
+imagine this will not be the case for different tracers,
+in which case $2\sp\Sigma^2$ becomes $\Sigma_A^2+\Sigma_B^2$.
+We also note here the fact that the displacement
+distribution $p_t(\bm\psi)$ is
+spatially independent is a consequence of statistical homogeneity.}
+This form makes clear that $p_t(\r\Mid\q)\to p_t(\r-\q)$.
+Note that it does not require Gaussianity;
+it is a general result for large $\q$ with equality
+when $q\to\infty$.
+
+Evaluating Eq.~\eqref{eq:pt-factorize2} is simple
+if we assume $\bm\psi_1$ and $\bm\psi_2$ are
+both Gaussian distributed with mean zero and
+covariance $\Sigma^2\mbf{I}$.
+Since Eq.~\eqref{eq:pt-factorize2} is a
+convolution between two Gaussians, we obtain for
+$p_t(\r\sp\Mid\sp\text{$\q$ large})$ a Gaussian
+with mean $\q=\q_1-\q_2$ and covariance
+$2\sp\Sigma^2\mbf{I}$, i.e.\ the sum of the individual
+covariances.
+This recovers the earlier result~\eqref{eq:cum-large-q}
+and explains the factor of two.
 
 %With the conditioning made clear, it is not hard to see from
 % these expressions that the transition probability is a genuine pdf.
-Only in the special case where the transition probability
-is translation invariant can the correlation
-function~\eqref{eq:xi-homo} be considered a convolution.
+It's worth clarifying that only in the special case where
+the transition probability is translation invariant can the correlation
+function~\eqref{eq:xi-homo} be considered a proper convolution.
 This is the case for sufficiently large separations,
 but not for small separations,
 where the transition kernel
-retains dependence on both $\r$ and $\q$. As mentioned
+has dependence on both $\r$ and $\q$. As mentioned
 in the introduction, the structure of the correlation function
 is generally that of a marginal integral, involving a genuine
-conditional pdf.
-The naming `convolution LPT'~\citep{Carlson:2012,White:2014,Vlah:2016bcl}
+conditional pdf. For this reason
+the name `convolution LPT'~\citep{Carlson:2012,White:2014,Vlah:2016bcl}
 is something of a misnomer.
 %Lastly, note that the Gaussian transition probability~\eqref{eq:pt-Delta}
 %corresponds to the convolution kernel in LPT~\citep{Carlson:2012,White:2014,Vlah:2016bcl}.
@@ -1519,24 +1524,10 @@ is something of a misnomer.
 
 
 
-\begin{figure}[t!]
-    \centering
-    \includegraphics[width=0.97\columnwidth]{plots/correlation_evolution_raw_all_snapshots_overlay_zeldovich_transition_probabilities_linear_theory} % correlation_evolution_raw_all_snapshots_overlay_zeldovich_transition_probabilities} % correlation_evolution_raw_all_snapshots_overlay_zeldovich
-    \caption{{\bf Effect of diffusion on the evolution of
-    the two-point function (overdensity).}
-    Right column shows the model transition distributions
-    for $q=95\,h^{-1}\mrm{Mpc}$ at an initial redshift $z=49$.
-    Note that in order to make the effect more apparent
-    we have scaled out the dominant convergence effect,
-    proportional to $D^2(z)$. Model predictions are based on
-    Gaussian transition probability~\eqref{eq:p-t-Gauss}
-    evaluated using the Zeldovich approximation (solid black).
-    Linear theory prediction shown for reference (dashed blue).}
-    \label{fig:evoln}
-\end{figure}
 
-\subsection{Transitions over short timescales}\label{sec:zel-approx}
-\noindent To gain insight into the nature of the
+
+\subsection{Short timescale limit}\label{sec:zel-approx}
+\noindent To get insight into the nature of the
 transitions, consider the evolution of the
 correlation function~\eqref{eq:xi-homo} over short timescales.
 
@@ -1550,9 +1541,9 @@ p_t(\r\Mid\q)=\delD[\r-\R_t(\q)]+O(\Delta t^2)\,,
 \ee
 with $\mbf{C}_t(\q)=O(\Delta t^2)$ while
 $\R_t(\q)=O(\Delta t)$.
-Ignoring the $O(\Delta t^2)$ terms, this transition can
-be viewed as the Gaussian~\eqref{eq:p-t-Gauss} in the limit 
-$\mbf{C}_t\to0$ as $t\to t_0$.
+Ignoring the $O(\Delta t^2)$ terms, the delta-function
+transition can be viewed as the Gaussian~\eqref{eq:p-t-Gauss}
+in the limit  $\mbf{C}_t\to0$ as $t\to t_0$.
 Thus, at leading order in $\Delta t$
 the transition probability remains sharp, centred
 now at $\r=\R_t(\q)=\q+\mbf{D}_t(\q)$.
@@ -1600,24 +1591,26 @@ we have
 =\frac{\xi_{\rho0}(\q)}{|\det\mbf{J}_t(\q)\sp|}\,\bigg|_{\q=\R_t^{-1}(\r)}.
 \eea
 Using Jacobi's formula,
-$\frac{\dif}{\dif t}\ln \det \mbf{J}_t=\frac1a\nabla\cdot\v_{12}$,
-then gives
+$\frac{\dif}{\dif t}\ln \det \mbf{J}_t=\frac1a\theta_{12}$
+(where $\theta_{12}=\nabla\cdot\v_{12}$ is the
+pairwise velocity divergence), we have
 \be\label{eq:xi_n-formula}
 \xi_\rho(\r,t)
 =\xi_{\rho0}(\q)
     \exp\bigg(-\int^t_{0}\frac{\dif t'}{a(t')}\,\theta_{12}(\q,t')
-        \bigg)\ssp\bigg|_{\q=\R_t^{-1}(\r)},
+        \bigg)\ssp\bigg|_{\q=\R_t^{-1}(\r)}.
 \ee
-where $\theta_{12}=\nabla\cdot\v_{12}$ is the
-pairwise velocity divergence. Equation~\eqref{eq:xi_n-formula} is a
-two-point version of
-a standard formula from fluid dynamics~\citep{MoninYaglom71}.
-It has appeared before in the context of large-scale structure,
-see, e.g.~\cite{Smith:2007gi} who derived it using
-pair conservation equation~\eqref{eq:pairwise-eqn}.
+This is a pairwise version of
+a standard formula from fluid mechanics~\citep{MoninYaglom71}.
+We note that it has appeared before in the context of
+large-scale structure,
+see, e.g.~\cite{Smith:2007gi} where it was derived using
+the pair conservation equation~\eqref{eq:pairwise-eqn}.
 Extrapolation of Eq.~\eqref{eq:xi_n-formula} beyond short
 timescales ($t\gg 0$) neglects an important effect related to $\mbf{C}_t$
 which we discuss below (Section~\ref{sec:diffusion}).
+Whatever the long-time transition probability,
+we always have Eq.~\eqref{eq:xi_n-formula} on short timescales.
 
 Note that linear theory is contained in
 Eq.~\eqref{eq:xi_n-formula}. In particular, the
@@ -1646,16 +1639,21 @@ to leading order in $\xi_0$.
 
 
 
-\subsection{Convergence and advection}
-\noindent These effects are illustrated in Figure~\ref{fig:cartoon_peak}.
-We group these two effects together because they derive from $\R_t(\q)$.
-The third effect, diffusion, is related to $\mbf{C}_t(\q)$
-and is discussed below.
 
-We call it `convergence' because it is very similar to lensing convergence;
-both are related to the trace of the Jacobian of a map.
-Here it can be identified with the exponential factor in
-Eq.~\eqref{eq:xi_n-formula}.
+
+\subsection{Convergence and advection}
+\noindent 
+Convergence is to matter particles what
+lensing convergence is to light rays.
+Both are related to the trace of the Jacobian of their respective maps.
+Its effect on the correlation function is given by
+the exponential factor in Eq.~\eqref{eq:xi_n-formula},
+a kind of growth factor; see Figure~\ref{fig:cartoon_peak}.
+
+%We group these two effects together because they derive from $\R_t(\q)$.
+%The third effect, diffusion, is related to $\mbf{C}_t(\q)$
+%and is discussed below.
+
 
 Physically, convergence is the cumulative effect
 of volume expansion and contraction on the final correlations.
@@ -1693,7 +1691,7 @@ by writing
 	+\xi_\rho\,\theta_{12}\,.
 \ee
 Here advection is due to the first term $\v_{12}\cdot\nabla_\r\,\xi_\rho$
-(while convergence is due to the second term).
+(whereas convergence is due to the second term).
 If we neglect convergence,
 so $\theta_{12}=0$, then from Eq.~\eqref{eq:xi_n-formula} 
 we have $\xi_\rho(\r,t)=\xi_{\rho0}(\R_t^{-1}(\r))$,
@@ -1720,29 +1718,30 @@ we take $q_*=100\,h^{-1}\mrm{Mpc}$ the shift is much smaller.
 For example, over a time interval $z=10$ to
 $z=0$ and using the Zeldovich approximation, we estimate a shift
 $|\mbf{D}_t(\q_*)|\simeq0.03\,h^{-1}\mrm{Mpc}$.%
-\footnote{There is another, `apparent' shift~\citep{Smith:2007gi}
-missed in this analysis. 
-This shift is induced by what we call `diffusion'
-(Section~\ref{sec:diffusion}), which has the effect of
-smoothing the correlation function at large separation.
+\footnote{There is also an `apparent' shift~\citep{Smith:2007gi}
+which is of a more statistical origin. 
+This is induced by what we call `diffusion'
+(Section~\ref{sec:diffusion}). More standardly is is known as
+`smoothing' because of its effect
+on the correlation function (at large separation).
 % due to the random, uncorrelated motions
 %(and thus displacements) of widely-separated particles.
-Such is the case near the acoustic peak. But due to the presence
-of broadband correlations, smoothing generally does not
-preserve the location of the peak.
-%This means that a thin BAO shell contains slightly more particles
-%on the inside than the outside, so that a smoothing of the shell
-%generally yields a shift in the shell's peak density.
-The result is an apparent shift. This turns out to be larger
+%Smoothing becomes evident near the acoustic peak.
+The apparent shift occurs because the peak is slightly
+asymmetric, due to broadband correlations. Because of this
+the location of the peak moves after smoothing,
+even with a symmetric smoothing kernel (e.g.\ a Gaussian).
+The result is an apparent shift, one that turns out to be larger
 than the one due to advection.
 Indeed, in the same time interval considered above, we estimate an
 overall shift of $1.2\,h^{-1}\mrm{Mpc}$, driven largely by
 the apparent shift.
 This is supported by our simulations (in 1D)
-which show a similarly small overall shift ($1.6\,h^{-1}\mrm{Mpc}$)
-and which is barely visible in Figure~\ref{fig:evoln}.
-We note that the precise size of the shift is time-interval and
-tracer dependent.}
+which show a similar overall shift ($1.6\,h^{-1}\mrm{Mpc}$),
+barely visible in Figure~\ref{fig:evoln}.
+%We note that the precise size of the shift is time-interval and
+%tracer dependent.
+}
 
 
 
@@ -1794,7 +1793,79 @@ tracer dependent.}
 %the initial correlations are volume-distorting effects of gravity.
 
 
+\begin{figure}
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+      width  = 3.7in,
+      height = 1.22in,
+%      xlabel = {$r$},
+      ylabel = {$\xi_\rho(r,t)$},
+      xlabel style = {font=\small},
+      ylabel style = {font=\small},
+      axis line style = {thick},
+      tick label style = {font=\footnotesize},
+      xmin = 0,  xmax = 10,
+      ymin =  0,  ymax = 0.45,
+      xtick = \empty,
+      ytick = \empty,
+      axis lines = left,
+      clip = false,
+      samples = 200,
+      smooth,
+    ]
+    \node [font=\small] at (axis cs: 10, -0.08) {$r$};
+    % advection
+      \addplot [black, domain=0:10, thick]
+        {exp(-0.5*(x-1)^2/0.2^2) / sqrt(2*pi)};
+      \addplot [black, dashed, domain=0:10, thick]
+        {exp(-0.5*(x-2.3)^2/0.2^2) / sqrt(2*pi)};
+      % arrow between advection peaks
+      \draw [<-, thick]
+        (axis cs: 1.25, 0.38) -- (axis cs: 1.95, 0.38);
+    % advection label
+      \node [font=\small] at (axis cs: 1.65, -0.08) {advection};
 
+    % divergence
+      \addplot [black, dashed, domain=0:10, thick]
+        {exp(-0.5*(x-4.6)^2/0.2^2) / sqrt(2*pi) / 1.02};
+      \addplot [black, domain=0:10, thick]
+        {exp(-0.5*(x-4.6)^2/0.2^2) / sqrt(2*pi) / 0.82};
+      \draw [->, thick]
+        (axis cs: 4, 0.22) -- (axis cs: 4, 0.42);
+    % divergence label
+      \node [font=\small] at (axis cs: 4.6, -0.1) {convergence};
+
+    % diffusion
+      \addplot [black, dashed, domain=0:10, thick]
+        {exp(-0.5*(x-7.5)^2/0.2^2) / sqrt(2*pi)};
+      \addplot [black, domain=0:10, thick]
+        {exp(-0.5*(x-7.5)^2/0.6^2) / sqrt(2*pi) / 1.3};
+      \draw [->, >=stealth, thick]
+        (axis cs: 7.15, 0.35)
+        to[out=250, in=50]
+        (axis cs: 6.55, 0.18);
+      \draw [->, >=stealth, thick]
+        (axis cs: 7.85, 0.35)
+        to[out=290, in=130]
+        (axis cs: 8.45, 0.18);
+    % diffusion label
+      \node [font=\small] at (axis cs: 7.5, -0.08) {diffusion};
+    \end{axis}
+  \end{tikzpicture}
+  \caption{{\bf Three ways in which the
+   correlation function evolves.}
+   In this picture convergence plays a similar role to the growth factor
+   in linear theory.
+	Note that depending on the scale a rightward shift of the peak
+	to larger separations due to outfall is also possible (divergence).
+	Likewise, a suppression of the peak from expansion
+	is also possible. This cartoon also ignores that
+	each effect also carries scale dependence
+	(e.g.\ different amounts of enhancement or suppression
+	on the near vs far side of the peak).}
+  \label{fig:cartoon_peak}
+\end{figure}
 
 
 
@@ -1802,14 +1873,15 @@ tracer dependent.}
 \noindent
 Diffusion describes the spreading out
 of trajectories, as seen in Figure~\ref{fig:pt} (left panels).
-It is governed by $\mbf{C}_t$ and its 
+Unlike advection and convergence, it is described by
+$\mbf{C}_t$ and its 
 %it is absent in
 %Eq.~\eqref{eq:xi_n-formula}, and we need to
 %consider the full Gaussian kernel~\eqref{eq:p-t-Gauss}.
 effect on the correlation function is shown in Figure~\ref{fig:evoln}.
 
-To motivate this effect it is useful to note 
-that the Gaussian satisfies the
+To ground the discussion it is useful to note 
+that the Gaussian~\eqref{eq:p-t-Gauss} satisfies the
 Fokker--Planck equation~\citep{Risken1989FokkerPlanck}
 \be\label{eq:FP}
 \partial_t p_t=-\nabla_\r\cdot (\dot{\R}_t p_t)
@@ -1841,6 +1913,22 @@ approximated by the large separation limit
 (Section~\ref{sec:large-r-limit}), i.e.\ by genuine
 convolutions.
 
+\begin{figure}[t!]
+    \centering
+    \includegraphics[width=0.97\columnwidth]{plots/correlation_evolution_raw_all_snapshots_overlay_zeldovich_transition_probabilities_linear_theory} % correlation_evolution_raw_all_snapshots_overlay_zeldovich_transition_probabilities} % correlation_evolution_raw_all_snapshots_overlay_zeldovich
+    \caption{{\bf Effect of diffusion on the evolution of
+    the two-point function (overdensity).}
+    Right column shows the model transition proabibilities
+    for fixed $q=95\,h^{-1}\mrm{Mpc}$ and an initial redshift $z=49$.
+    Note that in order to make the effect more apparent
+    we have scaled out the dominant convergence effect,
+    proportional to $D^2(z)$. Model predictions are based on
+    Gaussian transition probability~\eqref{eq:p-t-Gauss}
+    evaluated using the Zeldovich approximation (solid black).
+    Linear theory prediction shown for reference (dashed blue).}
+    \label{fig:evoln}
+\end{figure}
+
 
 On the size of the effect, diffusion is subdominant to
 convergence. Hence we have
@@ -1852,23 +1940,28 @@ across the same redshift interval, we find the peak is
 suppressed by a factor of about 4 (with respect to the broadband),
 about an order of magnitude smaller than the convergence.
 
-To be clear, diffusion is not a new phenomena:
-the suppression of the acoustic peak is well established, and
-the failure of standard perturbation theory to account
-for it is well known~\citep{Senatore:2014via}.
-But typically the suppression is understood in terms of
-field theory and in particular
-the nonperturbative effects of long-wavelength modes.
+To be clear, we are \emph{not} identifying a new phenomena:
+the suppression (or smoothing) of the acoustic peak is well established,
+and the failure of standard perturbation theory to account
+for it is well known~\citep[e.g.][]{Senatore:2014via}.
+We are here
+describing the suppression as the result of diffusion,
+rather than the more conventional view (an effect of bulk
+motions from long-wavelength modes.
 The procedure that corrects for this is known as `infrared resummation'~\citep{Baldauf:2015xfa}.
 The framework we have presented instead describes this
 suppression as arising from the uncorrelated motions between
-widely-separated particle pairs. In this limit each particle
-in the pair is subject to independent gravitational forces
+widely-separated particle pairs, as described in
+Section~\ref{sec:large-r-limit}. The particles in such pairs
+are subject to independent gravitational forces
 sourced by encounters with nearby particles. This explains why
-we have $\mbf{C}_t(\q)\propto 2\Sigma^2$ for widely-separated particles
-and $\mbf{C}_t(\q)\simeq0$ for closely-separated ones.
+we have the sum of the individual dispersions,
+$\mbf{C}_t(\q)= 2\Sigma^2\mbf{I}$, for widely-separated particles,
+but $\mbf{C}_t(\q)\simeq0$ for closely-separated ones.
 Even if the correlation function was smooth without any features,
 there is still suppression.
+
+
 
 
 
@@ -1932,6 +2025,10 @@ there is still suppression.
 %$\R_t(\q)$).
 
 
+
+
+
+
 \begin{figure}[t!]
     \centering
     \includegraphics[width=\columnwidth]{plots/conditional_entropy_particle_count_comparison} % conditional_entropy
@@ -1944,21 +2041,18 @@ there is still suppression.
 \end{figure}
 
 
-
-
-
 \subsection{Entropy}
 \noindent A sharp transition distribution 
 implies little uncertainty in the final positions 
 of particles.
 A convenient way to quantify this is
-by computing the conditional entropy~\citep{Mackay_book}
+with the conditional entropy~\citep{Mackay_book}
 \be\label{eq:H}
 H_t(\q)=-\int\dif^3\r\, p_t(\r\Mid\q)\ln p_t(\r\Mid\q)\,.
 \ee
 We are interested in the change in entropy with time.
 At $t=0$ the transition probability is a delta function
-so $H_t(\q)=-\infty$, regardless of the value of $\q$.
+so $H_t(\q)=-\infty$, independent of $\q$.
 (If at the initial time one or
 both locations of the pair is multistreaming,
 then the map is multivalued.)
@@ -1977,13 +2071,7 @@ infrared resummation in the conventional approach).
 
 The effect of these large-scale displacements has sometimes been called `smearing'.
 E.g. Crocce and Scoccimarro, Bharadwaj 1996.
-From the point of view of the transition probability
-this is because for large $\r$ the transition probability
-depends on $\r-\q$ and not $\r$ and $\q$ separately.
-In particular, $\mbf{C}_t(\q)\to\mrm{const}.$ and $\mbf{D}_t(\q)\to0$.
-That is, for large $\r$ the transition probability
-reduces to a Gaussian convolution kernel.
-This is often called IR resummation.
+
 
 {\it needs editing.} The conditional entropy measures the broadening of the
 final pair-separation distribution.
@@ -2012,6 +2100,7 @@ As the bottom row in Figure~\ref{fig:pt} shows, the pdf can
 continue to develop a narrow, strongly populated
 core associated with trapped pairs while a small fraction of pairs
 generates increasingly long tails.
+
 
 
 %There are a couple of regimes in which we expect
@@ -3836,7 +3925,7 @@ deconvolution on large scales?
 %apparently not been described.
 The current power spectrum modelling paradigm is based
 on growth factors, transfer functions, initial spectra,
-and a continuous (or fluid) description of matter.
+a fluid description of matter, and Fourier mode decomposition.
 There are many reasons, both theoretical and practical,
 that the power spectra
 has become the statistic of choice~\citep{Hamilton:2005kz}.
@@ -3881,6 +3970,10 @@ dispersed. There is no infall-induced shift in the final distribution
 but only a broadening brought on by different realizations of the 
 velocity field, which on average has no preferred direction.
 
+An awkward aspect of this framework is the self-consistency of
+the equation of motion. This prevented a straightforward application
+of stochastic methods to our problem. Active transport versus
+passive transport.
 
 By formulating correlations in terms of transition probability
 we have arrived at a statistical understanding of the evolution
@@ -4039,12 +4132,14 @@ from the late-time correlations.
 
 
 \begin{acknowledgements}
-The bulk of this manuscript was written in 2025 at the University of Geneva
+This paper was originally intended as a companion to
+\cite{Dam:2025ops}. The bulk of the paper was written in 2025
+at the University of Geneva
 where the author was supported by the European Research Council under
 the Horizon 2020 Research and Innovation Programme of the European Union
 (grant agreement no.~863929). Numerics were added more recently
-for which the author acknowledges use of GPT-5.6 (OpenAI) to assist in code development and thus accepts responsibility for
-the accuracy of the results reported. All text was human authored.
+for which the author acknowledges use of GPT-5.6 (OpenAI) to assist in code development and accepts responsibility for
+the accuracy of the results. All text was human authored.
 Use of the Baobab HPC cluster at the University
 of Geneva is gratefully acknowledged.
 LD thanks Anton Chudaykin and Omar Darwish for helpful discussions.
