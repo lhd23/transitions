@@ -129,12 +129,11 @@ In previous work~\citep{Dam:2025ops} % on a related topic
 we noticed a general
 relation between correlations in
 redshift space and those in real space. The
-relation takes
-the form $p(s)=\int\dif x\, p(s\Mid x)\sp p(x)$; that is,
-a marginal integral over the distribution $p(x)$ of
-real positions and
-a \emph{transition probability} $p(s\Mid x)$,
-a conditional probability density of the
+relation takes the form of the marginal integral
+$p(s)=\int\dif x\, p(s\Mid x)\sp p(x)$, where
+$p(s)$ is the distribution of redshift positions,
+$p(x)$ is the distribution of real positions, and $p(s\Mid x)$ is a
+\emph{transition probability}, a conditional probability of the
 redshift positions $s$ attainable from a given real position $x$.
 The aim of this paper is to further explore this probabilistic
 viewpoint, which apparently has gone unnoticed in previous work. 
@@ -304,16 +303,20 @@ we clarify the assumptions underlying Eq.~\eqref{eq:n}.
 
 
 \noindent{\bf Notation and conventions.}
-In this work we find it more convenient to use the density
-correlation function
-$\xi_\rho(\x_1,\x_2)=\langle \rho(\x_1)\sp \rho(\x_2)\rangle$
-rather than the more standard
+In order to simplify the notation, we use two non-standard
+conventions. Since these have the potential to confuse,
+we spell them out here.
+First, subscript 0 denotes evaluation at the \emph{initial}
+time $t_0$, not the present time.
+Without loss of generality we take  $t_0=0$.
+Second, we find it much more convenient to work with the
+correlation function of the absolute density $\rho$, with
+$\xi_\rho(\x_1,\x_2)=\langle \rho(\x_1)\sp \rho(\x_2)\rangle$,
+rather than of the overdensity $\delta=\rho/\bar{\rho}-1$,
+which we instead denote
 $\xi(\x_1,\x_2)=\langle\delta(\x_1)\sp\delta(\x_2)\rangle$
-of the overdensity $\delta=\rho/\bar{\rho}-1$.
-Of course the two are simply related by
+(without subscript). The two are related by
 $\xi_\rho(\x_1,\x_2)=\bar{\rho}^2[1+\xi(\x_1,\x_2)]$.
-We will also use subscript 0 to denote evaluation at the
-initial time $t=0$, not the present time.
 
 
 
@@ -1185,9 +1188,9 @@ The Gaussian corresponds to dropping all
 but the first and second cumulants in $Z(\k;\q)$ [Eq.~\eqref{eq:W}],
 yielding
 \be\label{eq:p-t-Gauss}
-p_t(\r\Mid\q)\,\dif^3\r
+p_t(\r\Mid\q)
 =\frac{e^{-\frac12[\r-\R_t(\q)]^T\mbf{C}_t(\q)^{-1}[\r-\R_t(\q)]}}
-    {\sqrt{(2\pi)^3|\det\mbf{C}_t(\q)|}}\,\dif^3\r\,,
+    {\sqrt{(2\pi)^3|\det\mbf{C}_t(\q)|}}\,,
 \ee
 This is a conditional Gaussian with mean and covariance
 %gives
@@ -1228,9 +1231,9 @@ Specifically, by making a change of variables from $\r$ to
 $\bm\Delta$, we can alternatively
 express the Gaussian~\eqref{eq:p-t-Gauss} as
 \be\label{eq:pt-Delta}
-p_t(\bm\Delta\Mid\q)\,\dif^3\bm\Delta
+p_t(\bm\Delta\Mid\q)%\,\dif^3\bm\Delta
 =\frac{e^{-\frac12[\bm\Delta-\mbf{D}_t(\q)]^T\mbf{C}_t(\q)^{-1}[\bm\Delta-\mbf{D}_t(\q)]}}
-    {\sqrt{(2\pi)^3|\det\mbf{C}_t(\q)|}}\,\dif^3\bm\Delta\,.
+    {\sqrt{(2\pi)^3|\det\mbf{C}_t(\q)|}}\,,%\,\dif^3\bm\Delta\,.
 \ee
 with mean and covariance
 [$\Delta\bm\psi\equiv\bm\psi(\q_1,t)-\bm\psi(\q_2,t)$]
@@ -1262,9 +1265,9 @@ $\R_t$ and $\mbf{C}_t$. We do this using the
 For the mean (a vector) we have
 %$\R_t(\q)=\q+\v_{12}(\q,0)\int^t_{0}\dif t' A(t')/a(t')$.
 %where $\int^t_{0}\dif t' A(t')\propto D^2-1$
-\be
+\be\label{eq:R-zel}
 \R_t(\q)\simeq\q+
-	2\big(D(t)/D_0-1\big)\,
+	2\big[D(t)/D_0-1\big]\,
 	\langle\bm\psi_0(0)\ssp\delta_0(\q)\rangle\,,
 \ee
 with $\R_t(\q)=\q$ when $t=0$. Here $D(t)$ is the growth factor
@@ -1283,7 +1286,7 @@ as $q\to0$: $\langle\bm\psi_0(0)\ssp\delta_0(\q)\rangle\to0$.
 For the covariance we have
 \be\label{eq:C}
 \mbf{C}_t(\q)
-\simeq\big(D(t)/D_0-1\big)^2\sp
+\simeq\big[D(t)/D_0-1\big]^2\sp
 	\langle\Delta\bm\psi_0\ssp\Delta\bm\psi_0\rangle\,,
 \ee
 with $\mbf{C}_t(\q)=0$ when $t=0$.
@@ -1312,43 +1315,16 @@ gravitational potential, tend to move coherently
 
 \subsection{Large separation limit}\label{sec:large-r-limit}
 \noindent 
-For widely-separated particles the transition probability~\eqref{eq:pt-r}
-generally assumes the translation-invariant form, $p_t(\r-\q)$.
-%This can be seen for the Gaussian~\eqref{eq:p-t-Gauss}
-%by taking the limit $q\to\infty$
-%for the mean and covariance.
-%For the mean we have
-%$\R_t\to\q$, since the tendency of infall vanishes as $q\to\infty$.
-%For the covariance
-%$\mbf{C}_t\to2(D(t)/D_0-1)^2\,\Sigma_0^2\,\mbf{I}$,
-%since $\langle\Delta\bm\psi_0\ssp\Delta\bm\psi_0\rangle
-%\to2\Sigma_0^2\,\mbf{I}$.
-In the large $q$ limit the mean and covariance converge to
-\be\label{eq:cum-large-q}
-\R_t(\q)\sim\q\,,\quad\;
-\mbf{C}_t(\q)\sim2\sp\Sigma^2_t\,\mbf{I}\,,
-\ee
-where $\Sigma^2_t\equiv(D(t)/D_0-1)^2\,\Sigma_0^2$,
-with $\Sigma_0^2=\langle\bm\psi_0^2\rangle/3$, is the
-one-dimensional displacement
-dispersion, and $\mbf{I}$ is the $3\times3$ identity matrix.
-Since these cumulants no longer depend on $\q$,
-Eq.~\eqref{eq:xi-homo} becomes a convolution.
-
-%Here $\Sigma_0^2=\langle\bm\psi_0^2\rangle/3$ is the
-%one-dimensional displacement
-%dispersion and $\mbf{I}$ is the $3\times3$ identity matrix.
-%Inserting these into Eq.~\eqref{eq:p-t-Gauss}
-%gives a convolution.
-
-In general, the transition probability~\eqref{eq:pt-r} of
-widely-separated particles reduces to a factorized form.
-Since the motions of particles $\q_1$
-and $\q_2$ for large $\q=\q_1-\q_2$
-can be considered independent, we have in this regime
+Two particles may be considered
+statistically independent if their separation is sufficiently large.
+We can use this fact to show that in this regime the
+transition probability~\eqref{eq:pt-r} reduces to a factorized form.
+More precisely, since the motions of particles $\q_1$ and $\q_2$ for
+large $\q\equiv\q_1-\q_2$
+can be considered uncorrelated, we have in this regime
 $p_t(\x_1,\x_2\Mid\q_1,\q_2)\approx
 p_t(\x_1\Mid\q_1)\sp p_t(\x_2\Mid\q_2)$.
-This gives
+Enforcing that $\r=\x_1-\x_2$, using the chain rule, we thus have
 \bea\label{eq:pt-factorize1}
 p_t(\r\sp\Mid\sp\text{$\q$ large})
 &\approx\int_{\x_1}\int_{\x_2}\:
@@ -1361,8 +1337,9 @@ Here $p_t(\x_1\Mid\q_1)$ and $p_t(\x_2\Mid\q_2)$ are one-particle
 transition probabilities
 (which only depend on one-point statistics like $\Sigma^2_t$).
 They are defined as
-$p_t(\x\Mid\q)=\langle\rho_0(\q)\ssp\delD[\x-\x_t(\q)]\rangle/
-\langle\rho_0(\q)\rangle$, cf.~the two-particle
+$p_t(\x_1\Mid\q_1)=\langle\rho_0(\q_1)\ssp\delD[\x_1-\x_t(\q_1)]\rangle/
+\langle\rho_0(\q_1)\rangle$ and likewise for $p_t(\x_2\Mid\q_2)$,
+cf.~the two-particle
 transition probability~\eqref{eq:pt}.
 Now invoking statistical homogeneity we have
 $p_t(\x\Mid\q)=p_t(\x-\q)=p_t(\bm\psi)$,
@@ -1385,36 +1362,83 @@ in which case $2\sp\Sigma^2$ becomes $\Sigma_A^2+\Sigma_B^2$.
 We also note here the fact that the displacement
 distribution $p_t(\bm\psi)$ is
 spatially independent is a consequence of statistical homogeneity.}
-This form makes clear that $p_t(\r\Mid\q)\to p_t(\r-\q)$.
-Note that it does not require Gaussianity;
-it is a general result for large $\q$ with equality
-when $q\to\infty$.
+Equation~\eqref{eq:pt-factorize2} has the property
+$p_t(\r\Mid\q)\approx p_t(\r-\q)$,
+i.e.\ translation invariant.
 
-Evaluating Eq.~\eqref{eq:pt-factorize2} is simple
-if we assume $\bm\psi_1$ and $\bm\psi_2$ are
-both Gaussian distributed with mean zero and
-covariance $\Sigma^2\mbf{I}$.
-Since Eq.~\eqref{eq:pt-factorize2} is a
-convolution between two Gaussians, we obtain for
-$p_t(\r\sp\Mid\sp\text{$\q$ large})$ a Gaussian
-with mean $\q=\q_1-\q_2$ and covariance
-$2\sp\Sigma^2\mbf{I}$, i.e.\ the sum of the individual
-covariances.
-This recovers the earlier result~\eqref{eq:cum-large-q}
-and explains the factor of two.
+The above expressions hold for arbitrary
+one-point pdf $p_t(\bm\psi_a)$;
+now let us evaluate the
+transition probability~\eqref{eq:pt-factorize2}
+assuming $\bm\psi$ is a Gaussian field. In this case the
+one-point pdf is Gaussian with mean zero
+and covariance $\Sigma_t^2\mbf{I}_3$, where
+$\Sigma_t^2\equiv[D(t)/D_0-1]^2\Sigma_0^2$,
+with $\Sigma_0^2=\langle\bm\psi_0^2\rangle/3$, is the
+one-dimensional displacement
+dispersion, and $\mbf{I}_3$ is the $3\times3$ identity matrix.
+Noting that Eq.~\eqref{eq:pt-factorize2} is a
+convolution between two Gaussians, the result for
+$p_t(\r\sp\Mid\sp\text{$\q$ large})$ is a joint Gaussian
+with mean and covariance
+\be\label{eq:cum-large-q}
+\R_t(\q)\approx\q\,,\quad
+\mbf{C}_t(\q)\approx2\sp\Sigma_t^2\mbf{I}_3\,,
+\quad\text{(large $\q$)}
+\ee
+where the factor of two is just a consequence of independence
+(sum the individual covariances).
+%This recovers the earlier result~\eqref{eq:cum-large-q}
+%and explains the factor of two.
+In a more model-dependent way, this result can also be obtained from the
+Gaussian transition pdf~\eqref{eq:p-t-Gauss}, by taking
+the large $\q$ limit of the Zeldovich mean~\eqref{eq:R-zel} and 
+covariance~\eqref{eq:C}.
+Note that since the transition probability is in the form
+$p_t(\r-\q)$, the correlation function~\eqref{eq:xi-homo} is
+given by a convolution.
+%For widely-separated particles the transition probability~\eqref{eq:pt-r}
+%generally assumes the translation-invariant form, $p_t(\r-\q)$.
+%This can be seen for the Gaussian~\eqref{eq:p-t-Gauss}
+%by taking the limit $q\to\infty$
+%for the mean and covariance.
+%For the mean we have
+%$\R_t\to\q$, since the tendency of infall vanishes as $q\to\infty$.
+%For the covariance
+%$\mbf{C}_t\to2(D(t)/D_0-1)^2\,\Sigma_0^2\,\mbf{I}$,
+%since $\langle\Delta\bm\psi_0\ssp\Delta\bm\psi_0\rangle
+%\to2\Sigma_0^2\,\mbf{I}$.
+%In the large $q$ limit the mean and covariance converge to
+%\be
+%\R_t(\q)\sim\q\,,\quad\;
+%\mbf{C}_t(\q)\sim2\sp\Sigma^2_t\,\mbf{I}\,,
+%\ee
+%where $\Sigma^2_t\equiv(D(t)/D_0-1)^2\,\Sigma_0^2$,
+%with $\Sigma_0^2=\langle\bm\psi_0^2\rangle/3$, is the
+%one-dimensional displacement
+%dispersion, and $\mbf{I}$ is the $3\times3$ identity matrix.
+%Since these cumulants no longer depend on $\q$,
+%Eq.~\eqref{eq:xi-homo} becomes a convolution.
+
+%Here $\Sigma_0^2=\langle\bm\psi_0^2\rangle/3$ is the
+%one-dimensional displacement
+%dispersion and $\mbf{I}$ is the $3\times3$ identity matrix.
+%Inserting these into Eq.~\eqref{eq:p-t-Gauss}
+%gives a convolution.
+
+
 
 %With the conditioning made clear, it is not hard to see from
 % these expressions that the transition probability is a genuine pdf.
-It's worth clarifying that only in the special case where
-the transition probability is translation invariant can the correlation
+We emphasize that only in the case where the transition
+probability is translation invariant---i.e.\ of the form
+$p_t(\r-\q)$, as in the large separation limit---can the correlation
 function~\eqref{eq:xi-homo} be considered a proper convolution.
-This is the case for sufficiently large separations,
-but not for small separations,
-where the transition kernel
-has dependence on both $\r$ and $\q$. As mentioned
+This not the case for small separations, where the transition
+kernel has dependence on both $\r$ and $\q$. As mentioned
 in the introduction, the structure of the correlation function
 is generally that of a marginal integral, involving a genuine
-conditional pdf. For this reason
+conditional pdf. Given this
 the name `convolution LPT'~\citep{Carlson:2012,White:2014,Vlah:2016bcl}
 is something of a misnomer.
 %Lastly, note that the Gaussian transition probability~\eqref{eq:pt-Delta}
@@ -1531,7 +1555,7 @@ is something of a misnomer.
 \subsection{Short timescale limit}\label{sec:zel-approx}
 \noindent To get insight into the nature of the
 transitions, consider the evolution of the
-correlation function~\eqref{eq:xi-homo} over short timescales.
+correlation function~\eqref{eq:xi-homo} over a small time interval.
 
 First, we mentioned in Section~\ref{sec:properties} that the
 transition probability collapses to  $p_t(\r\Mid\q)\to\delD(\r-\q)$ in the limit
@@ -1959,7 +1983,7 @@ Section~\ref{sec:large-r-limit}. The particles in such pairs
 are subject to independent gravitational forces
 sourced by encounters with nearby particles. This explains why
 we have the sum of the individual dispersions,
-$\mbf{C}_t(\q)= 2\Sigma^2\mbf{I}$, for widely-separated particles,
+$\mbf{C}_t(\q)= 2\Sigma_t^2\mbf{I}$, for widely-separated particles,
 but $\mbf{C}_t(\q)\simeq0$ for closely-separated ones.
 Even if the correlation function was smooth without any features,
 there is still suppression.
@@ -4136,7 +4160,8 @@ This paper was originally intended as a companion to
 at the University of Geneva
 where the author was supported by the European Research Council under
 the Horizon 2020 Research and Innovation Programme of the European Union
-(grant agreement no.~863929). Numerics were added more recently
+(grant agreement no.~863929), and more recently furnished with
+numerics and figures
 for which the author acknowledges use of GPT-5.6 (OpenAI) to assist in code development and accepts responsibility for
 the accuracy of the results. All text was human authored.
 Use of the Baobab HPC cluster at the University
