@@ -255,7 +255,7 @@ Lagrangian perturbation theory needed here.
     \includegraphics[width=0.9\textwidth]{plots/push} % trajectories_extended6
     % \includegraphics[width=0.8\textwidth]{plots/trajectories_extended_long8}
     \caption{{\bf Gravitational evolution of the
-    matter distribution from the action of the pushforward.}
+    matter distribution given by the action of the pushforward.}
     Application of the pushforward~\eqref{eq:n} transports the
     density field forward along
     particle trajectories, which crosses at late times as
@@ -303,7 +303,7 @@ we clarify the assumptions underlying Eq.~\eqref{eq:n}.
 
 
 \noindent{\bf Notation and conventions.}
-In order to simplify the notation, we use two non-standard
+To simplify notation we use two non-standard
 conventions. Since these have the potential to confuse,
 we spell them out here.
 First, subscript 0 denotes evaluation at the \emph{initial}
@@ -1093,9 +1093,9 @@ Markov property.
 
 \section{Statistical evolution}\label{sec:proof}
 \noindent 
-The nonlinearity induced by gravitational collapse
-enters the correlation function through the transition probabilities
-(the initial correlations being simply described by linear theory).
+The nonlinearity induced by gravitational evolution
+enters the correlation function through the transition probabilities.
+%(the initial correlations being simply described by linear theory).
 Thus it is worth studying how the transition probability encodes 
 the full nonlinear evolution, and in particular how it is
 built up from the pairwise statistics
@@ -1315,32 +1315,35 @@ gravitational potential, tend to move coherently
 
 \subsection{Large separation limit}\label{sec:large-r-limit}
 \noindent 
-Two particles may be considered
-statistically independent if their separation is sufficiently large.
-We can use this fact to show that in this regime the
-transition probability~\eqref{eq:pt-r} reduces to a factorized form.
-More precisely, since the motions of particles $\q_1$ and $\q_2$ for
+Two particles may be regarded as
+statistically independent if they are sufficiently far apart
+(large separation).
+This implies that the
+transition probability~\eqref{eq:pt-r} should reduce to a factorized form.
+This will now be shown.
+First, since the motions of particles $\q_1$ and $\q_2$ for
 large $\q\equiv\q_1-\q_2$
 can be considered uncorrelated, we have in this regime
 $p_t(\x_1,\x_2\Mid\q_1,\q_2)\approx
 p_t(\x_1\Mid\q_1)\sp p_t(\x_2\Mid\q_2)$.
-Enforcing that $\r=\x_1-\x_2$, using the chain rule, we thus have
+Enforcing that $\r=\x_1-\x_2$, by using the chain rule,
+we thus have
 \bea\label{eq:pt-factorize1}
 p_t(\r\sp\Mid\sp\text{$\q$ large})
 &\approx\int_{\x_1}\int_{\x_2}\:
 	p_t(\x_1\Mid\q_1)\ssp p_t(\x_2\Mid\q_2)\,\delD\big[\r-(\x_1-\x_2)\big]
 	 \nonumber\\[-2pt]
-&\qquad\qquad\qquad\qquad	\text{(with $\q=\q_1-\q_2$)}
+&\qquad\qquad\qquad	\text{with $\q=\q_1-\q_2$}\,.
 \eea
 %where $\sim$ is used in the asymptotic sense.
 Here $p_t(\x_1\Mid\q_1)$ and $p_t(\x_2\Mid\q_2)$ are one-particle
 transition probabilities
 (which only depend on one-point statistics like $\Sigma^2_t$).
-They are defined as
+Since the (two-particle)
+transition probability~\eqref{eq:pt} factorizes as
+$\langle AB\rangle=\langle A\rangle\langle B\rangle$, we have
 $p_t(\x_1\Mid\q_1)=\langle\rho_0(\q_1)\ssp\delD[\x_1-\x_t(\q_1)]\rangle/
-\langle\rho_0(\q_1)\rangle$ and likewise for $p_t(\x_2\Mid\q_2)$,
-cf.~the two-particle
-transition probability~\eqref{eq:pt}.
+\langle\rho_0(\q_1)\rangle$ and likewise for $p_t(\x_2\Mid\q_2)$.
 Now invoking statistical homogeneity we have
 $p_t(\x\Mid\q)=p_t(\x-\q)=p_t(\bm\psi)$,
 with which Eq.~\eqref{eq:pt-factorize1} becomes
@@ -1356,8 +1359,8 @@ p_t(\r\sp\Mid\sp\text{$\q$ large})
 i.e.\ a convolution between the (identical)
 displacement distributions
 $p_t(\bm\psi_1)$ and $p_t(\bm\psi_2)$.%
-\footnote{These distributions are identical but we can easily
-imagine this will not be the case for different tracers,
+\footnote{These distributions are identical but it's not hard to
+imagine this will not be the case for different tracers $A\neq B$,
 in which case $2\sp\Sigma^2$ becomes $\Sigma_A^2+\Sigma_B^2$.
 We also note here the fact that the displacement
 distribution $p_t(\bm\psi)$ is
@@ -1366,7 +1369,7 @@ Equation~\eqref{eq:pt-factorize2} has the property
 $p_t(\r\Mid\q)\approx p_t(\r-\q)$,
 i.e.\ translation invariant.
 
-The above expressions hold for arbitrary
+The above expressions hold for an arbitrary
 one-point pdf $p_t(\bm\psi_a)$;
 now let us evaluate the
 transition probability~\eqref{eq:pt-factorize2}
@@ -1555,7 +1558,8 @@ is something of a misnomer.
 \subsection{Short timescale limit}\label{sec:zel-approx}
 \noindent To get insight into the nature of the
 transitions, consider the evolution of the
-correlation function~\eqref{eq:xi-homo} over a small time interval.
+correlation function~\eqref{eq:xi-homo} over a
+small time interval $\Delta t$.
 
 First, we mentioned in Section~\ref{sec:properties} that the
 transition probability collapses to  $p_t(\r\Mid\q)\to\delD(\r-\q)$ in the limit
@@ -1603,7 +1607,6 @@ closed-form expression of the correlation function $\xi_\rho(\r,t)$.
 Inserting into Eq.~\eqref{eq:xi-homo} the sharp transition
 probability~\eqref{eq:pt-sharp},
 neglecting the $O(\Delta t^2)$ corrections, we have
-[cf.~Eq.~\eqref{eq:xi-homo}]
 \be\label{eq:xi-adv}
 \xi_\rho(\r,t)
 =\int_\q \delD\big[\r-\R_t(\q)\big]\ssp \xi_{\rho0}(\q)\,.
@@ -1688,7 +1691,7 @@ of volume expansion and contraction on the final correlations.
 %$\det\mbf{J}_t=1$ and $\r=\q$, we have $\xi_\rho(\r,t)=\xi_{\rho0}(\r)$.
 We can picture this as follows.
 Consider a shell of test particles, with initial
-radius $\q$, traced along 
+radius $\q$. This is to be traced along 
 characteristics from time $t'=0$ to $t'=t$.
 In overdense regions where pairs of particles are more
 likely to be infalling, trajectories
@@ -1708,7 +1711,8 @@ If we evaluate the Jacobian using linear theory
 
 
 
-Next consider advection.
+Next consider advection. This is related to the transport
+of matter under flows.
 We can identify this effect in the
 pair conservation equation~\eqref{eq:pairwise-eqn}
 by writing
@@ -1952,7 +1956,7 @@ convolutions.
     proportional to $D^2(z)$. Model predictions are based on
     Gaussian transition probability~\eqref{eq:p-t-Gauss}
     evaluated using the Zeldovich approximation (solid black).
-    Linear theory prediction shown for reference (dashed blue).}
+    Linear theory shown for reference (dashed blue).}
     \label{fig:evoln}
 \end{figure}
 
@@ -1967,26 +1971,39 @@ across the same redshift interval, we find the peak is
 suppressed by a factor of about 4 (with respect to the broadband),
 about an order of magnitude smaller than the convergence.
 
-To be clear, we are \emph{not} identifying a new phenomena:
-the suppression (or smoothing) of the acoustic peak is well established,
-and the failure of standard perturbation theory to account
-for it is well known~\citep[e.g.][]{Senatore:2014via}.
-We are here
-describing the suppression as the result of diffusion,
-rather than the more conventional view (an effect of bulk
-motions from long-wavelength modes.
+To be clear, we are \emph{not} identifying a new phenomena here:
+the suppression (or smoothing) of the acoustic peak is well known,
+as well as the failure of standard perturbation theory to account
+for it~\citep[e.g.][]{Senatore:2014via}.
 The procedure that corrects for this is known as `infrared resummation'~\citep{Baldauf:2015xfa}.
-The framework we have presented instead describes this
-suppression as arising from the uncorrelated motions between
-widely-separated particle pairs, as described in
-Section~\ref{sec:large-r-limit}. The particles in such pairs
-are subject to independent gravitational forces
-sourced by encounters with nearby particles. This explains why
-we have the sum of the individual dispersions,
-$\mbf{C}_t(\q)= 2\Sigma_t^2\mbf{I}$, for widely-separated particles,
-but $\mbf{C}_t(\q)\simeq0$ for closely-separated ones.
+We are instead describing the suppression as a diffusion process
+whereby widely-separated particles move independently
+of one another, causing the distribution of pairwise
+positions to broaden over time. As described in Section~\ref{sec:large-r-limit},
+since the tendency for two objects to infall diminishes over
+increasingly large separation, their motions tend to be uncorrelated,
+driven by nearby matter. Since the statistically the motions are
+determined by one-point functions, we naturally have that
+the separation distribution broadens
+as $2\sp\Sigma_t^2$ in Eq.~\eqref{eq:cum-large-q}, where
+$\Sigma_t^2\sim D^2(t)$ is the displacement dispersion and the factor
+of two is due to statistical independence.
 Even if the correlation function was smooth without any features,
 there is still suppression.
+
+% rather than the more conventional view of an effect of bulk
+%motions from long-wavelength modes.
+%The framework we have presented instead describes this
+%suppression as arising from the uncorrelated motions between
+%widely-separated particle pairs, as described in
+%Section~\ref{sec:large-r-limit}. The particles in such pairs
+%are subject to independent gravitational forces
+%sourced by encounters with nearby particles. This explains why
+%we have the sum of the individual dispersions,
+%$\mbf{C}_t(\q)= 2\Sigma_t^2\mbf{I}$, for widely-separated particles,
+%but $\mbf{C}_t(\q)\simeq0$ for closely-separated ones.
+%Even if the correlation function was smooth without any features,
+%there is still suppression.
 
 
 
@@ -2069,8 +2086,8 @@ there is still suppression.
 
 
 \subsection{Entropy}
-\noindent A sharp transition distribution 
-implies little uncertainty in the final positions 
+\noindent A sharp transition probability 
+implies low uncertainty in the final positions 
 of particles.
 A convenient way to quantify this is
 with the conditional entropy~\citep{Mackay_book}
@@ -2078,7 +2095,7 @@ with the conditional entropy~\citep{Mackay_book}
 H_t(\q)=-\int\dif^3\r\, p_t(\r\Mid\q)\ln p_t(\r\Mid\q)\,.
 \ee
 We are interested in the change in entropy with time.
-At $t=0$ the transition probability is a delta function
+First, at $t=0$ the transition probability is a delta function
 so $H_t(\q)=-\infty$, independent of $\q$.
 (If at the initial time one or
 both locations of the pair is multistreaming,
@@ -3971,16 +3988,22 @@ the language and stochastic methods used in the study
 of e.g.\ statistical fluid mechanics.
 
 \section{Conclusions}
-The main message is that the correlation function 
-is naturally formulated in terms of particle trajectories and
+The correlation function 
+can generally be viewed in terms of particle trajectories and
 their transition probabilities. (This also extends to
-$N$-point functions and fluids.) These
-probabilities formally describe the final distribution of particle separations given
+$N$-point functions.)
+These probabilities formally describe the final distribution of
+particle separations given
 their initial separations, and thus encode the
 full nonlinear evolution of the two-point function.
 Except in certain limits, calculation of these transition
 probabilities can only be done approximately, e.g.\ by modelling
 the low-order cumulants, as in convolution LPT.
+
+This more mechanical view is to be contrasted with usual
+modelling practices based on a fluid description of matter
+analysed into Fourier modes (transfer functions, initial spectra,
+mode coupling, growth factors, etc).
 
 That there is a distribution of trajectories originates from 
 the randomness in the initial conditions
@@ -4162,8 +4185,8 @@ where the author was supported by the European Research Council under
 the Horizon 2020 Research and Innovation Programme of the European Union
 (grant agreement no.~863929), and more recently furnished with
 numerics and figures
-for which the author acknowledges use of GPT-5.6 (OpenAI) to assist in code development and accepts responsibility for
-the accuracy of the results. All text was human authored.
+for which the author acknowledges use of GPT-5.6 (OpenAI) to assist in code development. The author has verified the output and
+accepts responsibility for the accuracy of the results. All text was human authored.
 Use of the Baobab HPC cluster at the University
 of Geneva is gratefully acknowledged.
 LD thanks Anton Chudaykin and Omar Darwish for helpful discussions.
