@@ -110,12 +110,14 @@ describing the distribution of
 final (or Eulerian) particle positions given their
 initial (or Lagrangian) position. % In this picture
 The transition probability is initially sharply peaked
-and then over time broadens out in a diffusion-like manner,
-reflecting the increasing uncertainty about the final positions.
+and then over time broadens out in a diffusion-like manner.
+%This reflects the increasing uncertainty about the final positions
 The effect is more pronounced for
 widely-separated particles (e.g.\ at the baryon acoustic scale),
-leading to an effective damping of the two-point function in what is
+leading to an effective suppression of the two-point function in what is
 normally referred to as infrared resummation.
+%The framework clarifies the problem  of inferring the initial conditions
+%from the late-time correlations.
 \end{abstract}
 
 %\keywords{Large-scale structure} 
@@ -126,17 +128,16 @@ normally referred to as infrared resummation.
 \section{Introduction}
 \noindent
 In previous work~\citep{Dam:2025ops} % on a related topic
-we noticed a simple
-relation between correlations in
+we noticed a simple relation between correlations in
 redshift space and those in real space. This
-relation generally takes the form of the marginal integral
+relation takes the form of the marginal integral
 $p(s)=\int\dif x\, p(s\Mid x)\sp p(x)$, where
 $p(s)$ is the distribution of redshift positions,
-$p(x)$ is the distribution of real positions, and $p(s\Mid x)$ is a
-\emph{transition probability}, a conditional probability of the
+$p(x)$ is the distribution of real positions, and $p(s\Mid x)$ is
+the \emph{transition probability}, a conditional probability of the
 redshift positions $s$ attainable from a given real position $x$.
 The aim of this paper is to expand on this probabilistic
-viewpoint, which apparently has gone unnoticed in previous work. 
+viewpoint, which appears to have gone unnoticed until now. 
 
 We will do so by pointing out and studying another relation of this form,
 namely between Lagrangian and Eulerian space. In this relation the
@@ -234,7 +235,7 @@ understood as nominal convolutions.
 %then integrate out the variables for all but two particles.
 %Rather than going this route we will stay close to LPT.
 
-Our approach is in some respects similar to kinetic field theory
+Our approach has similarities to kinetic field theory
 \citep[KFT;][]{Bartelmann:2014gma,Bartelmann:2019unp},
 a statistical approach to the $N$-body problem
 using path integral methods
@@ -294,7 +295,8 @@ Lagrangian perturbation theory needed here.
 
 This paper is organized as follows.
 In Section~\ref{sec:transition} we establish some general
-results which hold for any transition probability.
+results which hold any
+transition probability (that is, any equation of motion).
 In Section~\ref{sec:phase-space}
 we clarify the assumptions underlying Eq.~\eqref{eq:n}.
 %Derivations supporting some of
@@ -506,7 +508,8 @@ p_t(\x_1,\x_2\Mid\q_1,\q_2) %\nonumber\\[3pt]
 \big\rangle\!\big\rangle
     \label{eq:pt}
 \ee
-is the {transition probability} (density), which gives the probability
+is the {transition probability} (density function),
+which gives the probability
 $p_t(\x_1,\x_2\Mid\q_1,\q_2)\ssp\dif^3\x_1\sp\dif^3\x_2$
 that a pair $(\q_1,\q_2)$ at $t=0$
 is later found between $(\x_1,\x_2)$ and
@@ -527,33 +530,33 @@ average
 \ee
 where $O(\q_1,\q_2)$ is any pairwise function.
 
-The above expressions hold for any equation of motion,
-not just Newton's equation. That
+Note that the above expressions hold for arbitrary equation
+of motion, not just Newton's law. That
 the correlation function can always be written in the
 form~\eqref{eq:MASTER} is simply an expression of
-conservation.\footnote{The more general case of nonconserved
-biased tracers was treated in \cite{Dam:2026bhb}.} No perturbation theory is assumed.
+conservation. 
+%(The more general case of nonconserved
+%biased tracers was treated in \cite{Dam:2026bhb}.)
+No perturbation theory is assumed.
 
-We also emphasize that the transition probability~\eqref{eq:pt}
-is a genuine pdf.
-This is true even if the input and output distributions 
-are not properly normalized (as for an
-infinite universe).
-%This will become clear in Section~\ref{sec:proof} when
-%we express the transition probability in a more standard form.
 
 
 \subsection{Properties}\label{sec:properties}
-\noindent Two properties are worth keeping in mind
-for what follows.
-First, the transition probability is normalized:
-$\int\dif^3\x_1\int\dif^3\x_2\, p_t(\x_1,\x_2\Mid\q_1,\q_2)=1$.
-This is the statement that the number of pairs is
-conserved under time evolution.
-Physically, pairs cannot disappear from the system but must
-assume {some} position.
+\noindent The transition probability~\eqref{eq:pt} may not
+appear to be a pdf but it is easy to check that it satisfies
+the required properties, namely, non-negativity,
+$p_t(\x_1,\x_2\Mid\q_1,\q_2)\geq0$ for
+all $\x_1$ and $\x_2$; and normalisation,
+$\int\dif^3\x_1\int\dif^3\x_2\, p_t(\x_1,\x_2\Mid\q_1,\q_2)=1$.%
+\footnote{This still holds even though the input
+and output distributions cannot be normalised in an
+infinite universe.}
+The latter is the statement that the number of pairs is
+conserved under time evolution, i.e.\ pairs cannot disappear
+from the system but must assume {some} position.
 
-Second, the transition probability collapses
+In what follows, it is also worth keeping in mind that
+the transition probability collapses
 to the identity map in the limit $t\to 0$:
 $
 p_t(\x_1,\x_2\Mid\q_1,\q_2)\to
@@ -632,8 +635,8 @@ highly nonlinear object.
 \noindent
 Just as the integral form~\eqref{eq:n} of $\rho(\x,t)$ can 
 be expressed in differential form as the continuity equation
-$\partial_t\sp \rho+\nabla\cdot(\rho\sp\u)/a=0$, the integral
-form~\eqref{eq:xi-homo} for $\xi_\rho(\r,t)$
+$\partial_t\sp \rho+\nabla\cdot(\rho\sp\u)/a=0$, so the integral
+form~\eqref{eq:xi-homo} of $\xi_\rho(\r,t)$
 can be expressed as a differential equation, 
 known as the pair conservation equation~\citep{Davis:1977}
 %For convenience we call the initial time $t_0$.
@@ -725,7 +728,7 @@ In Eq.~\eqref{eq:pt-fixed-n0} we have thus written
 $\x_t(\q;\delta_0)$, instead of $\x_t(\q)$ as we did earlier
 (in keeping with standard notation).
 For brevity we will continue writing
-$\x_t(\q)$ with the dependence on $\delta_0$ understood.
+$\x_t(\q)$ with an implicit dependence on $\delta_0$ understood.
 
 Why do the individual trajectories depend on $\delta_0$?
 This is because the gravitational field is
@@ -1077,8 +1080,8 @@ Markov property.
 %    The Gaussians shown in solid black correspond
 %    to the data points in the left panel. 
     The solid vertical lines indicates the mean separation.
-    For reference we overplot in thin black the Gaussian corresponding
-    to the measured mean and standard deviation.
+    For reference we overplot the Gaussian corresponding
+    to the estimated mean and standard deviation (thin black).
     Note that the distributions are (slightly) skewed towards values $r<q$,
     since particles infall towards each other, decreasing
     the separation between them.
@@ -1093,12 +1096,20 @@ Markov property.
 
 
 
-\section{Statistical evolution}\label{sec:proof}
-\noindent 
-The nonlinearity induced by gravitational evolution
-enters the correlation function through the transition probability,
-%(the initial correlations being simply described by linear theory).
-which is built up from the pairwise statistics
+\section{Analysis of transitions}\label{sec:proof}
+\noindent In conventional modelling approaches,
+the gravitational evolution of continuous distributions
+of matter is described in terms of the growth factor.
+%, or more generally
+%a Green's function.
+By contrast, our framework deals with transition
+probabilities, a more general quantity better
+suited to discrete objects.
+
+In general, the
+full nonlinearity induced by gravitational evolution
+can be captured by the transition probability, which
+is built up from the pairwise statistics
 $\llangle\r_t\rrangle$, $\llangle\r_t\r_t^T\rrangle$, etc.
 To this end it will be convenient to express
 $p_t(\r\Mid\q)$ in terms of its
@@ -1183,17 +1194,20 @@ $(k\Delta t)^n$.
 % that $\r_t$ is Gaussian distributed for given
 % $\q_1$ and $\q_2$.
 \noindent
-For the rest of this section we will specialize to a Gaussian
-transition probability, an instructive first approximation.
-The Gaussian corresponds to dropping all
-but the first and second cumulants in $Z(\k;\q)$ [Eq.~\eqref{eq:W}],
-yielding
+Although $p_t(\r\Mid\q)$ is generally of
+a complicated form, there are regimes where a Gaussian is a
+good approximation, namely for large initial separations
+or over short time scales; see Figure~\ref{fig:pt}.
+We thus adopt and analyse the Gaussian as a simple model.
+This corresponds to neglecting all
+but the first and second cumulants in the
+characteristic function~\eqref{eq:W}, yielding
 \be\label{eq:p-t-Gauss}
 p_t(\r\Mid\q)
 =\frac{e^{-\frac12[\r-\R_t(\q)]^T\mbf{C}_t(\q)^{-1}[\r-\R_t(\q)]}}
     {\sqrt{(2\pi)^3|\det\mbf{C}_t(\q)|}}\,,
 \ee
-This is a conditional Gaussian with mean and covariance
+a conditional pdf. The first and second cumulants are
 %gives
 %$Z(\k;\q)
 %=
@@ -1211,9 +1225,10 @@ This is a conditional Gaussian with mean and covariance
 \r_t\r^T_t\rangle\!\rangle
  -\langle\!\langle\r_t\rangle\!\rangle\langle\!\langle\r_t\rangle\!\rangle^T\,,
 \eea
-which are the first and second cumulants:
-$\int_\r\ssp p_t(\r\Mid\q)\sp\r=\R_t(\q)$ and
-$\int_\r\ssp p_t(\r\Mid\q)(\r-\R_t(\q))(\r-\R_t(\q))^T=\mbf{C}_t(\q)$.
+i.e.\ the mean and covariance, respectively.
+%which are the first and second cumulants:
+%$\int_\r\ssp p_t(\r\Mid\q)\sp\r=\R_t(\q)$ and
+%$\int_\r\ssp p_t(\r\Mid\q)(\r-\R_t(\q))(\r-\R_t(\q))^T=\mbf{C}_t(\q)$.
 %Now since the generating function is that of a
 %conditional Gaussian with mean $\R_t(\q)$ and covariance
 %$\mbf{C}_t(\q)$, we conclude
@@ -1259,8 +1274,8 @@ mean pairwise velocity.
 
 
 
-Now that we have fixed the form of $p_t$ it remains to evaluate
-$\R_t$ and $\mbf{C}_t$. We do this using the
+Now that we have fixed the form of $p_t(\r\Mid\q)$ it remains to evaluate
+$\R_t$ and $\mbf{C}_t$. We do so using the
 \cite{Zeldovich:1969sb} approximation.
 
 For the mean (a vector) we have
@@ -1268,7 +1283,7 @@ For the mean (a vector) we have
 %where $\int^t_{0}\dif t' A(t')\propto D^2-1$
 \be\label{eq:R-zel}
 \R_t(\q)\simeq\q+
-	2\big[D(t)/D_0-1\big]\,
+	2\sp[D(t)/D_0-1]\,
 	\langle\bm\psi_0(0)\ssp\delta_0(\q)\rangle\,,
 \ee
 with $\R_t(\q)=\q$ when $t=0$. Here $D(t)$ is the growth factor
@@ -1287,7 +1302,7 @@ as $q\to0$: $\langle\bm\psi_0(0)\ssp\delta_0(\q)\rangle\to0$.
 For the covariance we have
 \be\label{eq:C}
 \mbf{C}_t(\q)
-\simeq\big[D(t)/D_0-1\big]^2\sp
+\simeq[D(t)/D_0-1]^2\sp
 	\langle\Delta\bm\psi_0\ssp\Delta\bm\psi_0\rangle\,,
 \ee
 with $\mbf{C}_t(\q)=0$ when $t=0$.
@@ -1297,11 +1312,11 @@ expansion of the prefactor for $t=t_0+\Delta t$ shows
 indeed $\R_t(\q)=O(\Delta t)$ and
 $\mbf{C}_t(\q)=O(\Delta t^2)$.
 The Zeldovich approximation suggests the broadening grows
-without bound, which is not realistic since this approximation
-ignores the convergence of trajectories under gravity. Indeed
-particles settle into potential wells and stop 
-exploring so the growth of the prefactor
-should be sub-quadratic. Such behaviour can be seen in
+without bound, which is not realistic. More realistically,
+we have that particles form clusters, which capture
+yet more particles. The quadratic growth of $\mbf{C}_t$
+cannot be sustained forever.
+Such behaviour can be seen in
 Figure~\ref{fig:trajectories}.
 In the limit $q\to0$ we have
 $\langle\Delta\bm\psi_0\ssp\Delta\bm\psi_0\rangle\to0$
@@ -1326,27 +1341,28 @@ large $\q\equiv\q_1-\q_2$
 can be considered uncorrelated, we have in this regime
 $p_t(\x_1,\x_2\Mid\q_1,\q_2)\approx
 p_t(\x_1\Mid\q_1)\sp p_t(\x_2\Mid\q_2)$.
-Enforcing that $\r=\x_1-\x_2$, by using the chain rule,
+Enforcing $\r=\x_1-\x_2$, by using the chain rule,
 we thus have
-\bea\label{eq:pt-factorize1}
+\bea
 p_t(\r\sp\Mid\sp\text{$\q$ large})
 &\approx\int_{\x_1}\int_{\x_2}\:
 	p_t(\x_1\Mid\q_1)\ssp p_t(\x_2\Mid\q_2)\,\delD\big[\r-(\x_1-\x_2)\big]
-	 \nonumber\\[-2pt]
-&\qquad\qquad\qquad	\text{with $\q=\q_1-\q_2$}\,.
+	 \nonumber%\\[-2pt]
+%&\qquad\qquad\qquad	\text{with $\q=\q_1-\q_2$}\,.
+%\label{eq:pt-factorize1}
 \eea
+with $\q=\q_1-\q_2$ understood.
 %where $\sim$ is used in the asymptotic sense.
 Here $p_t(\x_1\Mid\q_1)$ and $p_t(\x_2\Mid\q_2)$ are one-particle
-transition probabilities
-(which only depend on one-point statistics like $\Sigma^2_t$).
-Since the (two-particle)
+transition probabilities so depend on one-point functions only.
+Now, since the (two-particle)
 transition probability~\eqref{eq:pt} factorizes as
 $\langle AB\rangle=\langle A\rangle\langle B\rangle$, we have
 $p_t(\x_1\Mid\q_1)=\langle\rho_0(\q_1)\ssp\delD[\x_1-\x_t(\q_1)]\rangle/
 \langle\rho_0(\q_1)\rangle$ and likewise for $p_t(\x_2\Mid\q_2)$.
 Now invoking statistical homogeneity we have
 $p_t(\x\Mid\q)=p_t(\x-\q)=p_t(\bm\psi)$,
-with which Eq.~\eqref{eq:pt-factorize1} becomes
+with which the previous expression becomes
 \bea\label{eq:pt-factorize2}
 \begin{split}
 p_t(\r\sp\Mid\sp\text{$\q$ large})
@@ -1365,17 +1381,16 @@ where $2\sp\Sigma^2$ becomes $\Sigma_A^2+\Sigma_B^2$.
 We also note here the fact that the displacement
 distribution $p_t(\bm\psi)$ is
 spatially independent is a consequence of statistical homogeneity.}
-Equation~\eqref{eq:pt-factorize2} has the property
-$p_t(\r\Mid\q)\approx p_t(\r-\q)$,
-i.e.\ translation invariant.
+Note that Eq.~\eqref{eq:pt-factorize2} is
+translation invariant,
+$p_t(\r\Mid\q)\approx p_t(\r-\q)$.
 
 The above expressions hold for an arbitrary
-one-point pdf $p_t(\bm\psi_a)$;
-now let us evaluate the
+one-point pdf $p_t(\bm\psi_a)$; Gaussianity has
+not been assumed. Now let us evaluate the
 transition probability~\eqref{eq:pt-factorize2}
-assuming $p_t(\bm\psi)$ is Gaussian. In this case the
-one-point pdf is Gaussian with mean zero
-and covariance $\Sigma_t^2\mbf{I}_3$, where
+assuming $p_t(\bm\psi)$ is Gaussian, having
+mean zero and covariance $\Sigma_t^2\mbf{I}_3$, where
 $\Sigma_t^2\equiv[D(t)/D_0-1]^2\Sigma_0^2$,
 with $\Sigma_0^2=\langle\bm\psi_0^2\rangle/3$, is the
 one-dimensional displacement
@@ -1389,7 +1404,7 @@ with mean and covariance
 \mbf{C}_t(\q)\approx2\sp\Sigma_t^2\mbf{I}_3\,,
 \quad\text{(large $\q$)}
 \ee
-where the factor of two is just a consequence of independence
+where the factor of two is because of independence
 (sum the individual covariances).
 %This recovers the earlier result~\eqref{eq:cum-large-q}
 %and explains the factor of two.
@@ -1440,10 +1455,10 @@ function~\eqref{eq:xi-homo} be considered a proper convolution.
 This not the case for small separations, where the transition
 kernel has dependence on both $\r$ and $\q$. As mentioned
 in the introduction, the structure of the correlation function
-is generally that of a marginal integral, involving a genuine
-conditional pdf. Given this
-the name `convolution LPT'~\citep{Carlson:2012,White:2014,Vlah:2016bcl}
-is something of a misnomer.
+is generally that of a marginal integral, with a
+conditional pdf for the kernel.\footnote{The name
+`convolution LPT'~\citep{Carlson:2012,White:2014,Vlah:2016bcl}
+is, in our view, a misnomer.}
 %Lastly, note that the Gaussian transition probability~\eqref{eq:pt-Delta}
 %corresponds to the convolution kernel in LPT~\citep{Carlson:2012,White:2014,Vlah:2016bcl}.
 %The difference between them is a matter of interpretation:
@@ -1673,10 +1688,10 @@ to leading order in $\xi_0$.
 
 \subsection{Convergence and advection}
 \noindent 
-Convergence is to matter particles what
-lensing convergence is to light rays.
-Both are related to the trace of the Jacobian of their respective maps.
-Its effect on the correlation function is given by
+Convergence is to matter trajectories what
+lensing convergence is to light rays
+(both are related to the trace of the Jacobian of their respective maps).
+Here its effect on the correlation function is given by
 the exponential factor in Eq.~\eqref{eq:xi_n-formula},
 a kind of growth factor; see Figure~\ref{fig:cartoon_peak}.
 
@@ -1749,9 +1764,9 @@ we take $q_*=100\,h^{-1}\mrm{Mpc}$ the shift is much smaller.
 For example, over a time interval $z=10$ to
 $z=0$ and using the Zeldovich approximation, we estimate a shift
 $|\mbf{D}_t(\q_*)|\simeq0.03\,h^{-1}\mrm{Mpc}$.%
-\footnote{There is also an `apparent' shift~\citep{Smith:2007gi}
-which is of a more statistical origin. 
-This is induced by what we call `diffusion'
+\footnote{There is also an `apparent' shift~\citep{Smith:2007gi}.
+This is of a more statistical origin
+and is induced by what we call `diffusion'
 (Section~\ref{sec:diffusion}). More standardly is is known as
 `smoothing' because of its effect
 on the correlation function (at large separation).
@@ -1762,7 +1777,7 @@ The apparent shift occurs because the peak is slightly
 asymmetric, due to broadband correlations. Because of this
 the location of the peak moves after smoothing,
 even with a symmetric smoothing kernel (e.g.\ a Gaussian).
-The result is an apparent shift, one that turns out to be larger
+The result is an apparent shift that turns out to be larger
 than the one due to advection.
 Indeed, in the same time interval considered above, we estimate an
 overall shift of $1.2\,h^{-1}\mrm{Mpc}$, driven largely by
@@ -1907,7 +1922,8 @@ of trajectories, as seen in Figure~\ref{fig:pt} (left panels).
 %it is absent in
 %Eq.~\eqref{eq:xi_n-formula}, and we need to
 %consider the full Gaussian kernel~\eqref{eq:p-t-Gauss}.
-Its effect on the correlation function is shown in Figure~\ref{fig:evoln}.
+The effect of this on the correlation function is shown
+in Figure~\ref{fig:evoln}.
 
 Unlike advection and convergence, diffusion is described by
 $\mbf{C}_t$. We can see this because the Gaussian~\eqref{eq:p-t-Gauss}
@@ -1918,9 +1934,9 @@ satisfies the Fokker--Planck equation~\citep{Risken1989FokkerPlanck}
 \ee
 where the first term is related to drift and the second to
 diffusion.%
-\footnote{Note that for a general transition probability
-Eq.~\eqref{eq:FP} includes non-Gaussian cumulants, which enter 
-the right-hand side as higher-derivative corrections.}
+\footnote{For a general transition probability, the right-hand side
+of Eq.~\eqref{eq:FP} includes non-Gaussian cumulants which
+appear as higher-derivative corrections.}
 We should however be careful to identify our problem with
 solving the standard Fokker--Planck equation.
 Although the form of the equation is the same, the underlying
@@ -1977,13 +1993,17 @@ as well as the failure of standard perturbation theory to account
 for it~\citep[e.g.][]{Senatore:2014via}.
 The procedure that corrects for this is known as `infrared resummation'~\citep{Baldauf:2015xfa}.
 We are instead describing the suppression as a diffusion process
-whereby widely-separated particles move independently
-of one another such that $\langle(r_t-q)^2\rangle\simeq2\sp\Sigma_t^2$,
-i.e.\ the distribution in the relative separations
-broadens over time. As described in Section~\ref{sec:large-r-limit},
+whereby the distribution of the (relative) Eulerian separation, $r-q$,
+has a variance,
+$\langle(r_t-q)^2\rangle\simeq2\sp\Sigma_t^2\propto D^2(t)$,
+i.e.\ the distribution broadens with time.
+As described in Section~\ref{sec:large-r-limit},
 since the tendency for two objects to infall diminishes over
 increasingly large separation, their motions tend to be uncorrelated,
-driven by nearby matter. Since the statistically the motions are
+driven by nearby matter. 
+This means that the individual displacements of
+widely-separated particles are uncorrelated (hence the factor of two above).
+Since the statistically the motions are
 determined by one-point functions, we naturally have that
 the separation distribution broadens
 as $2\sp\Sigma_t^2$ in Eq.~\eqref{eq:cum-large-q}, where
@@ -2091,60 +2111,57 @@ there is still suppression.
 implies low uncertainty in the final positions 
 of particles.
 A convenient way to quantify this is
-with the conditional entropy~\citep{Mackay_book}
+with the (conditional) entropy~\citep{Mackay_book}
 \be\label{eq:H}
 H_t(\q)=-\int\dif^3\r\, p_t(\r\Mid\q)\ln p_t(\r\Mid\q)\,.
 \ee
-We are interested in the change in entropy with time.
-First, at $t=0$ the transition probability is a delta function
-so $H_t(\q)=-\infty$, independent of $\q$.
-(If at the initial time one or
-both locations of the pair is multistreaming,
-then the map is multivalued.)
-This is to be compared with the entropy of the Gaussian
-for which $H_t(\q)$
-The entropy is high for large separation $\q$.
-This reflects that particles which are widely separated
-have uncorrelated trajectories, whereas particles which
-are closely separated have correlated trajectories, there
-motions induced by the same environment.
+This is shown in Figure~\ref{fig:entropy} for different
+initial separations. While the entropy is generally
+monotone increasing the rate of change depends on the
+separation. For particles which are widely separated see
+a larger increase in entropy, and
+this reflects the effect of dispersion $\Sigma_t^2$
+on the endpoints of the separation.
+By contrast, particles closer together tend to move
+coherently (with correlated motions and displacements)
+and the effect is suppressed, yielding a lower entropy
+overall. For the smallest separation, $q=0.00L$,
+the entropy increases only slightly; this is an indication
+that the transition probability remains sharply distributed.
+Physically, nearby particles bind to the same structure
+relatively quickly, with further evolution yielding only small
+relative displacements.
 
-Even perfect knowledge of the present
-correlations is insufficient to infer past correlations.
-This has to do with diffusion (which is analogous to
-infrared resummation in the conventional approach).
+Although not visible in Figure~\ref{fig:entropy},
+note that the entropy eventually plateaus in the future.
+This is to be compared with the Gaussian--Zeldovich
+model~\eqref{eq:p-t-Gauss} in which diffusion~\eqref{eq:C}
+increases without bound, implying sustained entropy production.
+Instead the simulations show that particles become trapped,
+settling into configurations that barely change with time.
+That this occurs sooner for small separations
+(and later for large separations) is because nearby particles 
+wind up in the same structures and are thus unable to visit a
+wide range of separations.
+nearby particles quickly trapped in clusters cannot undergo the
+large displacements that they did earlier on when
+clusters were beginning to form.
 
-The effect of these large-scale displacements has sometimes been called `smearing'.
-E.g. Crocce and Scoccimarro, Bharadwaj 1996.
+
+The two panels in Figure~\ref{fig:entropy} show the entropy
+estimated in simulations for two different particle numbers.
+The higher entropies for $N=1000$ is due to
+large gravitational deflections that each particle can be
+subjected to. In general, the displacement dispersion grows
+inversely with the number of particles. The rank order of $q$
+is preserved, independent of the number of particles.
 
 
-{\it needs editing.} The conditional entropy measures the broadening of the
-final pair-separation distribution.
-In Figure~\ref{fig:entropy}, large initial separations
-($q=50-100h^{-1}\mrm{Mpc}$) remain
-sensitive to evolving large-scale displacements out to $a\simeq1$ and
-show sustained increase in entropy. By contrast, closely separated particles
-rapidly become confined within the same structures: $q=5h^{-1}\mrm{Mpc}$
-remains almost deterministic and $q=10h^{-1}\mrm{Mpc}$ rises
-briefly before saturating. The $q=20h^{-1}\mrm{Mpc}$ curve
-exhibits two distinct stages, plausibly corresponding first
-to pre-collapse displacement broadening, followed by a temporary
-balance during collapse, and then renewed broadening from
-shell crossing, secondary infall, or phase mixing before the
-bound separation distribution reaches its final plateau.
 
-The conditional entropy initially rises because gravitational evolution broadens the transition probability. This means that pairs with the same
-initial separation visit an increasingly wide range of final
-separations as they encounter different density environments.
-The plateau occurs earlier at small $q$, since two particles are
-more likely to enter the same nonlinear structure and become
-confined within a common potential well, with further evolution
-producing relatively little additional spreading of the bulk
-of the distribution. For $q=20,h^{-1}\mrm{Mpc}$, the intermediate plateau and subsequent rise may reflect two stages of nonlinear evolution-initial collapse on smaller scales, followed by later infall, merging, or coupling to larger-scale structures. The final plateau should not, however, be interpreted automatically as convergence to a stationary transition probability.
-As the bottom row in Figure~\ref{fig:pt} shows, the pdf can
-continue to develop a narrow, strongly populated
-core associated with trapped pairs while a small fraction of pairs
-generates increasingly long tails.
+%As the bottom row in Figure~\ref{fig:pt} shows, the pdf can
+%continue to develop a narrow, strongly populated
+%core associated with trapped pairs while a small fraction of pairs
+%generates increasingly long tails.
 
 
 
@@ -3957,107 +3974,115 @@ generates increasingly long tails.
 
 
 
-\section{Discussion}
-\noindent % This paper has presented no new modelling.
-%Our work has described a probabilistic way to
-%think about the statistics of large-scale structure.
-%It is surprising that an overtly probabilistic way of 
-%thinking about the statistics of large-scale structure has
-%apparently not been described.
-The current power spectrum modelling paradigm is based
-on growth factors, transfer functions, initial spectra,
-a fluid description of matter, and Fourier mode decomposition.
-There are many reasons, both theoretical and practical,
-that the power spectra
-has become the statistic of choice~\citep{Hamilton:2005kz}.
-%much of which hinges on the mode independence in linear theory.
-% For one
-%Fourier analysis is natural when there is translation invariance
-%so that distinct plane wave modes
-%become statistically independent (on large scales).
+%\section{Discussion}
+%\noindent % This paper has presented no new modelling.
+%%Our work has described a probabilistic way to
+%%think about the statistics of large-scale structure.
+%%It is surprising that an overtly probabilistic way of 
+%%thinking about the statistics of large-scale structure has
+%%apparently not been described.
+%The current power spectrum modelling paradigm is based
+%on growth factors, transfer functions, initial spectra,
+%a fluid description of matter, and Fourier mode decomposition.
+%There are many reasons, both theoretical and practical,
+%that the power spectra
+%has become the statistic of choice~\citep{Hamilton:2005kz}.
+%%much of which hinges on the mode independence in linear theory.
+%% For one
+%%Fourier analysis is natural when there is translation invariance
+%%so that distinct plane wave modes
+%%become statistically independent (on large scales).
+%
+%There are however modelling advantages to returning to
+%a configuration-space approach, favoured in early work~\citep{Peebles_LSS}.
+%Here we have presented a more mechanical view based on
+%particle trajectories, their uncertain initial conditions, and
+%the associated transition probabilities. This is closely
+%related to the Lagrangian viewpoint.
+%Indeed, this brings us in line with
+%the language and stochastic methods used in the study
+%of e.g.\ statistical fluid mechanics.
 
-There are however modelling advantages to returning to
-a configuration-space approach, favoured in early work~\citep{Peebles_LSS}.
-Here we have presented a more mechanical view based on
-particle trajectories, their uncertain initial conditions, and
-the associated transition probabilities. This is closely
-related to the Lagrangian viewpoint.
-%is more natural when working with discrete objects in 
-%configuration space (where they have compact support).
-Indeed, this brings us in line with
-the language and stochastic methods used in the study
-of e.g.\ statistical fluid mechanics.
+
 
 \section{Conclusions}
-\noindent We showed that the correlation function 
-can generally be viewed in terms of particle trajectories and
-their transition probabilities, see Eq.~\eqref{eq:xi-homo}.
-(This also extends to $N$-point functions.)
-These probabilities formally describe the final distribution of
-particle separations given
-their initial separations, and thus encode the
-full nonlinear evolution of the two-point function.
+\noindent The two-point function
+can be viewed as pushforward of initial correlations along
+particle trajectories, see Eq.~\eqref{eq:xi-homo}. The key
+quantity in this approach is the transition probability,
+describing the final Eulerian distribution of
+separations given an initial Lagrangian separation.
 Except in certain limits, calculation of these transition
 probabilities can only be done approximately, e.g.\ by modelling
-the low-order cumulants, as in convolution LPT.
+the low-order cumulants.
+The generalisation of this probabilistic approach to $n$-point
+functions is straightforward.
 
-This more mechanical view is to be contrasted with usual
-modelling practices based on a fluid description of matter
+Our more mechanical approach to large-scale structure, based
+on stochastic methods, is to be contrasted with the standard
+approach, based on a fluid description of matter
 analysed into Fourier modes (transfer functions, initial spectra,
 mode coupling, growth factors, etc).
 
-That there is a distribution of trajectories originates from 
-the randomness in the initial conditions
+We have clarified that the distribution of final
+separations originates from 
+the stochasticity of the initial conditions
 (e.g.\ the initial density field) over which one is
-averaging; it is not because of multistreaming nor because the trajectories
-are non-deterministic (they are not).
-A consequence of this is that, after averaging
-over the ensemble of realizations, widely-separated pairs become
-dispersed. There is no infall-induced shift in the final distribution
-but only a broadening brought on by different realizations of the 
-velocity field, which on average has no preferred direction.
+implicitly averaging when taking ensemble averages.
+It is not because of multistreaming nor because the trajectories
+are non-deterministic (which they are not).
+A consequence of this is diffusion, the broadening
+of the transition probability due to the uncorrelated
+displacements of widely-separated particles. 
 
-An awkward aspect of this framework is the self-consistency of
-the equation of motion. This prevented a straightforward application
-of stochastic methods to our problem. Active transport versus
-passive transport.
+We note that the methods used here are routinely used
+in statistical fluid mechanics~\citep{MoninYaglom71}.
+The key difference is the underlying equation of motion,
+which for us
+is \emph{self-consistent}: moving a particle cannot be done
+without also changing the gravitational field in which it is moving.
+This boils down to active transport (our case) versus
+passive transport (the hydrodynamic case).
 
-By formulating correlations in terms of transition probability
-we have arrived at a statistical understanding of the evolution
-of large-scale structure.
-We have described the probabilistic structure underlying the calculation of
-correlation functions.
-\begin{itemize}
-\item
-The map from Lagrangian to Eulerian space, together with
-number conservation, implies a transition probability
-$p_t(\r\Mid\q)$ [Eq.~\eqref{eq:xi-homo}].
-This quantity,
-relating the initial correlations to the final correlations,
-is built up from the
-pairwise statistics of particle trajectories. It also gives
-physical meaning to the Gaussian kernel of convolution LPT.
-%Having established that $p_t(\r\Mid\q)$ is a genuine pdf, we
-%explored some of its properties, clarifying that the key formula~\eqref{eq:n}
-%is valid for cold initial data.
-Regardless of its detailed form,
-over short time intervals the transition probability is effectively sharp,
-described by a delta function. Over time it broadens out, passing
-from a Gaussian at intermediate times to a more general skewed
-distribution.
+%By formulating correlations in terms of transition probability
+%we have arrived at a statistical understanding of the evolution
+%of large-scale structure.
+%We have described the probabilistic structure underlying the calculation of
+%correlation functions.
+%\begin{itemize}
+%\item
+%The map from Lagrangian to Eulerian space, together with
+%number conservation, implies a transition probability
+%$p_t(\r\Mid\q)$ [Eq.~\eqref{eq:xi-homo}].
+%This quantity,
+%relating the initial correlations to the final correlations,
+%is built up from the
+%pairwise statistics of particle trajectories. It also gives
+%physical meaning to the Gaussian kernel of convolution LPT.
+%%Having established that $p_t(\r\Mid\q)$ is a genuine pdf, we
+%%explored some of its properties, clarifying that the key formula~\eqref{eq:n}
+%%is valid for cold initial data.
+%Regardless of its detailed form,
+%over short time intervals the transition probability is effectively sharp,
+%described by a delta function. Over time it broadens out, passing
+%from a Gaussian at intermediate times to a more general skewed
+%distribution.
+%
+%
+%In this work we resurface the earlier probabilistic view,
+%showing that the correlation function
+%is naturally described in terms of the transition probability.
+%One advantage over the conventional view is that it gives a
+%physically appealing way
+%to think about the correlation function based on probability theory.
+%Another advantage is that it clarifies the problem 
+%of inferring the initial conditions
+%from the late-time correlations.
+%
+%\end{itemize}
 
 
-In this work we resurface the earlier probabilistic view,
-showing that the correlation function
-is naturally described in terms of the transition probability.
-One advantage over the conventional view is that it gives a
-physically appealing way
-to think about the correlation function based on probability theory.
-Another advantage is that it clarifies the problem 
-of inferring the initial conditions
-from the late-time correlations.
 
-\end{itemize}
 
 
 %KFT assumes Newtonian dynamics and makes use of its
