@@ -1097,22 +1097,21 @@ Markov property.
 
 
 \section{Analysis of transitions}\label{sec:proof}
-\noindent In conventional modelling approaches,
+\noindent In the usual approach,
 the gravitational evolution of continuous distributions
 of matter is described in terms of the growth factor.
 %, or more generally
 %a Green's function.
-By contrast, our framework deals with transition
-probabilities, a more general quantity better
-suited to discrete objects.
+This should be compared with our framework deals, which
+deals instead with transition probabilities, a
+quantity better suited to discrete objects.
 
-In general, the
-full nonlinearity induced by gravitational evolution
-can be captured by the transition probability, which
-is built up from the pairwise statistics
+In principle, the full nonlinear evolution of matter is
+contained in the transition probability, encoded
+in the pairwise statistics
 $\llangle\r_t\rrangle$, $\llangle\r_t\r_t^T\rrangle$, etc.
-To this end it will be convenient to express
-$p_t(\r\Mid\q)$ in terms of its
+Towards a perturbative treatment, it will be convenient
+to express $p_t(\r\Mid\q)$ in terms of its
 characteristic function $Z(\k;\q)$:
 \be\label{eq:pt-r}
 p_t(\r\Mid\q)
@@ -1327,6 +1326,14 @@ gravitational potential, tend to move coherently
 
 
 
+\begin{figure}[t!]
+    \centering
+    \includegraphics[width=\columnwidth]{plots/dimensionless_cumulant_comparison_q001L_q01L} % conditional_entropy
+    \vspace{-20pt}
+    \caption{Cumulant evolution. Here
+     $\kappa_1\equiv R_t(q)$ and $\kappa_2\equiv C_t(q)$.}
+    \label{fig:cumulants}
+\end{figure}
 
 
 \subsection{Large separation limit}\label{sec:large-r-limit}
@@ -1701,7 +1708,7 @@ a kind of growth factor; see Figure~\ref{fig:cartoon_peak}.
 
 
 Physically, convergence is the cumulative effect
-of volume expansion and contraction on the final correlations.
+of expansion and contraction of matter on the correlations.
 %First, in case  the volume is preserved,
 %$\det\mbf{J}_t=1$ and $\r=\q$, we have $\xi_\rho(\r,t)=\xi_{\rho0}(\r)$.
 We can picture this as follows.
@@ -2126,14 +2133,14 @@ By contrast, particles closer together tend to move
 coherently (with correlated motions and displacements)
 and the effect is suppressed, yielding a lower entropy
 overall. For the smallest separation, $q=0.00L$,
-the entropy increases only slightly; this is an indication
+the entropy increases only slightly, an indication
 that the transition probability remains sharply distributed.
 Physically, nearby particles bind to the same structure
 relatively quickly, with further evolution yielding only small
 relative displacements.
 
 Although not visible in Figure~\ref{fig:entropy},
-note that the entropy eventually plateaus in the future.
+note that the entropy eventually plateaus.
 This is to be compared with the Gaussian--Zeldovich
 model~\eqref{eq:p-t-Gauss} in which diffusion~\eqref{eq:C}
 increases without bound, implying sustained entropy production.
@@ -4007,10 +4014,11 @@ is preserved, independent of the number of particles.
 
 \section{Conclusions}
 \noindent The two-point function
-can be viewed as pushforward of initial correlations along
-particle trajectories, see Eq.~\eqref{eq:xi-homo}. The key
-quantity in this approach is the transition probability,
-describing the final Eulerian distribution of
+can be viewed as the pushforward of initial correlations along
+particle trajectories,
+see Eq.~\eqref{eq:xi-homo}.
+The key quantity in this approach is the transition probability,
+a conditional pdf describing the Eulerian distribution of
 separations given an initial Lagrangian separation.
 Except in certain limits, calculation of these transition
 probabilities can only be done approximately, e.g.\ by modelling
