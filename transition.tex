@@ -195,13 +195,14 @@ We have similar for the initial distribution.
 %We have a similar relation in Lagrangian space
 %for $\dif P=p_\mathrm{init}(\q_1,\q_2)\,\dif^3\q_1\dif^3\q_2$.
 
-The main message of this work is that the correlation function
-is naturally formulated in terms of a transition probability.
-We should note that the seeds of this idea can be
+The main message of this work is that clustering 
+can be viewed in probabilistic terms, with
+the correlation function naturally described in terms
+of a well-defined transition probability.
+But we should note that the seeds of this idea can be
 found in \cite{Couchman_Bond88}
 who it seems were the first to give an expression like Eq.~\eqref{eq:marginal},
-though in terms of the distribution of Lagrangian displacements,
-obscuring a probabilistic viewpoint.
+though in terms of Zeldovich displacements.
 %We are not the first to have noticed this, however.
 %As far as we know \cite{Couchman_Bond88} were the first,
 %though they gave their expression in terms of Lagrangian displacements
@@ -1085,6 +1086,8 @@ Markov property.
     Note that the distributions are (slightly) skewed towards values $r<q$,
     since particles infall towards each other, decreasing
     the separation between them.
+    An animated version of this plot can be found at 
+    \url{https://github.com/lhd23/pt-LSS/}.
 %    The 98 other particles
 %    have initial positions that are uniformly random distributed and
 %    initial velocities that are Gaussian distributed with mean zero.
@@ -1102,7 +1105,7 @@ the gravitational evolution of continuous distributions
 of matter is described in terms of the growth factor.
 %, or more generally
 %a Green's function.
-This should be compared with our framework deals, which
+By contrast, our framework deals, which
 deals instead with transition probabilities, a
 quantity better suited to discrete objects.
 
@@ -1335,14 +1338,14 @@ Two particles may be regarded as
 statistically independent if they are sufficiently far apart
 (large separation).
 This implies that the
-transition probability~\eqref{eq:pt-r} should reduce to a factorized form.
-More precisely, since the motions of particles $\q_1$ and $\q_2$ for
-large $\q\equiv\q_1-\q_2$
+transition probability~\eqref{eq:pt-r} reduces to a factorized form.
+More precisely, since the motions of particles $\q_1$ and $\q_2$, for
+large $\q\equiv\q_1-\q_2$,
 can be considered uncorrelated, we have in this regime
 $p_t(\x_1,\x_2\Mid\q_1,\q_2)\approx
 p_t(\x_1\Mid\q_1)\sp p_t(\x_2\Mid\q_2)$.
 Enforcing $\r=\x_1-\x_2$, by using the chain rule,
-we thus have
+gives
 \bea
 p_t(\r\sp\Mid\sp\text{$\q$ large})
 &\approx\int_{\x_1}\int_{\x_2}\:
@@ -1354,7 +1357,7 @@ p_t(\r\sp\Mid\sp\text{$\q$ large})
 with $\q=\q_1-\q_2$ understood.
 %where $\sim$ is used in the asymptotic sense.
 Here $p_t(\x_1\Mid\q_1)$ and $p_t(\x_2\Mid\q_2)$ are one-particle
-transition probabilities so depend on one-point functions only.
+transition probabilities (depend on one-point functions only).
 Now, since the (two-particle)
 transition probability~\eqref{eq:pt} factorizes as
 $\langle AB\rangle=\langle A\rangle\langle B\rangle$, we have
@@ -1381,9 +1384,8 @@ where $2\sp\Sigma^2$ becomes $\Sigma_A^2+\Sigma_B^2$.
 We also note here the fact that the displacement
 distribution $p_t(\bm\psi)$ is
 spatially independent is a consequence of statistical homogeneity.}
-Note that Eq.~\eqref{eq:pt-factorize2} is
-translation invariant,
-$p_t(\r\Mid\q)\approx p_t(\r-\q)$.
+Importantly, note that in this regime the transition
+probability is translation invariant, $p_t(\r\Mid\q)\approx p_t(\r-\q)$.
 
 The above expressions hold for an arbitrary
 one-point pdf $p_t(\bm\psi_a)$; Gaussianity has
@@ -1576,7 +1578,7 @@ transitions, consider the evolution of the
 correlation function~\eqref{eq:xi-homo} over a
 small time interval $\Delta t$.
 
-First, we mentioned in Section~\ref{sec:properties} that the
+First, recall that the
 transition probability collapses to  $p_t(\r\Mid\q)\to\delD(\r-\q)$ in the limit
 $t_0\to t$. Now consider a small time step forward,
 $t_0\to t=t_0+\Delta t$. Based on the characteristic function~\eqref{eq:W},
@@ -1588,7 +1590,8 @@ with $\mbf{C}_t(\q)=O(\Delta t^2)$ while
 $\R_t(\q)=O(\Delta t)$.
 Ignoring the $O(\Delta t^2)$ terms, the delta-function
 transition can be viewed as the Gaussian~\eqref{eq:p-t-Gauss}
-in the limit  $\mbf{C}_t\to0$ as $t\to t_0$.
+in the limit  $\mbf{C}_t\to0$ as $t\to t_0$, i.e.\
+a Gaussian spike.
 Thus, at leading order in $\Delta t$
 the transition probability remains sharp, centred
 now at $\r=\R_t(\q)=\q+\mbf{D}_t(\q)$.
@@ -1647,7 +1650,7 @@ pairwise velocity divergence), we have
 \ee
 This is a pairwise version of
 a well-known change-of-variables formula from transport theory~\citep{villani_book,MoninYaglom71}.
-We note that it has appeared before in the context of
+We note that it has also appeared in the context of
 large-scale structure,
 see, e.g.~\cite{Smith:2007gi} where it was derived using
 the pair conservation equation~\eqref{eq:pairwise-eqn}.
@@ -1925,8 +1928,9 @@ of trajectories, as seen in Figure~\ref{fig:pt} (left panels).
 The effect of this on the correlation function is shown
 in Figure~\ref{fig:evoln}.
 
-Unlike advection and convergence, diffusion is described by
-$\mbf{C}_t$. We can see this because the Gaussian~\eqref{eq:p-t-Gauss}
+Whereas advection and convergence are controlled by $\R_t$,
+diffusion is controlled by $\mbf{C}_t$.
+We can understand this because the Gaussian~\eqref{eq:p-t-Gauss}
 satisfies the Fokker--Planck equation~\citep{Risken1989FokkerPlanck}
 \be\label{eq:FP}
 \partial_t p_t=-\nabla_\r\cdot (\dot{\R}_t p_t)
@@ -1964,8 +1968,8 @@ convolutions.
     \caption{{\bf Effect of diffusion on the evolution of
     the two-point function
     $\xi(r,z)=\langle\delta(\x,z)\ssp\delta(\x+\r,z)\rangle$.}
-    Note that in order to make the effect more apparent
-    we have scaled out the dominant convergence effect,
+    Note that in order to make this effect more apparent
+    we have scaled out the prevailing convergence effect,
     proportional to $D^2(z)$.
     Right column shows the model transition proabibilities
     for fixed $q=95\,h^{-1}\mrm{Mpc}$ and an initial redshift $z=49$.
@@ -2106,7 +2110,7 @@ there is still suppression.
 \end{figure}
 
 
-\subsection{Entropy}
+\subsection{Entropy of transitions}
 \noindent A sharp transition probability 
 implies low uncertainty in the final positions 
 of particles.
@@ -2156,14 +2160,19 @@ subjected to. In general, the displacement dispersion grows
 inversely with the number of particles. The rank order of $q$
 is preserved, independent of the number of particles.
 
-\begin{figure}[t!]
+\begin{figure*}[t!]
     \centering
-    \includegraphics[width=\columnwidth]{plots/dimensionless_cumulant_comparison_q001L_q01L} % conditional_entropy
-    \vspace{-20pt}
-    \caption{Cumulant evolution. Here
-     $\kappa_1\equiv R_t(q)$ and $\kappa_2\equiv C_t(q)$.}
+    \includegraphics[width=1.3\columnwidth]{plots/dimensionless_cumulants_cdm_sheets_N4000_R512_q01L_q001L_zeldovich} % dimensionless_cumulants_cdm_sheets_N4000_R512_q01L_q001L_zeldovich_xmax1.pdf % dimensionless_cumulants_cdm_sheets_N4000_R512_q01L_q001L.pdf % dimensionless_cumulants_uniform_random_5000_50_log_q01L_q001L % dimensionless_cumulant_comparison_q001L_q01L % conditional_entropy
+%    \vspace{-20pt}
+    \caption{Evolution of the first four cumulants of
+    the transition probability. In order to make this comparison,
+    the cumulants are of the dimensionless quantity
+    $(r_t(q)-q)/q$ and are conditional on $q$. For $\kappa_1$ and
+    $\kappa_2$ we also show the Zeldovich predictions (dashed grey);
+    see Eqs.~\eqref{eq:R-zel} and \eqref{eq:C}.
+    }
     \label{fig:cumulants}
-\end{figure}
+\end{figure*}
 
 %As the bottom row in Figure~\ref{fig:pt} shows, the pdf can
 %continue to develop a narrow, strongly populated
@@ -4018,31 +4027,38 @@ can be viewed as the pushforward of initial correlations along
 particle trajectories,
 see Eq.~\eqref{eq:xi-homo}.
 The key quantity in this approach is the transition probability,
-a conditional pdf describing the Eulerian distribution of
-separations given an initial Lagrangian separation.
-Except in certain limits, calculation of these transition
-probabilities can only be done approximately, e.g.\ by modelling
-the low-order cumulants.
+a conditional pdf of the Eulerian
+separations given initial Lagrangian separation.
+The transition probability is approximately Gaussian with
+dynamics given by the Fokker--Planck equation. Initially a delta function,
+the transition probability shifts (due to infall) and diffuses
+(due to uncorrelated pairwise motions).
+The size of higher-order cumulants develops over time.
+%Except in certain limits, calculation of these transition
+%probabilities can only be done approximately, e.g.\ by modelling
+%the low-order cumulants.
 The generalisation of this probabilistic approach to $n$-point
 functions is straightforward.
 
-Our more mechanical approach to large-scale structure, based
-on stochastic methods, is to be contrasted with the standard
-approach, based on a fluid description of matter
-analysed into Fourier modes (transfer functions, initial spectra,
-mode coupling, growth factors, etc).
+
 
 We have clarified that the distribution of final
 separations originates from 
 the stochasticity of the initial conditions
-(e.g.\ the initial density field) over which one is
-implicitly averaging when taking ensemble averages.
+(e.g.\ the initial density field) over which the
+ensemble average is taken. Once the initial conditions are
+fixed the subsequent evolution is deterministic.
 It is not because of multistreaming nor because the trajectories
 are non-deterministic (which they are not).
 A consequence of this is diffusion, the broadening
 of the transition probability due to the uncorrelated
 displacements of widely-separated particles. 
 
+Our more mechanical approach to large-scale structure, based
+on probabilistic methods, is to be contrasted with the standard
+approach, based on a fluid description of matter
+analysed into Fourier modes (transfer functions, initial spectra,
+mode coupling, growth factors, etc).
 We note that the methods used here are routinely used
 in statistical fluid mechanics~\citep{MoninYaglom71}.
 The key difference is the underlying equation of motion,
