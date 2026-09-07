@@ -99,8 +99,9 @@ University of Geneva, 24 Quai Ansermet, CH-1211 Geneva 4, Switzerland}
 % \thanks{$^\star$Email: \href{mailto:lawrence.dam@unige.ch}{lawrence.dam55@gmail.com}}
 
 \begin{abstract}
-\noindent We describe a probabilistic approach to the statistics of
-large-scale structure.
+\noindent We describe a probabilistic approach to 
+gravitational clustering in configuration space. 
+%We describe a probabilistic approach to the statistics of large-scale structure.
 %In modelling the development of structure from stochastic initial conditions,
 %we show that there is a well-defined
 We show that the two-point function
@@ -1056,7 +1057,7 @@ Markov property.
 
 \begin{figure*}
     \centering
-    \includegraphics[width=0.93\textwidth]{plots/pt_grid_uniform_random_5000_sigma_bands} % pt_grid_uniform_random_5000
+    \includegraphics[width=0.93\textwidth]{plots/pt_grid_uniform_random_50000_sigma_bands} % pt_grid_uniform_random_5000_sigma_bands % pt_grid_uniform_random_5000
     \caption{{\bf Evolution of the transition probability~\eqref{eq:pt}
     in a one-dimensional universe.} 
 %    Here the transition probability
@@ -1410,9 +1411,9 @@ where the factor of two is because of independence
 (sum the individual covariances).
 %This recovers the earlier result~\eqref{eq:cum-large-q}
 %and explains the factor of two.
-In a more model-dependent way, this result can also be obtained from the
-Gaussian transition pdf~\eqref{eq:p-t-Gauss}, by taking
-the large $\q$ limit of the Zeldovich mean~\eqref{eq:R-zel} and 
+This result can also be obtained in a more model-dependent way,
+starting with Gaussian transition pdf~\eqref{eq:p-t-Gauss}, then
+taking the large $\q$ limit of the Zeldovich mean~\eqref{eq:R-zel} and 
 covariance~\eqref{eq:C}.
 Note that since the transition probability is in the form
 $p_t(\r-\q)$, the correlation function~\eqref{eq:xi-homo} is
@@ -4023,33 +4024,41 @@ is preserved, independent of the number of particles.
 
 \section{Conclusions}
 \noindent The two-point function
-can be viewed as the pushforward of initial correlations along
-particle trajectories,
-see Eq.~\eqref{eq:xi-homo}.
-The key quantity in this approach is the transition probability,
-a conditional pdf of the Eulerian
-separations given initial Lagrangian separation.
-The transition probability is approximately Gaussian with
-dynamics given by the Fokker--Planck equation. Initially a delta function,
-the transition probability shifts (due to infall) and diffuses
-(due to uncorrelated pairwise motions).
-The size of higher-order cumulants develops over time.
+is the pushforward~\eqref{eq:xi-homo} of initial correlations along
+particle trajectories.
+The key quantity is the transition probability,
+a conditional pdf of the distribution of particle
+separations given the initial (Lagrangian) separation.
+The evolution of the transition probability proceeds from
+an initial delta function centred at the initial separation,
+to a Gaussian, shifted towards smaller separations (due to infall) and
+increasingly broad (due to uncorrelated pairwise motions).
+Later, skewness develops and the distribution
+is of a more complex form.
+The broadening, which smooths features in the two-point function,
+is closely related to infrared resummation.
+We noted that the shift and the broadening, or drift and diffusion, 
+are described by the Fokker--Planck equation, which we showed
+is satisfied by the Gaussian transition probability.
+The dynamics are generally more complicated than this, with
+higher-order (non-Gaussian) cumulants progressively
+developing over time---sooner for smaller separations and
+later for larger ones.
 %Except in certain limits, calculation of these transition
 %probabilities can only be done approximately, e.g.\ by modelling
 %the low-order cumulants.
-The generalisation of this probabilistic approach to $n$-point
-functions is straightforward.
 
 
 
-We have clarified that the distribution of final
-separations originates from 
-the stochasticity of the initial conditions
-(e.g.\ the initial density field) over which the
-ensemble average is taken. Once the initial conditions are
-fixed the subsequent evolution is deterministic.
+
+We emphasized that the distribution of the Eulerian
+separations originates with the stochasticity of the initial conditions,
+e.g.\ the density field at an earlier epoch.
+%over which the ensemble average is taken.
 It is not because of multistreaming nor because the trajectories
 are non-deterministic (which they are not).
+Once the initial conditions are
+fixed the subsequent evolution is deterministic.
 A consequence of this is diffusion, the broadening
 of the transition probability due to the uncorrelated
 displacements of widely-separated particles. 
@@ -4067,6 +4076,10 @@ is \emph{self-consistent}: moving a particle cannot be done
 without also changing the gravitational field in which it is moving.
 This boils down to active transport (our case) versus
 passive transport (the hydrodynamic case).
+
+The generalisation of this probabilistic approach to $n$-point
+functions is straightforward.
+
 
 %By formulating correlations in terms of transition probability
 %we have arrived at a statistical understanding of the evolution
