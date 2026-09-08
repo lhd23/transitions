@@ -196,22 +196,21 @@ We have similar for the initial distribution.
 %We have a similar relation in Lagrangian space
 %for $\dif P=p_\mathrm{init}(\q_1,\q_2)\,\dif^3\q_1\dif^3\q_2$.
 
-The main message of this work is that clustering 
-can be viewed in probabilistic terms, with
-the correlation function naturally described in terms
-of a well-defined transition probability.
-But we should note that the seeds of this idea can be
-found in \cite{Couchman_Bond88}
-who it seems were the first to give an expression like Eq.~\eqref{eq:marginal},
-though in terms of Zeldovich displacements.
+The main message here is that clustering, in particular
+its evolution from uncertain initial conditions, 
+can naturally be viewed probabilistically. 
+%The key object is the transition probability which we will study.
+But we should note that the seeds of this view can be
+found in \cite{Couchman_Bond88} who it seems were the first to give
+an expression like Eq.~\eqref{eq:marginal}.
 %We are not the first to have noticed this, however.
 %As far as we know \cite{Couchman_Bond88} were the first,
 %though they gave their expression in terms of Lagrangian displacements
 %and so missed the more basic structure~\eqref{eq:marginal}.
 
-There are a large number of works based on the 
+There are now a large number of works based on the 
 calculational method of \cite{Couchman_Bond88}; see, e.g.\
-\cite{1995MNRAS.273..475S,Taylor:1996ne,
+\cite{1993MNRAS.263..798M,1995MNRAS.273..475S,Taylor:1996ne,
 Matsubara:2007wj,Vlah:2016bcl,Chen:2020fxs}.
 But to our knowledge a treatment of the two-point function in
 clear probabilistic terms has not been described before. 
@@ -239,7 +238,7 @@ understood as nominal convolutions.
 
 Our approach has similarities to kinetic field theory
 \citep[KFT;][]{Bartelmann:2014gma,Bartelmann:2019unp},
-a statistical approach to the $N$-body problem
+a statistical approach to the cosmological $N$-body problem
 using path integral methods
 \citep{Martin:1973zz,Janssen76,deDominicis78}.
 %Following \cite{2010PhRvE..81f1102M}, KFT reformulates the
@@ -734,11 +733,13 @@ $\x_t(\q)$ with an implicit dependence on $\delta_0$ understood.
 
 Why do the individual trajectories depend on $\delta_0$?
 This is because the gravitational field is
-{self-consistently} determined from the mass distribution.
-That is, the acceleration of
-a particle depends on the gradient of the gravitational potential,
-which in turn depends on the positions of {all} other
-particles through pairwise interactions. Similar to
+\emph{self-consistently} sourced from the matter distribution.
+This means that the acceleration of
+a particle depends on the potential (through its
+gradient), which in turn depends on the positions of {all}
+other particles through pairwise interactions; that is,
+we cannot move a particle without also changing the
+gravitational field in which it is moving. Similar to
 the way that initial conditions are specified in an
 $N$-body simulation, $\delta_0$ encodes the initial
 positions of  all other particles.
@@ -834,15 +835,14 @@ positions of  all other particles.
 % time-evolution operator for $\xi_n$. 
 %\noindent {\bf Nonlinearity.}
 Another aspect of self-consistency is
-that the transition probability is a nonlinear function of the initial
+that the transition probability depends on the initial
 correlations (among higher-order correlations).
 Consequently,
 Eq.~\eqref{eq:MASTER} is a nonlinear map of correlations
 at one time to correlations at another. This distinguishes
 the transition probability~\eqref{eq:pt} from those normally
 encountered in, e.g.\ statistical fluid mechanics~\citep{MoninYaglom71},
-which instead follow from linear maps and often satisfy the
-Markov property.
+which passively transport material independent of the initial conditions.
 %Unless one considers the motion of test particles, the concept of
 %passive advection does not exist in a self-gravitating system.
 
@@ -1057,7 +1057,7 @@ Markov property.
 
 \begin{figure*}
     \centering
-    \includegraphics[width=0.93\textwidth]{plots/pt_grid_uniform_random_50000_sigma_bands} % pt_grid_uniform_random_5000_sigma_bands % pt_grid_uniform_random_5000
+    \includegraphics[width=0.95\textwidth]{plots/pt_grid_uniform_random_50000_sigma_bands_ymin001_log_trajectory} % pt_grid_uniform_random_50000_sigma_bands_ymin001 % pt_grid_uniform_random_5000_sigma_bands % pt_grid_uniform_random_5000
     \caption{{\bf Evolution of the transition probability~\eqref{eq:pt}
     in a one-dimensional universe.} 
 %    Here the transition probability
@@ -1358,7 +1358,7 @@ p_t(\r\sp\Mid\sp\text{$\q$ large})
 with $\q=\q_1-\q_2$ understood.
 %where $\sim$ is used in the asymptotic sense.
 Here $p_t(\x_1\Mid\q_1)$ and $p_t(\x_2\Mid\q_2)$ are one-particle
-transition probabilities (depend on one-point functions only).
+transition probabilities (which depend on one-point functions only).
 Now, since the (two-particle)
 transition probability~\eqref{eq:pt} factorizes as
 $\langle AB\rangle=\langle A\rangle\langle B\rangle$, we have
@@ -1461,7 +1461,7 @@ in the introduction, the structure of the correlation function
 is generally that of a marginal integral, with a
 conditional pdf for the kernel.\footnote{The name
 `convolution LPT'~\citep{Carlson:2012,White:2014,Vlah:2016bcl}
-is, in our view, a misnomer.}
+is a misnomer.}
 %Lastly, note that the Gaussian transition probability~\eqref{eq:pt-Delta}
 %corresponds to the convolution kernel in LPT~\citep{Carlson:2012,White:2014,Vlah:2016bcl}.
 %The difference between them is a matter of interpretation:
@@ -1731,7 +1731,7 @@ If we evaluate the Jacobian using linear theory
 
 
 Next consider advection. This is related to the transport
-of matter under flows.
+of matter.
 At the level of the correlation function, we can understand its
 effect by returning to the pair conservation
 equation~\eqref{eq:pairwise-eqn} and writing
@@ -1746,6 +1746,81 @@ If we neglect convergence,
 so $\theta_{12}=0$, then from Eq.~\eqref{eq:xi_n-formula} 
 we have $\xi_\rho(\r,t)=\xi_{\rho0}(\R_t^{-1}(\r))$,
 i.e.\ the initial correlations are remapped.
+
+\begin{figure}
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+      width  = 3.7in,
+      height = 1.22in,
+%      xlabel = {$r$},
+      ylabel = {$\xi_\rho(r,t)$},
+      xlabel style = {font=\small},
+      ylabel style = {font=\small},
+      axis line style = {thick},
+      tick label style = {font=\footnotesize},
+      xmin = 0,  xmax = 10,
+      ymin =  0,  ymax = 0.45,
+      xtick = \empty,
+      ytick = \empty,
+      axis lines = left,
+      clip = false,
+      samples = 200,
+      smooth,
+    ]
+    \node [font=\small] at (axis cs: 10, -0.08) {$r$};
+    % advection
+      \addplot [black, domain=0:10, thick]
+        {exp(-0.5*(x-1)^2/0.2^2) / sqrt(2*pi)};
+      \addplot [black, dashed, domain=0:10, thick]
+        {exp(-0.5*(x-2.3)^2/0.2^2) / sqrt(2*pi)};
+      % arrow between advection peaks
+      \draw [<-, thick]
+        (axis cs: 1.25, 0.38) -- (axis cs: 1.95, 0.38);
+    % advection label
+      \node [font=\small] at (axis cs: 1.65, -0.08) {advection};
+
+    % divergence
+      \addplot [black, dashed, domain=0:10, thick]
+        {exp(-0.5*(x-4.6)^2/0.2^2) / sqrt(2*pi) / 1.02};
+      \addplot [black, domain=0:10, thick]
+        {exp(-0.5*(x-4.6)^2/0.2^2) / sqrt(2*pi) / 0.82};
+      \draw [->, thick]
+        (axis cs: 4, 0.22) -- (axis cs: 4, 0.42);
+    % divergence label
+      \node [font=\small] at (axis cs: 4.6, -0.1) {convergence};
+
+    % diffusion
+      \addplot [black, dashed, domain=0:10, thick]
+        {exp(-0.5*(x-7.5)^2/0.2^2) / sqrt(2*pi)};
+      \addplot [black, domain=0:10, thick]
+        {exp(-0.5*(x-7.5)^2/0.6^2) / sqrt(2*pi) / 1.3};
+      \draw [->, >=stealth, thick]
+        (axis cs: 7.15, 0.35)
+        to[out=250, in=50]
+        (axis cs: 6.55, 0.18);
+      \draw [->, >=stealth, thick]
+        (axis cs: 7.85, 0.35)
+        to[out=290, in=130]
+        (axis cs: 8.45, 0.18);
+    % diffusion label
+      \node [font=\small] at (axis cs: 7.5, -0.08) {diffusion};
+    \end{axis}
+  \end{tikzpicture}
+  \caption{{\bf Three ways in which the
+   correlation function evolves.}
+   In this picture convergence plays a similar role to the growth factor
+   in linear theory.
+	Note that depending on the scale a rightward shift of the peak
+	to larger separations due to outfall is also possible (divergence).
+	Likewise, a suppression of the peak from expansion
+	is also possible. This cartoon also ignores that
+	each effect also carries scale dependence
+	(e.g.\ different amounts of enhancement or suppression
+	on the near vs far side of the peak).}
+  \label{fig:cartoon_peak}
+\end{figure}
+
 
 Let us consider the remapping in more detail.
 For example, suppose the initial correlations are given by
@@ -1843,81 +1918,55 @@ barely visible in Figure~\ref{fig:evoln}.
 %the initial correlations are volume-distorting effects of gravity.
 
 
-\begin{figure}
-  \centering
-  \begin{tikzpicture}
-    \begin{axis}[
-      width  = 3.7in,
-      height = 1.22in,
-%      xlabel = {$r$},
-      ylabel = {$\xi_\rho(r,t)$},
-      xlabel style = {font=\small},
-      ylabel style = {font=\small},
-      axis line style = {thick},
-      tick label style = {font=\footnotesize},
-      xmin = 0,  xmax = 10,
-      ymin =  0,  ymax = 0.45,
-      xtick = \empty,
-      ytick = \empty,
-      axis lines = left,
-      clip = false,
-      samples = 200,
-      smooth,
-    ]
-    \node [font=\small] at (axis cs: 10, -0.08) {$r$};
-    % advection
-      \addplot [black, domain=0:10, thick]
-        {exp(-0.5*(x-1)^2/0.2^2) / sqrt(2*pi)};
-      \addplot [black, dashed, domain=0:10, thick]
-        {exp(-0.5*(x-2.3)^2/0.2^2) / sqrt(2*pi)};
-      % arrow between advection peaks
-      \draw [<-, thick]
-        (axis cs: 1.25, 0.38) -- (axis cs: 1.95, 0.38);
-    % advection label
-      \node [font=\small] at (axis cs: 1.65, -0.08) {advection};
 
-    % divergence
-      \addplot [black, dashed, domain=0:10, thick]
-        {exp(-0.5*(x-4.6)^2/0.2^2) / sqrt(2*pi) / 1.02};
-      \addplot [black, domain=0:10, thick]
-        {exp(-0.5*(x-4.6)^2/0.2^2) / sqrt(2*pi) / 0.82};
-      \draw [->, thick]
-        (axis cs: 4, 0.22) -- (axis cs: 4, 0.42);
-    % divergence label
-      \node [font=\small] at (axis cs: 4.6, -0.1) {convergence};
 
-    % diffusion
-      \addplot [black, dashed, domain=0:10, thick]
-        {exp(-0.5*(x-7.5)^2/0.2^2) / sqrt(2*pi)};
-      \addplot [black, domain=0:10, thick]
-        {exp(-0.5*(x-7.5)^2/0.6^2) / sqrt(2*pi) / 1.3};
-      \draw [->, >=stealth, thick]
-        (axis cs: 7.15, 0.35)
-        to[out=250, in=50]
-        (axis cs: 6.55, 0.18);
-      \draw [->, >=stealth, thick]
-        (axis cs: 7.85, 0.35)
-        to[out=290, in=130]
-        (axis cs: 8.45, 0.18);
-    % diffusion label
-      \node [font=\small] at (axis cs: 7.5, -0.08) {diffusion};
-    \end{axis}
-  \end{tikzpicture}
-  \caption{{\bf Three ways in which the
-   correlation function evolves.}
-   In this picture convergence plays a similar role to the growth factor
-   in linear theory.
-	Note that depending on the scale a rightward shift of the peak
-	to larger separations due to outfall is also possible (divergence).
-	Likewise, a suppression of the peak from expansion
-	is also possible. This cartoon also ignores that
-	each effect also carries scale dependence
-	(e.g.\ different amounts of enhancement or suppression
-	on the near vs far side of the peak).}
-  \label{fig:cartoon_peak}
+\begin{figure}[t!]
+    \centering
+    \includegraphics[width=0.97\columnwidth]{plots/correlation_evolution_raw_all_snapshots_overlay_zeldovich_transition_probabilities_linear_theory} % correlation_evolution_raw_all_snapshots_overlay_zeldovich_transition_probabilities} % correlation_evolution_raw_all_snapshots_overlay_zeldovich
+    \caption{{\bf Effect of diffusion on the evolution of
+    the two-point function
+    $\xi(r,z)=\langle\delta(\x,z)\ssp\delta(\x+\r,z)\rangle$.}
+    Note that in order to make this effect more apparent
+    we have scaled out the larger convergence effect,
+    proportional to $D^2(z)$.
+    Right column shows the model transition proabibilities
+    for fixed $q=95\,h^{-1}\mrm{Mpc}$ and an initial redshift $z=49$.
+    Model predictions are based on
+    Gaussian transition probability~\eqref{eq:p-t-Gauss}
+    evaluated using the Zeldovich approximation (solid black).
+    Linear theory shown for reference (dashed blue).}
+    \label{fig:evoln}
 \end{figure}
 
 
+
+
+%\begin{figure}[t!]
+%    \centering
+%    \includegraphics[width=\columnwidth]{plots/conditional_entropy_particle_count_comparison} % conditional_entropy
+%    \vspace{-14pt}
+%    \caption{{Conditional entropy~\eqref{eq:H} of the transition
+%    probability for different initial separations $q$.}
+%    Note that the entropy tends to plateau, reflecting
+%    the capture of particles into bound regions.}
+%    \label{fig:entropy}
+%\end{figure}
+
+\begin{figure*}[t!]
+    \centering
+    \includegraphics[]{plots/dimensionless_cumulants_cdm_sheets_N4000_R512_q01L_q001L_q0001L_zeldovich_conditional_entropy} % dimensionless_cumulants_cdm_sheets_N4000_R512_q01L_q001L_zeldovich % dimensionless_cumulants_cdm_sheets_N4000_R512_q01L_q001L_zeldovich_xmax1.pdf % dimensionless_cumulants_cdm_sheets_N4000_R512_q01L_q001L.pdf % dimensionless_cumulants_uniform_random_5000_50_log_q01L_q001L % dimensionless_cumulant_comparison_q001L_q01L % conditional_entropy
+%    \vspace{-20pt}
+    \caption{Evolution of the first four cumulants of
+    the transition probability. In order to make this comparison,
+    the cumulants are of the dimensionless quantity
+    $(r_t(q)-q)/q$ and are conditional on $q$, e.g.\ $\kappa_1$ is the
+    mean relative displacement and $\kappa_2$ is the dispersion.
+    For $\kappa_1$ and
+    $\kappa_2$ we show the Zeldovich predictions (dashed black);
+    see Eqs.~\eqref{eq:R-zel} and \eqref{eq:C}.
+    }
+    \label{fig:cumulants}
+\end{figure*}
 
 \subsection{Diffusion}\label{sec:diffusion}
 \noindent
@@ -1963,23 +2012,8 @@ approximated by the large separation limit
 (Section~\ref{sec:large-r-limit}), i.e.\ by genuine
 convolutions.
 
-\begin{figure}[t!]
-    \centering
-    \includegraphics[width=0.97\columnwidth]{plots/correlation_evolution_raw_all_snapshots_overlay_zeldovich_transition_probabilities_linear_theory} % correlation_evolution_raw_all_snapshots_overlay_zeldovich_transition_probabilities} % correlation_evolution_raw_all_snapshots_overlay_zeldovich
-    \caption{{\bf Effect of diffusion on the evolution of
-    the two-point function
-    $\xi(r,z)=\langle\delta(\x,z)\ssp\delta(\x+\r,z)\rangle$.}
-    Note that in order to make this effect more apparent
-    we have scaled out the prevailing convergence effect,
-    proportional to $D^2(z)$.
-    Right column shows the model transition proabibilities
-    for fixed $q=95\,h^{-1}\mrm{Mpc}$ and an initial redshift $z=49$.
-    Model predictions are based on
-    Gaussian transition probability~\eqref{eq:p-t-Gauss}
-    evaluated using the Zeldovich approximation (solid black).
-    Linear theory shown for reference (dashed blue).}
-    \label{fig:evoln}
-\end{figure}
+
+
 
 
 On the size of the effect, diffusion is subdominant to
@@ -2099,28 +2133,19 @@ there is still suppression.
 
 
 
-\begin{figure}[t!]
-    \centering
-    \includegraphics[width=\columnwidth]{plots/conditional_entropy_particle_count_comparison} % conditional_entropy
-    \vspace{-14pt}
-    \caption{{Conditional entropy~\eqref{eq:H} of the transition
-    probability for different initial separations $q$.}
-    Note that the entropy tends to plateau, reflecting
-    the capture of particles into bound regions.}
-    \label{fig:entropy}
-\end{figure}
+
 
 
 \subsection{Entropy of transitions}
 \noindent A sharp transition probability 
-implies low uncertainty in the final positions 
-of particles.
+implies strong knowledge of the final positions,
+whereas a broad transition implies more uncertainty.
 A convenient way to quantify this is
 with the (conditional) entropy~\citep{Mackay_book}
 \be\label{eq:H}
 H_t(\q)=-\int\dif^3\r\, p_t(\r\Mid\q)\ln p_t(\r\Mid\q)\,.
 \ee
-This is shown in Figure~\ref{fig:entropy} for different
+This is shown in Figure~\ref{fig:cumulants} for different
 initial separations. While the entropy is generally
 monotone increasing the rate of change depends on the
 separation. For particles which are widely separated see
@@ -2137,8 +2162,8 @@ Physically, nearby particles bind to the same structure
 relatively quickly, with further evolution yielding only small
 relative displacements.
 
-Although not visible in Figure~\ref{fig:entropy},
-note that the entropy eventually plateaus.
+Figure~\ref{fig:cumulants} shows
+that the entropy plateaus.
 This is to be compared with the Gaussian--Zeldovich
 model~\eqref{eq:p-t-Gauss} in which diffusion~\eqref{eq:C}
 increases without bound, implying sustained entropy production.
@@ -2153,27 +2178,15 @@ large displacements that they did earlier on when
 clusters were beginning to form.
 
 
-The two panels in Figure~\ref{fig:entropy} show the entropy
-estimated in simulations for two different particle numbers.
-The higher entropies for $N=1000$ is due to
-large gravitational deflections that each particle can be
-subjected to. In general, the displacement dispersion grows
-inversely with the number of particles. The rank order of $q$
-is preserved, independent of the number of particles.
+%The two panels in Figure~\ref{fig:entropy} show the entropy
+%estimated in simulations for two different particle numbers.
+%The higher entropies for $N=1000$ is due to
+%large gravitational deflections that each particle can be
+%subjected to. In general, the displacement dispersion grows
+%inversely with the number of particles. The rank order of $q$
+%is preserved, independent of the number of particles.
 
-\begin{figure*}[t!]
-    \centering
-    \includegraphics[width=1.3\columnwidth]{plots/dimensionless_cumulants_cdm_sheets_N4000_R512_q01L_q001L_zeldovich} % dimensionless_cumulants_cdm_sheets_N4000_R512_q01L_q001L_zeldovich_xmax1.pdf % dimensionless_cumulants_cdm_sheets_N4000_R512_q01L_q001L.pdf % dimensionless_cumulants_uniform_random_5000_50_log_q01L_q001L % dimensionless_cumulant_comparison_q001L_q01L % conditional_entropy
-%    \vspace{-20pt}
-    \caption{Evolution of the first four cumulants of
-    the transition probability. In order to make this comparison,
-    the cumulants are of the dimensionless quantity
-    $(r_t(q)-q)/q$ and are conditional on $q$. For $\kappa_1$ and
-    $\kappa_2$ we also show the Zeldovich predictions (dashed grey);
-    see Eqs.~\eqref{eq:R-zel} and \eqref{eq:C}.
-    }
-    \label{fig:cumulants}
-\end{figure*}
+
 
 %As the bottom row in Figure~\ref{fig:pt} shows, the pdf can
 %continue to develop a narrow, strongly populated
@@ -4023,59 +4036,57 @@ is preserved, independent of the number of particles.
 
 
 \section{Conclusions}
-\noindent The two-point function
-is the pushforward~\eqref{eq:xi-homo} of initial correlations along
-particle trajectories.
-The key quantity is the transition probability,
+\noindent The evolution of the two-point function
+unfolds through the transition probability,
 a conditional pdf of the distribution of particle
 separations given the initial (Lagrangian) separation.
-The evolution of the transition probability proceeds from
-an initial delta function centred at the initial separation,
-to a Gaussian, shifted towards smaller separations (due to infall) and
-increasingly broad (due to uncorrelated pairwise motions).
-Later, skewness develops and the distribution
-is of a more complex form.
-The broadening, which smooths features in the two-point function,
-is closely related to infrared resummation.
+Beginning with a delta function (centred at the Lagrangian separation $q$),
+the transition probability evolves through a Gaussian
+to a general skewed distribution. The development of skewness
+and higher-order cumulants occurs sooner for smaller
+Lagrangian separations than for larger ones.
+Two effects are generally apparent: the skewness is
+towards smaller separations $r<q$ (due to pairwise infall),
+and the distribution becomes increasingly broad (due to
+uncorrelated pairwise motions).
+%Later, as collapse becomes strongly nonlinear, skewness develops
+%and the distribution is of a more complex form;
+%this occurs sooner for smaller Lagrangian separations and later
+%for larger ones.
+We made a connection between the broadening, which noticeably
+smooths features in the two-point function,
+and what is normally called infrared resummation.
 We noted that the shift and the broadening, or drift and diffusion, 
 are described by the Fokker--Planck equation, which we showed
 is satisfied by the Gaussian transition probability.
-The dynamics are generally more complicated than this, with
-higher-order (non-Gaussian) cumulants progressively
-developing over time---sooner for smaller separations and
-later for larger ones.
-%Except in certain limits, calculation of these transition
-%probabilities can only be done approximately, e.g.\ by modelling
-%the low-order cumulants.
 
 
 
+%We emphasized that the distribution of the Eulerian
+%separations originates with the stochasticity of the initial conditions,
+%e.g.\ the density field at an earlier epoch.
+%%over which the ensemble average is taken.
+%It is not because of multistreaming nor because the trajectories
+%are non-deterministic (which they are not).
+%Once the initial conditions are
+%fixed the subsequent evolution is deterministic.
+%A consequence of this is diffusion, the broadening
+%of the transition probability due to the uncorrelated
+%displacements of widely-separated particles. 
 
-We emphasized that the distribution of the Eulerian
-separations originates with the stochasticity of the initial conditions,
-e.g.\ the density field at an earlier epoch.
-%over which the ensemble average is taken.
-It is not because of multistreaming nor because the trajectories
-are non-deterministic (which they are not).
-Once the initial conditions are
-fixed the subsequent evolution is deterministic.
-A consequence of this is diffusion, the broadening
-of the transition probability due to the uncorrelated
-displacements of widely-separated particles. 
-
-Our more mechanical approach to large-scale structure, based
-on probabilistic methods, is to be contrasted with the standard
-approach, based on a fluid description of matter
-analysed into Fourier modes (transfer functions, initial spectra,
-mode coupling, growth factors, etc).
-We note that the methods used here are routinely used
-in statistical fluid mechanics~\citep{MoninYaglom71}.
-The key difference is the underlying equation of motion,
-which for us
-is \emph{self-consistent}: moving a particle cannot be done
-without also changing the gravitational field in which it is moving.
-This boils down to active transport (our case) versus
-passive transport (the hydrodynamic case).
+%Our more mechanical approach to large-scale structure, based
+%on probabilistic methods, is to be contrasted with the standard
+%approach, based on a fluid description of matter
+%analysed into Fourier modes (transfer functions, initial spectra,
+%mode coupling, growth factors, etc).
+%We note that the methods used here are routinely used
+%in statistical fluid mechanics~\citep{MoninYaglom71}.
+%The key difference is the underlying equation of motion,
+%which for us
+%is \emph{self-consistent}: moving a particle cannot be done
+%without also changing the gravitational field in which it is moving.
+%This boils down to active transport (our case) versus
+%passive transport (the hydrodynamic case).
 
 The generalisation of this probabilistic approach to $n$-point
 functions is straightforward.
@@ -4241,19 +4252,18 @@ functions is straightforward.
 
 
 \begin{acknowledgements}
-This paper was originally intended as a companion to
-\cite{Dam:2025ops}. The bulk of the paper was written in 2025
+A large part of this paper was written in 2025
 at the University of Geneva
 where the author was supported by the European Research Council under
 the Horizon 2020 Research and Innovation Programme of the European Union
-(grant agreement no.~863929), and more recently furnished with
-numerics and figures
-for which the author acknowledges use of GPT-5.6 (OpenAI) to assist in code development. The author has verified the output and
-accepts responsibility for the accuracy of the results.
-All text was human authored.
+(grant agreement no.~863929).
+The author acknowledges use of GPT-5.6 (OpenAI) to assist in
+code development and assumes responsibility for the accuracy of the 
+numerical results.
+All text was written by the author.
 Use of the Baobab HPC cluster at the University
 of Geneva is gratefully acknowledged.
-LD thanks Anton Chudaykin and Omar Darwish for helpful discussions.
+The author thanks A.~Chudaykin and O.~Darwish for helpful discussions.
 \end{acknowledgements}
 
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
