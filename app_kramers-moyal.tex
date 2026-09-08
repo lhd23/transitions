@@ -1,0 +1,459 @@
+% \section{Kramers--Moyal expansion}\label{app:KM-expansion}
+% \noindent
+% Just as the integral form~\eqref{eq:n} of $n(\x,t)$ can 
+%  be expressed in
+% differential form as the continuity equation
+% $\partial_t\sp n+\nabla\cdot(n\sp\u)=0$, the integral
+% form~\eqref{eq:xi-homo} for $\xi_n(\r,t)$
+% can be expressed as a differential equation, 
+% taking the form of a Kramers--Moyal expansion.
+% There are several ways this equation can be obtained and
+% here we derive it following the characteristic-function approach
+% of \cite{Risken1989FokkerPlanck}.
+
+% Consider an expansion of Eq.~\eqref{eq:xi-homo} for a small time interval
+% (which we take to zero at the end of the calculation).
+% To do this it helps to write Eq.~\eqref{eq:xi-homo} using
+% arbitrary times $t$ and $t'$ so
+% \be\label{eq:xi-homo-alt}
+% \xi_n(\r',t')=\int_{\r}p(\r',t'\Mid\r,t)\, \xi_n(\r,t)\,,
+% \ee
+% Now we will expand $p$ in moments
+% \be
+% M_{i_1\ldots i_m}(\r;t',t)
+% \equiv \int_{\r'} (\r'-\r)_{i_1}\cdots(\r'-\r)_{i_m}\ssp p(\r',t'\Mid\r,t).
+% \ee
+% (This is closely related to the LPT displacement moments,
+% e.g.\ for the first moment ${M}_i=\llangle\Delta\psi_i\rrangle$.)
+% % The transition probability can be expanded in terms of
+% % the moments $M_{i_1\ldots i_n}(\r';t,t')
+% % =\llangle\Delta_{i_1}\cdots\Delta_{i_n}\rrangle$,
+% %  $\Delta_i=r_i-r_i'$:
+% % \bea
+% % M_{i_1\ldots i_n}(\r';t,t')
+% % % &\equiv\llangle\Delta_{i_1}\cdots\Delta_{i_n}\rrangle \\
+% % &=\int_\r (\r-\r')_{i_1}\cdots(\r-\r')_{i_n}\ssp p(\r,t\Mid\r',t').
+% % \eea
+% % When inserted back into Eq.~\eqref{eq:xi-homo} we have the
+% % Kramers--Moyal expansion. This is useful for obtaining
+% % the differential equation form of Eq.~\eqref{eq:xi-homo}, i.e.\
+% % in the limit of infinitesimally small time steps.
+% % The following calculation can be found in
+% % \cite{Risken1989FokkerPlanck}.
+% These moments are encoded in the
+% generating function~\eqref{eq:pt-r} as
+% $Z(\k;\r)=\llangle e^{\im\k\cdot\r_{t'}}\rrangle
+% =e^{\im\k\cdot\r}\llangle e^{\im\k\cdot\bm(\r_{t'}-\r)}\rrangle$.
+% Expanding the second exponential in a power series,
+% the transition probability~\eqref{eq:pt-r} becomes
+% \be\nonumber
+% p(\r',t'\Mid\r,t)
+% =\int_\k e^{-\im\k\cdot(\r'-\r)}
+%     \left(1+\sum_{m=1}^\infty\frac{\im^m}{m!} k_{i_1}\cdots k_{i_m}
+%         M_{i_1\ldots i_m}(\r;t',t)
+%     \right)
+% \ee
+% Evaluating the integral over $\k$ using the identity
+% \be\nonumber
+% \int_\k e^{-\im\k\cdot(\r'-\r)}\sp\im^m\sp k_{i_1}\cdots k_{i_m}
+% =(-1)^n\ssp\frac{\partial}{\partial r_{i_1}'}
+%     \cdots\frac{\partial}{\partial r_{i_m}'}\,\delD(\r'-\r)
+% \ee
+% and using $\delD(\r'-\r)\sp M(\r)=\delD(\r'-\r)\sp M(\r')$, we have
+% \bea
+% &p(\r',t'\Mid\r,t) \\
+% &=\left(1+\sum_{m=1}^\infty\frac{(-1)^m}{m!}
+%     \frac{\partial}{\partial r_{i_1}'}
+%     \cdots\frac{\partial}{\partial r_{i_m}'} M_{i_1\ldots i_m}(\r';t',t)
+%     \right)\delD(\r'-\r). \nonumber
+% \eea
+% Inserted back into Eq.~\eqref{eq:xi-homo-alt} and bringing the
+% zeroth-order term over to the left-hand side, we have
+% \bea\nonumber
+% &\xi_n(\r',t')-\xi_n(\r',t) 
+% =\sum_{m=1}^\infty\frac{(-1)^m}{m!}
+%     \frac{\partial}{\partial r_{i_1}'}
+%     \cdots\frac{\partial}{\partial r_{i_m}'} M_{i_1\ldots i_m}(\r';t',t)\ssp
+%     \xi_n(\r',t).\nonumber
+% \eea
+% Expanding both sides, assuming a small time interval $\Delta t=t'-t$,
+% the left-hand side reduces to
+% $\partial_t\ssp\xi_n\ssp\Delta t+O(\Delta t^2)$;
+% on the right-hand side we have
+% \be\nonumber
+% M_{i_1\ldots i_m}(\r';t+\Delta t,t)
+% =K_{i_1\ldots i_m}(\r',t)\cdot\Delta t+O(\Delta t^2)\,,
+% \ee
+% where
+% \be
+% K_{i_1\ldots i_m}(\r,t)
+% \equiv\lim_{\Delta t\to 0} M_{i_1\ldots i_m}(\r;t+\Delta t,t)/\Delta t
+% \ee
+% is the Kramers--Moyal coefficient~\citep{Risken1989FokkerPlanck}.
+% Inserting these expansions into the foregoing equation,
+% dividing both sides by $\Delta t$ and then taking the limit
+% $\Delta t\to0$, we obtain
+% \be\label{eq:KM-expansion}
+% \partial_t\ssp\xi_n(\r,t)
+% =\sum_{m=1}^\infty\frac{(-1)^m}{m!}
+%     \frac{\partial}{\partial r_{i_1}}
+%     \cdots\frac{\partial}{\partial r_{i_m}}
+%         \big[K_{i_1\ldots i_m}(\r,t)\, \xi_n(\r,t)\big]\,.
+% \ee
+% (For simplicity we have dropped the prime on the
+% arbitrary separation $\r'$.)
+% This is the Kramers--Moyal expansion.
+
+% The pair conservation equation is obtained by 
+% neglecting all but the first term  on the right-hand side
+% of Eq.~\eqref{eq:KM-expansion}:
+% \be
+% \partial_t\ssp \xi_n
+% +\bm\nabla\cdot(\xi_n\ssp \u_{12})=0\,,
+% \ee
+% where $\u_{12}(\r,t)=\mbf{K}(\r,t)$ is the 
+% pairwise relative velocity~\citep{Davis:1977,Peebles_LSS}.
+
+% % A Fokker--Planck equation is obtained by 
+% % neglecting all but the first two terms on the right-hand side 
+% % of Eq.~\eqref{eq:KM-expansion}:
+% % \be
+% % \partial_t\ssp \xi_n
+% % =-\frac{\partial}{\partial r_i}({D}_i\ssp\xi_n)
+% % +\frac12\frac{\partial}{\partial r_i}
+% %     \frac{\partial}{\partial r_j}(D_{ij}\ssp\xi_n)\,.
+% % \ee
+
+
+\section{Main idea}
+\noindent A simple model conveys the main idea of this work.
+
+Consider a system of three particles, labelled $A$, $B$, and $C$,
+moving according to the equation of motion $\dot{\x}=\mbf{F}(\x,t)$, with
+$\x(t)=(x_A(t),x_B(t),x_C(t))$ and $\mbf{F}$ such that the motions are coupled.
+We want to determine the separation  $r(t)=x_A(t)-x_B(t)$ between
+$A$ and $B$ at time $t$. Now if we know the initial configuration of the system
+then we have complete information to determine a future configuration
+and any observable thereof, e.g.\ $r(t)$.
+But suppose we know the exact initial positions,
+$q_A\equiv x_A(0)$ and $q_B\equiv x_B(0)$, of only two particles.
+We don't know the exact initial coordinates of particle $C$,
+but we do it is roughly at $q_*\pm\sigma_*$. (For concreteness,
+we assume it is Gaussian distributed about $q_*$ with variance $\sigma_*^2$.)
+Since we need the positions of all three particles, we do \emph{not} have
+enough information to exactly determine $r(t)$. Instead, because we
+have a distribution of $q_C$, we also have a {distribution} of $r(t)$.
+%This is by marginalizing over all $q_C\sim\mathcal{N}(q_*,\sigma_*^2)$
+%for given $q=q_A-q_B$.
+%And since the uncertainty in particle $C$'s position
+%grows with time, so also the uncertainty of $r(t)$ grows with time.
+
+
+
+\section{Derivation of the pair conservation equation}\label{app:KM-expansion}
+\noindent
+To derive the pair conservation equation~\eqref{eq:pairwise-eqn} from the
+the pushforward~\eqref{eq:xi-homo},
+%Just as the integral form~\eqref{eq:n} of $n(\x,t)$ can 
+%be expressed in differential form as the continuity equation,
+%the integral form~\eqref{eq:xi-homo} for $\xi_n(\r,t)$
+%can be expressed as a differential equation, 
+%known as the pair conservation equation.
+%This is derived as follows.
+% The derivation we fobelow is essentially the same as the derivation of the
+% Kramers--Moyal expansion using the characteristic function
+% \cite{Risken1989FokkerPlanck}.
+consider an expansion of Eq.~\eqref{eq:xi-homo} over a small time interval
+$\Delta t$. We take $\Delta t$ to zero at the end of the calculation.
+First it will be convenient to call the initial time 
+$t_0$ and write Eq.~\eqref{eq:xi-homo} as
+\be\label{eq:xi-homo-alt}
+\xi_\rho(\r,t)=\int\dif^3{\q}\; p(\r,t\Mid\q,t_0)\, \xi_\rho(\q,t_0)\,,
+\ee
+where
+$p(\r,t\Mid\q,t_0)=\llangle\delD(\r-\r_{t})\rrangle$.
+(Note that that the pair trajectory $\r_{t}$ is a random variable
+that depends on $\q_1$ and $\q_2$, and only on
+$\q=\q_1-\q_2$ after averaging.)
+Now it is convenient to use the Fourier representation of
+the delta function to write
+\be\nonumber
+p(\r,t\Mid\q,t_0)
+=\int\frac{\dif^3\k}{(2\pi)^3}\, e^{-\im\k\cdot\r}
+    \llangle e^{\im\k\cdot\r_{t}}\rrangle
+=\int\frac{\dif^3\k}{(2\pi)^3}\, e^{-\im\k\cdot(\r-\q)}
+    \llangle e^{\im\k\cdot\Delta\bm\psi}\rrangle\,,
+\ee
+where we recalled the relative displacement
+$\Delta\bm\psi=\r_t-\q$.
+Expand the second exponential in a power series:
+\be\label{eq:pt-expansion}
+p(\r,t\Mid\q,t_0)
+=\int\frac{\dif^3\k}{(2\pi)^3}\, e^{-\im\k\cdot(\r-\q)}
+    \Big(1+\im \k\cdot\mbf{D}(\q;t,t_0)+\cdots
+    \Big)\,.
+\ee
+As in the main text, here we defined
+$\mbf{D}(\q;t,t_0)
+% \equiv\langle\!\langle \r_{t}-\q\rangle\!\rangle
+\equiv\langle\!\langle\Delta\bm\psi\rangle\!\rangle$, i.e.\ the expected
+relative displacement between time $t_0$ and $t>t_0$.
+This is related to the expected separation
+$\R_t(\q)\equiv\langle\!\langle\r_t\rangle\!\rangle
+=\q+\mbf{D}(\q;t,t_0)$.
+(For our particular
+transition probability the higher-order
+terms will turn out be irrelevant when we take the limit $t\to t_0$,
+hence our showing only the leading term.%
+\footnote{More specifically,
+the higher-order terms,
+$\langle\!\langle\Delta\psi_i\sp\Delta\psi_j\rangle\!\rangle$, 
+$\langle\!\langle\Delta\psi_i\sp\Delta\psi_j\sp\Delta\psi_k\rangle\!\rangle$, etc,
+% \bea
+% \langle\!\langle\Delta\psi_i\sp\Delta\psi_j\rangle\!\rangle\,,
+% \quad
+% \langle\!\langle\Delta\psi_i\sp\Delta\psi_j\sp\Delta\psi_k\rangle\!\rangle\,, \quad\text{etc.} 
+% \eea
+may be neglected because the relative displacement
+$\Delta\bm\psi=(\v_1-\v_2)\sp\Delta t+O(\Delta t^2)$ is at
+lowest order $\Delta t$, meaning that the second moment is
+$O(\Delta t^2)$, the third moment is $O(\Delta t^3)$, and so on. 
+Upon dividing through by $\Delta t$ and taking the
+limit $\Delta t\to0$,
+these moments vanish, leaving only 
+$D_i=\langle\!\langle\Delta\psi_i\rangle\!\rangle$.
+})
+Now using the identity
+$(2\pi)^{-3}\int\dif^3\k\, e^{-\im\k\cdot(\r-\q)}\im\k
+=-\nabla_\r\,\delD(\r-\q)$, we have
+\be\label{eq:pt-LO}
+p(\r,t\Mid\q,t_0)
+=\delD(\r-\q)
+    -\nabla_\r\cdot
+        \big[\mbf{D}(\r;t,t_0)\,\delD(\r-\q)\big]+\cdots
+\ee
+Here, using the property
+$\delD(\r-\q)\sp f(\q)=\delD(\r-\q)\sp f(\r)$, we evaluated
+$\mbf{D}$ at separation $\r$.
+Inserted back into Eq.~\eqref{eq:xi-homo-alt} and bringing the
+zeroth-order term over to the left-hand side, we have
+\bea\nonumber
+\xi_n(\r,t)-\xi_n(\r,t_0) 
+=-\nabla_\r\cdot
+        \big[\mbf{D}(\r;t,t_0)\,\xi_n(\r,t_0)\big]+\cdots
+\eea
+Now write $t=t_0+\Delta t$ and expand both sides about the
+initial time $t_0$, assuming a small time interval $\Delta t$.
+On the left-hand side,
+$\xi_n(\r,t)=\xi_n(\r,t_0)+\partial_{t}\ssp\xi_n(\r,t)|_{t=t_0}\Delta t
++O(\Delta t^2)$.
+On the right-hand side,
+\be\label{eq:M}
+\mbf{D}(\r;t_0+\Delta t,t_0)
+\equiv\llangle\Delta\bm\psi\rrangle
+=\frac1a\v_{12}(\r,t_0)\sp\Delta t+O(\Delta t^2)
+\ee
+where we have inserted the relative displacement
+$\Delta\bm\psi=\r_t-\q=\frac1a(\v_1-\v_2)\sp\Delta t+O(\Delta t^2)$
+with $\v_1=\v(\q_1)$ and $\v_2=\v(\q_2)$,
+and recognized the pairwise streaming velocity, defined as
+$\v_{12}=\llangle\v_1-\v_2\rrangle$.
+Here the scale factor enters because $\v_1=a\sp\dif\x_1/\dif t$ and
+$\v_2=a\sp\dif\x_2/\dif t$ are the physical velocities
+conventionally used.
+The expression now reads
+\be\label{eq:pair-exp}
+\partial_t\ssp\xi_n(\r,t)\,\Delta t
+=-\frac1a\nabla_\r\cdot
+        \big[\xi_n(\r,t)\,\v_{12}(\r;t)\big]\sp\Delta t
+    +O(\Delta t^2)\,.
+\ee
+(Since the final time $t$ no longer appears in this local-in-time
+expression, we have relabelled the arbitrary initial time $t_0\to t$.)
+Upon dividing both sides by $\Delta t$ and taking the limit
+$\Delta t\to0$,
+we recover the pair conservation equation~\eqref{eq:pairwise-eqn}.
+%\be\label{eq:pair-eqn}
+%\partial_t\ssp\xi_n
+%+\frac1a\bm\nabla_\r\cdot
+%    \big(\xi_n\,\v_{12}\big)=0\,.
+%\ee
+%This is the pair conservation equation~\citep{Davis:1977}.
+%There are also equations for the conservation of triplets, quadruplets, etc, all of which have the same basic form as
+%Eq.~\eqref{eq:pair-eqn}
+%and can be derived following a similar calculation to that above.
+%For explicit formula and their derivation from the BBGKY hierarchy,
+%see \cite{Peebles_LSS}, section 71.B.
+
+
+%Finally note that Eq.~\eqref{eq:pair-eqn} is generally not closed.
+%Since to solve for the zeroth
+%moment $\xi_n$ one needs to solve for the first moment
+%$\u_{12}$, which in turn requires solving for the second moment
+%(the pairwise velocity dispersion), and so on.
+%This requires partial solution of the full BBGKY hierarchy.
+%Thus a solution of $\xi_n$ generally depends not just on
+%$\u_{12}$ but also higher moments.
+
+
+
+
+
+
+
+
+% \section{Derivation of the pair conservation equation from the transition probability}\label{app:KM-expansion}
+% \noindent
+% Just as the integral form~\eqref{eq:n} of $n(\x,t)$ can 
+%  be expressed in
+% differential form as the continuity equation
+% $\partial_t\sp n+\nabla\cdot(n\sp\u)=0$, the integral
+% form~\eqref{eq:xi-homo} for $\xi_n(\r,t)$
+% can be expressed as a differential equation, 
+% taking the form of a Kramers--Moyal expansion.
+% There are several ways this equation can be obtained and
+% here we derive it following the characteristic-function approach
+% of \cite{Risken1989FokkerPlanck}.
+
+% Consider an expansion of Eq.~\eqref{eq:xi-homo} for a small time interval
+% (which we take to zero at the end of the calculation).
+% To do this it will be convenient to call the initial time 
+% $t$ and the final time $t'$. We also
+% relabel $\q\to\r$ and $\r\to\r'$. Equation~\eqref{eq:xi-homo} 
+% then reads
+% \be\label{eq:xi-homo-alt}
+% \xi_n(\r',t')=\int_{\r}p(\r',t'\Mid\r,t)\, \xi_n(\r,t)\,,
+% \ee
+% where
+% $p(\r',t'\Mid\r,t)=\langle\!\langle\delD(\r'-\r_{t'})\rangle\!\rangle$.
+% (Note that $\r_{t'}$ is a stochastic variable that depends on
+% $\r$ after averaging.)
+% Now expand the delta function in plane waves as
+% \be\nonumber
+% p(\r',t'\Mid\r,t)
+% =\int_\k e^{-\im\k\cdot\r'}
+%     \langle\!\langle e^{\im\k\cdot\r_{t'}}\rangle\!\rangle
+% =\int_\k e^{-\im\k\cdot(\r'-\r)}
+%     \langle\!\langle e^{\im\k\cdot(\r_{t'}-\r)}\rangle\!\rangle
+% \ee
+% Expanding the second exponential in a power series,
+% \be\nonumber
+% p(\r',t'\Mid\r,t)
+% =\int_\k e^{-\im\k\cdot(\r'-\r)}
+%     \Big(1+\im \k\cdot\mbf{M}(\r;t',t)+\cdots
+%     \Big)\,.
+% \ee
+% Here we defined $\mbf{M}(\r;t',t)
+% =\langle\!\langle \r_{t'}-\r\rangle\!\rangle$. For our particular
+% transition probability the higher-order
+% terms will turn out be irrelevant when we take the limit $t\to t'$.
+% Hence we exhibit only the leading-order term.
+% Now using the identity
+% $\int_\k e^{-\im\k\cdot(\r'-\r)}\im\k
+% =-\frac{\partial}{\partial\r'}\sp\delD(\r'-\r)$, we have
+% \be\nonumber
+% p(\r',t'\Mid\r,t)
+% =\delD(\r'-\r)
+%     -\frac{\partial}{\partial\r'}\cdot
+%         \big[\mbf{M}(\r';t',t)\,\delD(\r'-\r)\big]+\cdots
+% \ee
+% Here we have also used the property
+% $\delD(x-y)\sp f(y)=\delD(x-y)\sp f(x)$.
+% Inserted back into Eq.~\eqref{eq:xi-homo-alt} and bringing the
+% zeroth-order term over to the left-hand side, we have
+% \bea\nonumber
+% \xi_n(\r',t')-\xi_n(\r',t) 
+% =-\frac{\partial}{\partial\r'}\cdot
+%         \big[\mbf{M}(\r';t',t)\,\xi_n(\r',t)\big]+\cdots
+% \eea
+% Now write $t'=t+\Delta t$ and expand both sides about the
+% initial time $t$, assuming a small time interval $\Delta t$.
+% We have
+% $\xi_n(\r',t')=\xi_n(\r',t)+\partial_t\sp\xi_n(\r',t)\sp\Delta t
+% +O(\Delta t^2)$.
+% We also have
+% $\mbf{M}(\r';t',t)
+% =\u_{12}(\r',t)\sp\Delta t+O(\Delta t^2)$,
+% where $\u_{12}=\langle\!\langle\u_1-\u_2\rangle\!\rangle$ is the
+% pairwise streaming velocity.
+% Our expression now reads
+% \be
+% \partial_t\ssp\xi_n(\r',t)\,\Delta t
+% =-\frac{\partial}{\partial\r'}\cdot
+%         \big[\xi_n(\r',t)\,\u_{12}(\r';t)\big]\sp\Delta t
+%     +O(\Delta t^2)
+% \ee
+% Dividing both sides by $\Delta t$, taking the limit $\Delta t\to0$,
+% and relabelling $\r'\to\r$, we get
+% \be
+% \partial_t\ssp\xi_n
+% +\bm\nabla_\r\cdot
+%     \big(\xi_n\,\u_{12}\big)=0\,.
+% \ee
+% This is the pair conservation equation~\citep{Davis:1977,Peebles_LSS}.
+
+% We mentioned that the higher-order moments of the transition
+% probability, e.g.\
+% \bea
+% M_{ij}(\r;t',t)
+% &\equiv\int_{\r'} (\r'-\r)_i (\r'-\r)_j \sp p(\r',t'\Mid\r,t) \\
+% &=\langle\!\langle(\r_{t'}-\r)_i(\r_{t'}-\r)_j\rangle\!\rangle
+% \eea
+% may be neglected. This is because when we insert the perturbative
+% solution $\r_{t'}=\r+(\u_1-\u_2)\sp\Delta t+O(\Delta t^2)$
+% it is not hard to see that $M_{ij}=O(\Delta t^2)$. Hence
+% when we divide by $\Delta t$ and take the limit $\Delta t\to0$
+% this moment vanishes.
+% Indeed all moments higher than the first vanish in this limit,
+% e.g.\ for third moment $M_{ijk}=O(\Delta t^3)$, and so on.
+
+
+
+
+
+
+% Here's a more direct derivation. Write
+% \be\nonumber
+% p_t(\x_1,\x_2\Mid\q_1,\q_2)
+% =\langle\!\langle\delD[\x_1-\x_t(\q_1)]\ssp\delD[\x_2-\x_t(\q_2)] 
+%     \rangle\!\rangle\,,
+% \ee
+% Consider the transition of a small time interval, $t=\Delta t$.
+% Expand each trajectory about the initial time:
+% \bea
+% \x_t(\q_1)
+% &=\q_1+\frac{\dif\x_t(\q_1)}{\dif t}\bigg|_{t=0}\,\Delta t
+%     +O(\Delta t^2)\,,\nonumber\\
+% \x_t(\q_2)
+% &=\q_2+\frac{\dif\x_t(\q_2)}{\dif t}\bigg|_{t=0}\,\Delta t
+%     +O(\Delta t^2)\,,
+% \eea
+% Now we expand the transition probability:
+% \bea
+% &p_t(\x_1,\x_2\Mid\q_1,\q_2) 
+% =\delD(\x_1-\q_1)\ssp\delD(\x_2-\q_2) \nonumber\\
+% &
+%     -\left\langle\!\left\langle\frac{\dif\x_t(\q_1)}{\dif t}\bigg|_{t=0}\cdot\frac{\partial}{\partial\x_1}\ssp\delD(\x_1-\q_1)\ssp\delD(\x_2-\q_2)+(1\leftrightarrow2)\right\rangle\!\right\rangle\Delta t \nonumber\\
+% &
+%  + O(\Delta t^2)
+%     \nonumber
+% \eea
+% This yields
+% \bea
+% \partial_t\ssp\xi_n(\x_1,\x_2,t)\ssp\Delta t
+% &=-\bm\nabla_{\x_1}\cdot\big[
+%     \langle\!\langle\u_1\rangle\!\rangle\ssp
+%         \xi_{n0}(\x_1,\x_2)\big]\Delta t \nonumber\\
+% &\quad-\bm\nabla_{\x_2}\cdot\big[
+%     \langle\!\langle\u_2\rangle\!\rangle\ssp
+%         \xi_{n0}(\x_1,\x_2)\big]\Delta t
+% +O(\Delta t^2)\nonumber
+% \eea
+% Using that the correlations depend on $\x_1-\x_2$ (homogeneity)
+% we obtain, in the limit $\Delta t\to0$,
+% \be
+% \partial_t\ssp\xi_n+\bm\nabla_\r\cdot\big(\xi_n\ssp\u_{12}\big)=0
+% \ee
+
+
+
