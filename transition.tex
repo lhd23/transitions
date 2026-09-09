@@ -1058,8 +1058,7 @@ which passively transport material independent of the initial conditions.
 \begin{figure*}
     \centering
     \includegraphics[width=0.95\textwidth]{plots/pt_grid_uniform_random_50000_sigma_bands_ymin001_log_trajectory} % pt_grid_uniform_random_50000_sigma_bands_ymin001 % pt_grid_uniform_random_5000_sigma_bands % pt_grid_uniform_random_5000
-    \caption{{\bf Evolution of the transition probability~\eqref{eq:pt}
-    in a one-dimensional universe.} 
+    \caption{{\bf Evolution of the transition probability~\eqref{eq:pt}.} 
 %    Here the transition probability
 %    is estimated from 5000 $N$-body simulations
 %    of 100 particles.
@@ -1650,7 +1649,7 @@ pairwise velocity divergence), we have
         \bigg)\ssp\bigg|_{\q=\R_t^{-1}(\r)}.
 \ee
 This is a pairwise version of
-a well-known change-of-variables formula from transport theory~\citep{villani_book,MoninYaglom71}.
+a change-of-variables formula well known in transport theory~\citep{villani_book,MoninYaglom71}.
 We note that it has also appeared in the context of
 large-scale structure,
 see, e.g.~\cite{Smith:2007gi} where it was derived using
@@ -1956,13 +1955,15 @@ barely visible in Figure~\ref{fig:evoln}.
     \centering
     \includegraphics[]{plots/dimensionless_cumulants_cdm_sheets_N4000_R512_q01L_q001L_q0001L_zeldovich_conditional_entropy} % dimensionless_cumulants_cdm_sheets_N4000_R512_q01L_q001L_zeldovich % dimensionless_cumulants_cdm_sheets_N4000_R512_q01L_q001L_zeldovich_xmax1.pdf % dimensionless_cumulants_cdm_sheets_N4000_R512_q01L_q001L.pdf % dimensionless_cumulants_uniform_random_5000_50_log_q01L_q001L % dimensionless_cumulant_comparison_q001L_q01L % conditional_entropy
 %    \vspace{-20pt}
-    \caption{Evolution of the first four cumulants of
-    the transition probability. In order to make this comparison,
-    the cumulants are of the dimensionless quantity
-    $(r_t(q)-q)/q$ and are conditional on $q$, e.g.\ $\kappa_1$ is the
-    mean relative displacement and $\kappa_2$ is the dispersion.
-    For $\kappa_1$ and
-    $\kappa_2$ we show the Zeldovich predictions (dashed black);
+    \caption{Evolution of the conditional entropy and the
+    first four cumulants of the transition probability,
+    estimated from the CDM sheet simulation.
+	Note that the cumulants are of the dimensionless
+	relative displacement
+    $(r_t(q)-q)/q$ and are conditional on $q$. For
+    $\kappa_1$ and $\kappa_2$, the mean  and variance of
+    the relative displacement, respectively,
+    we show the Zeldovich predictions (dashed black);
     see Eqs.~\eqref{eq:R-zel} and \eqref{eq:C}.
     }
     \label{fig:cumulants}
@@ -2017,7 +2018,7 @@ convolutions.
 
 
 On the size of the effect, diffusion is subdominant to
-convergence. Hence we have
+convergence. We have therefore
 normalized by $D^2(z)$ in Figure~\ref{fig:evoln}.
 The raw correlations grow in time, and a short calculation
 shows that the correlations are enhanced by a factor
@@ -2029,8 +2030,8 @@ about an order of magnitude smaller than the convergence.
 To be clear, we are \emph{not} identifying a new phenomena here:
 the suppression (or smoothing) of the acoustic peak is well known,
 as well as the failure of standard perturbation theory to account
-for it~\citep[e.g.][]{Senatore:2014via}.
-The procedure that corrects for this is known as `infrared resummation'~\citep{Baldauf:2015xfa}.
+for it~\citep[e.g.][]{Senatore:2014via}, and thus
+the need for `infrared resummation'~\citep[e.g.][]{Baldauf:2015xfa}.
 We are instead describing the suppression as a diffusion process
 whereby the distribution of the (relative) Eulerian separation, $r-q$,
 has a variance,
@@ -4040,10 +4041,10 @@ clusters were beginning to form.
 unfolds through the transition probability,
 a conditional pdf of the distribution of particle
 separations given the initial (Lagrangian) separation.
-Beginning with a delta function (centred at the Lagrangian separation $q$),
-the transition probability evolves through a Gaussian
-to a general skewed distribution. The development of skewness
-and higher-order cumulants occurs sooner for smaller
+Initially sharply peaked (at the Lagrangian separation $q$),
+the transition probability evolves to a Gaussian
+then to an increasingly skewed distribution. The development of
+skew and higher-order cumulants occurs sooner for smaller
 Lagrangian separations than for larger ones.
 Two effects are generally apparent: the skewness is
 towards smaller separations $r<q$ (due to pairwise infall),
@@ -4258,11 +4259,11 @@ where the author was supported by the European Research Council under
 the Horizon 2020 Research and Innovation Programme of the European Union
 (grant agreement no.~863929).
 The author acknowledges use of GPT-5.6 (OpenAI) to assist in
-code development and assumes responsibility for the accuracy of the 
+code development and assumes responsibility for any errors in the 
 numerical results.
 All text was written by the author.
-Use of the Baobab HPC cluster at the University
-of Geneva is gratefully acknowledged.
+%Use of the Baobab HPC cluster at the University
+%of Geneva is gratefully acknowledged.
 The author thanks A.~Chudaykin and O.~Darwish for helpful discussions.
 \end{acknowledgements}
 
