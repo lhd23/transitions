@@ -744,6 +744,29 @@ the way that initial conditions are specified in an
 $N$-body simulation, $\delta_0$ encodes the initial
 positions of  all other particles.
 
+We can make this clearer with a simple example.
+
+Consider a system of three particles, labelled $A$, $B$, and $C$,
+moving according to the equation of motion $\dot{\x}=\mbf{F}(\x,t)$, with
+$\x(t)=(x_A(t),x_B(t),x_C(t))$ and $\mbf{F}$ such that the motions are coupled.
+%We want to know the separation  $r(t)=x_A(t)-x_B(t)$.
+ Now if we know the initial configuration of the system
+then we have complete information to determine a future configuration
+and any observable thereof, e.g.\ the separation $r(t)=x_A(t)-x_B(t)$.
+
+Suppose we know the initial positions of particles $A$ and $B$
+but not of particle $C$.
+More precisely, suppose  $q_A\equiv x_A(0)$ and $q_B\equiv x_B(0)$ are given,
+and particle $C$ is approximately known with $q_C\sim \mathcal{N}(\mu,\sigma^2)$.
+Since we need the positions of all three particles, we do {not} have
+enough information to exactly determine $r(t)$. Marginalising over
+the distribution of $q_3$, yields the {distribution}
+\be
+p_t(x_1,x_2\Mid q_1,q_2)
+=\int\dif q_3\: p_t(x_1,x_2\Mid q_1,q_2,q_3)\ssp p(q_3)
+\ee
+This is the transition probability for $A$ and $B$.
+
 
 %, we have
 %\be\label{eq:pt-fixed-n0}
@@ -884,7 +907,6 @@ which passively transport material independent of the initial conditions.
 % This is the well-known pair conservation equation,
 % the analogue of the continuity equation for pairs \citep{Davis:1977,Peebles_LSS}.
 
-% is there a FOKKER PLANCK EQN??
 
 
 
@@ -901,6 +923,9 @@ which passively transport material independent of the initial conditions.
 % However, the interpretation as a genuine convolution
 % is complicated by the dependence on both $\r-\q$ and $\q$ itself
 % (in the mean and covariance).
+
+
+
 
 
 
@@ -1057,8 +1082,9 @@ which passively transport material independent of the initial conditions.
 
 \begin{figure*}
     \centering
-    \includegraphics[width=0.95\textwidth]{plots/pt_grid_uniform_random_50000_sigma_bands_ymin001_log_trajectory} % pt_grid_uniform_random_50000_sigma_bands_ymin001 % pt_grid_uniform_random_5000_sigma_bands % pt_grid_uniform_random_5000
-    \caption{{\bf Evolution of the transition probability~\eqref{eq:pt}.} 
+    \includegraphics[width=0.9\textwidth]{plots/pt_grid_uniform_random_50000_sigma_bands_ymin001_log_trajectory} % pt_grid_uniform_random_50000_sigma_bands_ymin001 % pt_grid_uniform_random_5000_sigma_bands % pt_grid_uniform_random_5000
+    \caption{{\bf Evolution of the transition probability~\eqref{eq:pt}
+    for uniform random initial conditions.} 
 %    Here the transition probability
 %    is estimated from 5000 $N$-body simulations
 %    of 100 particles.
@@ -1083,7 +1109,7 @@ which passively transport material independent of the initial conditions.
     The solid vertical lines indicates the mean separation.
     For reference we overplot the Gaussian corresponding
     to the estimated mean and standard deviation (thin black).
-    Note that the distributions are (slightly) skewed towards values $r<q$,
+    Note that the distributions are skewed towards values $r<q$,
     since particles infall towards each other, decreasing
     the separation between them.
     An animated version of this plot can be found at 
@@ -1316,8 +1342,7 @@ $\mbf{C}_t(\q)=O(\Delta t^2)$.
 The Zeldovich approximation suggests the broadening grows
 without bound, which is not realistic. More realistically,
 we have that particles form clusters, which capture
-yet more particles. The quadratic growth of $\mbf{C}_t$
-cannot be sustained forever.
+yet more particles.
 Such behaviour can be seen in
 Figure~\ref{fig:trajectories}.
 In the limit $q\to0$ we have
@@ -1337,8 +1362,8 @@ gravitational potential, tend to move coherently
 Two particles may be regarded as
 statistically independent if they are sufficiently far apart
 (large separation).
-This implies that the
-transition probability~\eqref{eq:pt-r} reduces to a factorized form.
+This implies a factorized form for the
+transition probability~\eqref{eq:pt-r}.
 More precisely, since the motions of particles $\q_1$ and $\q_2$, for
 large $\q\equiv\q_1-\q_2$,
 can be considered uncorrelated, we have in this regime
@@ -1813,7 +1838,7 @@ i.e.\ the initial correlations are remapped.
 	Note that depending on the scale a rightward shift of the peak
 	to larger separations due to outfall is also possible (divergence).
 	Likewise, a suppression of the peak from expansion
-	is also possible. This cartoon also ignores that
+	is also possible. This (exaggerated) picture also ignores that
 	each effect also carries scale dependence
 	(e.g.\ different amounts of enhancement or suppression
 	on the near vs far side of the peak).}
@@ -1840,9 +1865,11 @@ The precise size of the shift depends on scale and time (specifically the
 time interval over which the displacement accumulates). If
 we take $q_*=100\,h^{-1}\mrm{Mpc}$ the shift is much smaller.
 For example, over a time interval $z=10$ to
-$z=0$ and using the Zeldovich approximation, we estimate a shift
-$|\mbf{D}_t(\q_*)|\simeq0.03\,h^{-1}\mrm{Mpc}$.%
-\footnote{There is also an `apparent' shift~\citep{Smith:2007gi}.
+$z=0$ and using the Zeldovich approximation, the shift is
+$|\mbf{D}_t(\q_*)|\simeq0.03\,h^{-1}\mrm{Mpc}$, a less than $1\%$
+effect.%
+\footnote{There is also an `apparent' shift~\citep{Smith:2007gi}
+which is more sizeable.
 This is of a more statistical origin
 and is induced by what we call `diffusion'
 (Section~\ref{sec:diffusion}). More standardly is is known as
@@ -2029,10 +2056,9 @@ about an order of magnitude smaller than the convergence.
 
 To be clear, we are \emph{not} identifying a new phenomena here:
 the suppression (or smoothing) of the acoustic peak is well known,
-as well as the failure of standard perturbation theory to account
-for it~\citep[e.g.][]{Senatore:2014via}, and thus
-the need for `infrared resummation'~\citep[e.g.][]{Baldauf:2015xfa}.
-We are instead describing the suppression as a diffusion process
+explained as a the failure of standard perturbation theory to account
+for the nonperturbative effects of long-wavelength modes~\citep[e.g.][]{Senatore:2014via,Baldauf:2015xfa}.
+Here we are instead describing the suppression as a diffusion process
 whereby the distribution of the (relative) Eulerian separation, $r-q$,
 has a variance,
 $\langle(r_t-q)^2\rangle\simeq2\sp\Sigma_t^2\propto D^2(t)$,
@@ -2135,12 +2161,10 @@ there is still suppression.
 
 
 
-
-
 \subsection{Entropy of transitions}
 \noindent A sharp transition probability 
-implies strong knowledge of the final positions,
-whereas a broad transition implies more uncertainty.
+implies more knowledge about the final positions
+than a broad one.
 A convenient way to quantify this is
 with the (conditional) entropy~\citep{Mackay_book}
 \be\label{eq:H}
