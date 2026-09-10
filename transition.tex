@@ -601,6 +601,10 @@ p_t(\r\Mid\q)=\llangle\delD(\r-\r_t)\rrangle\,,
 is the pair transition probability.
 Equation~\eqref{eq:xi-homo} is very similar
 to an expression given in \cite{Couchman_Bond88}.
+%Note that
+%Eq.~\eqref{eq:xi-homo} is a \emph{nonlinear} map of correlations
+%at one time to another.
+
 
 Equation~\eqref{eq:xi-homo} further simplifies
 if we additionally have statistical isotropy. Now
@@ -726,46 +730,81 @@ Note that the dependence on $\delta_0$ enters
 Eq.~\eqref{eq:pt-marginal} through the
 density weighting and the trajectories themselves.
 In Eq.~\eqref{eq:pt-fixed-n0} we have thus written
-$\x_t(\q;\delta_0)$, instead of $\x_t(\q)$ as we did earlier
-(in keeping with standard notation).
-For brevity we will continue writing
-$\x_t(\q)$ with an implicit dependence on $\delta_0$ understood.
+$\x_t(\q;\delta_0)$, instead of $\x_t(\q)$ as we did earlier.%
+\footnote{For brevity we will continue writing $\x_t(\q)$ with an
+implicit dependence on $\delta_0$ understood.}
+That the individual trajectories depend on $\delta_0$
+is because the gravitational field is self-consistently
+determined by the particles themselves
+%This means that the acceleration of
+%a particle depends on the potential (through its
+%gradient), which in turn depends on the positions of {all}
+%other particles through pairwise interactions; that is,
+(one cannot move a particle without also changing the
+gravitational field in which it is moving).
+This self-consistency means we are dealing with \emph{active}
+transport, as opposed to the more common case of
+passive transport where there is no such backreaction~\citep{MoninYaglom71}.
 
-Why do the individual trajectories depend on $\delta_0$?
-This is because the gravitational field is
-\emph{self-consistently} sourced from the matter distribution.
-This means that the acceleration of
-a particle depends on the potential (through its
-gradient), which in turn depends on the positions of {all}
-other particles through pairwise interactions; that is,
-we cannot move a particle without also changing the
-gravitational field in which it is moving. Similar to
-the way that initial conditions are specified in an
-$N$-body simulation, $\delta_0$ encodes the initial
-positions of  all other particles.
+%% The transition probability can be regarded as a \emph{nonlinear}
+%% time-evolution operator for $\xi_n$. 
+%%\noindent {\bf Nonlinearity.}
+%Another aspect of self-consistency is
+%that the transition probability depends on the initial
+%correlations.
+%This means that
+%Eq.~\eqref{eq:MASTER} is a \emph{nonlinear} map of correlations
+%at one time to another.
+%This distinguishes
+%our transition probability~\eqref{eq:pt} from those normally
+%encountered \cite[e.g.\ in statistical fluid mechanics;][]{MoninYaglom71},
+%which transport material without backreacting with the flow.
+%%Unless one considers the motion of test particles, the concept of
+%%passive advection does not exist in a self-gravitating system.
 
-We can make this clearer with a simple example.
+\subsubsection{Simple example}
+\noindent
+The double brackets in Eq.~\eqref{eq:pt-marginal} can
+be thought of as an instruction to marginalize over the initial
+positions of all particles, except $\q_1$ and $\q_2$.
+We can see this as follows.
 
-Consider a system of three particles, labelled $A$, $B$, and $C$,
+Consider a system of three particles
 moving according to the equation of motion $\dot{\x}=\mbf{F}(\x,t)$, with
-$\x(t)=(x_A(t),x_B(t),x_C(t))$ and $\mbf{F}$ such that the motions are coupled.
+$\x(t)=(x_1(t),x_2(t),x_3(t))$ and $\mbf{F}$ such that the motions are coupled.
 %We want to know the separation  $r(t)=x_A(t)-x_B(t)$.
- Now if we know the initial configuration of the system
-then we have complete information to determine a future configuration
-and any observable thereof, e.g.\ the separation $r(t)=x_A(t)-x_B(t)$.
-
-Suppose we know the initial positions of particles $A$ and $B$
-but not of particle $C$.
-More precisely, suppose  $q_A\equiv x_A(0)$ and $q_B\equiv x_B(0)$ are given,
-and particle $C$ is approximately known with $q_C\sim \mathcal{N}(\mu,\sigma^2)$.
-Since we need the positions of all three particles, we do {not} have
-enough information to exactly determine $r(t)$. Marginalising over
-the distribution of $q_3$, yields the {distribution}
+Knowing the initial configuration $(q_1,q_2,q_3)$
+allows us to determine a future configuration
+and any observable thereof. For example, the separation
+can be obtained with
 \be
-p_t(x_1,x_2\Mid q_1,q_2)
-=\int\dif q_3\: p_t(x_1,x_2\Mid q_1,q_2,q_3)\ssp p(q_3)
+p_t(x_1,x_2\Mid q_1,q_2,q_3)=\delD[x_1-x_1(t)]\,\delD[x_2-x_2(t)]\,,
 \ee
-This is the transition probability for $A$ and $B$.
+where both $x_1(t)$ and $x_2(t)$ depend on $(q_1,q_2,q_3)$.
+
+Now suppose we know the initial positions of particles $1$ and $2$
+but not of particle $3$.
+Thus, let  $q_1$ and $q_2$ be given,
+and suppose $q_3$ is distributed as $p(q_3)$.
+Without knowing the positions of all three particles, we do {not} have
+enough information to determine $r(t)$. Instead, our
+knowledge of particle 1 and 2 is given by
+\be\nonumber
+p_t(x_1,x_2\Mid q_1,q_2)
+=\int\dif q_3\: p_t(x_1,x_2\Mid q_1,q_2,q_3)\ssp p(q_3)\,.
+\ee
+i.e.\ the stochasticity of the transitions can
+be seen as the propagation of uncertainty
+in the initial conditions.
+
+Note we have assumed that $q_3$ is independent of $q_1$ and $q_2$;
+but particles are not uniform random distributed, so more correctly
+$p(q_3)\to p(q_3\Mid q_1,q_2)$.
+Similar to the way that initial conditions are specified
+in an $N$-body simulation, we can think of $\delta_0$ in
+Eq.~\eqref{eq:pt-marginal} as a stand-in for the initial positions
+(and velocities) of all other particles in the limit of a
+continuous medium.
 
 
 %, we have
@@ -854,20 +893,7 @@ This is the transition probability for $A$ and $B$.
 
 
 
-% The transition probability can be regarded as a \emph{nonlinear}
-% time-evolution operator for $\xi_n$. 
-%\noindent {\bf Nonlinearity.}
-Another aspect of self-consistency is
-that the transition probability depends on the initial
-correlations (among higher-order correlations).
-Consequently,
-Eq.~\eqref{eq:MASTER} is a nonlinear map of correlations
-at one time to correlations at another. This distinguishes
-the transition probability~\eqref{eq:pt} from those normally
-encountered in, e.g.\ statistical fluid mechanics~\citep{MoninYaglom71},
-which passively transport material independent of the initial conditions.
-%Unless one considers the motion of test particles, the concept of
-%passive advection does not exist in a self-gravitating system.
+
 
 %For instance, if we change the initial correlations
 %$\xi_{n0}(\q_1,\q_2)$, for fixed $\q_1$
@@ -1126,19 +1152,19 @@ which passively transport material independent of the initial conditions.
 
 
 \section{Analysis of transitions}\label{sec:proof}
-\noindent In the usual approach,
-the gravitational evolution of continuous distributions
-of matter is described in terms of the growth factor.
-%, or more generally
-%a Green's function.
-By contrast, our framework deals, which
-deals instead with transition probabilities, a
-quantity better suited to discrete objects.
+\noindent We now study some of the physical aspects 
+of the transition probability, and how they express in
+the correlation function.
 
-In principle, the full nonlinear evolution of matter is
+Now, it is clear the transition probability
+is responsible for evolving a system forward in time, going beyond
+the usual description based on the growth factor.
+In principle, the full nonlinear gravitational evolution of matter is
 contained in the transition probability, encoded
 in the pairwise statistics
 $\llangle\r_t\rrangle$, $\llangle\r_t\r_t^T\rrangle$, etc.
+%By contrast, the gravitational evolution of continuous matter distributions
+%is typically described in terms of the growth factor.
 Towards a perturbative treatment, it will be convenient
 to express $p_t(\r\Mid\q)$ in terms of its
 characteristic function $Z(\k;\q)$:
