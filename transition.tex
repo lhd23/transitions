@@ -212,8 +212,8 @@ There are now a large number of works based on the
 calculational method of \cite{Couchman_Bond88}; see, e.g.\
 \cite{1993MNRAS.263..798M,1995MNRAS.273..475S,Taylor:1996ne,
 Matsubara:2007wj,Vlah:2016bcl,Chen:2020fxs}.
-But to our knowledge a treatment of the two-point function in
-clear probabilistic terms has not been described before. 
+But to our knowledge a general treatment of the two-point function in
+probabilistic terms has not been described before. 
 Though our work closely resembles convolution Lagrangian perturbation theory
 \citep{Carlson:2012,White:2014} there are some important
 conceptual differences.
@@ -294,14 +294,12 @@ Lagrangian perturbation theory needed here.
 %the approach applies equally well to continuous matter fields.
 
 
-This paper is organized as follows.
-In Section~\ref{sec:transition} we establish some general
-results which hold any
-transition probability (that is, any equation of motion).
-In Section~\ref{sec:phase-space}
-we clarify the assumptions underlying Eq.~\eqref{eq:n}.
-%Derivations supporting some of
-%our results are given in the Appendix.
+%This paper is organized as follows.
+%In Section~\ref{sec:transition} we establish some general
+%results which hold any
+%transition probability (that is, any equation of motion).
+%In Section~\ref{sec:phase-space}
+%we clarify the assumptions underlying Eq.~\eqref{eq:n}.
 
 
 
@@ -549,9 +547,9 @@ the required properties, namely, non-negativity,
 $p_t(\x_1,\x_2\Mid\q_1,\q_2)\geq0$ for
 all $\x_1$ and $\x_2$; and normalisation,
 $\int\dif^3\x_1\int\dif^3\x_2\, p_t(\x_1,\x_2\Mid\q_1,\q_2)=1$.%
-\footnote{This still holds even though the input
-and output distributions cannot be normalised in an
-infinite universe.}
+\footnote{This holds even if the input
+and output distributions cannot be normalised in a
+spatially infinite universe.}
 The latter is the statement that the number of pairs is
 conserved under time evolution, i.e.\ pairs cannot disappear
 from the system but must assume {some} position.
@@ -600,7 +598,8 @@ p_t(\r\Mid\q)=\llangle\delD(\r-\r_t)\rrangle\,,
 \ee
 is the pair transition probability.
 Equation~\eqref{eq:xi-homo} is very similar
-to an expression given in \cite{Couchman_Bond88}.
+to an expression given in \cite{Couchman_Bond88};
+see also \cite{1993MNRAS.263..798M}.
 %Note that
 %Eq.~\eqref{eq:xi-homo} is a \emph{nonlinear} map of correlations
 %at one time to another.
@@ -743,8 +742,9 @@ determined by the particles themselves
 (one cannot move a particle without also changing the
 gravitational field in which it is moving).
 This self-consistency means we are dealing with \emph{active}
-transport, as opposed to the more common case of
-passive transport where there is no such backreaction~\citep{MoninYaglom71}.
+transport, as opposed to the simpler case of
+passive transport where there is no
+such backreaction~\citep{MoninYaglom71,MoninYaglom75}.
 
 %% The transition probability can be regarded as a \emph{nonlinear}
 %% time-evolution operator for $\xi_n$. 
@@ -762,49 +762,51 @@ passive transport where there is no such backreaction~\citep{MoninYaglom71}.
 %%Unless one considers the motion of test particles, the concept of
 %%passive advection does not exist in a self-gravitating system.
 
-\subsubsection{Simple example}
+\subsubsection{Probabilistic view}
 \noindent
-The double brackets in Eq.~\eqref{eq:pt-marginal} can
-be thought of as an instruction to marginalize over the initial
-positions of all particles, except $\q_1$ and $\q_2$.
-We can see this as follows.
+A simple example suggests an interpretation of the
+density-weighted ensemble average as a conditional average.
 
-Consider a system of three particles
-moving according to the equation of motion $\dot{\x}=\mbf{F}(\x,t)$, with
-$\x(t)=(x_1(t),x_2(t),x_3(t))$ and $\mbf{F}$ such that the motions are coupled.
+Consider a system of three particles moving in 1D
+according to the equation of motion $\dot{\x}=\mbf{F}(\x,t)$, with
+$\x(t)=(x_1(t),x_2(t),x_3(t))$ and $\mbf{F}$ such that the motions
+are coupled so that $x_a(t)$ depends on the initial
+configuration $(q_1,q_2,q_3)$.
 %We want to know the separation  $r(t)=x_A(t)-x_B(t)$.
-Knowing the initial configuration $(q_1,q_2,q_3)$
+We recall that knowing the initial configuration
 allows us to determine a future configuration
 and any observable thereof. For example, the separation
-can be obtained with
-\be
-p_t(x_1,x_2\Mid q_1,q_2,q_3)=\delD[x_1-x_1(t)]\,\delD[x_2-x_2(t)]\,,
+$r(t)=x_1(t)-x_2(t)$ can be obtained with
+\be\nonumber
+p_t(x_1,x_2\Mid q_1,q_2,q_3)=\delD[x_1-x_1(t)]\,\delD[x_2-x_2(t)]\,.
 \ee
-where both $x_1(t)$ and $x_2(t)$ depend on $(q_1,q_2,q_3)$.
 
 Now suppose we know the initial positions of particles $1$ and $2$
 but not of particle $3$.
 Thus, let  $q_1$ and $q_2$ be given,
 and suppose $q_3$ is distributed as $p(q_3)$.
-Without knowing the positions of all three particles, we do {not} have
-enough information to determine $r(t)$. Instead, our
-knowledge of particle 1 and 2 is given by
+Without knowing $(q_1,q_2,q_3)$, we do {not} have
+enough information to determine $r(t)$. Instead, we have
 \be\nonumber
 p_t(x_1,x_2\Mid q_1,q_2)
-=\int\dif q_3\: p_t(x_1,x_2\Mid q_1,q_2,q_3)\ssp p(q_3)\,.
+=\int\dif q_3\: p_t(x_1,x_2\Mid q_1,q_2,q_3)\ssp p(q_3)\,,
 \ee
-i.e.\ the stochasticity of the transitions can
-be seen as the propagation of uncertainty
-in the initial conditions.
+i.e.\ we marginalise over $q_3$.
+% (in general, for $N$ particles,
+%one marginalises over all particles not held fixed).
+Comparing this to Eq.~\eqref{eq:pt-fixed-n0},
+we see that the density-weighted ensemble
+average can be understood as a marginalisation over the (unknown)
+initial positions of all particles, except $q_1$ and $q_2$.
 
-Note we have assumed that $q_3$ is independent of $q_1$ and $q_2$;
-but particles are not uniform random distributed, so more correctly
+Note that we have assumed $q_3$ is independent of $q_1$ and $q_2$;
+but particles are not coherently distributed, so more correctly
 $p(q_3)\to p(q_3\Mid q_1,q_2)$.
-Similar to the way that initial conditions are specified
+In the same way that initial conditions are specified
 in an $N$-body simulation, we can think of $\delta_0$ in
 Eq.~\eqref{eq:pt-marginal} as a stand-in for the initial positions
-(and velocities) of all other particles in the limit of a
-continuous medium.
+(and velocities) of all particles, except $q_1$ and $q_2$,
+in the limit of a continuous medium.
 
 
 %, we have
@@ -1117,8 +1119,7 @@ continuous medium.
     Each row is for a different initial separation
     $q\equiv q_1-q_2$.
     Left panels show, for a given $q$, 75 sample trajectories
-    $r_t=x_t(q_1)-x_t(q_2)$,
-    each taken from a different realization;
+    $r_t=x_t(q_1)-x_t(q_2)$, each from a different realization;
     the white curve is the mean trajectory 
     and the bands indicate
     the $\pm1\sigma$ and $\pm2\sigma$ regions.
@@ -1133,6 +1134,8 @@ continuous medium.
 %    The Gaussians shown in solid black correspond
 %    to the data points in the left panel. 
     The solid vertical lines indicates the mean separation.
+    The histograms show four snapshots of the transition probability,
+    which we estimated from 50,000 Monte Carlo samples.
     For reference we overplot the Gaussian corresponding
     to the estimated mean and standard deviation (thin black).
     Note that the distributions are skewed towards values $r<q$,
@@ -1152,11 +1155,11 @@ continuous medium.
 
 
 \section{Analysis of transitions}\label{sec:proof}
-\noindent We now study some of the physical aspects 
+\noindent We now turn to some of the physical aspects 
 of the transition probability, and how they express in
 the correlation function.
 
-Now, it is clear the transition probability
+Now, it is clear that the transition probability
 is responsible for evolving a system forward in time, going beyond
 the usual description based on the growth factor.
 In principle, the full nonlinear gravitational evolution of matter is
@@ -1249,7 +1252,7 @@ $(k\Delta t)^n$.
 % $\q_1$ and $\q_2$.
 \noindent
 Although $p_t(\r\Mid\q)$ is generally of
-a complicated form, there are regimes where a Gaussian is a
+a skewed form, there are regimes where a Gaussian is a
 good approximation, namely for large initial separations
 or over short time scales; see Figure~\ref{fig:pt}.
 We thus adopt and analyse the Gaussian as a simple model.
@@ -1365,12 +1368,8 @@ transition probability (Figure~\ref{fig:pt});
 expansion of the prefactor for $t=t_0+\Delta t$ shows
 indeed $\R_t(\q)=O(\Delta t)$ and
 $\mbf{C}_t(\q)=O(\Delta t^2)$.
-The Zeldovich approximation suggests the broadening grows
-without bound, which is not realistic. More realistically,
-we have that particles form clusters, which capture
-yet more particles.
-Such behaviour can be seen in
-Figure~\ref{fig:trajectories}.
+Note that the broadening eventually plateaus as 
+clusters form, as in Figure~\ref{fig:trajectories}.
 In the limit $q\to0$ we have
 $\langle\Delta\bm\psi_0\ssp\Delta\bm\psi_0\rangle\to0$
 so $\mbf{C}_t(\q)\to0$, independent of time. We can understand
@@ -1414,7 +1413,7 @@ transition probability~\eqref{eq:pt} factorizes as
 $\langle AB\rangle=\langle A\rangle\langle B\rangle$, we have
 $p_t(\x_1\Mid\q_1)=\langle\rho_0(\q_1)\ssp\delD[\x_1-\x_t(\q_1)]\rangle/
 \langle\rho_0(\q_1)\rangle$ and likewise for $p_t(\x_2\Mid\q_2)$.
-Now invoking statistical homogeneity we have
+Invoking statistical homogeneity we have
 $p_t(\x\Mid\q)=p_t(\x-\q)=p_t(\bm\psi)$,
 with which the previous expression becomes
 \bea\label{eq:pt-factorize2}
@@ -1429,8 +1428,8 @@ p_t(\r\sp\Mid\sp\text{$\q$ large})
 i.e.\ a convolution between the (identical)
 displacement distributions
 $p_t(\bm\psi_1)$ and $p_t(\bm\psi_2)$.%
-\footnote{These distributions are identical but it's not hard to
-imagine this need not be the case for different tracers $A\neq B$,
+\footnote{These distributions are identical but this need
+not be the case for different tracers $A\neq B$,
 where $2\sp\Sigma^2$ becomes $\Sigma_A^2+\Sigma_B^2$.
 We also note here the fact that the displacement
 distribution $p_t(\bm\psi)$ is
@@ -1450,11 +1449,11 @@ one-dimensional displacement
 dispersion, and $\mbf{I}_3$ is the $3\times3$ identity matrix.
 Noting that Eq.~\eqref{eq:pt-factorize2} is a
 convolution between two Gaussians, the result for
-$p_t(\r\sp\Mid\sp\text{$\q$ large})$ is a Gaussian
+$p_t(\r\sp\Mid\sp\text{$\q$ large})$ is a Gaussian~\eqref{eq:p-t-Gauss}
 with mean and covariance
 \be\label{eq:cum-large-q}
 \R_t(\q)\approx\q\,,\quad
-\mbf{C}_t(\q)\approx2\sp\Sigma_t^2\mbf{I}_3\,,
+\mbf{C}_t(\q)\approx2\sp\Sigma_t^2\mbf{I}_3
 \quad\text{(large $\q$)}
 \ee
 where the factor of two is because of independence
@@ -1859,7 +1858,7 @@ i.e.\ the initial correlations are remapped.
   \end{tikzpicture}
   \caption{{\bf Three ways in which the
    correlation function evolves.}
-   In this picture convergence plays a similar role to the growth factor
+   Here convergence plays a similar role to the growth factor
    in linear theory.
 	Note that depending on the scale a rightward shift of the peak
 	to larger separations due to outfall is also possible (divergence).
@@ -2080,10 +2079,11 @@ across the same redshift interval, we find the peak is
 suppressed by a factor of about 4 (with respect to the broadband),
 about an order of magnitude smaller than the convergence.
 
-To be clear, we are \emph{not} identifying a new phenomena here:
+To be clear, we are {not} claiming a new phenomena here:
 the suppression (or smoothing) of the acoustic peak is well known,
-explained as a the failure of standard perturbation theory to account
-for the nonperturbative effects of long-wavelength modes~\citep[e.g.][]{Senatore:2014via,Baldauf:2015xfa}.
+typically explained as a the failure of standard perturbation
+theory to account for the nonperturbative effects of
+long-wavelength modes~\citep[e.g.][]{Senatore:2014via,Baldauf:2015xfa}.
 Here we are instead describing the suppression as a diffusion process
 whereby the distribution of the (relative) Eulerian separation, $r-q$,
 has a variance,
@@ -4095,7 +4095,7 @@ Initially sharply peaked (at the Lagrangian separation $q$),
 the transition probability evolves to a Gaussian
 then to an increasingly skewed distribution. The development of
 skew and higher-order cumulants occurs sooner for smaller
-Lagrangian separations than for larger ones.
+initial separations than for larger ones.
 Two effects are generally apparent: the skewness is
 towards smaller separations $r<q$ (due to pairwise infall),
 and the distribution becomes increasingly broad (due to
@@ -4138,6 +4138,9 @@ is satisfied by the Gaussian transition probability.
 %without also changing the gravitational field in which it is moving.
 %This boils down to active transport (our case) versus
 %passive transport (the hydrodynamic case).
+
+We have implicitly assumed pushforwards from cold initial conditions.
+We describe in Appendix the generalisation to arbitrary initial conditions.
 
 The generalisation of this probabilistic approach to $n$-point
 functions is straightforward.
