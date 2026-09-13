@@ -137,7 +137,7 @@ $p(s)$ is the distribution of redshift positions,
 $p(x)$ is the distribution of real positions, and $p(s\Mid x)$ is
 the \emph{transition probability}, a conditional probability of the
 redshift positions $s$ attainable from a given real position $x$.
-The aim of this paper is to expand on this probabilistic
+The aim of this paper is to elaborate on this probabilistic
 viewpoint. 
 
 We will do so by pointing out and studying another relation of this form,
@@ -207,12 +207,13 @@ to Gaussian statistics and the Zeldovich approxiation).
 Their approach was used by
 \cite{1993MNRAS.263..798M} to model cluster correlations,
 by generalising Eq.~\eqref{eq:marginal}
-to include other relevant latent variables.
+to include other latent variables relevant to biased tracers
+as peaks~\citep{BBKS}; see also \cite{Desjacques:2010gz}.
 %We are not the first to have noticed this, however.
 %As far as we know \cite{Couchman_Bond88} were the first,
 %though they gave their expression in terms of Lagrangian displacements
 %and so missed the more basic structure~\eqref{eq:marginal}.
-Since these works there have been a number of related approaches, many
+A number of related approaches have since followed, many
 aimed at a model of the power spectrum
 \citep[see, e.g.][]{1995MNRAS.273..475S,Taylor:1996ne,
 Matsubara:2007wj,Vlah:2016bcl,Chen:2020fxs}. None to our knowledge
@@ -220,15 +221,15 @@ have further developed the probabilistic approach.
 %Without committing to a particular model, what can we say about
 %the evolution of the two-point function from unknown initial conditions?
 
-Our framework does, however, have some similarities to
+As we will see, the framework of our approach is essentially
 convolution Lagrangian perturbation theory
 \citep{Carlson:2012,White:2014}.
-The main difference is our understanding of the
-`convolution kernel' as a transition probability, and the role
-it plays in evolving the correlation function forward in time
-through the marginal integral~\eqref{eq:marginal}.
+The main difference however is our interpretation of the
+`convolution kernel' as a transition probability, and the
+role it plays in explaining in physical terms the evolution of the
+correlation function through the marginal integral~\eqref{eq:marginal}.
 Such integrals have previously
-been understood to be nominal convolutions.
+been understood as nominal convolutions.
 %This also leads to a physical interpretation
 %of the density weighting implicit in this approach.
 % with the transition probability a smoothing kernel.
@@ -256,11 +257,17 @@ using path integral methods
 %particles as a field theory, allowing one to
 %access path integral techniques
 %\citep{Martin:1973zz,Janssen76,deDominicis78}.
-While KFT is a more systematic framework
-(e.g.\ working with a complete phase-space description versus
-our reduced description), it requires much else
-besides an understanding of
-Lagrangian perturbation theory as needed here.
+KFT is a more systematic treatment, based on a
+full phase-space description versus our
+reduced configuration-space description.
+But this comes at the cost of formalism, which goes well
+beyond what we need here.
+Another difference is that, except for numerical work,
+our study does not commit to a particular equation of motion.
+The aim here is to separate the model-dependent aspects
+from the basic probabilistic theory, which should be true
+of any reasonable model.
+
 
 \begin{figure*}[t!]
     \centering
@@ -312,15 +319,15 @@ Lagrangian perturbation theory as needed here.
 
 
 
-\noindent{\bf Notation and conventions.}
-To simplify notation we use two non-standard
-conventions. Since these have the potential to confuse,
-we spell them out here.
-First, subscript 0 denotes evaluation at the \emph{initial}
+{\bf Notation and conventions.}
+In order to simplify the presentation we use two non-standard
+conventions.
+(i) Subscript 0 denotes evaluation at the \emph{initial}
 time $t_0$, not the present time.
-Without loss of generality we take  $t_0=0$.
-Second, we find it much more convenient to work with the
-correlation function of the absolute density $\rho$, with
+Without loss of generality we put $t_0=0$.
+%:
+(ii) We find it more convenient to work with the
+correlation function of the density $\rho$, with
 $\xi_\rho(\x_1,\x_2)=\langle \rho(\x_1)\sp \rho(\x_2)\rangle$,
 rather than of the overdensity $\delta=\rho/\bar{\rho}-1$,
 which we instead denote
@@ -363,10 +370,10 @@ $\xi_\rho(\x_1,\x_2)=\bar{\rho}^2[1+\xi(\x_1,\x_2)]$.
 
 \section{Pushforward approach to LPT}
 \noindent
-The transition probability, discussed in the next section,
-is closely tied to the idea of transport.
-This is illustrated in Figure~\ref{fig:trajectories}:
-since particles make up the mass 
+To motivate the transition probability
+it helps to bring to mind the related concept of transport.
+This is illustrated in Figure~\ref{fig:trajectories} which shows
+that since particles make up the mass 
 distribution their motions underlie the transport of the density.
 This is the pushforward approach to LPT, which we now recall.
 
@@ -397,7 +404,8 @@ mass conservation or, equivalently, the
 continuity equation
 $\partial_t\ssp\rho+\nabla\cdot(\rho\v)=0$ to which Eq.~\eqref{eq:n}
 can be seen as the formal solution
-(with cold initial conditions).
+(with cold initial conditions; see
+Appendix~\ref{sec:phase-space} for generalisation).
 
 We note that Eq.~\eqref{eq:n} is typically written
 in terms of the displacement $\bm\psi(\q,t)$ with
@@ -536,7 +544,7 @@ average
     \rho_0(\q_1)\ssp \rho_0(\q_2)\rangle}
     {\langle\sp \rho_0(\q_1)\ssp \rho_0(\q_2)\rangle}\,,
 \ee
-where $O(\q_1,\q_2)$ is any pairwise function.
+where $O(\q_1,\q_2)$ is any pairwise observable.
 
 Note that the above expressions hold for arbitrary equation
 of motion, not just Newton's law. That
@@ -583,8 +591,8 @@ correlations, $\xi_{\rho0}\to\xi_\rho$.
 now imposing statistical homogeneity the transition
 probability has the form
 \be\label{eq:pt-alt}
-p_t(\x_1,\x_2\Mid\q_1,\q_2)
-=p_t(\r,\bar\r-\bar\q\Mid\q)\,,
+p_t(\x_1,\x_2\Mid\q_1,\q_2)\,\dif^3\x_1\ssp\dif^3\x_2
+=p_t(\r,\bar\r-\bar\q\Mid\q)\,\dif^3\r\ssp\dif^3\bar\r\,,
 \ee
 where $\r=\x_1-\x_2$ and  $\bar\r=(\x_1+\x_2)/2$ are the
 Eulerian separation and midpoint, respectively (with
@@ -775,18 +783,19 @@ from being a linear operation on the density.
 
 \subsubsection{Probabilistic view}
 \noindent
-A simple example suggests the
+A simple example suggests that the
 density-weighted ensemble average may be interpreted as 
 a conditional average.
 
 Consider a system of three particles moving in 1D
 according to the equation of motion $\dot{\x}=\mbf{F}(\x,t)$, with
-$\x(t)=(x_1(t),x_2(t),x_3(t))$ and $\mbf{F}$ such that the motions
-are coupled so that $x_a(t)$ depends on the initial
-configuration $(q_1,q_2,q_3)$.
+state trajectory 
+$\x(t)=(x_1(t),x_2(t),x_3(t))$ and $\mbf{F}$ such that the individual
+motions are coupled, so $x_a(t)$ depends on the initial
+state $(q_1,q_2,q_3)$.
 %We want to know the separation  $r(t)=x_A(t)-x_B(t)$.
-We recall that knowing the initial configuration
-allows us to determine a future configuration
+We recall that knowing the initial state
+allows us to determine a future state
 and any observable thereof. For example, the separation
 $r(t)=x_1(t)-x_2(t)$ can be obtained with
 \be\nonumber
@@ -811,7 +820,7 @@ we see that the density-weighted ensemble
 average can be understood as a marginalisation over the (unknown)
 initial positions of all particles, except $q_1$ and $q_2$.
 
-Note that we have assumed $q_3$ is independent of $q_1$ and $q_2$;
+Here we have assumed $q_3$ is independent of $q_1$ and $q_2$;
 but particles are not coherently distributed, so more correctly
 $p(q_3)\to p(q_3\Mid q_1,q_2)$.
 In the same way that initial conditions are specified
@@ -1514,14 +1523,15 @@ given by a convolution.
 We emphasize that only in the case where the transition
 probability is translation invariant---i.e.\ of the form
 $p_t(\r-\q)$, as in the large separation limit---can the correlation
-function~\eqref{eq:xi-homo} be considered a proper convolution.
+function~\eqref{eq:xi-homo} be considered a proper convolution.%
+\footnote{The name
+`convolution LPT'~\citep{Carlson:2012,White:2014,Vlah:2016bcl}
+is a misnomer.}
 This not the case for small separations, where the transition
 kernel has dependence on both $\r$ and $\q$. As mentioned
 in the introduction, the structure of the correlation function
 is generally that of a marginal integral, with a
-conditional pdf for the kernel.\footnote{The name
-`convolution LPT'~\citep{Carlson:2012,White:2014,Vlah:2016bcl}
-is a misnomer.}
+conditional pdf for the kernel.
 %Lastly, note that the Gaussian transition probability~\eqref{eq:pt-Delta}
 %corresponds to the convolution kernel in LPT~\citep{Carlson:2012,White:2014,Vlah:2016bcl}.
 %The difference between them is a matter of interpretation:
@@ -1757,7 +1767,7 @@ lensing convergence is to light rays
 (both are related to the trace of the Jacobian of their respective maps).
 Here its effect on the correlation function is given by
 the exponential factor in Eq.~\eqref{eq:xi_n-formula},
-a kind of growth factor; see Figure~\ref{fig:cartoon_peak}.
+a form of growth factor; see Figure~\ref{fig:cartoon_peak}.
 
 %We group these two effects together because they derive from $\R_t(\q)$.
 %The third effect, diffusion, is related to $\mbf{C}_t(\q)$
@@ -4345,9 +4355,8 @@ The author thanks A.~Chudaykin and O.~Darwish for helpful discussions.
 
 
 
-
-\input{app_kramers-moyal}
 \input{app_phase_space}
+\input{app_kramers-moyal}
 \input{app_path-integral}
 % \input{app_anatomy}
 % \input{app_pt_symmetry}
