@@ -812,12 +812,12 @@ the best we have is
 p_t(x_1,x_2\Mid q_1,q_2)
 =\int\dif q_3\: p_t(x_1,x_2\Mid q_1,q_2,q_3)\ssp p(q_3)\,,
 \ee
-i.e.\ we marginalise over $q_3$.
+i.e.\ we marginalize over $q_3$.
 % (in general, for $N$ particles,
 %one marginalises over all particles not held fixed).
 Comparing this to Eq.~\eqref{eq:pt-fixed-n0},
 we see that the density-weighted ensemble
-average can be understood as a marginalisation over the (unknown)
+average can be understood as a marginalization over the (unknown)
 initial positions of all particles, except $q_1$ and $q_2$.
 
 Here we have assumed $q_3$ is independent of $q_1$ and $q_2$;
@@ -1808,7 +1808,7 @@ pairwise velocity divergence), we have
         \bigg)\ssp\bigg|_{\q=\R_t^{-1}(\r)}.
 \ee
 This is a pairwise version of
-a change-of-variables formula well known in transport theory~\citep{villani_book,MoninYaglom71}.
+a change-of-variables formula well known in transport theory~\citep{villani_book,MoninYaglom71,MoninYaglom75}.
 We note that it has also appeared in the context of
 large-scale structure,
 see, e.g.~\cite{Smith:2007gi} where it was derived using
@@ -1873,12 +1873,12 @@ a form of growth factor; see Figure~\ref{fig:cartoon_peak}.
     Note that in order to make this effect more apparent
     we have scaled out the more prominent convergence effect,
     proportional to $D^2(z)$.
-    The right column of panels shows the model transition proabibilities
-    for fixed $q=95\,h^{-1}\mrm{Mpc}$ and an initial redshift $z=49$.
     Model predictions are based on
     Gaussian transition probability~\eqref{eq:p-t-Gauss}
-    evaluated using the Zeldovich approximation (solid black).
-    Linear theory shown for reference (dashed blue).}
+    evaluated using the Zeldovich approximation (solid blue).
+    Linear theory shown for reference (dashed red).
+    The right column of panels shows the model transition proabibilities
+    for fixed $q=95\,h^{-1}\mrm{Mpc}$ and an initial redshift $z=49$.}
     \label{fig:evoln}
 \end{figure}
 
@@ -2547,7 +2547,7 @@ field.
 %$\v_{m0}(\q)$\propto\nabla\nabla^{-2}\delta_0$ corresponding to the growing mode.
 Comparing this $f_0$ to the general form~\eqref{eq:f-chain}
 we have
-\be
+\be\nonumber
 p_0(\u\Mid\q)=\delD[\u-\v_{m0}(\q)]\,.
 \ee
 Inserting this particular distribution into Eq.~\eqref{eq:T_t} yields
@@ -2620,14 +2620,14 @@ which do not cross; the above configuration-space description
 is made possible with single streaming.  
 
 
-To answer the question posed by this section,
+To summarise,
 the pushforward~\eqref{eq:n} assumes
 a cold initial state, i.e.\ completely specified by
 $\rho_0$ (or $\delta_0$). This  requires either that $\rho_0$
 is evaluated at sufficiently early initial time, or that
 we work consistently in the single-streaming
 regime (as in standard perturbation theory).
-Although in the latter case the pushforward can be used to relate
+Although the latter case allows us to relate
 the density between arbitrary times,
 multistreaming effects will not be captured.
 
@@ -4445,8 +4445,9 @@ multistreaming effects will not be captured.
 \section{Conclusions}
 \noindent The dynamical evolution of the two-point function
 can be viewed through the transition probability,
-a conditional pdf of the distribution of particle
-separations given the initial (Lagrangian) separation $q$.
+a conditional pdf for the likely particle
+separations given an initial (Lagrangian) separation $q$,
+marginalized over the initial conditions.
 Initially spiked at $q$,
 the transition probability evolves to a narrow Gaussian,
 a broader one, then to an increasingly skewed distribution.
