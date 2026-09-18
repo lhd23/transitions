@@ -1131,7 +1131,7 @@ in the limit of a continuous medium.
 
 \begin{figure*}
     \centering
-    \includegraphics[width=\textwidth]{plots/pt_grid_uniform_random_50000_sigma_bands_ymin001_log_trajectory_xmin0_no_sigma_bands_direction_arrows_middle_panels_scienceplots_times11_gnuplot} % pt_grid_uniform_random_50000_sigma_bands_ymin001_log_trajectory_xmin0_no_sigma_bands_direction_arrows_middle_panels_scienceplots_times11 %  pt_grid_uniform_random_50000_sigma_bands_ymin001_log_trajectory_xmin0_no_sigma_bands_direction_arrows_middle_panels % pt_grid_uniform_random_50000_sigma_bands_ymin001_log_trajectory_xmin0_no_sigma_bands.pdf % pt_grid_uniform_random_50000_sigma_bands_ymin001_log_trajectory % pt_grid_uniform_random_50000_sigma_bands_ymin001 % pt_grid_uniform_random_5000_sigma_bands % pt_grid_uniform_random_5000
+    \includegraphics[width=\textwidth]{plots/poisson_transition_grid_N100_R50000} % pt_grid_uniform_random_50000_sigma_bands_ymin001_log_trajectory_xmin0_no_sigma_bands_direction_arrows_middle_panels_scienceplots_times11_gnuplot %  pt_grid_uniform_random_50000_sigma_bands_ymin001_log_trajectory_xmin0_no_sigma_bands_direction_arrows_middle_panels_scienceplots_times11 %  pt_grid_uniform_random_50000_sigma_bands_ymin001_log_trajectory_xmin0_no_sigma_bands_direction_arrows_middle_panels % pt_grid_uniform_random_50000_sigma_bands_ymin001_log_trajectory_xmin0_no_sigma_bands.pdf % pt_grid_uniform_random_50000_sigma_bands_ymin001_log_trajectory % pt_grid_uniform_random_50000_sigma_bands_ymin001 % pt_grid_uniform_random_5000_sigma_bands % pt_grid_uniform_random_5000
     \caption{{\bf Evolution of the transition probability~\eqref{eq:pt}
     for uniform random initial conditions.} 
 %    Here the transition probability
@@ -1303,7 +1303,7 @@ a conditional pdf. The first and second cumulants are
 \r_t\r^T_t\rangle\!\rangle
  -\langle\!\langle\r_t\rangle\!\rangle\langle\!\langle\r_t\rangle\!\rangle^T\,,
 \eea
-i.e.\ the mean and covariance, respectively.
+which are the mean and covariance, respectively.
 %which are the first and second cumulants:
 %$\int_\r\ssp p_t(\r\Mid\q)\sp\r=\R_t(\q)$ and
 %$\int_\r\ssp p_t(\r\Mid\q)(\r-\R_t(\q))(\r-\R_t(\q))^T=\mbf{C}_t(\q)$.
@@ -1538,7 +1538,7 @@ We emphasize that only in the case where the transition
 probability is translation invariant---i.e.\ of the form
 $p_t(\r-\q)$, as in the large separation limit---can the correlation
 function~\eqref{eq:xi-homo} be considered a proper convolution.%
-\footnote{The name
+\footnote{In our view the name
 `convolution LPT'~\citep{Carlson:2012,White:2014,Vlah:2016bcl}
 is a misnomer.}
 This not the case for small separations, where the transition
@@ -2595,15 +2595,16 @@ described \emph{at all times} as a pressureless perfect fluid,
 with $f(\x,\v,t)=\rho(\x,t)\,\delD[\v-\v_{m}(\x,t)]$,
 where $\v_m$ satisfies the Euler equation~\citep[e.g.][]{Pueblas:2008uv,Garny:2022tlk}.
 In this case, the trajectories $\x_t(\q)$ 
-are obtained from the characteristic equation
+are the integral curves of the velocity field, obtained from
+the characteristic equation~\citep{Ehlers:1996wg}
 \be\label{eq:eom-ss}
 \frac{\dif\x_t(\q)}{\dif t}=\frac{1}{a}\,\v_m(\x_t(\q),t)\,,
 \ee
-which implies that the flow satisfies a
-composition property (in configuration space):
+This implies a composition property of the flow (in configuration space):
 $\x_{t,t'}(\x_{t'}(\q))=\x_t(\q)$, where $t'$ is some
 intermediate time between $t_0=0$ and $t$.
-In terms of the pushforward, this property translates to
+In terms of the pushforward~\eqref{eq:n2},
+with $T_t(\x\Mid\q)=\delD[\x-\x_t(\q)]$, this property translates to
 \be
 T_t(\x\Mid\q)=\int_{\x'} T_{t,t'}(\x\Mid\x')\ssp T_{t'}(\x'\Mid\q)\,,
 \ee
@@ -4471,7 +4472,7 @@ is satisfied by the Gaussian transition probability~\eqref{eq:p-t-Gauss}.
 
 We expect many of the methods in this work to 
 carry over to the case of biased tracers.
-As we showed recently~\citep{Dam:2026bhb},
+As we recently showed~\citep{Dam:2026bhb},
 tracer conservation is not a strict requirement of the
 pushforward approach, but it does require accounting for the
 survival probability (due to merger events) and the source
@@ -4678,7 +4679,7 @@ at the University of Geneva
 where the author was supported by the European Research Council under
 the Horizon 2020 Research and Innovation Programme of the European Union
 (grant agreement no.~863929).
-The author acknowledges use of GPT-5.6 via Codex to assist with
+The author used GPT-5.6 via Codex to assist with
 code development and assumes responsibility for any errors in the 
 numerical results.
 All text was written by the author.
