@@ -2553,7 +2553,7 @@ p_0(\u\Mid\q)=\delD[\u-\v_{m0}(\q)]\,.
 Inserting this particular distribution into Eq.~\eqref{eq:T_t} yields
 $T_t(\x\Mid\q)=\delD[\x-\x_t(\q,\v_{m0}(\q)]$, which
 recovers Eq.~\eqref{eq:n} in a form that makes explicit
-that the trajectory also depends on initial velocity.
+that the trajectory also depends on initial velocity.%
 %Thus Eq.~\eqref{eq:n2} reads
 %\be\label{eq:n-alt}
 %\rho(\x,t)
@@ -2596,29 +2596,34 @@ with $f(\x,\v,t)=\rho(\x,t)\,\delD[\v-\v_{m}(\x,t)]$,
 where $\v_m$ satisfies the Euler equation~\citep[e.g.][]{Pueblas:2008uv,Garny:2022tlk}.
 In this case, the trajectories $\x_t(\q)$ 
 are the integral curves of the velocity field, obtained from
-the characteristic equation~\citep{Ehlers:1996wg}
+the equation~\citep{Ehlers:1996wg}
 \be\label{eq:eom-ss}
-\frac{\dif\x_t(\q)}{\dif t}=\frac{1}{a}\,\v_m(\x_t(\q),t)\,,
+\frac{\dif\x_t(\q)}{\dif t}=\frac{1}{a}\,\v_m(\x_t(\q),t)\,.
 \ee
 This implies a composition property of the flow (in configuration space):
 $\x_{t,t'}(\x_{t'}(\q))=\x_t(\q)$, where $t'$ is some
-intermediate time between $t_0=0$ and $t$.
-In terms of the pushforward~\eqref{eq:n2},
-with $T_t(\x\Mid\q)=\delD[\x-\x_t(\q)]$, this property translates to
-\be
-T_t(\x\Mid\q)=\int_{\x'} T_{t,t'}(\x\Mid\x')\ssp T_{t'}(\x'\Mid\q)\,,
+intermediate time between $t_0=0$ and $t$.%
+\footnote{See \cite{Edison:2025bmj} for the importance of
+this property in the nonlocal-in-time bias expansion.}
+In terms of the kernels,
+$T_t(\x\Mid\q)=\delD[\x-\x_t(\q)]$, composition translates to
+\be\label{eq:CK}
+T_t(\x\Mid\q)
+=\int_{\x'} T_{t,t'}(\x\Mid\x')\ssp T_{t'}(\x'\Mid\q)\,,
 \ee
 which we note is the Chapman--Kolmogorov
-equation~\citep{Risken1989FokkerPlanck}. This says that
+equation~\citep{Risken1989FokkerPlanck}. This expresses
+the semi-group property that
 we can view a single pushforward~\eqref{eq:n} as a sequence
 of smaller ones; see our earlier Figure~\ref{fig:trajectories}
 for an illustration (but restricting to the part
 before trajectories first cross).
-Generally, after the onset of multistreaming, the
-composition property relates to the
-phase-space density~\eqref{eq:psd} and to phase-space trajectories,
-which do not cross; the above configuration-space description
-is made possible with single streaming.  
+After the onset of multistreaming, the property~\eqref{eq:CK}
+is lost, i.e.\ Eq.~\eqref{eq:CK} does not hold
+with the more general kernel~\eqref{eq:T_t}.
+Although there is still a semi-group property, it now relates to 
+tracking the phase-space density~\eqref{eq:psd} and to
+phase-space trajectories, which do not cross.
 
 
 To summarise,
@@ -2629,7 +2634,8 @@ is evaluated at sufficiently early initial time, or that
 we work consistently in the single-streaming
 regime (as in standard perturbation theory).
 Although the latter case allows us to relate
-the density between arbitrary times,
+the density between arbitrary times (e.g.\ at times
+when density fluctuations are nonlinear),
 multistreaming effects will not be captured.
 
 
